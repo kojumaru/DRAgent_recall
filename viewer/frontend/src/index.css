@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+/*
+ * 兄弟入れ替え時のみ FTAFlow が `fta-flow--node-position-transition` を付与する。
+ * @xyflow/react のノードラッパーは通常 `transform: translate(...)` で配置される。
+ * クラス名はバージョンにより `react-flow__node` / `xy-flow__node` のいずれか。
+ */
+.fta-flow--node-position-transition .react-flow__node,
+.fta-flow--node-position-transition .xy-flow__node {
+  transition: transform 320ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 兄弟入れ替え後、一時非表示だった枝だけ FTAFlow が `fta-edge--fade-in` を付与 */
+@keyframes fta-edge-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fta-edge--fade-in .react-flow__edge-path,
+.fta-edge--fade-in path.react-flow__edge-path,
+.fta-edge--fade-in .xy-flow__edge-path,
+.fta-edge--fade-in path.xy-flow__edge-path,
+.fta-edge--fade-in path {
+  animation: fta-edge-fade-in 0.35s ease-out forwards;
+}
+
+@theme {
+  --font-sans: 'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', ui-sans-serif, sans-serif;
+  --font-mono: 'Menlo', 'Consolas', monospace;
+}
