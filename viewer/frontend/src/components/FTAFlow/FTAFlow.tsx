@@ -691,7 +691,7 @@ const FTAFlow = forwardRef<FTAFlowHandle, Props>(function FTAFlow(
         fitViewOptions={{ padding: 0.15 }}
         minZoom={0.05}
         maxZoom={2}
-        nodesDraggable={!isEditMode && !readOnly}
+        nodesDraggable={!isEditMode}
         nodesConnectable={false}
         elementsSelectable
       >

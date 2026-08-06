@@ -9,6 +9,7 @@
 from __future__ import annotations
 
 import os
+from datetime import datetime, timezone
 from pathlib import Path
 
 import json
@@ -17,6 +18,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
+from pydantic import BaseModel
 
 load_dotenv(Path(__file__).parent.parent.parent / ".env")
 
@@ -82,6 +84,7 @@ def list_recalls():
             "notifier": notifier,
             "vehicle": vehicle_name,
             "defect_location": meta.get("defect_location", ""),
+            "has_review": (d / "review.json").exists(),
         })
     return recalls
 
@@ -121,6 +124,31 @@ def get_pdf(recall_id: str):
     return FileResponse(pdf_path, media_type="application/pdf")
 
 
+@app.get("/api/recalls/{recall_id}/diagram")
+def get_diagram(recall_id: str):
+    """部品図PDFを返す。ローカルキャッシュがあればそれを、なければダウンロードしてキャッシュ。"""
+    import urllib.request
+    from fastapi.responses import RedirectResponse
+
+    raw_path = DATA_DIR / recall_id / "raw.json"
+    if not raw_path.exists():
+        raise HTTPException(404, "raw.json not found")
+    raw = json.loads(raw_path.read_text("utf-8"))
+    diagram_url = raw.get("diagram_pdf_url")
+    if not diagram_url:
+        raise HTTPException(404, "diagram_pdf_url not set in raw.json")
+
+    # ローカルキャッシュを確認
+    cached = PDF_DIR / f"{recall_id}_diagram.pdf"
+    if not cached.exists():
+        try:
+            urllib.request.urlretrieve(diagram_url, cached)
+        except Exception:
+            return RedirectResponse(url=diagram_url)
+
+    return FileResponse(cached, media_type="application/pdf")
+
+
 @app.get("/api/recalls/{recall_id}/fta")
 def get_fta(recall_id: str):
     output_path = DATA_DIR / recall_id / "output.yaml"
@@ -134,12 +162,129 @@ def get_fta(recall_id: str):
     for i, node in enumerate(raw_nodes):
         flat_nodes.extend(_nested_to_flat(node, parent_id=None, step=0, order_index=i, counter=counter))
 
+    input_path = DATA_DIR / recall_id / "input.yaml"
+    input_data = yaml.safe_load(input_path.read_text("utf-8")) if input_path.exists() else {}
+
     return {
         "tree_id": data.get("tree_id", recall_id),
-        "product_name": data.get("product_name", ""),
-        "purpose": data.get("purpose", ""),
-        "top_event": "",
-        "components": data.get("components", []),
-        "functions": data.get("functions") or [],
+        "product_name": input_data.get("product_name", data.get("product_name", "")),
+        "purpose": input_data.get("purpose", data.get("purpose", "")),
+        "top_event": input_data.get("top_event", ""),
+        "components": input_data.get("components", data.get("components", [])),
+        "functions": input_data.get("functions") or data.get("functions") or [],
         "nodes": flat_nodes,
     }
+
+
+
+@app.get("/api/recalls/{recall_id}/review")
+def get_review(recall_id: str):
+    """専門家レビュー結果を返す。未レビューなら null を返す（404にしない）。"""
+    path = DATA_DIR / recall_id / "review.json"
+    if not path.exists():
+        return None
+    return json.loads(path.read_text("utf-8"))
+
+
+class ReviewItemCheck(BaseModel):
+    """1項目分の見逃しフラグ訂正（"false_negative" = 自動判定の誤り）。"""
+    key: str
+    status: str
+
+
+class ReviewSubmission(BaseModel):
+    """専門家レビューの保存リクエストボディ。"""
+    reviewer: str
+    verdict: str  # "good" | "needs_fix"
+    comment: str = ""
+    item_checks: dict[str, str] = {}
+
+
+@app.post("/api/recalls/{recall_id}/review")
+def save_review(recall_id: str, body: ReviewSubmission):
+    """専門家レビュー結果を review.json に保存する。"""
+    base = DATA_DIR / recall_id
+    if not base.exists():
+        raise HTTPException(404, "recall not found")
+    if not body.reviewer.strip():
+        raise HTTPException(400, "reviewer は必須です")
+
+    review = {
+        "reviewer": body.reviewer,
+        "reviewed_at": datetime.now(timezone.utc).isoformat(),
+        "verdict": body.verdict,
+        "comment": body.comment,
+        "item_checks": body.item_checks,
+    }
+    (base / "review.json").write_text(
+        json.dumps(review, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    return review
+
+
+# ---------------------------------------------------------------------------
+# 項目別スコア（LLM per-item judge）
+# ---------------------------------------------------------------------------
+
+@app.get("/api/recalls/{recall_id}/per_item_score")
+def get_per_item_score(recall_id: str):
+    """LLM の項目別スコア（per_item_score.json）を返す。未計算なら 404。"""
+    path = DATA_DIR / recall_id / "per_item_score.json"
+    if not path.exists():
+        raise HTTPException(404, "per_item_score.json not found（judge.py --per-item を実行してください）")
+    return json.loads(path.read_text("utf-8"))
+
+
+# ---------------------------------------------------------------------------
+# 専門家評価（5段階、複数人）
+# ---------------------------------------------------------------------------
+
+class ExpertScoreItem(BaseModel):
+    item: str
+    score: int  # 1〜5
+
+
+class ExpertReviewSubmission(BaseModel):
+    reviewer: str
+    failure_modes: list[ExpertScoreItem] = []
+
+
+@app.get("/api/recalls/{recall_id}/expert_reviews")
+def get_expert_reviews(recall_id: str):
+    """全専門家のレビューリストを返す（expert_reviews.json）。"""
+    path = DATA_DIR / recall_id / "expert_reviews.json"
+    if not path.exists():
+        return []
+    return json.loads(path.read_text("utf-8"))
+
+
+@app.post("/api/recalls/{recall_id}/expert_reviews")
+def save_expert_review(recall_id: str, body: ExpertReviewSubmission):
+    """専門家の5段階評価を expert_reviews.json に追記・上書き保存する。
+
+    同一レビュアー名が既に存在する場合は上書き、新規の場合は追記する。
+    """
+    base = DATA_DIR / recall_id
+    if not base.exists():
+        raise HTTPException(404, "recall not found")
+    if not body.reviewer.strip():
+        raise HTTPException(400, "reviewer は必須です")
+
+    path = base / "expert_reviews.json"
+    reviews: list[dict] = json.loads(path.read_text("utf-8")) if path.exists() else []
+
+    entry = {
+        "reviewer": body.reviewer,
+        "reviewed_at": datetime.now(timezone.utc).isoformat(),
+        "failure_modes": [i.model_dump() for i in body.failure_modes],
+    }
+
+    # 同一レビュアーなら上書き
+    idx = next((i for i, r in enumerate(reviews) if r["reviewer"] == body.reviewer), None)
+    if idx is not None:
+        reviews[idx] = entry
+    else:
+        reviews.append(entry)
+
+    path.write_text(json.dumps(reviews, ensure_ascii=False, indent=2), encoding="utf-8")
+    return entry

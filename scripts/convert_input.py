@@ -79,7 +79,7 @@ def _derive_top_event(consequences: list[str]) -> str:
     return text.strip()
 
 
-def convert_one(spec_text: str, meta: dict) -> dict:
+def convert_one(spec_text: str, meta: dict, raw: dict | None = None) -> dict:
     """spec_FTA.md と raw.json の metadata から input.yaml の内容を生成する。"""
     # product_name: 「対象部品：...」行から取得
     product_name = ""
@@ -102,13 +102,19 @@ def convert_one(spec_text: str, meta: dict) -> dict:
     if not top_event:
         top_event = meta.get("defect_location", "不明") + "の不具合"
 
-    return {
+    result: dict = {
         "product_name": product_name,
         "purpose": purpose,
         "functions": functions,
         "components": components,
         "top_event": top_event,
     }
+
+    # diagram_pdf_url: raw.json にあれば追加
+    if raw and raw.get("diagram_pdf_url"):
+        result["diagram_pdf_url"] = raw["diagram_pdf_url"]
+
+    return result
 
 
 def process_one(recall_id: str, force: bool = False) -> bool:
@@ -128,11 +134,11 @@ def process_one(recall_id: str, force: bool = False) -> bool:
         print(f"  [SKIP] {recall_id}: input.yaml 既存")
         return True
 
-    spec_text = spec_path.read_text(encoding="utf-8")
+    spec_text = re.sub(r"<!--.*?-->", "", spec_path.read_text(encoding="utf-8"), flags=re.DOTALL)
     raw = json.loads(raw_path.read_text(encoding="utf-8"))
     meta = raw.get("metadata", {})
 
-    data = convert_one(spec_text, meta)
+    data = convert_one(spec_text, meta, raw)
 
     input_path.write_text(
         yaml.dump(data, allow_unicode=True, default_flow_style=False, sort_keys=False),

@@ -91,6 +91,42 @@ JUDGE_SYSTEM_PROMPT = """\
 overall は3軸の単純平均を小数点以下1桁に丸めた値とする。
 """
 
+# ---------------------------------------------------------------------------
+# 項目別スコアリング（per-item judge）
+# ---------------------------------------------------------------------------
+
+SCORE_CRITERIA = """\
+## 評価基準（1〜5）
+
+- 5: 明確に含まれている（同一または同義の表現でFTA内に完全に表現されている）
+- 4: 含まれているが、表現や粒度がやや異なる（言い換え・上位概念・近似表現など）
+- 3: 関連する記述はあるが、直接的な表現ではない（周辺事象として間接的に示唆されている）
+- 2: 部分的にしか表れておらず、重要な側面が欠けている
+- 1: ほとんど含まれていない（または全く含まれていない）"""
+
+PER_ITEM_JUDGE_SYSTEM_PROMPT = f"""\
+あなたはFTA（故障の木解析）の品質評価専門家です。
+リコール届出書から抽出した正解ラベルの各項目が、AIが生成したFTA（YAML形式）の中に
+どの程度含まれているかを1〜5の整数で評価してください。
+
+{SCORE_CRITERIA}
+
+## 出力スキーマ（JSONのみ返す、コードブロック不要）
+
+{{
+  "failure_modes": [
+    {{"item": "評価対象の故障モード名（入力と同じ文字列）", "score": 1〜5}},
+    ...
+  ],
+  "causal_chain": [
+    {{"item": "評価対象の因果連鎖ステップ（入力と同じ文字列）", "score": 1〜5}},
+    ...
+  ]
+}}
+
+failure_modes と causal_chain の各項目は、入力で渡したリストと同じ順序・同じ文字列で返してください。
+"""
+
 
 def _yaml_to_text(fta_yaml: dict) -> str:
     """FTA YAML を評価用のフラットなテキスト（全ノードラベル一覧）に変換する。"""
@@ -245,13 +281,132 @@ def judge_all(recall_ids: list[str] | None = None, force: bool = False) -> list[
     return results
 
 
+def judge_per_item_one(
+    label: dict,
+    fta_yaml: dict,
+    client: AzureOpenAI,
+) -> dict:
+    """failure_modes と causal_chain の各項目を個別に1〜5でスコアリングする。
+
+    Args:
+        label: label.json の内容
+        fta_yaml: output.yaml の内容
+        client: Azure OpenAI クライアント
+
+    Returns:
+        per_item_score.json 形式の dict
+    """
+    fta_text = _yaml_to_text(fta_yaml)
+    failure_modes = label.get("failure_modes") or []
+    causal_chain = label.get("causal_chain") or []
+
+    user_content = (
+        "## 生成FTA\n"
+        f"```\n{fta_text}\n```\n\n"
+        "## 評価対象: 故障モード\n"
+        + "\n".join(f"- {m}" for m in failure_modes)
+        + "\n\n## 評価対象: 因果連鎖ステップ\n"
+        + "\n".join(f"- {s}" for s in causal_chain)
+        + "\n\n上記の各項目について、生成FTAへの包含度を1〜5で評価してください。"
+    )
+
+    response = client.chat.completions.create(
+        model=AOAI_DEPLOYMENT,
+        max_completion_tokens=2048,
+        messages=[
+            {"role": "system", "content": PER_ITEM_JUDGE_SYSTEM_PROMPT},
+            {"role": "user", "content": user_content},
+        ],
+    )
+    raw = response.choices[0].message.content.strip()
+    raw = re.sub(r"```(?:json)?|```", "", raw).strip()
+    try:
+        result = json.loads(raw)
+    except json.JSONDecodeError:
+        print(f"  [WARN] per-item JSONパース失敗")
+        result = {
+            "failure_modes": [{"item": m, "score": 1} for m in failure_modes],
+            "causal_chain": [{"item": s, "score": 1} for s in causal_chain],
+            "error": raw[:200],
+        }
+
+    # 項目数が一致しない場合は入力リストで補正
+    if len(result.get("failure_modes", [])) != len(failure_modes):
+        result["failure_modes"] = [{"item": m, "score": 1} for m in failure_modes]
+    if len(result.get("causal_chain", [])) != len(causal_chain):
+        result["causal_chain"] = [{"item": s, "score": 1} for s in causal_chain]
+
+    return result
+
+
+def process_per_item_one(recall_id: str, client: AzureOpenAI, force: bool = False) -> bool:
+    """1件の recall_id に対して項目別スコアリングを実行し per_item_score.json に保存する。
+
+    Args:
+        recall_id: 対象 ID
+        client: Azure OpenAI クライアント
+        force: 既存ファイルを上書き
+
+    Returns:
+        成功した場合 True
+    """
+    base = DATA_DIR / recall_id
+    label_path = base / "label.json"
+    output_path = base / "output.yaml"
+    score_path = base / "per_item_score.json"
+
+    if not label_path.exists():
+        print(f"  [SKIP] {recall_id}: label.json なし")
+        return False
+    if not output_path.exists():
+        print(f"  [SKIP] {recall_id}: output.yaml なし（FTA未生成）")
+        return False
+    if score_path.exists() and not force:
+        print(f"  [SKIP] {recall_id}: per_item_score.json 既存")
+        return True
+
+    label = json.loads(label_path.read_text(encoding="utf-8"))
+    fta_yaml = yaml.safe_load(output_path.read_text(encoding="utf-8"))
+
+    result = judge_per_item_one(label, fta_yaml, client)
+    result["recall_id"] = recall_id
+    score_path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    print(f"  [OK] {recall_id}: "
+          f"故障モード {len(result['failure_modes'])} 件、"
+          f"因果連鎖 {len(result['causal_chain'])} ステップ")
+    return True
+
+
+def judge_per_item_all(recall_ids: list[str] | None = None, force: bool = False) -> None:
+    """全件または指定 recall_id に対して項目別スコアリングを実行する。"""
+    if not AOAI_KEY:
+        raise EnvironmentError("AZURE_OPENAI_API_KEY が未設定です")
+    client = AzureOpenAI(
+        azure_endpoint=AOAI_ENDPOINT,
+        api_key=AOAI_KEY,
+        api_version=AOAI_API_VERSION,
+    )
+    if recall_ids is None:
+        recall_ids = [d.name for d in DATA_DIR.iterdir() if d.is_dir()]
+    print(f"[judge-per-item] {len(recall_ids)} 件処理中...")
+    for rid in recall_ids:
+        process_per_item_one(rid, client, force=force)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="LLM as judge でFTA品質をスコア化")
     parser.add_argument("--id", metavar="RECALL_ID", help="特定 recall_id のみ処理")
     parser.add_argument("--force", action="store_true", help="既存 score.json を上書き")
+    parser.add_argument("--per-item", action="store_true",
+                        help="各故障モード・因果連鎖ステップを個別にスコアリング（per_item_score.json）")
     args = parser.parse_args()
 
-    judge_all([args.id] if args.id else None, force=args.force)
+    ids = [args.id] if args.id else None
+    if args.per_item:
+        judge_per_item_all(ids, force=args.force)
+    else:
+        judge_all(ids, force=args.force)
 
 
 if __name__ == "__main__":

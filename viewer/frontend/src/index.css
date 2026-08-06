@@ -50,3 +50,18 @@ body {
   --font-sans: 'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', ui-sans-serif, sans-serif;
   --font-mono: 'Menlo', 'Consolas', monospace;
 }
+
+/* 評価項目が選択されたとき、対応するFTAノードを周期的に光らせて強調する */
+@keyframes fta-node-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.65);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(37, 99, 235, 0);
+  }
+}
+
+.fta-node--highlighted {
+  animation: fta-node-pulse 1.2s ease-in-out infinite;
+}

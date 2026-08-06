@@ -77,6 +77,8 @@ interface FTANodeData extends Record<string, unknown> {
   flowOrientation?: FtaFlowOrientation;
   /** ベンチマーク用: 正解ラベルとの一致カテゴリ */
   matchCategories?: ('component' | 'failure_mode' | 'top_event')[];
+  /** 専門家レビューで選択中の評価項目に対応するノードなら true（周期的に光らせる） */
+  highlighted?: boolean;
 }
 
 function DetailDisclosureChevron({
@@ -283,7 +285,8 @@ export function FTAFailureNode({ data }: NodeProps<Node<FTANodeData>>) {
         ? ` ring-2 ring-red-600 ring-offset-1${versionRemovedPreview ? '' : ' opacity-[0.78]'}`
         : data.versionDiffKind === 'changed'
           ? ' ring-2 ring-amber-400 ring-offset-1'
-          : '');
+          : '') +
+    (data.highlighted ? ' fta-node--highlighted' : '');
 
   const stagingRejectContentDim =
     (data.stagingChoice && !data.stagingChoice.accepted) || versionRemovedPreview
