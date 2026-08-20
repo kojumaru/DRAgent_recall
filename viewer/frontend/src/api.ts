@@ -1,4 +1,5 @@
 const BASE = '/api';
+const BASE_BMK = '/api/benchmark/cases';
 
 export interface RecallListItem {
   id: string;
@@ -6,6 +7,9 @@ export interface RecallListItem {
   vehicle: string;
   defect_location: string;
   has_review: boolean;
+  has_spec: boolean;
+  has_fta: boolean;
+  has_spec_review: boolean;
 }
 
 
@@ -91,6 +95,7 @@ export async function getRecall(id: string): Promise<RecallDetail> {
 
 export async function getFTA(id: string): Promise<FTATree> {
   const res = await fetch(`${BASE}/recalls/${id}/fta`);
+  if (!res.ok) throw new Error('fta not found');
   return res.json();
 }
 
@@ -160,9 +165,166 @@ export async function getExpertReviews(id: string): Promise<ExpertReview[]> {
   return res.json();
 }
 
+// ---------------------------------------------------------------------------
+// 仕様書レビュー
+// ---------------------------------------------------------------------------
+
+export interface SpecSectionReview {
+  verdict: 'approved' | 'needs_fix' | 'skipped';
+  comment: string;
+}
+
+export interface SpecReview {
+  reviewer: string;
+  reviewed_at: string;
+  verdict: 'approved' | 'needs_fix' | 'skipped';
+  comment: string;
+  section_reviews: Record<string, SpecSectionReview>;
+}
+
+export interface SpecReviewSubmission {
+  reviewer: string;
+  verdict: 'approved' | 'needs_fix' | 'skipped';
+  comment: string;
+  section_reviews: Record<string, SpecSectionReview>;
+}
+
+export async function getSpecReview(id: string, base = `${BASE}/recalls`): Promise<SpecReview | null> {
+  const res = await fetch(`${base}/${id}/spec_review`);
+  if (!res.ok) return null;
+  return res.json();
+}
+
+export async function saveSpecReview(id: string, body: SpecReviewSubmission, base = `${BASE}/recalls`): Promise<SpecReview> {
+  const res = await fetch(`${base}/${id}/spec_review`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: res.statusText }));
+    throw new Error(err.detail ?? '保存に失敗しました');
+  }
+  return res.json();
+}
+
+
 /** 専門家の5段階評価を保存する（同一レビュアー名なら上書き）。 */
 export async function saveExpertReview(id: string, body: ExpertReviewSubmission): Promise<ExpertReview> {
   const res = await fetch(`${BASE}/recalls/${id}/expert_reviews`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: res.statusText }));
+    throw new Error(err.detail ?? '専門家レビューの保存に失敗しました');
+  }
+  return res.json();
+}
+
+// ---------------------------------------------------------------------------
+// 故障モードレビュー
+// ---------------------------------------------------------------------------
+
+export interface FailureModeReview {
+  reviewer: string;
+  reviewed_at: string;
+  verdict: 'approved' | 'needs_fix';
+  item_reviews: Record<string, 'approved' | 'needs_fix'>;
+  missing_items: string[];
+  comment: string;
+}
+
+export interface FailureModeReviewSubmission {
+  reviewer: string;
+  verdict: 'approved' | 'needs_fix';
+  item_reviews: Record<string, 'approved' | 'needs_fix'>;
+  missing_items: string[];
+  comment: string;
+}
+
+export async function getFailureModeReview(id: string, base = `${BASE}/recalls`): Promise<FailureModeReview | null> {
+  const res = await fetch(`${base}/${id}/failure_mode_review`);
+  if (!res.ok) return null;
+  return res.json();
+}
+
+export async function saveFailureModeReview(id: string, body: FailureModeReviewSubmission, base = `${BASE}/recalls`): Promise<FailureModeReview> {
+  const res = await fetch(`${base}/${id}/failure_mode_review`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body),
+  });
+  if (!res.ok) { const err = await res.json().catch(() => ({ detail: res.statusText })); throw new Error(err.detail ?? '保存に失敗しました'); }
+  return res.json();
+}
+
+// ---------------------------------------------------------------------------
+// トップ事象レビュー
+// ---------------------------------------------------------------------------
+
+export interface TopEventReview {
+  reviewer: string;
+  reviewed_at: string;
+  verdict: 'approved' | 'needs_fix';
+  suggested_top_event: string;
+  comment: string;
+}
+
+export interface TopEventReviewSubmission {
+  reviewer: string;
+  verdict: 'approved' | 'needs_fix';
+  suggested_top_event: string;
+  comment: string;
+}
+
+export async function getTopEventReview(id: string, base = `${BASE}/recalls`): Promise<TopEventReview | null> {
+  const res = await fetch(`${base}/${id}/top_event_review`);
+  if (!res.ok) return null;
+  return res.json();
+}
+
+export async function saveTopEventReview(id: string, body: TopEventReviewSubmission, base = `${BASE}/recalls`): Promise<TopEventReview> {
+  const res = await fetch(`${base}/${id}/top_event_review`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body),
+  });
+  if (!res.ok) { const err = await res.json().catch(() => ({ detail: res.statusText })); throw new Error(err.detail ?? '保存に失敗しました'); }
+  return res.json();
+}
+
+// ---------------------------------------------------------------------------
+// ベンチマーク API（fta-agent/cases + sessions）
+// ---------------------------------------------------------------------------
+
+export async function listBenchmarkCases(): Promise<RecallListItem[]> {
+  const res = await fetch(`${BASE_BMK}`);
+  return res.json();
+}
+
+export async function getBenchmarkCase(id: string): Promise<RecallDetail> {
+  const res = await fetch(`${BASE_BMK}/${id}`);
+  return res.json();
+}
+
+export async function getBenchmarkFTA(id: string): Promise<FTATree> {
+  const res = await fetch(`${BASE_BMK}/${id}/fta`);
+  if (!res.ok) throw new Error('fta not found');
+  return res.json();
+}
+
+export async function getBenchmarkPerItemScore(id: string): Promise<PerItemScore | null> {
+  const res = await fetch(`${BASE_BMK}/${id}/per_item_score`);
+  if (!res.ok) return null;
+  return res.json();
+}
+
+export async function getBenchmarkExpertReviews(id: string): Promise<ExpertReview[]> {
+  const res = await fetch(`${BASE_BMK}/${id}/expert_reviews`);
+  if (!res.ok) return [];
+  return res.json();
+}
+
+export async function saveBenchmarkExpertReview(id: string, body: ExpertReviewSubmission): Promise<ExpertReview> {
+  const res = await fetch(`${BASE_BMK}/${id}/expert_reviews`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),

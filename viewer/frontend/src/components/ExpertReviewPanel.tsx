@@ -7,11 +7,11 @@ import type { ExpertReview, ExpertReviewSubmission, PerItemScoreEntry } from '..
 // ---------------------------------------------------------------------------
 
 const SCORE_CRITERIA: { score: number; label: string; description: string; color: string }[] = [
-  { score: 5, label: '完全に含まれている', description: '同一または同義の表現でFTA内に完全に表現されている', color: 'text-green-700' },
-  { score: 4, label: 'ほぼ含まれている', description: '言い換え・上位概念・近似表現などで含まれているが、表現や粒度がやや異なる', color: 'text-green-600' },
-  { score: 3, label: '間接的に含まれている', description: '関連する記述はあるが直接的な表現ではない（周辺事象として間接的に示唆されている）', color: 'text-yellow-700' },
-  { score: 2, label: '部分的にしか含まれていない', description: '部分的にしか表れておらず、重要な側面が欠けている', color: 'text-orange-600' },
-  { score: 1, label: 'ほとんど含まれていない', description: 'ほとんど含まれていない（または全く含まれていない）', color: 'text-red-700' },
+  { score: 5, label: '同一現象', description: 'FTAノードと故障モードが意味的に同じ現象を指している', color: 'text-green-700' },
+  { score: 4, label: '直接原因', description: 'FTAノードが故障モードの直接原因（このノードがなければ故障モードも起きなかった）', color: 'text-green-600' },
+  { score: 3, label: '遠因',     description: 'FTAノードが故障モードの遠因（複数ステップを経て故障モードにつながる）', color: 'text-yellow-700' },
+  { score: 2, label: '結果',     description: 'FTAノードが故障モードの結果（故障モードが起きた後に現れる現象）', color: 'text-orange-600' },
+  { score: 1, label: '無関係',   description: 'いずれにも該当しない', color: 'text-red-700' },
 ];
 
 function CriteriaBox() {
@@ -22,22 +22,25 @@ function CriteriaBox() {
         className="flex w-full items-center justify-between px-3 py-2 text-left text-[12px] font-semibold text-blue-800"
         onClick={() => setOpen((v) => !v)}
       >
-        <span>評価基準（1〜5）</span>
+        <span>スコア判定フロー（専門家・LLM共通）</span>
         <span className="text-[10px]">{open ? '▲ 折り畳む' : '▼ 表示する'}</span>
       </button>
       {open && (
-        <div className="border-t border-blue-200 px-3 pb-2">
-          {SCORE_CRITERIA.map(({ score, label, description, color }) => (
-            <div key={score} className="mt-1.5 flex items-start gap-2 text-[11px]">
-              <span className={`shrink-0 rounded px-1 py-0.5 text-[11px] font-bold ${color}`}>
-                {score}
-              </span>
-              <span>
-                <span className={`font-semibold ${color}`}>{label}</span>
-                <span className="text-neutral-500"> — {description}</span>
-              </span>
-            </div>
-          ))}
+        <div className="border-t border-blue-200 px-3 py-2 text-[11px] leading-relaxed">
+          <div className="flex flex-col gap-1 font-mono">
+            <div>(1) FTAノードと故障モードは<span className="font-semibold">意味的に同じ現象</span>か？</div>
+            <div className="pl-4">↓ Yes → <span className="font-bold text-green-700">スコア 5（同一現象）</span></div>
+            <div>(2) FTAノードが故障モードの<span className="font-semibold">直接原因</span>か？</div>
+            <div className="pl-4 text-neutral-400 text-[10px]">（このノードがなければ故障モードも起きなかったと言えるか）</div>
+            <div className="pl-4">↓ Yes → <span className="font-bold text-green-600">スコア 4（直接原因）</span></div>
+            <div>(3) FTAノードが故障モードの<span className="font-semibold">遠因</span>か？</div>
+            <div className="pl-4 text-neutral-400 text-[10px]">（複数ステップを経て故障モードにつながるか）</div>
+            <div className="pl-4">↓ Yes → <span className="font-bold text-yellow-700">スコア 3（遠因）</span></div>
+            <div>(4) FTAノードが故障モードの<span className="font-semibold">結果</span>か？</div>
+            <div className="pl-4 text-neutral-400 text-[10px]">（故障モードが起きた後に現れる現象か）</div>
+            <div className="pl-4">↓ Yes → <span className="font-bold text-orange-600">スコア 2（結果）</span></div>
+            <div className="pl-4">↓ No &nbsp;→ <span className="font-bold text-red-700">スコア 1（無関係）</span></div>
+          </div>
         </div>
       )}
     </div>
@@ -113,6 +116,7 @@ interface Props {
   failureModes: string[];
   existingReviews: ExpertReview[];
   onSaved: (review: ExpertReview) => void;
+  saveReview?: (id: string, body: ExpertReviewSubmission) => Promise<ExpertReview>;
 }
 
 export default function ExpertReviewPanel({
@@ -120,6 +124,7 @@ export default function ExpertReviewPanel({
   failureModes,
   existingReviews,
   onSaved,
+  saveReview = saveExpertReview,
 }: Props) {
   const [reviewer, setReviewer] = useState('');
   const [fmScores, setFmScores] = useState<(number | null)[]>(() => failureModes.map(() => null));
@@ -153,7 +158,7 @@ export default function ExpertReviewPanel({
         reviewer,
         failure_modes: failureModes.map((item, i) => ({ item, score: fmScores[i] ?? 0 })),
       };
-      const saved = await saveExpertReview(recallId, body);
+      const saved = await saveReview(recallId, body);
       onSaved(saved);
       setSavedMsg(true);
     } catch (e) {

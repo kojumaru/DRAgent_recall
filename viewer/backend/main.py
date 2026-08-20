@@ -28,6 +28,74 @@ PDF_DIR = Path(os.environ.get(
     str(Path(__file__).parent.parent.parent.parent / "fta-spec-generator"),
 )) / "dataset" / "pdfs"
 
+FTA_AGENT_ROOT = Path(os.environ.get(
+    "FTA_AGENT_ROOT",
+    str(Path(__file__).resolve().parent.parent.parent.parent / "fta-agent"),
+))
+BMK_CASES = FTA_AGENT_ROOT / "cases"
+BMK_SESSIONS = FTA_AGENT_ROOT / "sessions"
+
+
+def _bmk_sessions_for_case(case_id: str) -> list[Path]:
+    """指定ケースIDに紐づくセッションディレクトリ一覧（更新時刻降順）。"""
+    result = []
+    if not BMK_SESSIONS.exists():
+        return result
+    for s in BMK_SESSIONS.iterdir():
+        if not s.is_dir():
+            continue
+        session_md = s / "session.md"
+        if session_md.exists() and case_id in session_md.read_text("utf-8"):
+            result.append(s)
+    return sorted(result, key=lambda p: p.stat().st_mtime, reverse=True)
+
+
+def _bmk_latest_round(session: Path) -> Path | None:
+    """セッション内の最新 ROUND-#### ディレクトリ（tree.yaml 有り）。"""
+    rounds = sorted(
+        [r for r in session.iterdir() if r.is_dir() and r.name.startswith("ROUND-")],
+        reverse=True,
+    )
+    for r in rounds:
+        if (r / "tree.yaml").exists():
+            return r
+    return None
+
+
+def _bmk_latest_round_any(case_id: str) -> Path | None:
+    """全セッション中で最新の ROUND-#### （tree.yaml あり）。"""
+    for s in _bmk_sessions_for_case(case_id):
+        r = _bmk_latest_round(s)
+        if r:
+            return r
+    return None
+
+
+def _coverage_to_per_item(cov: dict) -> dict:
+    """recall_coverage.json → PerItemScore 形式。新旧両フォーマット対応。"""
+
+    def _score(entry: dict) -> int:
+        s = entry.get("llm_score")
+        if s is not None:
+            return max(1, min(5, int(s)))
+        return 4 if entry.get("covered") else 2
+
+    fm = [
+        {"item": e.get("mode", ""), "score": _score(e)}
+        for e in cov.get("failure_modes", [])
+        if e.get("mode")
+    ]
+    cc = [
+        {"item": e.get("step", ""), "score": _score(e)}
+        for e in cov.get("causal_chain_detail", [])
+        if e.get("step") and not e.get("skipped")
+    ]
+    return {
+        "recall_id": cov.get("recall_id", ""),
+        "failure_modes": fm,
+        "causal_chain": cc,
+    }
+
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
@@ -72,8 +140,6 @@ def list_recalls():
             continue
         if not (d / "raw.json").exists():
             continue
-        if not (d / "output.yaml").exists():
-            continue
         raw = json.loads((d / "raw.json").read_text("utf-8"))
         meta = raw.get("metadata", {})
         notifier = meta.get("notifier", "")
@@ -85,6 +151,9 @@ def list_recalls():
             "vehicle": vehicle_name,
             "defect_location": meta.get("defect_location", ""),
             "has_review": (d / "review.json").exists(),
+            "has_spec": (d / "spec_FTA.md").exists(),
+            "has_fta": (d / "output.yaml").exists(),
+            "has_spec_review": (d / "spec_review.json").exists(),
         })
     return recalls
 
@@ -256,6 +325,365 @@ def get_expert_reviews(recall_id: str):
     if not path.exists():
         return []
     return json.loads(path.read_text("utf-8"))
+
+
+# ---------------------------------------------------------------------------
+# 仕様書レビュー（spec_review.json）
+# ---------------------------------------------------------------------------
+
+class SpecSectionReview(BaseModel):
+    verdict: str  # "approved" | "needs_fix" | "skipped"
+    comment: str = ""
+
+class SpecReviewSubmission(BaseModel):
+    reviewer: str
+    verdict: str  # "approved" | "needs_fix" | "skipped"
+    comment: str = ""
+    section_reviews: dict[str, SpecSectionReview] = {}  # key: "1"〜"7"
+
+@app.get("/api/recalls/{recall_id}/spec_review")
+def get_spec_review(recall_id: str):
+    """仕様書レビュー結果を返す。未レビューなら null。"""
+    path = DATA_DIR / recall_id / "spec_review.json"
+    if not path.exists():
+        return None
+    return json.loads(path.read_text("utf-8"))
+
+@app.post("/api/recalls/{recall_id}/spec_review")
+def save_spec_review(recall_id: str, body: SpecReviewSubmission):
+    """仕様書レビュー結果を spec_review.json に保存する。"""
+    base = DATA_DIR / recall_id
+    if not base.exists():
+        raise HTTPException(404, "recall not found")
+    if not body.reviewer.strip():
+        raise HTTPException(400, "reviewer は必須です")
+
+    review = {
+        "reviewer": body.reviewer,
+        "reviewed_at": datetime.now(timezone.utc).isoformat(),
+        "verdict": body.verdict,
+        "comment": body.comment,
+        "section_reviews": {k: v.model_dump() for k, v in body.section_reviews.items()},
+    }
+    (base / "spec_review.json").write_text(
+        json.dumps(review, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    return review
+
+
+# ---------------------------------------------------------------------------
+# スキル改善フィードバック（skill_feedback.json）
+# ---------------------------------------------------------------------------
+
+class SkillFeedbackSubmission(BaseModel):
+    reviewer: str
+    category: str  # "source_access" | "source_priority" | "instruction" | "format" | "coverage"
+    description: str
+    suggestion: str = ""
+
+@app.get("/api/recalls/{recall_id}/skill_feedback")
+def get_skill_feedback(recall_id: str):
+    """スキル改善フィードバック一覧を返す。"""
+    path = DATA_DIR / recall_id / "skill_feedback.json"
+    if not path.exists():
+        return []
+    return json.loads(path.read_text("utf-8"))
+
+@app.post("/api/recalls/{recall_id}/skill_feedback")
+def save_skill_feedback(recall_id: str, body: SkillFeedbackSubmission):
+    """スキル改善フィードバックを skill_feedback.json に追記する。"""
+    base = DATA_DIR / recall_id
+    if not base.exists():
+        raise HTTPException(404, "recall not found")
+    if not body.reviewer.strip():
+        raise HTTPException(400, "reviewer は必須です")
+
+    path = base / "skill_feedback.json"
+    feedbacks: list[dict] = json.loads(path.read_text("utf-8")) if path.exists() else []
+
+    entry = {
+        "reviewer": body.reviewer,
+        "submitted_at": datetime.now(timezone.utc).isoformat(),
+        "category": body.category,
+        "description": body.description,
+        "suggestion": body.suggestion,
+        "recall_id": recall_id,
+    }
+    feedbacks.append(entry)
+    path.write_text(json.dumps(feedbacks, ensure_ascii=False, indent=2), encoding="utf-8")
+    return entry
+
+
+# ---------------------------------------------------------------------------
+# 故障モードレビュー
+# ---------------------------------------------------------------------------
+
+class FailureModeReviewSubmission(BaseModel):
+    reviewer: str
+    verdict: str  # "approved" | "needs_fix"
+    item_reviews: dict[str, str] = {}   # {mode: "approved"|"needs_fix"}
+    missing_items: list[str] = []
+    comment: str = ""
+
+
+def _save_json_to(path: Path, data: dict) -> dict:
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    return data
+
+
+@app.get("/api/recalls/{recall_id}/failure_mode_review")
+def get_failure_mode_review(recall_id: str):
+    path = DATA_DIR / recall_id / "failure_mode_review.json"
+    return json.loads(path.read_text("utf-8")) if path.exists() else None
+
+
+@app.post("/api/recalls/{recall_id}/failure_mode_review")
+def save_failure_mode_review(recall_id: str, body: FailureModeReviewSubmission):
+    base = DATA_DIR / recall_id
+    if not base.exists(): raise HTTPException(404, "recall not found")
+    if not body.reviewer.strip(): raise HTTPException(400, "reviewer は必須です")
+    return _save_json_to(base / "failure_mode_review.json", {
+        "reviewer": body.reviewer,
+        "reviewed_at": datetime.now(timezone.utc).isoformat(),
+        "verdict": body.verdict,
+        "item_reviews": body.item_reviews,
+        "missing_items": body.missing_items,
+        "comment": body.comment,
+    })
+
+
+# ---------------------------------------------------------------------------
+# トップ事象レビュー
+# ---------------------------------------------------------------------------
+
+class TopEventReviewSubmission(BaseModel):
+    reviewer: str
+    verdict: str  # "approved" | "needs_fix"
+    suggested_top_event: str = ""
+    comment: str = ""
+
+
+@app.get("/api/recalls/{recall_id}/top_event_review")
+def get_top_event_review(recall_id: str):
+    path = DATA_DIR / recall_id / "top_event_review.json"
+    return json.loads(path.read_text("utf-8")) if path.exists() else None
+
+
+@app.post("/api/recalls/{recall_id}/top_event_review")
+def save_top_event_review(recall_id: str, body: TopEventReviewSubmission):
+    base = DATA_DIR / recall_id
+    if not base.exists(): raise HTTPException(404, "recall not found")
+    if not body.reviewer.strip(): raise HTTPException(400, "reviewer は必須です")
+    return _save_json_to(base / "top_event_review.json", {
+        "reviewer": body.reviewer,
+        "reviewed_at": datetime.now(timezone.utc).isoformat(),
+        "verdict": body.verdict,
+        "suggested_top_event": body.suggested_top_event,
+        "comment": body.comment,
+    })
+
+
+# ---------------------------------------------------------------------------
+# ベンチマーク（fta-agent/cases + sessions）
+# ---------------------------------------------------------------------------
+
+@app.get("/api/benchmark/cases")
+def list_benchmark_cases():
+    if not BMK_CASES.exists():
+        return []
+    cases = []
+    for d in sorted(BMK_CASES.iterdir()):
+        if not d.is_dir():
+            continue
+        label_path = d / "recall_label.json"
+        if not label_path.exists():
+            continue
+        label = json.loads(label_path.read_text("utf-8"))
+        input_path = d / "input.yaml"
+        input_data = yaml.safe_load(input_path.read_text("utf-8")) if input_path.exists() else {}
+        sessions = _bmk_sessions_for_case(d.name)
+        has_fta = any(_bmk_latest_round(s) is not None for s in sessions)
+        cases.append({
+            "id": d.name,
+            "notifier": "",
+            "vehicle": input_data.get("product_name", d.name),
+            "defect_location": input_data.get("top_event", ""),
+            "has_review": (d / "expert_reviews.json").exists(),
+            "has_spec": False,
+            "has_fta": has_fta,
+            "has_spec_review": False,
+        })
+    return cases
+
+
+@app.get("/api/benchmark/cases/{case_id}")
+def get_benchmark_case(case_id: str):
+    case_dir = BMK_CASES / case_id
+    if not case_dir.exists():
+        raise HTTPException(404, "case not found")
+    label = json.loads((case_dir / "recall_label.json").read_text("utf-8")) if (case_dir / "recall_label.json").exists() else {}
+    input_path = case_dir / "input.yaml"
+    inp = yaml.safe_load(input_path.read_text("utf-8")) if input_path.exists() else {}
+    spec_path = case_dir / "spec_FTA.md"
+    spec = spec_path.read_text("utf-8") if spec_path.exists() else None
+
+    return {
+        "raw": {
+            "recall_id": case_id,
+            "date_text": "",
+            "metadata": {
+                "notification_number": case_id,
+                "notifier": "",
+                "defect_system": inp.get("product_purpose", ""),
+                "defect_location": inp.get("top_event", ""),
+                "defect_description": inp.get("product_purpose", ""),
+                "root_cause": "",
+                "consequences": [],
+                "correction_summary": "",
+                "affected_vehicles": [{"make": "", "model": inp.get("product_name", ""), "type_designation": "", "affected_count": ""}],
+            },
+        },
+        "label": {
+            "target_component": [c.split("：")[0].split(":")[0] for c in inp.get("components", [])],
+            "failure_modes": label.get("failure_modes", []),
+            "top_event": [inp.get("top_event", "")] if inp.get("top_event") else [],
+            "causal_chain": label.get("causal_chain", []),
+        },
+        "spec": spec,
+    }
+
+
+@app.get("/api/benchmark/cases/{case_id}/pdf")
+def get_benchmark_pdf(case_id: str):
+    case_dir = BMK_CASES / case_id
+    for name in ("recall_report.pdf", "recall.pdf"):
+        p = case_dir / name
+        if p.exists():
+            return FileResponse(p, media_type="application/pdf")
+    raise HTTPException(404, "PDF not found")
+
+
+@app.get("/api/benchmark/cases/{case_id}/diagram_masked")
+def get_benchmark_diagram_masked(case_id: str):
+    case_dir = BMK_CASES / case_id
+    p = case_dir / "diagram_masked.png"
+    if p.exists():
+        return FileResponse(p, media_type="image/png")
+    raise HTTPException(404, "diagram_masked.png not found")
+
+
+@app.get("/api/benchmark/cases/{case_id}/fta")
+def get_benchmark_fta(case_id: str):
+    case_dir = BMK_CASES / case_id
+    if not case_dir.exists():
+        raise HTTPException(404, "case not found")
+    latest = _bmk_latest_round_any(case_id)
+    if not latest:
+        raise HTTPException(404, "no FTA tree found")
+    data = yaml.safe_load((latest / "tree.yaml").read_text("utf-8"))
+    # tree.yaml は単一ルートネスト形式（nodes キーなし）
+    raw_nodes = [data] if isinstance(data, dict) else (data if isinstance(data, list) else [])
+    counter = [0]
+    flat_nodes: list[dict] = []
+    for i, node in enumerate(raw_nodes):
+        flat_nodes.extend(_nested_to_flat(node, parent_id=None, step=0, order_index=i, counter=counter))
+    # input.yaml は ROUND内 skills/ を優先
+    inp_path = latest / "skills" / "input.yaml"
+    if not inp_path.exists():
+        inp_path = case_dir / "input.yaml"
+    inp = yaml.safe_load(inp_path.read_text("utf-8")) if inp_path.exists() else {}
+    return {
+        "tree_id": case_id,
+        "product_name": inp.get("product_name", case_id),
+        "purpose": inp.get("product_purpose", ""),
+        "top_event": inp.get("top_event", ""),
+        "components": inp.get("components", []),
+        "functions": [],
+        "nodes": flat_nodes,
+    }
+
+
+@app.get("/api/benchmark/cases/{case_id}/per_item_score")
+def get_benchmark_per_item_score(case_id: str):
+    latest = _bmk_latest_round_any(case_id)
+    if not latest:
+        raise HTTPException(404, "no rounds found")
+    cov_path = latest / "recall_coverage.json"
+    if not cov_path.exists():
+        raise HTTPException(404, "recall_coverage.json not found")
+    return _coverage_to_per_item(json.loads(cov_path.read_text("utf-8")))
+
+
+@app.get("/api/benchmark/cases/{case_id}/expert_reviews")
+def get_benchmark_expert_reviews(case_id: str):
+    path = BMK_CASES / case_id / "expert_reviews.json"
+    if not path.exists():
+        return []
+    return json.loads(path.read_text("utf-8"))
+
+
+@app.get("/api/benchmark/cases/{case_id}/failure_mode_review")
+def get_benchmark_failure_mode_review(case_id: str):
+    path = BMK_CASES / case_id / "failure_mode_review.json"
+    return json.loads(path.read_text("utf-8")) if path.exists() else None
+
+
+@app.post("/api/benchmark/cases/{case_id}/failure_mode_review")
+def save_benchmark_failure_mode_review(case_id: str, body: FailureModeReviewSubmission):
+    case_dir = BMK_CASES / case_id
+    if not case_dir.exists(): raise HTTPException(404, "case not found")
+    if not body.reviewer.strip(): raise HTTPException(400, "reviewer は必須です")
+    return _save_json_to(case_dir / "failure_mode_review.json", {
+        "reviewer": body.reviewer,
+        "reviewed_at": datetime.now(timezone.utc).isoformat(),
+        "verdict": body.verdict,
+        "item_reviews": body.item_reviews,
+        "missing_items": body.missing_items,
+        "comment": body.comment,
+    })
+
+
+@app.get("/api/benchmark/cases/{case_id}/top_event_review")
+def get_benchmark_top_event_review(case_id: str):
+    path = BMK_CASES / case_id / "top_event_review.json"
+    return json.loads(path.read_text("utf-8")) if path.exists() else None
+
+
+@app.post("/api/benchmark/cases/{case_id}/top_event_review")
+def save_benchmark_top_event_review(case_id: str, body: TopEventReviewSubmission):
+    case_dir = BMK_CASES / case_id
+    if not case_dir.exists(): raise HTTPException(404, "case not found")
+    if not body.reviewer.strip(): raise HTTPException(400, "reviewer は必須です")
+    return _save_json_to(case_dir / "top_event_review.json", {
+        "reviewer": body.reviewer,
+        "reviewed_at": datetime.now(timezone.utc).isoformat(),
+        "verdict": body.verdict,
+        "suggested_top_event": body.suggested_top_event,
+        "comment": body.comment,
+    })
+
+
+@app.post("/api/benchmark/cases/{case_id}/expert_reviews")
+def save_benchmark_expert_review(case_id: str, body: ExpertReviewSubmission):
+    case_dir = BMK_CASES / case_id
+    if not case_dir.exists():
+        raise HTTPException(404, "case not found")
+    if not body.reviewer.strip():
+        raise HTTPException(400, "reviewer は必須です")
+    path = case_dir / "expert_reviews.json"
+    reviews: list[dict] = json.loads(path.read_text("utf-8")) if path.exists() else []
+    entry = {
+        "reviewer": body.reviewer,
+        "reviewed_at": datetime.now(timezone.utc).isoformat(),
+        "failure_modes": [i.model_dump() for i in body.failure_modes],
+    }
+    idx = next((i for i, r in enumerate(reviews) if r["reviewer"] == body.reviewer), None)
+    if idx is not None:
+        reviews[idx] = entry
+    else:
+        reviews.append(entry)
+    path.write_text(json.dumps(reviews, ensure_ascii=False, indent=2), encoding="utf-8")
+    return entry
 
 
 @app.post("/api/recalls/{recall_id}/expert_reviews")
