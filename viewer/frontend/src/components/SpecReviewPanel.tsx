@@ -39,6 +39,55 @@ function VerdictButton({
   );
 }
 
+function SavedReviewToggle({ review }: { review: SpecReview }) {
+  const [open, setOpen] = useState(false);
+
+  const verdictLabel =
+    review.verdict === 'approved' ? '✓ 承認' :
+    review.verdict === 'needs_fix' ? '✗ 要修正' : '— スキップ';
+  const verdictColor =
+    review.verdict === 'approved' ? 'text-green-700 border-green-200 bg-green-50' :
+    review.verdict === 'needs_fix' ? 'text-red-700 border-red-200 bg-red-50' :
+    'text-neutral-600 border-neutral-200 bg-neutral-50';
+
+  return (
+    <div className={`rounded border text-[11px] ${verdictColor}`}>
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full items-center justify-between px-3 py-2 text-left font-semibold"
+      >
+        <span>
+          {verdictLabel} — {review.reviewer}
+          <span className="ml-2 font-normal opacity-70">
+            {new Date(review.reviewed_at).toLocaleString('ja-JP')}
+          </span>
+        </span>
+        <span className="ml-2 opacity-60">{open ? '▲' : '▼'}</span>
+      </button>
+
+      {open && (
+        <div className="border-t border-current/20 px-3 pb-3 pt-2 flex flex-col gap-2">
+          {review.comment && (
+            <p className="whitespace-pre-wrap">{review.comment}</p>
+          )}
+          {Object.entries(review.section_reviews ?? {}).map(([num, sr]) => {
+            if (!sr || sr.verdict === 'skipped') return null;
+            const section = SECTIONS.find((s) => s.num === num);
+            const style = VERDICT_STYLES[sr.verdict as SectionVerdict];
+            return (
+              <div key={num} className={`rounded border p-2 ${style.bg} ${style.text}`}>
+                <span className="font-semibold">§{num} {section?.name}</span>
+                <span className="ml-2 text-[10px]">{style.label}</span>
+                {sr.comment && <p className="mt-1 whitespace-pre-wrap">{sr.comment}</p>}
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function SpecReviewPanel({
   recallId,
   spec,
@@ -63,6 +112,7 @@ export default function SpecReviewPanel({
     return init;
   });
   const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
   const [error, setError] = useState('');
 
   const setSection = (num: string, field: 'verdict' | 'comment', value: string) => {
@@ -109,6 +159,14 @@ export default function SpecReviewPanel({
         section_reviews: sectionReviews,
       };
       const result = await saveSpecReview(recallId, body, apiBase);
+      setReviewer('');
+      setOverallComment('');
+      setSections(() => {
+        const reset: Record<string, { verdict: SectionVerdict | null; comment: string }> = {};
+        for (const s of SECTIONS) reset[s.num] = { verdict: null, comment: '' };
+        return reset;
+      });
+      setSaved(true);
       onSaved(result);
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : '保存に失敗しました');
@@ -192,8 +250,13 @@ export default function SpecReviewPanel({
 
               {/* 仕様書テキスト */}
               {sectionTexts[s.num] && (
-                <div className="mb-2 rounded bg-white/60 p-2 font-mono text-[10px] leading-relaxed text-neutral-600 whitespace-pre-wrap break-words">
-                  {sectionTexts[s.num].replace(/<!--.*?-->/gs, '').trim()}
+                <div className="mb-2 rounded bg-white/60 p-2 font-mono text-[10px] leading-relaxed text-neutral-600 break-words">
+                  {sectionTexts[s.num].split('\n').map((line, li) => {
+                    const mAi = line.match(/^<!--\s*\[AI推論\]\s*(.*?)\s*-->$/);
+                    if (mAi) return <span key={li} className="block whitespace-pre-wrap text-neutral-700">{mAi[1]}</span>;
+                    if (/^<!--/.test(line)) return null; // [出典]等は非表示
+                    return <span key={li} className="block whitespace-pre-wrap">{line}</span>;
+                  })}
                 </div>
               )}
 
@@ -231,23 +294,22 @@ export default function SpecReviewPanel({
         {error && <p className="text-[11px] text-red-600">{error}</p>}
         <button
           onClick={handleSave}
-          disabled={saving || !allDone}
+          disabled={saving || !allDone || saved}
           className={`rounded px-4 py-2 text-[12px] font-semibold text-white transition-colors ${
-            allDone
+            saved
+              ? 'bg-green-600 cursor-default'
+              : allDone
               ? 'bg-indigo-600 hover:bg-indigo-700'
               : 'bg-neutral-300 cursor-not-allowed'
           }`}
         >
-          {saving ? '保存中...' : allDone ? 'レビューを保存' : `残り ${SECTIONS.length - reviewedCount} セクション`}
+          {saving ? '保存中...' : saved ? '✓ 保存しました' : allDone ? 'レビューを保存' : `残り ${SECTIONS.length - reviewedCount} セクション`}
         </button>
       </div>
 
-      {/* 保存済み表示 */}
+      {/* 保存済み表示（トグル） */}
       {existingReview && (
-        <div className="rounded border border-green-200 bg-green-50 p-2 text-[11px] text-green-700">
-          最終レビュー: {existingReview.reviewer} — {new Date(existingReview.reviewed_at).toLocaleString('ja-JP')}
-          {' '}({existingReview.verdict === 'approved' ? '✓ 承認' : existingReview.verdict === 'needs_fix' ? '✗ 要修正' : '— スキップ'})
-        </div>
+        <SavedReviewToggle review={existingReview} />
       )}
 
     </div>
