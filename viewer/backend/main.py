@@ -257,13 +257,18 @@ def get_recall_diagram_original(recall_id: str):
 @app.get("/api/recalls/{recall_id}/pdf")
 def get_pdf(recall_id: str):
     from fastapi.responses import RedirectResponse
+    # data/{recall_id}/recall.pdf を優先
+    local_pdf = DATA_DIR / recall_id / "recall.pdf"
+    if local_pdf.exists():
+        return FileResponse(local_pdf, media_type="application/pdf")
+    # 旧来の PDF_DIR からも探す
     raw_path = DATA_DIR / recall_id / "raw.json"
     raw = json.loads(raw_path.read_text("utf-8")) if raw_path.exists() else {}
     ocr_id = raw.get("parent_recall_id", recall_id)
     pdf_path = PDF_DIR / f"{ocr_id}.pdf"
     if pdf_path.exists():
         return FileResponse(pdf_path, media_type="application/pdf")
-    # ローカルにない場合は raw.json の pdf_urls[0] にリダイレクト
+    # フォールバック: pdf_urls[0] にリダイレクト
     pdf_urls = raw.get("pdf_urls") or []
     if pdf_urls:
         return RedirectResponse(url=pdf_urls[0])
