@@ -1,0 +1,36 @@
+{
+  "reviewer": "吉田",
+  "reviewed_at": "2026-08-22T14:21:27.110998+00:00",
+  "verdict": "needs_fix",
+  "comment": "",
+  "section_reviews": {
+    "1": {
+      "verdict": "skipped",
+      "comment": ""
+    },
+    "2": {
+      "verdict": "skipped",
+      "comment": ""
+    },
+    "3": {
+      "verdict": "skipped",
+      "comment": ""
+    },
+    "4": {
+      "verdict": "skipped",
+      "comment": ""
+    },
+    "5": {
+      "verdict": "needs_fix",
+      "comment": "表は生成しないで。どのセクションでも共通。"
+    },
+    "6": {
+      "verdict": "skipped",
+      "comment": ""
+    },
+    "7": {
+      "verdict": "skipped",
+      "comment": ""
+    }
+  }
+}

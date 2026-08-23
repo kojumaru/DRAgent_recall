@@ -1,0 +1,56 @@
+{
+  "recall_id": "r8-06-11-005757",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005757.html",
+  "date_text": "令和8年6月11日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002005689.pdf",
+    "https://www.mlit.go.jp/report/press/content/002005690.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002005690.pdf",
+  "metadata": {
+    "notification_number": "外-4198",
+    "notification_date": "2026-06-11",
+    "notifier": "メルセデス·ベンツ日本合同会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "メルセデス·ベンツ",
+        "model": "G580",
+        "type_designation": "ZAA-465600C",
+        "model_years": [
+          "2024-09-17 to 2025-07-22"
+        ],
+        "affected_count": "360"
+      },
+      {
+        "make": "メルセデス·ベンツ",
+        "model": "G580",
+        "type_designation": "ZAA-465600C",
+        "model_years": [
+          "2024-10-17 to 2025-05-12"
+        ],
+        "affected_count": "153"
+      }
+    ],
+    "defect_system": "走行装置",
+    "defect_location": "ホイールボルト",
+    "defect_description": "ホイールボルトにおいて、設計検討が不十分なため、高負荷での使用を続けると、当該ボルトが緩むおそれがある。そのため、当該ボルトが外れてホイールが脱落するおそれがある。",
+    "root_cause": "設計検討が不十分なため。",
+    "consequences": [
+      "当該ボルトが外れてホイールが脱落するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ホイールボルト",
+        "part_number": null,
+        "system_path": [
+          "走行装置",
+          "ホイールボルト"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ホイールボルトを対策品に交換する。",
+    "correction_detail": "全車両、ホイールボルトを対策品に交換する。"
+  }
+}

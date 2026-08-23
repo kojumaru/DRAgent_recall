@@ -1,0 +1,130 @@
+{
+  "recall_id": "r8-04-24-005719",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005719.html",
+  "date_text": "令和8年4月24日",
+  "month": 4,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001997670.pdf",
+    "https://www.mlit.go.jp/report/press/content/001997671.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001997671.pdf",
+  "metadata": {
+    "notification_number": "5814",
+    "notification_date": "2026-04-24",
+    "notifier": "いすぐ自動車株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "いすぐ",
+        "model": "ギガ",
+        "type_designation": "2RG-CXZ77DT",
+        "model_years": [
+          "2025-03-03 to 2025-03-03"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "いすぐ",
+        "model": "ギガ",
+        "type_designation": "2PG-CYJ77D / 2PG-CYJ77DA",
+        "model_years": [
+          "2025-03-03 to 2025-03-15"
+        ],
+        "affected_count": "14"
+      },
+      {
+        "make": "いすぐ",
+        "model": "ギガ",
+        "type_designation": "2PG-CYL77D",
+        "model_years": [
+          "2025-03-03 to 2025-03-04"
+        ],
+        "affected_count": "6"
+      },
+      {
+        "make": "いすぐ",
+        "model": "ギガ",
+        "type_designation": "2PG-CYY77DU",
+        "model_years": [
+          "2025-03-03 to 2025-03-03"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "いすぐ",
+        "model": "フォワード",
+        "type_designation": "2RG-FRR90S4",
+        "model_years": [
+          "2025-03-01 to 2025-03-03"
+        ],
+        "affected_count": "3"
+      },
+      {
+        "make": "いすぐ",
+        "model": "フォワード",
+        "type_designation": "2PG-FSR90T4",
+        "model_years": [
+          "2025-03-06 to 2025-03-06"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "いすぐ",
+        "model": "フォワード",
+        "type_designation": "2RG-FTR90V4",
+        "model_years": [
+          "2025-03-04 to 2025-03-05"
+        ],
+        "affected_count": "3"
+      }
+    ],
+    "defect_system": "座席",
+    "defect_location": "シートサスペンション（運転者席）",
+    "defect_description": "運転者席において、バッテリ端子を外した状態でシートの上昇操作を行った場合、サスペンションがロックされたまま解除されなくなり、座面高さの調整ができなくなることがある。そのまま使用を続けると、車両走行振動等により、意図せずサスペンションロックが解除されて座面が上昇し、サスペンションロックが機能しなくなるおそれがある。",
+    "root_cause": "シートサスペンションの設計検討が不十分なため。",
+    "consequences": [
+      "座面高さの調整ができなくなる",
+      "走行振動等により意図せずサスペンションロックが解除されて座面が上昇する",
+      "サスペンションロックが機能しなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "シートサスペンション",
+        "part_number": null,
+        "system_path": [
+          "座席",
+          "シートサスペンション"
+        ]
+      },
+      {
+        "part_name": "電磁遮断弁",
+        "part_number": null,
+        "system_path": [
+          "座席",
+          "運転者席シート",
+          "エア回路"
+        ]
+      },
+      {
+        "part_name": "電磁遮断弁制御ECU",
+        "part_number": null,
+        "system_path": [
+          "座席",
+          "運転者席シート",
+          "エア回路"
+        ]
+      },
+      {
+        "part_name": "ラチェットギア締結部ナット",
+        "part_number": null,
+        "system_path": [
+          "座席",
+          "シートサスペンション",
+          "ラチェットギア締結部"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、運転者席シートのエア回路に電磁遮断弁および電磁遮断弁制御ECUを追加するとともに、ラチェットギア締結部のナットを新品に交換し、緩み止め剤を塗布する。サスペンションロック機能を点検し、機能に問題がある場合はシートサスペンション一式を対策品に交換する。",
+    "correction_detail": "運転者席シートのエア回路に電磁遮断弁および電磁遮断弁制御ECUを追加する。ラチェットギア締結部のナットを新品に交換し、緩み止め剤を塗布する。さらにサスペンションロック機能を点検し、機能に問題がある場合はシートサスペンション一式を対策品に交換する。"
+  }
+}

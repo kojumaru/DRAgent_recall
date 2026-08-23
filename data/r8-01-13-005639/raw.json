@@ -1,0 +1,84 @@
+{
+  "recall_id": "r8-01-13-005639",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005639.html",
+  "date_text": "令和8年1月13日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001976681.pdf",
+    "https://www.mlit.go.jp/report/press/content/001976689.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001976689.pdf",
+  "metadata": {
+    "notification_number": "5760",
+    "notification_date": "2026-01-13",
+    "notifier": "三菱ふそうトラック·バス株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "三菱",
+        "model": "ふそう ファイター",
+        "type_designation": "2PG-FK72N",
+        "model_years": [
+          "2024-04-19 to 2025-06-05"
+        ],
+        "affected_count": "65"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう ファイター",
+        "type_designation": "2PG-FK62N",
+        "model_years": [
+          "2024-08-27 to 2025-01-17"
+        ],
+        "affected_count": "4"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう ファイター",
+        "type_designation": "2KG-FK72F",
+        "model_years": [
+          "2024-04-15 to 2025-06-12"
+        ],
+        "affected_count": "134"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう ファイター",
+        "type_designation": "2KG-FK62F",
+        "model_years": [
+          "2024-04-12 to 2025-06-05"
+        ],
+        "affected_count": "274"
+      }
+    ],
+    "defect_system": "後退時車両直後確認装置",
+    "defect_location": "リヤビューカメラ",
+    "defect_description": "リヤビューカメラにおいて、荷台への取り付け位置が不適切なため、荷台のリヤゲートを下した際に当該カメラと干渉することがある。そのため、当該カメラのレンズが損傷して視認性が悪化し、法規不適合となるおそれがある。",
+    "root_cause": "荷台への取り付け位置が不適切なため、荷台のリヤゲートを下した際にリヤビューカメラと干渉することがある。",
+    "consequences": [
+      "当該カメラのレンズが損傷して視認性が悪化する",
+      "法規不適合となるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "リヤビューカメラ",
+        "part_number": null,
+        "system_path": [
+          "後退時車両直後確認装置",
+          "リヤビューカメラ"
+        ]
+      },
+      {
+        "part_name": "リヤビューカメラ取り付け固定用支持具",
+        "part_number": null,
+        "system_path": [
+          "後退時車両直後確認装置",
+          "リヤビューカメラ",
+          "取り付け固定用支持具"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、リヤビューカメラ取り付け固定用支持具を変更する。また、当該カメラのレンズが損傷している場合は、当該カメラを新品に交換する。",
+    "correction_detail": "全車両についてリヤビューカメラの取り付け固定用支持具を変更し、併せてレンズ損傷が認められる車両はリヤビューカメラを新品に交換する。"
+  }
+}

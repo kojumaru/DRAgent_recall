@@ -1,0 +1,83 @@
+{
+  "recall_id": "r8-02-05-005654",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005654.html",
+  "date_text": "令和8年2月5日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001980213.pdf",
+    "https://www.mlit.go.jp/report/press/content/001980214.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001980214.pdf",
+  "metadata": {
+    "notification_number": "外-4141",
+    "notification_date": "2026-02-05",
+    "notifier": "Stellantis ジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "アルファロメオ",
+        "model": "ステルヴィオ",
+        "type_designation": "3BA-94920",
+        "model_years": [
+          "2024-12-12 to 2025-10-22"
+        ],
+        "affected_count": "83"
+      },
+      {
+        "make": "アルファロメオ",
+        "model": "ジュリア",
+        "type_designation": "3BA-95220",
+        "model_years": [
+          "2024-12-12 to 2025-10-22"
+        ],
+        "affected_count": "177"
+      },
+      {
+        "make": "アルファロメオ",
+        "model": "ステルヴィオ",
+        "type_designation": "3DA-94922",
+        "model_years": [
+          "2025-06-09 to 2025-07-07"
+        ],
+        "affected_count": "31"
+      },
+      {
+        "make": "アルファロメオ",
+        "model": "ステルヴィオ",
+        "type_designation": "7BA-94929",
+        "model_years": [
+          "2024-12-12 to 2025-10-22"
+        ],
+        "affected_count": "13"
+      },
+      {
+        "make": "アルファロメオ",
+        "model": "ジュリア",
+        "type_designation": "7BA-95229",
+        "model_years": [
+          "2024-12-12 to 2025-10-22"
+        ],
+        "affected_count": "113"
+      }
+    ],
+    "defect_system": "電気装置",
+    "defect_location": "メータークラスター",
+    "defect_description": "車線維持支援機能において、メータークラスターの制御プログラムが不適切なため、運転者がハンドルから手を離した事により当該機能が停止しても、警告音が吹鳴せず、保安基準に適合しない。",
+    "root_cause": "メータークラスターの制御プログラムが不適切なため。",
+    "consequences": [
+      "車線維持支援機能が停止しても警告音が吹鳴せず、保安基準に適合しない"
+    ],
+    "parts": [
+      {
+        "part_name": "メータークラスター",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "メータークラスター"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、メータークラスターの制御プログラムを対策仕様に更新する。",
+    "correction_detail": "全車両、メータークラスターの制御プログラムを対策仕様に更新する。"
+  }
+}

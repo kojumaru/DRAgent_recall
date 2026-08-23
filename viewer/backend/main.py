@@ -9,20 +9,26 @@
 from __future__ import annotations
 
 import os
+import subprocess
+import threading
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
+import io
 import json
 import yaml
+import zipfile
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, StreamingResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 load_dotenv(Path(__file__).parent.parent.parent / ".env")
 
-DATA_DIR = Path(__file__).parent.parent.parent / "data"
+DATA_DIR = Path(os.environ.get("DATA_DIR", str(Path(__file__).parent.parent.parent / "data")))
 PDF_DIR = Path(os.environ.get(
     "FTA_SPEC_GENERATOR_ROOT",
     str(Path(__file__).parent.parent.parent.parent / "fta-spec-generator"),
@@ -33,6 +39,15 @@ FTA_AGENT_ROOT = Path(os.environ.get(
     str(Path(__file__).resolve().parent.parent.parent.parent / "fta-agent"),
 ))
 BMK_CASES = FTA_AGENT_ROOT / "cases"
+
+SPEC_GEN_ROOT = Path(os.environ.get(
+    "FTA_SPEC_GENERATOR_ROOT",
+    str(Path(__file__).parent.parent.parent.parent / "fta-spec-generator"),
+))
+CLAUDE_BIN = os.environ.get("CLAUDE_BIN", "/opt/homebrew/bin/claude")
+
+# skill-improve ジョブ管理（in-memory）
+_skill_improve_jobs: dict[str, dict] = {}  # recall_id → {status, output, started_at}
 BMK_SESSIONS = FTA_AGENT_ROOT / "sessions"
 
 
@@ -145,17 +160,62 @@ def list_recalls():
         notifier = meta.get("notifier", "")
         vehicles = meta.get("affected_vehicles", [])
         vehicle_name = vehicles[0].get("model", "") if vehicles else ""
+        spec_review_improved = False
+        if (d / "spec_review.json").exists():
+            sr = json.loads((d / "spec_review.json").read_text("utf-8"))
+            spec_review_improved = bool(sr.get("skill_improved_at"))
         recalls.append({
             "id": d.name,
             "notifier": notifier,
             "vehicle": vehicle_name,
             "defect_location": meta.get("defect_location", ""),
+            "notification_date": meta.get("notification_date", raw.get("date_text", "")),
+            "has_diagram_pdf": bool(raw.get("diagram_pdf_url")),
             "has_review": (d / "review.json").exists(),
             "has_spec": (d / "spec_FTA.md").exists(),
-            "has_fta": (d / "output.yaml").exists(),
+            "has_label": (d / "label.json").exists(),
+            "has_input": (d / "input.yaml").exists(),
+            "has_fta": (d / "output.yaml").exists() or any(d.glob("output_*.yaml")),
+            "fta_count": len([f for f in [d / "output.yaml"] + list(d.glob("output_*.yaml")) if f.exists()]),
             "has_spec_review": (d / "spec_review.json").exists(),
+            "spec_review_improved": spec_review_improved,
+            "has_diagram_masked": (d / "diagram_masked.png").exists(),
+            "has_diagram_original": (d / "diagram_original.png").exists(),
+            "has_top_event_review": (d / "top_event_review.json").exists(),
+            "has_failure_mode_review": (d / "failure_mode_review.json").exists(),
         })
     return recalls
+
+
+REVIEW_FILES = [
+    "review.json",
+    "spec_review.json",
+    "failure_mode_review.json",
+    "top_event_review.json",
+    "expert_reviews.json",
+    "skill_feedback.json",
+]
+
+
+@app.get("/api/export/reviews")
+def export_reviews():
+    """レビュー済みデータを ZIP にまとめてダウンロードする。"""
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+        for d in sorted(DATA_DIR.iterdir()):
+            if not d.is_dir() or not (d / "raw.json").exists():
+                continue
+            for fname in REVIEW_FILES:
+                p = d / fname
+                if p.exists():
+                    zf.write(p, arcname=f"{d.name}/{fname}")
+    buf.seek(0)
+    filename = f"fta_reviews_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
+    return StreamingResponse(
+        buf,
+        media_type="application/zip",
+        headers={"Content-Disposition": f"attachment; filename={filename}"},
+    )
 
 
 @app.get("/api/recalls/{recall_id}")
@@ -176,6 +236,22 @@ def get_recall(recall_id: str):
         result["score"] = json.loads((base / "score.json").read_text("utf-8"))
 
     return result
+
+
+@app.get("/api/recalls/{recall_id}/diagram_masked")
+def get_recall_diagram_masked(recall_id: str):
+    p = DATA_DIR / recall_id / "diagram_masked.png"
+    if p.exists():
+        return FileResponse(p, media_type="image/png")
+    raise HTTPException(404, "diagram_masked.png not found")
+
+
+@app.get("/api/recalls/{recall_id}/diagram_original")
+def get_recall_diagram_original(recall_id: str):
+    p = DATA_DIR / recall_id / "diagram_original.png"
+    if p.exists():
+        return FileResponse(p, media_type="image/png")
+    raise HTTPException(404, "diagram_original.png not found")
 
 
 @app.get("/api/recalls/{recall_id}/pdf")
@@ -371,6 +447,89 @@ def save_spec_review(recall_id: str, body: SpecReviewSubmission):
     return review
 
 
+@app.post("/api/recalls/{recall_id}/spec_review/mark_improved")
+def mark_spec_review_improved(recall_id: str):
+    """spec_review.json に skill_improved_at タイムスタンプを記録する。"""
+    path = DATA_DIR / recall_id / "spec_review.json"
+    if not path.exists():
+        raise HTTPException(404, "spec_review.json not found")
+    review = json.loads(path.read_text("utf-8"))
+    review["skill_improved_at"] = datetime.now(timezone.utc).isoformat()
+    path.write_text(json.dumps(review, ensure_ascii=False, indent=2), encoding="utf-8")
+    return review
+
+
+# ---------------------------------------------------------------------------
+# skill-improve 実行エンドポイント
+# ---------------------------------------------------------------------------
+
+def _run_skill_improve(recall_id: str, job_id: str) -> None:
+    """バックグラウンドスレッドで claude -p "/skill-improve {recall_id}" を実行する。"""
+    try:
+        env = os.environ.copy()
+        env.pop("CLAUDECODE", None)  # ネストしたClaudeセッション禁止を回避
+        result = subprocess.run(
+            [CLAUDE_BIN, "-p", f"/skill-improve {recall_id}"],
+            cwd=str(SPEC_GEN_ROOT),
+            capture_output=True,
+            text=True,
+            timeout=600,
+            env=env,
+        )
+        output = result.stdout + result.stderr
+        if result.returncode == 0:
+            _skill_improve_jobs[recall_id] = {
+                "job_id": job_id,
+                "status": "done",
+                "output": output,
+                "finished_at": datetime.now(timezone.utc).isoformat(),
+            }
+            # spec_review.json に skill_improved_at を自動記録
+            path = DATA_DIR / recall_id / "spec_review.json"
+            if path.exists():
+                review = json.loads(path.read_text("utf-8"))
+                review["skill_improved_at"] = datetime.now(timezone.utc).isoformat()
+                path.write_text(json.dumps(review, ensure_ascii=False, indent=2), encoding="utf-8")
+        else:
+            _skill_improve_jobs[recall_id] = {
+                "job_id": job_id,
+                "status": "error",
+                "output": output,
+                "finished_at": datetime.now(timezone.utc).isoformat(),
+            }
+    except subprocess.TimeoutExpired:
+        _skill_improve_jobs[recall_id] = {
+            "job_id": job_id, "status": "error", "output": "タイムアウト（10分）",
+            "finished_at": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        _skill_improve_jobs[recall_id] = {
+            "job_id": job_id, "status": "error", "output": str(e),
+            "finished_at": datetime.now(timezone.utc).isoformat(),
+        }
+
+
+@app.post("/api/recalls/{recall_id}/skill_improve")
+def start_skill_improve(recall_id: str):
+    """skill-improve をバックグラウンドで実行開始する。"""
+    if not (DATA_DIR / recall_id).exists():
+        raise HTTPException(404, "recall not found")
+    existing = _skill_improve_jobs.get(recall_id, {})
+    if existing.get("status") == "running":
+        return existing  # すでに実行中
+    job_id = str(uuid.uuid4())[:8]
+    job = {"job_id": job_id, "status": "running", "output": "", "started_at": datetime.now(timezone.utc).isoformat()}
+    _skill_improve_jobs[recall_id] = job
+    threading.Thread(target=_run_skill_improve, args=(recall_id, job_id), daemon=True).start()
+    return job
+
+
+@app.get("/api/recalls/{recall_id}/skill_improve")
+def get_skill_improve_status(recall_id: str):
+    """skill-improve の実行状況を返す。未実行なら null。"""
+    return _skill_improve_jobs.get(recall_id)
+
+
 # ---------------------------------------------------------------------------
 # スキル改善フィードバック（skill_feedback.json）
 # ---------------------------------------------------------------------------
@@ -456,17 +615,40 @@ def save_failure_mode_review(recall_id: str, body: FailureModeReviewSubmission):
 # トップ事象レビュー
 # ---------------------------------------------------------------------------
 
+class TopEventEventReview(BaseModel):
+    top_event: str
+    verdict: str  # "approved" | "needs_fix"
+    suggested: str = ""
+    comment: str = ""
+
 class TopEventReviewSubmission(BaseModel):
     reviewer: str
-    verdict: str  # "approved" | "needs_fix"
-    suggested_top_event: str = ""
-    comment: str = ""
+    event_reviews: list[TopEventEventReview]
+
+
+def _migrate_top_event_review(data: dict) -> dict:
+    """旧フォーマット（verdict/suggested_top_event）を新フォーマットに変換する。"""
+    if "event_reviews" in data:
+        return data
+    # 旧フォーマット: top_event が不明なので空文字で保持
+    return {
+        "reviewer": data.get("reviewer", ""),
+        "reviewed_at": data.get("reviewed_at", ""),
+        "event_reviews": [{
+            "top_event": data.get("suggested_top_event", ""),
+            "verdict": data.get("verdict", "approved"),
+            "suggested": data.get("suggested_top_event", ""),
+            "comment": data.get("comment", ""),
+        }],
+    }
 
 
 @app.get("/api/recalls/{recall_id}/top_event_review")
 def get_top_event_review(recall_id: str):
     path = DATA_DIR / recall_id / "top_event_review.json"
-    return json.loads(path.read_text("utf-8")) if path.exists() else None
+    if not path.exists():
+        return None
+    return _migrate_top_event_review(json.loads(path.read_text("utf-8")))
 
 
 @app.post("/api/recalls/{recall_id}/top_event_review")
@@ -474,13 +656,37 @@ def save_top_event_review(recall_id: str, body: TopEventReviewSubmission):
     base = DATA_DIR / recall_id
     if not base.exists(): raise HTTPException(404, "recall not found")
     if not body.reviewer.strip(): raise HTTPException(400, "reviewer は必須です")
-    return _save_json_to(base / "top_event_review.json", {
+    data = {
         "reviewer": body.reviewer,
         "reviewed_at": datetime.now(timezone.utc).isoformat(),
-        "verdict": body.verdict,
-        "suggested_top_event": body.suggested_top_event,
-        "comment": body.comment,
-    })
+        "event_reviews": [e.model_dump() for e in body.event_reviews],
+    }
+    return _save_json_to(base / "top_event_review.json", data)
+
+
+@app.get("/api/recalls/{recall_id}/fta")
+def get_recall_fta(recall_id: str, index: int = 0):
+    """FTA output を返す。index=0 は output.yaml、index>0 は output_{index}.yaml。"""
+    base = DATA_DIR / recall_id
+    path = base / "output.yaml" if index == 0 else base / f"output_{index}.yaml"
+    if not path.exists():
+        raise HTTPException(404, f"output yaml not found for index {index}")
+    data = yaml.safe_load(path.read_text("utf-8"))
+    return _fta_yaml_to_nodes(data)
+
+
+@app.get("/api/recalls/{recall_id}/fta/list")
+def list_recall_ftas(recall_id: str):
+    """利用可能な FTA ファイルのインデックス一覧を返す。"""
+    base = DATA_DIR / recall_id
+    indices = []
+    if (base / "output.yaml").exists():
+        indices.append(0)
+    i = 1
+    while (base / f"output_{i}.yaml").exists():
+        indices.append(i)
+        i += 1
+    return indices
 
 
 # ---------------------------------------------------------------------------
@@ -509,9 +715,13 @@ def list_benchmark_cases():
             "vehicle": input_data.get("product_name", d.name),
             "defect_location": input_data.get("top_event", ""),
             "has_review": (d / "expert_reviews.json").exists(),
-            "has_spec": False,
+            "has_spec": (d / "spec_FTA.md").exists(),
             "has_fta": has_fta,
-            "has_spec_review": False,
+            "has_spec_review": (d / "spec_review.json").exists(),
+            "has_diagram_masked": (d / "diagram_masked.png").exists(),
+            "has_diagram_original": (d / "diagram_original.png").exists(),
+            "has_top_event_review": (d / "top_event_review.json").exists(),
+            "has_failure_mode_review": (d / "failure_mode_review.json").exists(),
         })
     return cases
 
@@ -570,6 +780,38 @@ def get_benchmark_diagram_masked(case_id: str):
     if p.exists():
         return FileResponse(p, media_type="image/png")
     raise HTTPException(404, "diagram_masked.png not found")
+
+
+@app.get("/api/benchmark/cases/{case_id}/diagram_original")
+def get_benchmark_diagram_original(case_id: str):
+    case_dir = BMK_CASES / case_id
+    p = case_dir / "diagram_original.png"
+    if p.exists():
+        return FileResponse(p, media_type="image/png")
+    raise HTTPException(404, "diagram_original.png not found")
+
+
+@app.get("/api/benchmark/cases/{case_id}/spec_review")
+def get_benchmark_spec_review(case_id: str):
+    path = BMK_CASES / case_id / "spec_review.json"
+    return json.loads(path.read_text("utf-8")) if path.exists() else None
+
+
+@app.post("/api/benchmark/cases/{case_id}/spec_review")
+def save_benchmark_spec_review(case_id: str, body: SpecReviewSubmission):
+    case_dir = BMK_CASES / case_id
+    if not case_dir.exists():
+        raise HTTPException(404, "case not found")
+    if not body.reviewer.strip():
+        raise HTTPException(400, "reviewer は必須です")
+    review = {
+        "reviewer": body.reviewer,
+        "reviewed_at": datetime.now(timezone.utc).isoformat(),
+        "verdict": body.verdict,
+        "comment": body.comment,
+        "section_reviews": {k: v.model_dump() for k, v in body.section_reviews.items()},
+    }
+    return _save_json_to(case_dir / "spec_review.json", review)
 
 
 @app.get("/api/benchmark/cases/{case_id}/fta")
@@ -684,6 +926,19 @@ def save_benchmark_expert_review(case_id: str, body: ExpertReviewSubmission):
         reviews.append(entry)
     path.write_text(json.dumps(reviews, ensure_ascii=False, indent=2), encoding="utf-8")
     return entry
+
+
+# ---------------------------------------------------------------------------
+# フロントエンド静的ファイル配信（本番デプロイ用）
+# ---------------------------------------------------------------------------
+
+_DIST = Path(__file__).parent.parent / "frontend" / "dist"
+if _DIST.exists():
+    app.mount("/assets", StaticFiles(directory=str(_DIST / "assets")), name="assets")
+
+    @app.get("/{full_path:path}", include_in_schema=False)
+    def spa_fallback(full_path: str):
+        return FileResponse(str(_DIST / "index.html"))
 
 
 @app.post("/api/recalls/{recall_id}/expert_reviews")

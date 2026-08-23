@@ -1,0 +1,57 @@
+{
+  "recall_id": "r8-03-12-005681",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005681.html",
+  "date_text": "令和8年3月12日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001986106.pdf",
+    "https://www.mlit.go.jp/report/press/content/001986174.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001986174.pdf",
+  "metadata": {
+    "notification_number": "5788",
+    "notification_date": "2026-03-12",
+    "notifier": "トヨタ自動車株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "トヨタ",
+        "model": "SORA",
+        "type_designation": "ZBC-MUM1NAE",
+        "model_years": [
+          "2018-03-02 to 2025-12-18"
+        ],
+        "affected_count": "196"
+      }
+    ],
+    "defect_system": "車体",
+    "defect_location": "ルーフパネル（フロントルーフパネル）",
+    "defect_description": "フロントルーフパネルにおいて、ボデーに取付けるブラケットとの接着工程の指示が不適切なため、ブラケットへの接着剤の塗布範囲が不足しているものがある。そのため、接着部位に浸水し、経年で接着が剥がれ、そのままの状態で使用を続けると、最悪の場合、走行時の風圧等によりパネルが脱落して、他の交通の妨げとなるおそれがある。",
+    "root_cause": "ボデーに取付けるブラケットとの接着工程の指示が不適切なため、ブラケットへの接着剤の塗布範囲が不足している。",
+    "consequences": [
+      "走行時の風圧等によりパネルが脱落して、他の交通の妨げとなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ルーフパネル（フロントルーフパネル）",
+        "part_number": null,
+        "system_path": [
+          "車体",
+          "ルーフパネル",
+          "フロントルーフパネル"
+        ]
+      },
+      {
+        "part_name": "ブラケット",
+        "part_number": null,
+        "system_path": [
+          "車体",
+          "ルーフパネル",
+          "ブラケット"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、フロントルーフパネルの全接着部にリベットによる固定を追加する。",
+    "correction_detail": "全車両、フロントルーフパネルの全接着部にリベットによる固定を追加する。"
+  }
+}

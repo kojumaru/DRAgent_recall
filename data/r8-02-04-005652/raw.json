@@ -1,0 +1,238 @@
+{
+  "recall_id": "r8-02-04-005652",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005652.html",
+  "date_text": "令和8年2月4日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001979800.pdf",
+    "https://www.mlit.go.jp/report/press/content/001979801.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001979801.pdf",
+  "metadata": {
+    "notification_number": "外-4139",
+    "notification_date": "2026-02-04",
+    "notifier": "フォルクスワーゲングループ ジャパン株式会社 代表取締役 マティアスシェーパース",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "アウディ",
+        "model": "アウディ Q7 55Tq エアサス",
+        "type_designation": "3AA-4MDCBA",
+        "model_years": [
+          "2020-07-16 to 2024-02-29"
+        ],
+        "affected_count": "902"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q7 55Tq",
+        "type_designation": "3AA-4MDCBS",
+        "model_years": [
+          "2020-07-16 to 2023-05-24"
+        ],
+        "affected_count": "28"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q8 55Tq エアサス",
+        "type_designation": "3AA-F1DCBA",
+        "model_years": [
+          "2021-01-09 to 2024-10-17"
+        ],
+        "affected_count": "1094"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q8 55Tq エアサス",
+        "type_designation": "3AA-F1DCBL",
+        "model_years": [
+          "2024-10-28 to 2025-10-18"
+        ],
+        "affected_count": "179"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q8 55Tq",
+        "type_designation": "3AA-F1DCBS",
+        "model_years": [
+          "2021-01-15 to 2023-02-20"
+        ],
+        "affected_count": "5"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ RSQ8",
+        "type_designation": "3AA-F1DHUA",
+        "model_years": [
+          "2020-12-25 to 2025-10-18"
+        ],
+        "affected_count": "367"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q7 55Tq エアサス",
+        "type_designation": "3AA-F7DCBA",
+        "model_years": [
+          "2024-10-28 to 2025-09-10"
+        ],
+        "affected_count": "121"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ SQ7",
+        "type_designation": "3BA-4MDWRA",
+        "model_years": [
+          "2023-07-05 to 2024-05-17"
+        ],
+        "affected_count": "58"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ SQ8",
+        "type_designation": "3BA-F1DWRA",
+        "model_years": [
+          "2023-07-26 to 2025-10-18"
+        ],
+        "affected_count": "144"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ SQ7",
+        "type_designation": "3BA-F7DWRA",
+        "model_years": [
+          "2024-11-29 to 2025-09-18"
+        ],
+        "affected_count": "54"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q7 50TDIq エアサス",
+        "type_designation": "3DA-4MCVMA",
+        "model_years": [
+          "2023-08-18 to 2025-09-10"
+        ],
+        "affected_count": "674"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q7 50TDIq",
+        "type_designation": "3DA-4MCVMS",
+        "model_years": [
+          "2024-03-26 to 2025-05-07"
+        ],
+        "affected_count": "4"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q8 50TDIq エアサス",
+        "type_designation": "3DA-F1CVMA",
+        "model_years": [
+          "2023-10-19 to 2025-09-27"
+        ],
+        "affected_count": "395"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q8 50TDIq",
+        "type_designation": "3DA-F1CVMS",
+        "model_years": [
+          "2024-10-17 to 2025-05-22"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q8 55Tq エアサス",
+        "type_designation": "AAA-F1DCBA",
+        "model_years": [
+          "2019-05-31 to 2020-07-28"
+        ],
+        "affected_count": "1102"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q8 55Tq",
+        "type_designation": "AAA-F1DCBS",
+        "model_years": [
+          "2019-09-19 to 2019-09-19"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q7 45Tq エアサス",
+        "type_designation": "ABA-4MCYRA",
+        "model_years": [
+          "2020-07-16 to 2020-12-16"
+        ],
+        "affected_count": "313"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ e-tron",
+        "type_designation": "ZAA-GEEAS",
+        "model_years": [
+          "2020-07-01 to 2023-03-08"
+        ],
+        "affected_count": "533"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ e-tron 50",
+        "type_designation": "ZAA-GEEASB",
+        "model_years": [
+          "2020-12-07 to 2023-02-20"
+        ],
+        "affected_count": "211"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ e-tron S",
+        "type_designation": "ZAA-GEEAV",
+        "model_years": [
+          "2022-03-04 to 2023-04-25"
+        ],
+        "affected_count": "85"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ SQ8 e-tron",
+        "type_designation": "ZAA-GEEAV",
+        "model_years": [
+          "2023-11-27 to 2025-05-12"
+        ],
+        "affected_count": "52"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q8 e-tron",
+        "type_designation": "ZAA-GEEDE",
+        "model_years": [
+          "2023-05-10 to 2025-05-27"
+        ],
+        "affected_count": "763"
+      }
+    ],
+    "defect_system": "視野確保装置",
+    "defect_location": "ドライバーアシストシステムコントロールユニット",
+    "defect_description": "ドライバーアシストシステムコントロールユニットにおいて、制御プログラムが不適切なため、カメラ映像信号の伝送が途切れることがある。そのため、サラウンドビューカメラの映像が映らなくなり、車両の直左映像が確認できず、保安基準に適合しないおそれがある。",
+    "root_cause": "制御プログラムが不適切なため。",
+    "consequences": [
+      "サラウンドビューカメラの映像が映らなくなる",
+      "車両の直左映像が確認できない",
+      "保安基準に適合しないおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ドライバーアシストシステムコントロールユニット",
+        "part_number": null,
+        "system_path": [
+          "視野確保装置",
+          "ドライバーアシストシステムコントロールユニット"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ドライバーアシストシステムコントロールユニットのプログラムを対策プログラムに書き換える。",
+    "correction_detail": "全車両、ドライバーアシストシステムコントロールユニットのプログラムを対策プログラムに書き換える。"
+  }
+}

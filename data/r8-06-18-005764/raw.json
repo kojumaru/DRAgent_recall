@@ -1,0 +1,57 @@
+{
+  "recall_id": "r8-06-18-005764",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005764.html",
+  "date_text": "令和8年6月18日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002007318.pdf",
+    "https://www.mlit.go.jp/report/press/content/002007319.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002007319.pdf",
+  "metadata": {
+    "notification_number": "5838",
+    "notification_date": "2026-06-18",
+    "notifier": "本田技研工業株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ホンダ",
+        "model": "インサイト",
+        "type_designation": "6AA-ZE4",
+        "model_years": [
+          "2020-02-12 to 2020-02-20"
+        ],
+        "affected_count": "120"
+      }
+    ],
+    "defect_system": "燃料装置",
+    "defect_location": "低圧燃料ポンプ（インペラ／樹脂製羽根車）",
+    "defect_description": "低圧燃料ポンプのインペラ(樹脂製羽根車)において、成形条件が不適切なため、樹脂密度が低くなって、燃料により膨潤して変形することがある。そのため、インペラがポンプカバーと接触して燃料ポンプが作動不良となり、最悪の場合、走行中エンストに至るおそれがある。",
+    "root_cause": "低圧燃料ポンプのインペラ(樹脂製羽根車)の成形条件が不適切で、樹脂密度が低下し、燃料により膨潤・変形するため。",
+    "consequences": [
+      "燃料ポンプが作動不良となる",
+      "最悪の場合、走行中エンストに至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "低圧燃料ポンプ",
+        "part_number": null,
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ"
+        ]
+      },
+      {
+        "part_name": "インペラ（樹脂製羽根車）",
+        "part_number": null,
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ",
+          "インペラ（樹脂製羽根車）"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、低圧燃料ポンプを対策品と交換する。",
+    "correction_detail": "全車両について、低圧燃料ポンプを対策品に交換する。"
+  }
+}

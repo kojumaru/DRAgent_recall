@@ -1,0 +1,94 @@
+{
+  "recall_id": "r8-06-26-005772",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005772.html",
+  "date_text": "令和8年6月26日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002008452.pdf",
+    "https://www.mlit.go.jp/report/press/content/002008453.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002008453.pdf",
+  "metadata": {
+    "notification_number": "5834",
+    "notification_date": "2026-06-26",
+    "notifier": "日産自動車株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ニッサン",
+        "model": "ノート",
+        "type_designation": "6AA-E13",
+        "model_years": [
+          "2020-11-12 to 2026-04-06"
+        ],
+        "affected_count": "269549"
+      },
+      {
+        "make": "ニッサン",
+        "model": "ノート",
+        "type_designation": "6AA-SNE13",
+        "model_years": [
+          "2021-02-26 to 2026-04-06"
+        ],
+        "affected_count": "52474"
+      },
+      {
+        "make": "ニッサン",
+        "model": "ノート オーラ",
+        "type_designation": "6AA-FE13",
+        "model_years": [
+          "2021-05-14 to 2026-04-06"
+        ],
+        "affected_count": "152017"
+      },
+      {
+        "make": "ニッサン",
+        "model": "ノート オーラ",
+        "type_designation": "6AA-FSNE13",
+        "model_years": [
+          "2021-05-17 to 2026-04-03"
+        ],
+        "affected_count": "31811"
+      },
+      {
+        "make": "ニッサン",
+        "model": "エクストレイル",
+        "type_designation": "6AA-T33",
+        "model_years": [
+          "2022-05-10 to 2026-01-26"
+        ],
+        "affected_count": "11211"
+      },
+      {
+        "make": "ニッサン",
+        "model": "エクストレイル",
+        "type_designation": "6AA-SNT33",
+        "model_years": [
+          "2022-04-20 to 2026-02-03"
+        ],
+        "affected_count": "83533"
+      }
+    ],
+    "defect_system": "電気装置",
+    "defect_location": "リチウムイオンバッテリコントローラ",
+    "defect_description": "リチウムイオンバッテリコントローラにおいて、制御プログラムが不適切なため、不要な異常判定を行うことがある。そのため、コンビネーションメータにEVシステム警告メッセージを表示するとともに駆動モータ出力が制限され、最悪の場合、走行中に駆動用モータへの出力を停止し、走行不能に至るおそれがある。",
+    "root_cause": "リチウムイオンバッテリコントローラの制御プログラムが不適切なため。",
+    "consequences": [
+      "コンビネーションメータにEVシステム警告メッセージが表示される",
+      "駆動モータ出力が制限される",
+      "最悪の場合、走行中に駆動用モータへの出力を停止し走行不能に至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "リチウムイオンバッテリコントローラ",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "リチウムイオンバッテリコントローラ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、リチウムイオンバッテリコントローラの制御プログラムを対策プログラムに書き換える。",
+    "correction_detail": "全車両、リチウムイオンバッテリコントローラの制御プログラムを対策プログラムに書き換える。"
+  }
+}

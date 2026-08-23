@@ -1,0 +1,129 @@
+{
+  "recall_id": "r8-01-23-005647",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005647.html",
+  "date_text": "令和8年1月23日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001977959.pdf",
+    "https://www.mlit.go.jp/report/press/content/001977960.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001977960.pdf",
+  "metadata": {
+    "notification_number": "5755",
+    "notification_date": "2026-01-23",
+    "notifier": "株式会社 パブコ",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS74HZ",
+        "model_years": [
+          "2024-09-26 to 2024-11-07"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS75HZ",
+        "model_years": [
+          "2024-12-06 to 2024-12-06"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS84GZ",
+        "model_years": [
+          "2024-10-21 to 2025-02-14"
+        ],
+        "affected_count": "3"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS84HY",
+        "model_years": [
+          "2025-04-08 to 2025-05-09"
+        ],
+        "affected_count": "4"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS84HZ",
+        "model_years": [
+          "2024-09-10 to 2025-06-16"
+        ],
+        "affected_count": "58"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS84VZ",
+        "model_years": [
+          "2024-09-04 to 2025-06-18"
+        ],
+        "affected_count": "207"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS85HZ",
+        "model_years": [
+          "2024-11-11 to 2024-11-19"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS85VZ",
+        "model_years": [
+          "2024-11-07 to 2025-06-11"
+        ],
+        "affected_count": "34"
+      }
+    ],
+    "defect_system": "巻込防止装置等",
+    "defect_location": "サイドガード（サイドガードステー補強部）",
+    "defect_description": "サイドガード(巻込防止装置)において、設計検討が不十分なため、サイドガードステーの補強部が燃料タンクを固定する燃料タンクバンドに近接しているものがある。そのため、走行中の車両揺動によりサイドガードステー補強部と燃料タンクバンドが干渉し、最悪の場合、燃料タンクバンドが破損し、燃料タンクが脱落して他の交通の妨げになるおそれがある。",
+    "root_cause": "設計検討が不十分なため、サイドガードステーの補強部が燃料タンクを固定する燃料タンクバンドに近接しているものがある。",
+    "consequences": [
+      "燃料タンクバンドが破損する",
+      "燃料タンクが脱落して他の交通の妨げになるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "サイドガード",
+        "part_number": null,
+        "system_path": [
+          "巻込防止装置等",
+          "サイドガード"
+        ]
+      },
+      {
+        "part_name": "サイドガードステー（補強部）",
+        "part_number": null,
+        "system_path": [
+          "巻込防止装置等",
+          "サイドガード",
+          "サイドガードステー（補強部）"
+        ]
+      },
+      {
+        "part_name": "燃料タンクバンド",
+        "part_number": null,
+        "system_path": [
+          "燃料装置",
+          "燃料タンク",
+          "燃料タンクバンド"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、サイドガードステー補強部と燃料タンクバンドのクリアランスを点検し、サイドガードステー補強部が燃料タンクバンドに近接しているものは、サイドガードステーの補強部を対策品に交換する。",
+    "correction_detail": "全車両について、サイドガードステー補強部と燃料タンクバンドのクリアランスを点検し、近接が認められる車両はサイドガードステーの補強部を対策品に交換する。"
+  }
+}

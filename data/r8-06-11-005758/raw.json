@@ -1,0 +1,48 @@
+{
+  "recall_id": "r8-06-11-005758",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005758.html",
+  "date_text": "令和8年6月11日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002005692.pdf",
+    "https://www.mlit.go.jp/report/press/content/002005693.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002005693.pdf",
+  "metadata": {
+    "notification_number": "5830",
+    "notification_date": "2026-06-11",
+    "notifier": "カワサキモータース株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "カワサキ",
+        "model": "W230 / MEGURO S1",
+        "type_designation": "8BK-BJ230A",
+        "model_years": [
+          "2024-11-05 to 2026-02-27"
+        ],
+        "affected_count": "9857"
+      }
+    ],
+    "defect_system": "方向指示器",
+    "defect_location": "シグナルランプ（バルブ）",
+    "defect_description": "方向指示器(シグナルランプ)において、バルブ製造時の工程管理が不適切なため、バルブ内に異物が混入している、または、バルブにひび割れが生じているものがある。そのため、早期にフィラメントが損傷し、シグナルランプが点灯しないおそれがある。",
+    "root_cause": "バルブ製造時の工程管理が不適切なため、バルブ内に異物が混入している、または、バルブにひび割れが生じているものがある。",
+    "consequences": [
+      "シグナルランプが点灯しないおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "シグナルランプ（方向指示器）バルブ",
+        "part_number": null,
+        "system_path": [
+          "方向指示器",
+          "シグナルランプ",
+          "バルブ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、シグナルランプのバルブを良品に交換する。",
+    "correction_detail": "全車両、シグナルランプ（方向指示器）のバルブを良品に交換する。"
+  }
+}

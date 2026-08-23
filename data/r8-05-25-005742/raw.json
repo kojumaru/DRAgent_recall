@@ -1,0 +1,85 @@
+{
+  "recall_id": "r8-05-25-005742",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005742.html",
+  "date_text": "令和8年5月25日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002002415.pdf",
+    "https://www.mlit.go.jp/report/press/content/002002416.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002002416.pdf",
+  "metadata": {
+    "notification_number": "外-4190",
+    "notification_date": "2026-05-25",
+    "notifier": "Aston Martin Japan合同会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "アストン マーティン",
+        "model": "DBX",
+        "type_designation": "7BA-AM801",
+        "model_years": [
+          "2020-09-09 to 2024-03-28"
+        ],
+        "affected_count": "535"
+      },
+      {
+        "make": "アストン マーティン",
+        "model": "DBX707",
+        "type_designation": "7BA-AM801",
+        "model_years": [
+          "2022-06-15 to 2025-09-01"
+        ],
+        "affected_count": "470"
+      },
+      {
+        "make": "アストン マーティン",
+        "model": "DBX707",
+        "type_designation": "不明",
+        "model_years": [
+          "2024-06-27 to 2024-08-30"
+        ],
+        "affected_count": "31"
+      },
+      {
+        "make": "アストン マーティン",
+        "model": "DBX S",
+        "type_designation": "不明",
+        "model_years": [
+          "2025-06-06 to 2025-06-06"
+        ],
+        "affected_count": "1"
+      }
+    ],
+    "defect_system": "サスペンション（リアサスペンション）",
+    "defect_location": "リアサスペンションのロアアームとトルクリアクションリンクの固定ボルト（トルクリアクションリンク固定ボルト）",
+    "defect_description": "リアサスペンションにおいて、ロアアームとトルクリアクションリンクの固定ボルトの設計検討が不十分なため、当該リンクが確実に固定されていないものがある。そのため、そのまま使用を続けると、当該リンクが外れて走行安定性を失い、最悪の場合、ロアアームが破損して走行不能となるおそれがある。",
+    "root_cause": "ロアアームとトルクリアクションリンクの固定ボルトの設計検討が不十分なため。",
+    "consequences": [
+      "当該リンクが外れて走行安定性を失う",
+      "最悪の場合、ロアアームが破損して走行不能となるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "リアサスペンショントルクリアクションリンクの固定ボルト",
+        "part_number": null,
+        "system_path": [
+          "サスペンション",
+          "リアサスペンション",
+          "トルクリアクションリンク固定ボルト"
+        ]
+      },
+      {
+        "part_name": "ロアアーム",
+        "part_number": null,
+        "system_path": [
+          "サスペンション",
+          "リアサスペンション",
+          "ロアアーム"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、トルクリアクションリンクの固定ボルトを対策品に交換する。また、ロアアームを点検し、損傷しているものはロアアームを新品に交換する。",
+    "correction_detail": "全車両について、トルクリアクションリンクの固定ボルトを対策品に交換する。併せてロアアームを点検し、損傷が認められる場合はロアアームを新品に交換する。"
+  }
+}

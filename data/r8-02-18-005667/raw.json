@@ -1,0 +1,75 @@
+{
+  "recall_id": "r8-02-18-005667",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005667.html",
+  "date_text": "令和8年2月18日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001981919.pdf",
+    "https://www.mlit.go.jp/report/press/content/001981920.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001981920.pdf",
+  "metadata": {
+    "notification_number": "5777",
+    "notification_date": "2026-02-18",
+    "notifier": "トヨタ自動車株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "トヨタ",
+        "model": "ランドクルーザー",
+        "type_designation": "3DA-FJA300W",
+        "model_years": [
+          "2025-02-05 to 2025-12-08"
+        ],
+        "affected_count": "2598"
+      },
+      {
+        "make": "トヨタ",
+        "model": "ランドクルーザー",
+        "type_designation": "3BA-VJA300W",
+        "model_years": [
+          "2025-02-05 to 2025-12-09"
+        ],
+        "affected_count": "5875"
+      },
+      {
+        "make": "レクサス",
+        "model": "LX600",
+        "type_designation": "3BA-VJA310W",
+        "model_years": [
+          "2025-02-26 to 2025-12-11"
+        ],
+        "affected_count": "1354"
+      }
+    ],
+    "defect_system": "動力伝達装置",
+    "defect_location": "自動変速機（トランスミッション）",
+    "defect_description": "自動変速機(トランスミッション)において、故障が生じた際に構成部品の過回転を抑制できないことがある。そのため、トランスミッションが損傷して走行不能となり、最悪の場合、漏れたトランスミッションフルードが排気管に付着して火災に至るおそれがある。",
+    "root_cause": "制御プログラムの検討が不十分なため。",
+    "consequences": [
+      "トランスミッションが損傷して走行不能となる",
+      "漏れたトランスミッションフルードが排気管に付着して火災に至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "自動変速機",
+        "part_number": null,
+        "system_path": [
+          "動力伝達装置",
+          "自動変速機"
+        ]
+      },
+      {
+        "part_name": "トランスミッション用制御コンピュータ",
+        "part_number": null,
+        "system_path": [
+          "動力伝達装置",
+          "自動変速機",
+          "制御コンピュータ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、トランスミッション用制御コンピュータのプログラムを対策仕様に修正する。",
+    "correction_detail": "全車両、トランスミッション用制御コンピュータのプログラムを対策仕様に修正する。"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "recall_id": "r8-05-14-005732",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005732.html",
+  "date_text": "令和8年5月14日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002000509.pdf",
+    "https://www.mlit.go.jp/report/press/content/002000143.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002000143.pdf",
+  "metadata": {
+    "notification_number": "5816",
+    "notification_date": "2026-05-14",
+    "notifier": "UDトラックス株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-GK6DAB",
+        "model_years": [
+          "2023-05-29 to 2025-04-01"
+        ],
+        "affected_count": "177"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-GK6DAD",
+        "model_years": [
+          "2023-05-29 to 2025-08-21"
+        ],
+        "affected_count": "111"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2KG-GW6DAH / 2PG-GW6DAH",
+        "model_years": [
+          "2023-08-29 to 2025-02-24"
+        ],
+        "affected_count": "22"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2DG-GW6EAH",
+        "model_years": [
+          "2023-05-29 to 2025-09-19"
+        ],
+        "affected_count": "324"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2DG-GW6ELH / 2DG-GW6ELH改",
+        "model_years": [
+          "2023-06-14 to 2025-04-11"
+        ],
+        "affected_count": "560"
+      },
+      {
+        "make": "いすぐ",
+        "model": "ギガ",
+        "type_designation": "2PG-EK6DAB",
+        "model_years": [
+          "2023-07-05 to 2025-06-16"
+        ],
+        "affected_count": "27"
+      },
+      {
+        "make": "いすぐ",
+        "model": "ギガ",
+        "type_designation": "2PG-EK6DAD",
+        "model_years": [
+          "2023-06-14 to 2025-03-11"
+        ],
+        "affected_count": "44"
+      },
+      {
+        "make": "いすぐ",
+        "model": "ギガ",
+        "type_designation": "2PG-EW6DAH",
+        "model_years": [
+          "2023-07-27 to 2025-03-21"
+        ],
+        "affected_count": "29"
+      },
+      {
+        "make": "いすぐ",
+        "model": "ギガ",
+        "type_designation": "2DG-EW6EAH",
+        "model_years": [
+          "2023-06-22 to 2025-05-28"
+        ],
+        "affected_count": "62"
+      },
+      {
+        "make": "いすぐ",
+        "model": "ギガ",
+        "type_designation": "2DG-EW6ELH",
+        "model_years": [
+          "2023-06-08 to 2025-06-03"
+        ],
+        "affected_count": "278"
+      }
+    ],
+    "defect_system": "原動機",
+    "defect_location": "オイルポンプ（可変容量オイルポンプの可変部ステータ／ハウジングカバーのステータ摺動面）",
+    "defect_description": "可変容量オイルポンプにおいて、運転状況に応じて油圧制御を繰り返すことで、ハウジングカバーのステータ摺動面が損傷・摩耗することがある。そのため、そのままの状態で使用を続けると、適正な油圧が確保できず、インストルメントクラスタに「エンジン油圧低下」の警告メッセージの表示及び警告灯の点灯とともにエンジン出力が制限され、さらにそのままの状態で走行すると、エンジンが焼き付き、走行不能に至るおそれがある。",
+    "root_cause": "可変容量オイルポンプの可変部ステータ（固定子）に採用した材質の耐久性検証が不十分であったため。",
+    "consequences": [
+      "適正な油圧が確保できない",
+      "「エンジン油圧低下」警告メッセージ表示および警告灯点灯",
+      "エンジン出力が制限される",
+      "エンジンが焼き付き走行不能に至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "オイルポンプ",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "オイルポンプ"
+        ]
+      },
+      {
+        "part_name": "ステータ（固定子）",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "オイルポンプ",
+          "ステータ"
+        ]
+      },
+      {
+        "part_name": "ハウジングカバー（ステータ摺動面）",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "オイルポンプ",
+          "ハウジングカバー"
+        ]
+      },
+      {
+        "part_name": "オイルコントロールバルブ（への油路）",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "オイルコントロールバルブ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、オイルポンプを対策品へ交換するとともに、オイルコントロールバルブへの油路を変更する。",
+    "correction_detail": "全車両について、可変容量オイルポンプを対策品に交換し、あわせてオイルコントロールバルブへの油路を変更する。",
+    "recall_type_detail": null
+  }
+}

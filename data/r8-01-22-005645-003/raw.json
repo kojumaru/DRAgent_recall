@@ -1,0 +1,48 @@
+{
+  "recall_id": "r8-01-22-005645-003",
+  "parent_recall_id": "r8-01-22-005645",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005645.html",
+  "date_text": "令和8年1月22日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001977676.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "5725",
+    "notification_date": "2025-12-05",
+    "notifier": "新潟トランシス株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ニイガタ",
+        "model": "ニイガタ NR303 ロータリ除雪車 他",
+        "type_designation": "YDS-NR6B 他",
+        "model_years": [
+          "2024-09-26 to 2025-03-18"
+        ],
+        "affected_count": "36"
+      }
+    ],
+    "defect_system": "車体（前フレーム／除雪装置取付部）",
+    "defect_location": "前フレームの除雪装置取付ブラケット（溶接部）",
+    "defect_description": "前フレームの除雪装置取付ブラケットにおいて、製造工程が不適切なため、溶接量が一部不足している。そのため、溶接部に亀裂が発生して進展し、最悪の場合、除雪装置が脱落して、走行不能となるおそれがある。",
+    "root_cause": "製造工程が不適切で溶接量が一部不足。",
+    "consequences": [
+      "最悪の場合、除雪装置が脱落し走行不能となるおそれ"
+    ],
+    "parts": [
+      {
+        "part_name": "除雪装置取付ブラケット（前フレーム）",
+        "part_number": null,
+        "system_path": [
+          "車体",
+          "前フレーム",
+          "除雪装置取付ブラケット"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

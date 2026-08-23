@@ -1,0 +1,57 @@
+{
+  "recall_id": "r8-02-18-005669-009",
+  "parent_recall_id": "r8-02-18-005669",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005669.html",
+  "date_text": "令和8年2月18日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001982127.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "外 4138",
+    "notification_date": "2026-01-28",
+    "notifier": "ビー·エム·ダブリュー株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "BMW",
+        "model": "BMW X1 xDrive20d",
+        "type_designation": "3CA-42EG20T",
+        "model_years": [
+          "2025-06-20 to 2025-06-20"
+        ],
+        "affected_count": "1"
+      }
+    ],
+    "defect_system": "乗員保護装置（シートベルト）",
+    "defect_location": "フロント左側シートベルトリトラクター（トーションバー）",
+    "defect_description": "フロント左側のシートベルトリトラクターにおいて、トーションバーが損傷しているものがある。そのため、衝突時にトーションバーが早期破損することで、シートベルトが必要以上に引き出されて、乗員の安全性に影響するおそれがある。",
+    "root_cause": "製造工程が不適切なため。",
+    "consequences": [
+      "衝突時にシートベルトが必要以上に引き出され、乗員の安全性に影響するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "シートベルトリトラクター（フロント左側）",
+        "part_number": null,
+        "system_path": [
+          "乗員保護装置",
+          "シートベルト",
+          "シートベルトリトラクター"
+        ]
+      },
+      {
+        "part_name": "トーションバー",
+        "part_number": null,
+        "system_path": [
+          "乗員保護装置",
+          "シートベルトリトラクター",
+          "トーションバー"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

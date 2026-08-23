@@ -1,0 +1,73 @@
+{
+  "recall_id": "r8-02-26-005675",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005675.html",
+  "date_text": "令和8年2月26日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001982749.pdf",
+    "https://www.mlit.go.jp/report/press/content/001982750.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001982750.pdf",
+  "metadata": {
+    "notification_number": "外-4147",
+    "notification_date": "2026-02-26",
+    "notifier": "ビー・エム・ダブリュー株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "BMW",
+        "model": "BMW X3 20 xDrive",
+        "type_designation": "3AA-32GP20",
+        "model_years": [
+          "2025-04-08 to 2025-08-28",
+          "2024-09-05 to 2024-09-05",
+          "2024-11-11 to 2024-12-02"
+        ],
+        "affected_count": "15"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW X3 20d xDrive",
+        "type_designation": "3CA-12GR20",
+        "model_years": [
+          "2025-04-08 to 2025-09-16",
+          "2024-08-21 to 2024-08-23",
+          "2024-09-23 to 2024-12-02",
+          "2025-01-16 to 2025-02-04"
+        ],
+        "affected_count": "537"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW X3 M50 xDrive",
+        "type_designation": "3AA-72GP30",
+        "model_years": [
+          "2025-04-08 to 2025-09-11",
+          "2024-11-12 to 2024-11-12"
+        ],
+        "affected_count": "188"
+      }
+    ],
+    "defect_system": "操舵装置",
+    "defect_location": "ステアリングギヤボックスコントロールユニット",
+    "defect_description": "電動パワーステアリングにおいて、ステアリングギヤボックスコントロールユニットのソフトウェアの設計検討が不十分なため、ステアリングモーメントセンサーが故障した際、補助センサーが正しい情報を電動制御モーターに伝えず、ステアリングアシスト機能が不安定になることがある。",
+    "root_cause": "ステアリングギヤボックスコントロールユニットのソフトウェアの設計検討が不十分なため。",
+    "consequences": [
+      "走行中、操舵力が増大する",
+      "ステアリングホイールに振動が発生する",
+      "最悪の場合、ステアリングホイールが意図せず旋回するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ステアリングギヤボックスコントロールユニット",
+        "part_number": null,
+        "system_path": [
+          "操舵装置",
+          "ステアリングギヤボックスコントロールユニット"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、当該ソフトウェアを対策プログラムに書き換える。",
+    "correction_detail": "全車両、当該ソフトウェアを対策プログラムに書き換える。なお、上記措置は以下のいずれかにより行う。- 販売店に入庫し、診断機に接続することにより実施する。- 準備が整い次第、対象車両へ遠隔配信にて配信し、使用者自身でインストールする。"
+  }
+}

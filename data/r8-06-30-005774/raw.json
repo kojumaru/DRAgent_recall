@@ -1,0 +1,83 @@
+{
+  "recall_id": "r8-06-30-005774",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005774.html",
+  "date_text": "令和8年6月30日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002009125.pdf",
+    "https://www.mlit.go.jp/report/press/content/002009126.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002009126.pdf",
+  "metadata": {
+    "notification_number": "5839",
+    "notification_date": "2026-06-30",
+    "notifier": "日本トレクス株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "いすぐ",
+        "model": "ギガ",
+        "type_designation": "2PG-CYJ77CA",
+        "model_years": [
+          "2021-09-02 to 2023-10-24"
+        ],
+        "affected_count": "95"
+      },
+      {
+        "make": "いすぐ",
+        "model": "ギガ",
+        "type_designation": "2PG-CYJ77DA",
+        "model_years": [
+          "2023-10-31 to 2025-09-04"
+        ],
+        "affected_count": "35"
+      },
+      {
+        "make": "いすぐ",
+        "model": "ギガ",
+        "type_designation": "2PG-CYJ77DA",
+        "model_years": [
+          "2023-07-03 to 2025-11-13"
+        ],
+        "affected_count": "70"
+      }
+    ],
+    "defect_system": "巻込防止装置等",
+    "defect_location": "突入防止装置",
+    "defect_description": "スワップボディコンテナキャリアにおいて、突入防止装置の設計が不適切なため、車体後面から取り付けることができる自動車の後端に近い位置となるよう当該突入防止装置が取り付けられておらず、保安基準に適合しない。",
+    "root_cause": "突入防止装置の設計が不適切なため。",
+    "consequences": [
+      "保安基準に適合しない"
+    ],
+    "parts": [
+      {
+        "part_name": "突入防止装置",
+        "part_number": null,
+        "system_path": [
+          "巻込防止装置等",
+          "突入防止装置"
+        ]
+      },
+      {
+        "part_name": "バンパースペーサ",
+        "part_number": null,
+        "system_path": [
+          "巻込防止装置等",
+          "突入防止装置",
+          "取付部品"
+        ]
+      },
+      {
+        "part_name": "バンパーステー",
+        "part_number": null,
+        "system_path": [
+          "巻込防止装置等",
+          "突入防止装置",
+          "取付部品"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、バンパースペーサを変更、または、バンパーステーの移設およびバンパースペーサを追加し、突入防止装置の取付位置を適切な位置に修正する。",
+    "correction_detail": "タイプA: バンパースペーサの変更。タイプB: ステーの移設+バンパースペーサの追加(アルミバンパー用)。タイプC: ステーの移設+バンパースペーサの追加(鋼製バンパー用)。"
+  }
+}

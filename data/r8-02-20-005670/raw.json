@@ -1,0 +1,561 @@
+{
+  "recall_id": "r8-02-20-005670",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005670.html",
+  "date_text": "令和8年2月20日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001982614.pdf",
+    "https://www.mlit.go.jp/report/press/content/001982615.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001982615.pdf",
+  "metadata": {
+    "notification_number": "外-4156",
+    "notification_date": "2026-02-20",
+    "notifier": "ポルシェジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne",
+        "type_designation": "ABA-E3K30",
+        "model_years": [
+          "2018-03-13 to 2020-06-05"
+        ],
+        "affected_count": "1380"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne",
+        "type_designation": "ABA-E3K30A",
+        "model_years": [
+          "2018-03-21 to 2020-06-08"
+        ],
+        "affected_count": "302"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne",
+        "type_designation": "3BA-E3MA",
+        "model_years": [
+          "2020-08-11 to 2021-09-21"
+        ],
+        "affected_count": "287"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne",
+        "type_designation": "3BA-E3MAA",
+        "model_years": [
+          "2020-08-18 to 2021-10-16"
+        ],
+        "affected_count": "101"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne",
+        "type_designation": "3BA-E3NA",
+        "model_years": [
+          "2021-07-21 to 2023-05-04"
+        ],
+        "affected_count": "616"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne",
+        "type_designation": "3BA-E3NAA",
+        "model_years": [
+          "2021-09-08 to 2023-05-03"
+        ],
+        "affected_count": "276"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne",
+        "type_designation": "7BA-E3RK",
+        "model_years": [
+          "2023-04-19 to 2025-05-21"
+        ],
+        "affected_count": "667"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne",
+        "type_designation": "7BA-E3RKA",
+        "model_years": [
+          "2023-04-04 to 2025-05-23"
+        ],
+        "affected_count": "781"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne S",
+        "type_designation": "ABA-E3K29",
+        "model_years": [
+          "2018-03-21 to 2020-06-05"
+        ],
+        "affected_count": "414"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne S",
+        "type_designation": "ABA-E3K29A",
+        "model_years": [
+          "2018-03-15 to 2020-06-05"
+        ],
+        "affected_count": "258"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne S",
+        "type_designation": "3BA-E3MB",
+        "model_years": [
+          "2020-10-26 to 2021-03-22"
+        ],
+        "affected_count": "5"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne S",
+        "type_designation": "3BA-E3MBA",
+        "model_years": [
+          "2020-10-29 to 2021-03-10"
+        ],
+        "affected_count": "4"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne S",
+        "type_designation": "3BA-E3NB",
+        "model_years": [
+          "2021-09-16 to 2023-01-11"
+        ],
+        "affected_count": "16"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne S",
+        "type_designation": "3BA-E3NBA",
+        "model_years": [
+          "2021-09-07 to 2023-02-14"
+        ],
+        "affected_count": "12"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne S",
+        "type_designation": "7BA-E3RM",
+        "model_years": [
+          "2023-04-20 to 2025-04-22"
+        ],
+        "affected_count": "105"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne S",
+        "type_designation": "7BA-E3RMA",
+        "model_years": [
+          "2023-03-29 to 2025-05-07"
+        ],
+        "affected_count": "283"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne Turbo",
+        "type_designation": "ABA-E3K40A",
+        "model_years": [
+          "2018-03-22 to 2020-06-09"
+        ],
+        "affected_count": "477"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne Turbo",
+        "type_designation": "3BA-E3MCA",
+        "model_years": [
+          "2020-10-02 to 2021-06-03"
+        ],
+        "affected_count": "24"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne Turbo",
+        "type_designation": "3BA-E3NCA",
+        "model_years": [
+          "2021-09-08 to 2023-04-26"
+        ],
+        "affected_count": "34"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne Turbo",
+        "type_designation": "3LA-E3L40A",
+        "model_years": [
+          "2019-09-06 to 2021-06-17"
+        ],
+        "affected_count": "68"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne Turbo",
+        "type_designation": "3LA-E3NHA",
+        "model_years": [
+          "2021-10-29 to 2022-03-23"
+        ],
+        "affected_count": "7"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne Turbo",
+        "type_designation": "3LA-E3PHA",
+        "model_years": [
+          "2022-09-08 to 2023-01-30"
+        ],
+        "affected_count": "4"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne Turbo",
+        "type_designation": "3LA-E3RRA",
+        "model_years": [
+          "2023-08-25 to 2025-05-27"
+        ],
+        "affected_count": "121"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne Turbo GT",
+        "type_designation": "7BA-E3NJA",
+        "model_years": [
+          "2021-09-27 to 2023-02-23"
+        ],
+        "affected_count": "98"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne GTS",
+        "type_designation": "3BA-E3M40",
+        "model_years": [
+          "2020-07-24 to 2021-08-31"
+        ],
+        "affected_count": "187"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne GTS",
+        "type_designation": "3BA-E3M40A",
+        "model_years": [
+          "2020-07-03 to 2021-08-24"
+        ],
+        "affected_count": "141"
+      },
+      {
+        "make": "ポルシェ",
+        "model": null,
+        "type_designation": "3BA-E3NI",
+        "model_years": [
+          "2021-07-22 to 2022-07-04"
+        ],
+        "affected_count": "116"
+      },
+      {
+        "make": "ポルシェ",
+        "model": null,
+        "type_designation": "3BA-E3NIA",
+        "model_years": [
+          "2021-08-30 to 2022-07-05"
+        ],
+        "affected_count": "124"
+      },
+      {
+        "make": "ポルシェ",
+        "model": null,
+        "type_designation": "3BA-E3PI",
+        "model_years": [
+          "2022-06-30 to 2023-04-13"
+        ],
+        "affected_count": "64"
+      },
+      {
+        "make": "ポルシェ",
+        "model": null,
+        "type_designation": "3BA-E3PIA",
+        "model_years": [
+          "2022-07-06 to 2023-04-05"
+        ],
+        "affected_count": "98"
+      },
+      {
+        "make": "ポルシェ",
+        "model": null,
+        "type_designation": "7BA-E3SPA",
+        "model_years": [
+          "2024-03-22 to 2025-05-30"
+        ],
+        "affected_count": "499"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne e-hybrid",
+        "type_designation": "3LA-E3L30",
+        "model_years": [
+          "2019-07-08 to 2021-08-18"
+        ],
+        "affected_count": "298"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne e-hybrid",
+        "type_designation": "3LA-E3L30A",
+        "model_years": [
+          "2019-07-08 to 2021-07-21"
+        ],
+        "affected_count": "179"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne e-hybrid",
+        "type_designation": "3LA-E3NF",
+        "model_years": [
+          "2021-07-23 to 2022-06-09"
+        ],
+        "affected_count": "41"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne e-hybrid",
+        "type_designation": "3LA-E3NFA",
+        "model_years": [
+          "2021-09-01 to 2022-06-15"
+        ],
+        "affected_count": "50"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne e-hybrid",
+        "type_designation": "3LA-E3PF",
+        "model_years": [
+          "2022-07-07 to 2023-05-27"
+        ],
+        "affected_count": "61"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne e-hybrid",
+        "type_designation": "3LA-E3PFA",
+        "model_years": [
+          "2022-07-01 to 2023-05-03"
+        ],
+        "affected_count": "69"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne e-hybrid",
+        "type_designation": "3LA-E3RL",
+        "model_years": [
+          "2023-06-14 to 2025-05-24"
+        ],
+        "affected_count": "145"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne e-hybrid",
+        "type_designation": "3LA-E3RLA",
+        "model_years": [
+          "2023-04-05 to 2025-05-24"
+        ],
+        "affected_count": "295"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Cayenne S e-hybrid",
+        "type_designation": "3LA-E3RNA",
+        "model_years": [
+          "2023-10-11 to 2025-05-15"
+        ],
+        "affected_count": "111"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Taycan",
+        "type_designation": "ZAA-J1NA1",
+        "model_years": [
+          "2021-03-10 to 2023-12-13"
+        ],
+        "affected_count": "360"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Taycan",
+        "type_designation": "ZAA-J1NA1C",
+        "model_years": [
+          "2021-03-09 to 2024-02-15"
+        ],
+        "affected_count": "479"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Taycan 4",
+        "type_designation": "ZAA-J1NA2",
+        "model_years": [
+          "2021-06-25 to 2024-02-19"
+        ],
+        "affected_count": "260"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Taycan 4S",
+        "type_designation": "ZAA-J1MB",
+        "model_years": [
+          "2020-09-24 to 2021-11-13"
+        ],
+        "affected_count": "310"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Taycan 4S",
+        "type_designation": "ZAA-J1NB",
+        "model_years": [
+          "2021-06-25 to 2024-01-30"
+        ],
+        "affected_count": "378"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Taycan Turbo",
+        "type_designation": "ZAA-J1MC",
+        "model_years": [
+          "2020-09-25 to 2021-10-23"
+        ],
+        "affected_count": "96"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Taycan Turbo",
+        "type_designation": "ZAA-J1NC",
+        "model_years": [
+          "2021-06-14 to 2023-12-18"
+        ],
+        "affected_count": "126"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Taycan Turbo S",
+        "type_designation": "ZAA-J1MD",
+        "model_years": [
+          "2020-09-25 to 2021-10-25"
+        ],
+        "affected_count": "107"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Taycan Turbo S",
+        "type_designation": "ZAA-J1ND",
+        "model_years": [
+          "2021-10-22 to 2023-12-20"
+        ],
+        "affected_count": "90"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Taycan GTS",
+        "type_designation": "ZAA-J1NE",
+        "model_years": [
+          "2022-01-24 to 2023-12-04"
+        ],
+        "affected_count": "291"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Panamera",
+        "type_designation": "7BA-G3RA1",
+        "model_years": [
+          "2023-11-29 to 2025-06-17"
+        ],
+        "affected_count": "509"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Panamera 4",
+        "type_designation": "7BA-G3RA2",
+        "model_years": [
+          "2023-11-28 to 2025-04-07"
+        ],
+        "affected_count": "210"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Panamera 4 e-hybrid",
+        "type_designation": "3LA-G3SB",
+        "model_years": [
+          "2024-10-11 to 2025-06-26"
+        ],
+        "affected_count": "152"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Panamera 4S e-hybrid",
+        "type_designation": "3LA-G3SC",
+        "model_years": [
+          "2024-10-14 to 2025-06-25"
+        ],
+        "affected_count": "53"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Panamera Turbo",
+        "type_designation": "3LA-G3SE",
+        "model_years": [
+          "2024-10-10 to 2025-04-14"
+        ],
+        "affected_count": "41"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Panamera Turbo S",
+        "type_designation": "3LA-G3SF",
+        "model_years": [
+          "2024-10-15 to 2025-04-08"
+        ],
+        "affected_count": "34"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Panamera GTS",
+        "type_designation": "7BA-G3SD",
+        "model_years": [
+          "2024-06-20 to 2025-02-20"
+        ],
+        "affected_count": "179"
+      },
+      {
+        "make": "ポルシェ",
+        "model": "Panamera GTS",
+        "type_designation": "7BA-G3TD",
+        "model_years": [
+          "2025-02-24 to 2025-06-24"
+        ],
+        "affected_count": "39"
+      }
+    ],
+    "defect_system": "視野確保装置",
+    "defect_location": "ドライバーアシストシステムコントロールユニット",
+    "defect_description": "ドライバーアシストシステムコントロールユニットにおいて、制御プログラムが不適切なため、カメラ映像信号の伝送が途切れることがある。そのため、サラウンドビューカメラの映像が映らなくなり、車両の直左映像（左ハンドル車にあっては車両の直右映像）が確認できず、保安基準に適合しないおそれがある。",
+    "root_cause": "制御プログラムが不適切なため。",
+    "consequences": [
+      "サラウンドビューカメラの映像が映らなくなる",
+      "車両の直左映像（左ハンドル車は直右映像）が確認できず、保安基準に適合しないおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ドライバーアシストシステムコントロールユニット",
+        "part_number": null,
+        "system_path": [
+          "視野確保装置",
+          "ドライバーアシストシステムコントロールユニット"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ドライバーアシストシステムコントロールユニットのプログラムを、対策プログラムが準備できた車両から順次書き換える。",
+    "correction_detail": "全車両、ドライバーアシストシステムコントロールユニットのプログラムを対策プログラムに順次書き換える（対策プログラムが準備できた車両から実施）。"
+  }
+}

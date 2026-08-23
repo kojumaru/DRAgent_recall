@@ -1,0 +1,669 @@
+{
+  "recall_id": "r8-03-30-005705",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005705.html",
+  "date_text": "令和8年3月30日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001992243.pdf",
+    "https://www.mlit.go.jp/report/press/content/001992244.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001992244.pdf",
+  "metadata": {
+    "notification_number": "5797",
+    "notification_date": "2026-03-30",
+    "notifier": "三菱ふそうトラック・バス株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FS70HZ",
+        "model_years": [
+          "2021-04-29 to 2023-09-29"
+        ],
+        "affected_count": "602"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FS74HZ",
+        "model_years": [
+          "2021-04-30 to 2023-09-28"
+        ],
+        "affected_count": "509"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FU70HY",
+        "model_years": [
+          "2021-11-08 to 2023-06-22"
+        ],
+        "affected_count": "15"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FU74HZ",
+        "model_years": [
+          "2021-04-28 to 2023-09-12"
+        ],
+        "affected_count": "208"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FV70HJR",
+        "model_years": [
+          "2021-06-28 to 2024-04-25"
+        ],
+        "affected_count": "501"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FV70HX",
+        "model_years": [
+          "2021-04-28 to 2023-09-12"
+        ],
+        "affected_count": "1815"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FV70HY",
+        "model_years": [
+          "2021-04-28 to 2023-09-06"
+        ],
+        "affected_count": "394"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FV70HYP",
+        "model_years": [
+          "2021-07-30 to 2024-04-25"
+        ],
+        "affected_count": "157"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FV70HZ",
+        "model_years": [
+          "2021-05-13 to 2023-09-18"
+        ],
+        "affected_count": "400"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FV70HZP",
+        "model_years": [
+          "2021-07-30 to 2024-03-18"
+        ],
+        "affected_count": "37"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FV74HJR",
+        "model_years": [
+          "2021-06-29 to 2025-10-21"
+        ],
+        "affected_count": "55"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FV80VJR",
+        "model_years": [
+          "2024-07-31 to 2026-02-06"
+        ],
+        "affected_count": "164"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FV80VYP",
+        "model_years": [
+          "2024-08-28 to 2025-11-11"
+        ],
+        "affected_count": "63"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FV80VZP",
+        "model_years": [
+          "2024-09-05 to 2025-07-29"
+        ],
+        "affected_count": "6"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2KG-FV84VJR",
+        "model_years": [
+          "2024-10-22 to 2026-02-06"
+        ],
+        "affected_count": "19"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FP74HDR",
+        "model_years": [
+          "2021-04-16 to 2025-10-21"
+        ],
+        "affected_count": "2499"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FP74HER",
+        "model_years": [
+          "2021-04-21 to 2024-04-24"
+        ],
+        "affected_count": "1000"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FP74HGR",
+        "model_years": [
+          "2021-05-13 to 2024-04-11"
+        ],
+        "affected_count": "158"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FP84HDR",
+        "model_years": [
+          "2024-07-15 to 2026-02-06"
+        ],
+        "affected_count": "419"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FP84HER",
+        "model_years": [
+          "2024-09-06 to 2026-02-06"
+        ],
+        "affected_count": "87"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FP84HGR",
+        "model_years": [
+          "2024-09-10 to 2026-02-06"
+        ],
+        "affected_count": "47"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS70HZ",
+        "model_years": [
+          "2021-04-19 to 2024-04-11"
+        ],
+        "affected_count": "322"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS74HY",
+        "model_years": [
+          "2021-04-28 to 2024-01-26"
+        ],
+        "affected_count": "106"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS74HZ",
+        "model_years": [
+          "2021-04-12 to 2026-01-21"
+        ],
+        "affected_count": "7358"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS75HY",
+        "model_years": [
+          "2021-07-13 to 2023-11-15"
+        ],
+        "affected_count": "4"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS75HZ",
+        "model_years": [
+          "2021-04-14 to 2026-01-21"
+        ],
+        "affected_count": "1347"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS80HZ",
+        "model_years": [
+          "2024-07-24 to 2026-01-23"
+        ],
+        "affected_count": "55"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS80VZ",
+        "model_years": [
+          "2024-07-24 to 2025-11-05"
+        ],
+        "affected_count": "94"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS84HY",
+        "model_years": [
+          "2025-01-22 to 2025-09-19"
+        ],
+        "affected_count": "14"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS84HZ",
+        "model_years": [
+          "2024-05-16 to 2026-02-06"
+        ],
+        "affected_count": "1360"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS84VY",
+        "model_years": [
+          "2024-08-28 to 2025-04-17"
+        ],
+        "affected_count": "15"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS84VZ",
+        "model_years": [
+          "2024-05-16 to 2026-02-06"
+        ],
+        "affected_count": "2435"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS85HZ",
+        "model_years": [
+          "2024-07-18 to 2026-02-06"
+        ],
+        "affected_count": "318"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FS85VZ",
+        "model_years": [
+          "2024-07-12 to 2026-02-06"
+        ],
+        "affected_count": "323"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FU70HY",
+        "model_years": [
+          "2021-04-27 to 2024-03-27"
+        ],
+        "affected_count": "203"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FU74HY",
+        "model_years": [
+          "2021-05-13 to 2024-04-15"
+        ],
+        "affected_count": "178"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FU74HZ",
+        "model_years": [
+          "2021-04-12 to 2025-10-21"
+        ],
+        "affected_count": "2280"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FU75HZ",
+        "model_years": [
+          "2021-04-21 to 2024-04-17"
+        ],
+        "affected_count": "740"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FU80HY",
+        "model_years": [
+          "2024-07-18 to 2025-10-07"
+        ],
+        "affected_count": "40"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FU80VY",
+        "model_years": [
+          "2024-07-24 to 2026-02-04"
+        ],
+        "affected_count": "20"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FU84HY",
+        "model_years": [
+          "2024-09-12 to 2026-01-07"
+        ],
+        "affected_count": "32"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FU84HZ",
+        "model_years": [
+          "2024-07-15 to 2026-02-19"
+        ],
+        "affected_count": "425"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FU84VY",
+        "model_years": [
+          "2024-10-21 to 2025-11-07"
+        ],
+        "affected_count": "8"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FU84VZ",
+        "model_years": [
+          "2024-05-24 to 2026-01-06"
+        ],
+        "affected_count": "498"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FU85HZ",
+        "model_years": [
+          "2024-07-18 to 2026-01-16"
+        ],
+        "affected_count": "68"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FU85VZ",
+        "model_years": [
+          "2024-08-02 to 2026-02-06"
+        ],
+        "affected_count": "158"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FV70HX",
+        "model_years": [
+          "2021-04-12 to 2024-04-22"
+        ],
+        "affected_count": "1578"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FV70HY",
+        "model_years": [
+          "2021-05-12 to 2024-04-18"
+        ],
+        "affected_count": "522"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FV70HZ",
+        "model_years": [
+          "2021-04-22 to 2024-04-18"
+        ],
+        "affected_count": "457"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FV74HJR",
+        "model_years": [
+          "2021-04-27 to 2024-02-19"
+        ],
+        "affected_count": "34"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FV74HZ",
+        "model_years": [
+          "2021-04-19 to 2024-04-19"
+        ],
+        "affected_count": "462"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FV80HX",
+        "model_years": [
+          "2024-07-08 to 2026-02-18"
+        ],
+        "affected_count": "265"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FV80HY",
+        "model_years": [
+          "2024-09-02 to 2025-12-10"
+        ],
+        "affected_count": "117"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FV80HZ",
+        "model_years": [
+          "2024-07-23 to 2026-02-06"
+        ],
+        "affected_count": "92"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FV80VX",
+        "model_years": [
+          "2024-06-04 to 2026-02-04"
+        ],
+        "affected_count": "336"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FV80VY",
+        "model_years": [
+          "2024-07-11 to 2026-02-04"
+        ],
+        "affected_count": "185"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FV80VZ",
+        "model_years": [
+          "2024-07-23 to 2026-01-15"
+        ],
+        "affected_count": "182"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FV84HZ",
+        "model_years": [
+          "2024-09-09 to 2026-02-06"
+        ],
+        "affected_count": "70"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FV84VZ",
+        "model_years": [
+          "2024-07-26 to 2026-02-06"
+        ],
+        "affected_count": "71"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FY70HY",
+        "model_years": [
+          "2021-04-22 to 2024-04-09"
+        ],
+        "affected_count": "192"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FY74HY",
+        "model_years": [
+          "2021-05-11 to 2026-01-21"
+        ],
+        "affected_count": "203"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FY80HY",
+        "model_years": [
+          "2024-07-24 to 2025-12-15"
+        ],
+        "affected_count": "31"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FY80VY",
+        "model_years": [
+          "2024-09-09 to 2026-02-06"
+        ],
+        "affected_count": "22"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FY84HY",
+        "model_years": [
+          "2024-08-22 to 2026-01-30"
+        ],
+        "affected_count": "38"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2PG-FY84VY",
+        "model_years": [
+          "2024-08-23 to 2026-02-06"
+        ],
+        "affected_count": "11"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2RG-FP84VDR",
+        "model_years": [
+          "2024-06-26 to 2026-02-06"
+        ],
+        "affected_count": "1013"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2RG-FP84VER",
+        "model_years": [
+          "2024-07-04 to 2026-02-06"
+        ],
+        "affected_count": "618"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2RG-FP84VGR",
+        "model_years": [
+          "2024-08-22 to 2025-10-24"
+        ],
+        "affected_count": "28"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "2RG-FV84VJR",
+        "model_years": [
+          "2024-10-23 to 2026-01-09"
+        ],
+        "affected_count": "9"
+      }
+    ],
+    "defect_system": "排出ガス発散防止装置",
+    "defect_location": "排気後処理制御装置用コントロールユニット（ACM）",
+    "defect_description": "ACMにおいて、ソフトウェアの設計検討が不十分なため、尿素水ポンプ回転センサー故障時にエンジン警告灯（MIL）が点灯しない。そのため、保安基準に適合しない。",
+    "root_cause": "ACMのソフトウェアの設計検討が不十分。",
+    "consequences": [
+      "尿素水ポンプ回転センサー故障時にエンジン警告灯（MIL）が点灯しない",
+      "そのため保安基準に適合しない"
+    ],
+    "parts": [
+      {
+        "part_name": "排気後処理制御装置用コントロールユニット（ACM）",
+        "part_number": null,
+        "system_path": [
+          "排出ガス発散防止装置",
+          "排気後処理制御装置用コントロールユニット"
+        ]
+      },
+      {
+        "part_name": "尿素水ポンプ回転センサー",
+        "part_number": null,
+        "system_path": [
+          "排出ガス発散防止装置",
+          "尿素水ポンプ",
+          "回転センサー"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ACMのソフトウェアを修正したものに書き換える。",
+    "correction_detail": "全車両の排気後処理制御装置用コントロールユニット（ACM）について、ソフトウェアを修正したものに書き換える。"
+  }
+}

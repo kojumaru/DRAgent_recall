@@ -1,0 +1,101 @@
+{
+  "recall_id": "r8-06-05-005753",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005753.html",
+  "date_text": "令和8年6月5日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002004944.pdf",
+    "https://www.mlit.go.jp/report/press/content/002004945.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002004945.pdf",
+  "metadata": {
+    "notification_number": "5827",
+    "notification_date": "2026-06-05",
+    "notifier": "株式会社 小松製作所",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "コマツ",
+        "model": "WA80-8",
+        "type_designation": "YDN-WA139",
+        "model_years": [
+          "2019-02-06 to 2026-04-08"
+        ],
+        "affected_count": "1949"
+      },
+      {
+        "make": "コマツ",
+        "model": "FH35 FH40 FH45 FH50",
+        "type_designation": "YDN-M286",
+        "model_years": [
+          "2014-12-26 to 2026-04-08"
+        ],
+        "affected_count": "384"
+      },
+      {
+        "make": "コマツ",
+        "model": "FH60 FH70 FH80",
+        "type_designation": "YDN-M288",
+        "model_years": [
+          "2017-04-26 to 2026-04-15"
+        ],
+        "affected_count": "87"
+      }
+    ],
+    "defect_system": "原動機",
+    "defect_location": "燃料インジェクタ、ECU（エンジンコントロールユニット）、可変ターボ、MAFセンサ、エアクリーナ",
+    "defect_description": "ショベル・ローグ等において、設計検討が不十分なため、(1)経時劣化により燃料インジェクタの噴射ノズルが摩耗し、燃料噴射量が増加する、(2)可変ターボ内部にダスト等が付着することで空気供給効率が低下する、(3)MAFセンサのセンシング部にエアクリーナで捕捉しきれなかったダストが付着し、実際よりも多い空気流量として誤認識することがある。そのため、そのまま使用を続けると、これらの不具合が複合的に作用して空燃比が低下し、煤の発生が増加して、PM（粒子状物質）の排出量が保安基準を超過するおそれがある。",
+    "root_cause": "設計検討が不十分なため。",
+    "consequences": [
+      "煤の発生が増加する",
+      "PM（粒子状物質）の排出量が保安基準を超過するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "燃料インジェクタ（噴射ノズル）",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "燃料インジェクタ"
+        ]
+      },
+      {
+        "part_name": "ECU（エンジンコントロールユニット）",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "ECU"
+        ]
+      },
+      {
+        "part_name": "可変ターボ",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "過給機",
+          "可変ターボ"
+        ]
+      },
+      {
+        "part_name": "MAFセンサ",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "吸気系",
+          "MAFセンサ"
+        ]
+      },
+      {
+        "part_name": "エアクリーナエレメントカバー",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "吸気系",
+          "エアクリーナ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、燃料インジェクタの対策品交換、コントローラプログラムの対策プログラムへの書換え、取扱説明書へのMAFセンサ自動補正の運転方法追加、エアクリーナエレメントカバーへの銘板貼付けを行う。",
+    "correction_detail": "全車両、以下の対策を行う。(1)燃料インジェクタを対策品に交換する。(2)コントローラのプログラムを対策プログラムに書き換える。(3)取扱説明書にMAFセンサ自動補正の運転方法を追加する。(4)エアクリーナエレメントカバーにMAFセンサ自動補正の実施を促す銘板を貼り付ける。"
+  }
+}

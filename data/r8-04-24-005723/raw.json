@@ -1,0 +1,58 @@
+{
+  "recall_id": "r8-04-24-005723",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005723.html",
+  "date_text": "令和8年4月24日",
+  "month": 4,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001997917.pdf",
+    "https://www.mlit.go.jp/report/press/content/001997918.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001997918.pdf",
+  "metadata": {
+    "notification_number": "5804",
+    "notification_date": "2026-04-24",
+    "notifier": "株式会社 小松製作所",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "コマツ",
+        "model": "GD405-7",
+        "type_designation": "YDR-GD035",
+        "model_years": [
+          "2019-07-23 to 2026-01-08"
+        ],
+        "affected_count": "731"
+      }
+    ],
+    "defect_system": "かじ取装置",
+    "defect_location": "ステアリングポストガススプリング",
+    "defect_description": "グレーダのステアリングポストにおいて、ステアリングポストを保持しているガススプリングの設計検討が不十分なため、チルトペダル操作時にガススプリング内部のガスが漏れることがある。そのため、そのまま使用を続けると、ガススプリングの保持力が低下してハンドルを任意の位置に固定できなくなり、最悪の場合、かじ取操作が確実にできなくなるおそれがある。",
+    "root_cause": "ステアリングポストを保持しているガススプリングの設計検討が不十分なため。",
+    "consequences": [
+      "ガススプリングの保持力が低下してハンドルを任意の位置に固定できなくなる",
+      "最悪の場合、かじ取操作が確実にできなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ステアリングポストガススプリング",
+        "part_number": null,
+        "system_path": [
+          "かじ取装置",
+          "ステアリングポスト",
+          "ガススプリング"
+        ]
+      },
+      {
+        "part_name": "チルトペダル一式",
+        "part_number": null,
+        "system_path": [
+          "かじ取装置",
+          "ステアリングポスト",
+          "チルトペダル"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ガススプリングとチルトペダル一式を対策品に交換する。",
+    "correction_detail": "全車両、ガススプリングとチルトペダル一式を対策品に交換する。"
+  }
+}

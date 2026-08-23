@@ -1,0 +1,85 @@
+{
+  "recall_id": "r8-06-05-005752",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005752.html",
+  "date_text": "令和8年6月5日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002004941.pdf",
+    "https://www.mlit.go.jp/report/press/content/002004942.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002004942.pdf",
+  "metadata": {
+    "notification_number": "5822",
+    "notification_date": "2026-06-05",
+    "notifier": "日立建機株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "日立",
+        "model": "ZW140-7",
+        "type_designation": "YDR-NTMA",
+        "model_years": [
+          "2025-07-15 to 2026-03-04"
+        ],
+        "affected_count": "48"
+      },
+      {
+        "make": "日立",
+        "model": "ZW160-7",
+        "type_designation": "YDR-NTLA",
+        "model_years": [
+          "2025-10-08 to 2026-03-13"
+        ],
+        "affected_count": "18"
+      },
+      {
+        "make": "日立",
+        "model": "ZW180-7",
+        "type_designation": "YDR-NTKA",
+        "model_years": [
+          "2024-08-20 to 2026-03-03"
+        ],
+        "affected_count": "143"
+      },
+      {
+        "make": "日立",
+        "model": "ZW220-7",
+        "type_designation": "YDS-NUDA",
+        "model_years": [
+          "2024-07-23 to 2026-03-02"
+        ],
+        "affected_count": "59"
+      },
+      {
+        "make": "日立",
+        "model": "ZW250-7",
+        "type_designation": "YDS-NUEA",
+        "model_years": [
+          "2025-11-27 to 2026-02-03"
+        ],
+        "affected_count": "2"
+      }
+    ],
+    "defect_system": "操縦装置",
+    "defect_location": "方向指示器操作装置の自動復帰機構",
+    "defect_description": "ショベル・ローダの操縦装置において、方向指示器の自動復帰機構の構造が不適切なため、特定のハンドル位置で自動復帰機構を操作すると、機構内部のピンとレバーが干渉することがある。そのため、方向指示器、又はハンドルの動作を妨げ、正常な運転操作ができなくなるおそれがある。",
+    "root_cause": "方向指示器の自動復帰機構の構造が不適切なため。",
+    "consequences": [
+      "方向指示器、又はハンドルの動作を妨げる",
+      "正常な運転操作ができなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "方向指示器操作装置の自動復帰機構",
+        "part_number": null,
+        "system_path": [
+          "操縦装置",
+          "方向指示器操作装置",
+          "自動復帰機構"
+        ]
+      }
+    ],
+    "correction_summary": "方向指示器の自動復帰機構を取り外す。",
+    "correction_detail": "方向指示器の自動復帰機構を取り外す。"
+  }
+}

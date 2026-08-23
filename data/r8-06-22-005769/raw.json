@@ -1,0 +1,74 @@
+{
+  "recall_id": "r8-06-22-005769",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005769.html",
+  "date_text": "令和8年6月22日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002007670.pdf",
+    "https://www.mlit.go.jp/report/press/content/002007671.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002007671.pdf",
+  "metadata": {
+    "notification_number": "外-4163",
+    "notification_date": "2026-06-22",
+    "notifier": "Hyundai Mobility Japan 株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ヒュンダイ",
+        "model": "ヒュンダイPY",
+        "type_designation": "ADG-RD00",
+        "model_years": [
+          "2009-10-11 to 2010-08-14"
+        ],
+        "affected_count": "40"
+      },
+      {
+        "make": "ヒュンダイ",
+        "model": "ヒュンダイPY",
+        "type_designation": "LDG-RD00",
+        "model_years": [
+          "2010-11-17 to 2017-07-10"
+        ],
+        "affected_count": "196"
+      },
+      {
+        "make": "ヒュンダイ",
+        "model": "ヒュンダイPY",
+        "type_designation": "2DG-RD00",
+        "model_years": [
+          "2017-05-12 to 2025-12-05"
+        ],
+        "affected_count": "55"
+      }
+    ],
+    "defect_system": "スライド窓",
+    "defect_location": "サイドスライド窓（窓レール／ストッパー）",
+    "defect_description": "補助席付き車両のサイドスライド窓において、レールに取付けたストッパー位置が設計どおりではないものがある。そのため、窓の開放部の有効幅が500mm以下となり、保安基準に適合しないおそれがある。",
+    "root_cause": "製造工程が不適切なため、レールに取付けたストッパー位置が設計どおりではないものがある。",
+    "consequences": [
+      "窓の開放部の有効幅が500mm以下となり、保安基準に適合しないおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "スライド窓ストッパー",
+        "part_number": null,
+        "system_path": [
+          "スライド窓",
+          "ストッパー"
+        ]
+      },
+      {
+        "part_name": "ウェザーストリップ",
+        "part_number": null,
+        "system_path": [
+          "スライド窓",
+          "窓レール",
+          "ウェザーストリップ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、窓レールに取付けられているストッパーを取外して開放部の有効幅を確保し、ストッパー跡にはウェザーストリップを取付ける。",
+    "correction_detail": "窓レールに取付けられているストッパーを取外し、窓の開放部の有効幅を確保する。ストッパー取外し後の跡にはウェザーストリップを取付ける。"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "recall_id": "r8-02-05-005650",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005650.html",
+  "date_text": "令和8年2月5日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001980142.pdf",
+    "https://www.mlit.go.jp/report/press/content/001980143.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001980143.pdf",
+  "metadata": {
+    "notification_number": "5771",
+    "notification_date": "2026-02-05",
+    "notifier": "株式会社SUBARU",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "スバル",
+        "model": "レヴォーグ",
+        "type_designation": "4BA-VN5",
+        "model_years": [
+          "2025-12-08 to 2025-12-23"
+        ],
+        "affected_count": "648"
+      },
+      {
+        "make": "スバル",
+        "model": "レヴォーグ",
+        "type_designation": "5BA-VNH",
+        "model_years": [
+          "2025-12-09 to 2025-12-20"
+        ],
+        "affected_count": "12"
+      },
+      {
+        "make": "スバル",
+        "model": "WRX",
+        "type_designation": "5BA-VBH",
+        "model_years": [
+          "2025-12-11 to 2025-12-24"
+        ],
+        "affected_count": "96"
+      },
+      {
+        "make": "スバル",
+        "model": "レヴォーグ",
+        "type_designation": "4BA-VN5",
+        "model_years": [
+          "2021-01-27 to 2021-01-27",
+          "2025-10-22 to 2025-10-22"
+        ],
+        "affected_count": "2"
+      }
+    ],
+    "defect_system": "かじ取り装置（電動パワーステアリング）",
+    "defect_location": "ステアリングギヤボックス（ハーネスコネクタ）",
+    "defect_description": "電動パワーステアリングにおいて、ハーネスコネクタの組付け作業が不適切であったため、正しく嵌合されていないものがある。そのため、走行振動等によりコネクタがはずれると警告灯が点灯するとともにステアリングの操作力が増大するおそれがある。",
+    "root_cause": "ハーネスコネクタの組付け作業が不適切であったため、正しく嵌合されていないものがある。",
+    "consequences": [
+      "走行振動等によりコネクタがはずれると警告灯が点灯する",
+      "ステアリングの操作力が増大するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ステアリングギヤボックス",
+        "part_number": "34110VC113",
+        "system_path": [
+          "かじ取り装置",
+          "ステアリングギヤボックス"
+        ]
+      },
+      {
+        "part_name": "ハーネスコネクタ",
+        "part_number": null,
+        "system_path": [
+          "かじ取り装置",
+          "電動パワーステアリング",
+          "ハーネスコネクタ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、コネクタが正しく嵌合されているか点検する。正しく嵌合されていない車両はステアリングギヤボックスを新品に交換する。",
+    "correction_detail": "全車両についてステアリングギヤボックスのハーネスコネクタ嵌合状態を点検し、正しく嵌合されていない場合はステアリングギヤボックスを新品に交換する。交換修理用部品が組み付けられた車両についても同様の改善を実施する。"
+  }
+}

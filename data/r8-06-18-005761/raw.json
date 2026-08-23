@@ -1,0 +1,48 @@
+{
+  "recall_id": "r8-06-18-005761",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005761.html",
+  "date_text": "令和8年6月18日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002007289.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "714",
+    "notification_date": "2026-05-07",
+    "notifier": "ビー·エム·ダブリュー株式会社",
+    "recall_type": "改善対策",
+    "affected_vehicles": [
+      {
+        "make": "ビー·エム·ダブリュー株式会社",
+        "model": "MINI",
+        "type_designation": "3BA-12GD15",
+        "model_years": [
+          "2024-07-23 to 2024-10-29"
+        ],
+        "affected_count": "2"
+      }
+    ],
+    "defect_system": "制動装置（電気機械式パーキングブレーキ）",
+    "defect_location": "右側EMFアクチュエーター（電気モーター）",
+    "defect_description": "右側のEMFアクチュエーターの電気モーターにおいて、モーターコイルが正しく巻かれていないものがある。そのため、繰り返し作動することで電気モーターが損傷すると、チェックコントロールメッセージが表示されるとともに、電気機械式パーキングブレーキの作動あるいは解除ができなくなるおそれがある。",
+    "root_cause": "製造機器の保守管理が不適切なため、モーターコイルが正しく巻かれていないものがある。",
+    "consequences": [
+      "チェックコントロールメッセージが表示される",
+      "電気機械式パーキングブレーキの作動あるいは解除ができなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "右側EMFアクチュエーター（電気モーター）",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "電気機械式パーキングブレーキ",
+          "EMFアクチュエーター"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

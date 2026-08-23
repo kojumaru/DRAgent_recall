@@ -1,0 +1,111 @@
+{
+  "recall_id": "r8-05-27-005744",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005744.html",
+  "date_text": "令和8年5月27日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002002813.pdf",
+    "https://www.mlit.go.jp/report/press/content/002002814.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002002814.pdf",
+  "metadata": {
+    "notification_number": "5821",
+    "notification_date": "2026-05-27",
+    "notifier": "トヨタ自動車株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "トヨタ",
+        "model": "ランドクルーザー",
+        "type_designation": "3DA-GDJ250W",
+        "model_years": [
+          "2024-04-10 to 2025-06-13",
+          "2024-04-10 to 2025-06-20"
+        ],
+        "affected_count": "20759"
+      },
+      {
+        "make": "トヨタ",
+        "model": "クラウン",
+        "type_designation": "6AA-AZSH32",
+        "model_years": [
+          "2023-10-25 to 2025-06-02"
+        ],
+        "affected_count": "12898"
+      },
+      {
+        "make": "トヨタ",
+        "model": "クラウン",
+        "type_designation": "ZBA-KZSM30",
+        "model_years": [
+          "2023-10-25 to 2025-06-03"
+        ],
+        "affected_count": "846"
+      },
+      {
+        "make": "トヨタ",
+        "model": "ミライ",
+        "type_designation": "ZBA-JPD20",
+        "model_years": [
+          "2023-12-18 to 2024-11-25"
+        ],
+        "affected_count": "58"
+      },
+      {
+        "make": "レクサス",
+        "model": "UX300h",
+        "type_designation": "6AA-MZAH11",
+        "model_years": [
+          "2023-12-13 to 2025-07-30"
+        ],
+        "affected_count": "6578"
+      },
+      {
+        "make": "レクサス",
+        "model": "UX300h",
+        "type_designation": "6AA-MZAH16",
+        "model_years": [
+          "2023-12-13 to 2025-07-30"
+        ],
+        "affected_count": "1829"
+      },
+      {
+        "make": "レクサス",
+        "model": "UX300e",
+        "type_designation": "ZAA-KMA10",
+        "model_years": [
+          "2023-12-13 to 2025-08-07"
+        ],
+        "affected_count": "211"
+      },
+      {
+        "make": "レクサス",
+        "model": "GX550",
+        "type_designation": "3BA-VJA252W",
+        "model_years": [
+          "2024-04-10 to 2024-12-03"
+        ],
+        "affected_count": "121"
+      }
+    ],
+    "defect_system": "電気装置",
+    "defect_location": "コンビネーションメータ",
+    "defect_description": "コンビネーションメータにおいて、制御プログラムの検討が不十分なため、始動時にメータが正しく起動せず画面の一部が表示されないことがある。そのため、警告灯等が確認できないおそれがある。",
+    "root_cause": "制御プログラムの検討が不十分なため。",
+    "consequences": [
+      "警告灯等が確認できないおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "コンビネーションメータ",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "コンビネーションメータ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、コンビネーションメータのプログラムを対策仕様に修正する。",
+    "correction_detail": "全車両、コンビネーションメータのプログラムを対策仕様に修正する。"
+  }
+}

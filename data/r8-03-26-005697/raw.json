@@ -1,0 +1,57 @@
+{
+  "recall_id": "r8-03-26-005697",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005697.html",
+  "date_text": "令和8年3月26日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001991030.pdf",
+    "https://www.mlit.go.jp/report/press/content/001991031.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001991031.pdf",
+  "metadata": {
+    "notification_number": "5800",
+    "notification_date": "2026-03-26",
+    "notifier": "日産自動車株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ニッサン",
+        "model": "リーフ",
+        "type_designation": "ZAA-ZE2",
+        "model_years": [
+          "2025-12-01 to 2026-03-07"
+        ],
+        "affected_count": "171"
+      }
+    ],
+    "defect_system": "電気装置",
+    "defect_location": "高電圧バッテリ",
+    "defect_description": "高電圧バッテリパック内のモジュールにおいて、セルに使用される電極板の製造工程が不適切なため、工程内で発生した電極板の破片が付着したものがある。そのため、バッテリの充電の繰り返しにより、モジュール内部で短絡が発生し、バッテリ異常の警告が表示される場合があり、最悪の場合、バッテリが異常発熱し、火災に至るおそれがある。",
+    "root_cause": "セルに使用される電極板の製造工程が不適切なため、工程内で発生した電極板の破片が付着したものがある。",
+    "consequences": [
+      "バッテリ異常の警告が表示される場合がある",
+      "最悪の場合、バッテリが異常発熱し、火災に至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "高電圧バッテリ",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "高電圧バッテリ"
+        ]
+      },
+      {
+        "part_name": "高電圧バッテリパック内モジュール",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "高電圧バッテリ",
+          "モジュール"
+        ]
+      }
+    ],
+    "correction_summary": "全車両バッテリパックまたはモジュールを良品に交換する。部品準備が整うまでの間は、車両をお預かりし、部品準備が整いしだい部品を交換する。",
+    "correction_detail": "対象車両について、バッテリパックまたはバッテリパック内モジュールを良品に交換する。部品準備が整うまでの間は車両を預かり、部品準備が整い次第交換作業を実施する。"
+  }
+}

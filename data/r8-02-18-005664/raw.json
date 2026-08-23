@@ -1,0 +1,58 @@
+{
+  "recall_id": "r8-02-18-005664",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005664.html",
+  "date_text": "令和8年2月18日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001981755.pdf",
+    "https://www.mlit.go.jp/report/press/content/001981756.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001981756.pdf",
+  "metadata": {
+    "notification_number": "外-4153",
+    "notification_date": "2026-02-18",
+    "notifier": "メルセデス·ベンツ日本合同会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "メルセデス·ベンツ",
+        "model": "メルセデスAMG E53 HYBRID 4MATIC+",
+        "type_designation": "4LA-214063C",
+        "model_years": [
+          "2024-09-05 to 2025-05-18",
+          "2024-09-05 to 2025-04-23"
+        ],
+        "affected_count": "105"
+      },
+      {
+        "make": "メルセデス·ベンツ",
+        "model": "メルセデスAMG E53 HYBRID 4MATIC+ ステーションワゴン",
+        "type_designation": "4LA-214263C",
+        "model_years": [
+          "2024-09-23 to 2025-03-24"
+        ],
+        "affected_count": "17"
+      }
+    ],
+    "defect_system": "電気配線",
+    "defect_location": "トランスミッション配線（オートマチックトランスミッションの電気配線）",
+    "defect_description": "オートマチックトランスミッションの電気配線において、配索設計が不適切なため、配線がフロントプロペラシャフトに接触して摩滅し、損傷することがある。そのため、電気モータの動力補助機能が喪失することで排ガス値が悪化する他、最悪の場合、ギア段がニュートラルに固定されることで走行不能になるおそれがある。",
+    "root_cause": "配索設計が不適切なため、配線がフロントプロペラシャフトに接触して摩滅し損傷することがある。",
+    "consequences": [
+      "電気モータの動力補助機能が喪失し、排ガス値が悪化する",
+      "最悪の場合、ギア段がニュートラルに固定され走行不能になるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "トランスミッション配線",
+        "part_number": null,
+        "system_path": [
+          "電気配線",
+          "トランスミッション配線"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、配索を点検し、クリアランスが基準以下のものは配索を変更する。配線に損傷がある場合は修理する。",
+    "correction_detail": "全車両について配索を点検し、クリアランスが基準以下の場合は配索を変更する。あわせて、配線に損傷が認められる場合は修理する。"
+  }
+}

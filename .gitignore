@@ -2,7 +2,7 @@
 __pycache__/
 *.pyc
 .env
-data/
+.claude/
 viewer/frontend/node_modules/
 viewer/frontend/dist/
 *.egg-info/

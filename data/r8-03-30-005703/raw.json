@@ -1,0 +1,118 @@
+{
+  "recall_id": "r8-03-30-005703",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005703.html",
+  "date_text": "令和8年3月30日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001991358.pdf",
+    "https://www.mlit.go.jp/report/press/content/001991359.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001991359.pdf",
+  "metadata": {
+    "notification_number": "外-4169",
+    "notification_date": "2026-03-30",
+    "notifier": "ビー·エム·ダブリュー株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "BMW",
+        "model": "BMW 120",
+        "type_designation": "3AA-82GE15",
+        "model_years": [
+          "2025-07-07 to 2025-08-04",
+          "2025-08-06 to 2025-10-21"
+        ],
+        "affected_count": "205"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 220 Gran Coupe",
+        "type_designation": "3AA-82GE15",
+        "model_years": [
+          "2025-07-03 to 2025-07-30",
+          "2025-08-18 to 2025-09-05"
+        ],
+        "affected_count": "23"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 120d",
+        "type_designation": "3CA-22GF20",
+        "model_years": [
+          "2025-07-18 to 2025-08-04",
+          "2025-08-05 to 2025-10-22"
+        ],
+        "affected_count": "121"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 220d Gran Coupe",
+        "type_designation": "3CA-22GF20",
+        "model_years": [
+          "2025-07-02 to 2025-07-30",
+          "2025-08-15 to 2025-10-27"
+        ],
+        "affected_count": "35"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW M135 xDrive",
+        "type_designation": "3BA-22GE20",
+        "model_years": [
+          "2025-07-17 to 2025-08-04",
+          "2025-08-05 to 2025-11-03"
+        ],
+        "affected_count": "37"
+      },
+      {
+        "make": "BMW",
+        "model": "M235 xDRIVE Gran Coupe",
+        "type_designation": "3BA-22GE20",
+        "model_years": [
+          "2025-07-09 to 2025-07-15",
+          "2025-08-19 to 2025-09-17"
+        ],
+        "affected_count": "7"
+      }
+    ],
+    "defect_system": "灯火装置",
+    "defect_location": "リヤライト",
+    "defect_description": "リヤライトのLEDドライバにおいて、製造工程が不適切なため、誤ったソフトウェアが搭載され、リヤライト制御ユニットのソフトウェアと互換性が無いものがある。そのため、点灯開始時の特定の制御条件下における内部診断の際に、異常がないにもかかわらず故障と誤判定し、尾灯、制動灯または方向指示器が不点灯になるおそれがある。",
+    "root_cause": "リヤライトのLEDドライバの製造工程が不適切なため、誤ったソフトウェアが搭載されたこと。",
+    "consequences": [
+      "尾灯が不点灯になるおそれがある",
+      "制動灯が不点灯になるおそれがある",
+      "方向指示器が不点灯になるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "リヤライト（フェンダーリヤライト、テールゲートリヤライト）",
+        "part_number": null,
+        "system_path": [
+          "灯火装置",
+          "リヤライト"
+        ]
+      },
+      {
+        "part_name": "LEDドライバ",
+        "part_number": null,
+        "system_path": [
+          "灯火装置",
+          "リヤライト",
+          "LEDドライバ"
+        ]
+      },
+      {
+        "part_name": "リヤライト制御ユニット",
+        "part_number": null,
+        "system_path": [
+          "灯火装置",
+          "リヤライト",
+          "リヤライト制御ユニット"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、不具合品に該当するリヤライトを良品に交換する。",
+    "correction_detail": "全車両において、不具合品に該当するリヤライト（フェンダーリヤライト、テールゲートリヤライト）を良品に交換する。"
+  }
+}

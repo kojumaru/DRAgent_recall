@@ -1,0 +1,66 @@
+{
+  "recall_id": "r8-06-18-005762",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005762.html",
+  "date_text": "令和8年6月18日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002007292.pdf",
+    "https://www.mlit.go.jp/report/press/content/002007293.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002007293.pdf",
+  "metadata": {
+    "notification_number": "外-4201",
+    "notification_date": "2026-06-18",
+    "notifier": "フォルクスワーゲングループジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "フォルクスワーゲン",
+        "model": "ゴルフトゥーラン 1.5/110kW",
+        "type_designation": "3BA-1TDPC",
+        "model_years": [
+          "2024-11-15 to 2025-07-08"
+        ],
+        "affected_count": "8"
+      },
+      {
+        "make": "フォルクスワーゲン",
+        "model": "VW T-CROSS 1.0/85kW",
+        "type_designation": "3BA-C1DKR",
+        "model_years": [
+          "2024-11-15 to 2025-10-04"
+        ],
+        "affected_count": "264"
+      },
+      {
+        "make": "フォルクスワーゲン",
+        "model": "ポロ 1.0/70kW",
+        "type_designation": "3BA-AWDLA",
+        "model_years": [
+          "2025-01-15 to 2025-10-21"
+        ],
+        "affected_count": "163"
+      }
+    ],
+    "defect_system": "電気装置",
+    "defect_location": "デジタルメータークラスター",
+    "defect_description": "デジタルメータークラスターのコントロールユニットにおいて、始動時にメーターが正しく起動せず画面が表示されないことがある。そのため、速度計や警告灯などの表示が確認できなくなるおそれがある。",
+    "root_cause": "制御プログラムの設計検討が不十分なため。",
+    "consequences": [
+      "速度計や警告灯などの表示が確認できなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "デジタルメータークラスター（コントロールユニット）",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "デジタルメータークラスター",
+          "コントロールユニット"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、デジタルメータークラスターのコントロールユニットのプログラムを対策プログラムに書き換える。",
+    "correction_detail": "全車両、デジタルメータークラスターのコントロールユニットのプログラムを対策プログラムに書き換える。"
+  }
+}

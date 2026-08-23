@@ -1,0 +1,48 @@
+{
+  "recall_id": "r8-02-10-005660",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005660.html",
+  "date_text": "令和8年2月10日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001980754.pdf",
+    "https://www.mlit.go.jp/report/press/content/001980755.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001980755.pdf",
+  "metadata": {
+    "notification_number": "外-4137",
+    "notification_date": "2026-02-10",
+    "notifier": "ボルボ・カー・ジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ボルボ",
+        "model": "ボルボ EX30",
+        "type_designation": "ZAA-2E400R",
+        "model_years": [
+          "2023-10-13 to 2024-04-30"
+        ],
+        "affected_count": "2446"
+      }
+    ],
+    "defect_system": "電気装置",
+    "defect_location": "高電圧バッテリー",
+    "defect_description": "高電圧バッテリーのセルモジュールにおいて、製造機器の設定が不適切なため、セルの陽極と負極の容量が不均衡なものがある。そのため、セルモジュール内部で短絡が発生し、異臭やバッテリーの過熱に関する警告が表示されることがある。",
+    "root_cause": "製造機器の設定が不適切なため、セルの陽極と負極の容量が不均衡なものがある。",
+    "consequences": [
+      "熱によるバッテリー異常が発生し、火災に至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "高電圧バッテリー（セルモジュール）",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "高電圧バッテリー",
+          "セルモジュール"
+        ]
+      }
+    ],
+    "correction_summary": "暫定措置として、全車両、ユーザーに注意喚起レターを送付し、車両の充電目標値を70%以下に設定するよう周知を行う。対策が決定次第、恒久対策を実施する。",
+    "correction_detail": "全車両について、ユーザーへ注意喚起レターを送付し、充電目標値を70%以下に設定するよう案内する（暫定措置）。恒久対策は対策内容決定後に実施する。"
+  }
+}

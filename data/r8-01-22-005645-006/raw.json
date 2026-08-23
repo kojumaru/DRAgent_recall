@@ -1,0 +1,68 @@
+{
+  "recall_id": "r8-01-22-005645-006",
+  "parent_recall_id": "r8-01-22-005645",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005645.html",
+  "date_text": "令和8年1月22日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001977676.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "外4128",
+    "notification_date": "2025-12-11",
+    "notifier": "Honda Development & Manufacturing of America, LLC",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ホンダ",
+        "model": "CR-V",
+        "type_designation": "ZBA-ZC8",
+        "model_years": [
+          "2024-09-03 to 2025-02-11"
+        ],
+        "affected_count": "70"
+      }
+    ],
+    "defect_system": "燃料電池システム（燃料電池スタック冷却系）",
+    "defect_location": "燃料電池スタック（エンドユニット冷却水路／冷却水ジョイントホルダ部）",
+    "defect_description": "燃料電池スタックにおいて、(1)エンドユニット内の冷却水路の防水処理が不適切なため、防水シール剤の充填量が不足しているものがある。そのため、冷却水路のシール性が低くなり冷却水が漏れ、パワーシステム警告灯が点灯し、そのまま使用を続けると、燃料電池の出力が低下し加速不良となり、最悪の場合、発電を停止し、走行継続不可警告灯が点灯して走行不能となるおそれがある。(2)冷却水ジョイントの検査工程が不十分なため、冷却水ジョイントホルダ部のシール性が不足しているものがある。そのため、ホルダ部より冷却水が漏れ、パワーシステム警告灯が点灯し、そのまま使用を続けると、燃料電池の出力が低下し加速不良となり、最悪の場合、発電を停止し、走行継続不可警告灯が点灯して走行不能となるおそれがある。",
+    "root_cause": "エンドユニット内冷却水路の防水処理不適切による防水シール剤充填量不足／冷却水ジョイントの検査工程不十分によるジョイントホルダ部シール性不足。",
+    "consequences": [
+      "冷却水が漏れる",
+      "パワーシステム警告灯が点灯",
+      "燃料電池の出力低下により加速不良となるおそれ",
+      "最悪の場合、発電を停止し走行不能となるおそれ"
+    ],
+    "parts": [
+      {
+        "part_name": "燃料電池スタック",
+        "part_number": null,
+        "system_path": [
+          "燃料電池システム",
+          "燃料電池スタック"
+        ]
+      },
+      {
+        "part_name": "エンドユニット（冷却水路防水シール）",
+        "part_number": null,
+        "system_path": [
+          "燃料電池システム",
+          "燃料電池スタック",
+          "エンドユニット"
+        ]
+      },
+      {
+        "part_name": "冷却水ジョイント（ホルダ部）",
+        "part_number": null,
+        "system_path": [
+          "燃料電池システム",
+          "燃料電池スタック",
+          "冷却水ジョイント"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

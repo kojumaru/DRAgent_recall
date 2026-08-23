@@ -1,0 +1,67 @@
+{
+  "recall_id": "r8-02-12-005661",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005661.html",
+  "date_text": "令和8年2月12日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001981373.pdf",
+    "https://www.mlit.go.jp/report/press/content/001981374.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001981374.pdf",
+  "metadata": {
+    "notification_number": "外-4134",
+    "notification_date": "2026-02-12",
+    "notifier": "BYD Auto Japan株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "BYD",
+        "model": "ATTO 3",
+        "type_designation": "ZAA-SC2EXSQ",
+        "model_years": [
+          "2022-12-29 to 2023-09-07"
+        ],
+        "affected_count": "1097"
+      }
+    ],
+    "defect_system": "灯火装置",
+    "defect_location": "リヤコンビネーションランプ",
+    "defect_description": "リヤコンビネーションランプにおいて、作業指示が不適切なため、灯火器内部の乾燥剤が適切な位置に貼り付けられていないものがある。そのため、湿気により膨張した乾燥剤が回路基板と干渉し、回路が短絡して断線を生じ、後部方向指示器が高速点滅、間欠点灯または不灯となるおそれがある。",
+    "root_cause": "作業指示が不適切なため、灯火器内部の乾燥剤が適切な位置に貼り付けられていないものがある。",
+    "consequences": [
+      "後部方向指示器が高速点滅となるおそれがある",
+      "後部方向指示器が間欠点灯となるおそれがある",
+      "後部方向指示器が不灯となるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "リヤコンビネーションランプ",
+        "part_number": null,
+        "system_path": [
+          "灯火装置",
+          "リヤコンビネーションランプ"
+        ]
+      },
+      {
+        "part_name": "乾燥剤",
+        "part_number": null,
+        "system_path": [
+          "灯火装置",
+          "リヤコンビネーションランプ",
+          "乾燥剤"
+        ]
+      },
+      {
+        "part_name": "回路基板",
+        "part_number": null,
+        "system_path": [
+          "灯火装置",
+          "リヤコンビネーションランプ",
+          "回路基板"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、当該リヤコンビネーションランプを良品と交換する。",
+    "correction_detail": "全車両、当該リヤコンビネーションランプを良品と交換する。"
+  }
+}

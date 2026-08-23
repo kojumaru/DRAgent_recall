@@ -1,0 +1,102 @@
+{
+  "recall_id": "r8-06-11-005756",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005756.html",
+  "date_text": "令和8年6月11日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002005686.pdf",
+    "https://www.mlit.go.jp/report/press/content/002005687.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002005687.pdf",
+  "metadata": {
+    "notification_number": "外-4196",
+    "notification_date": "2026-06-11",
+    "notifier": "Stellantis ジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "プジョー",
+        "model": "リフター",
+        "type_designation": "3DA-K9PYH01",
+        "model_years": [
+          "2025-09-20 to 2025-12-15"
+        ],
+        "affected_count": "205"
+      },
+      {
+        "make": "プジョー",
+        "model": "リフター",
+        "type_designation": "3DA-K9PYH01L",
+        "model_years": [
+          "2025-09-20 to 2025-12-15"
+        ],
+        "affected_count": "265"
+      },
+      {
+        "make": "シトロエン",
+        "model": "ベルランゴ",
+        "type_designation": "3DA-K9CYH01",
+        "model_years": [
+          "2025-09-20 to 2025-11-20"
+        ],
+        "affected_count": "181"
+      },
+      {
+        "make": "シトロエン",
+        "model": "ベルランゴ",
+        "type_designation": "3DA-K9CYH01L",
+        "model_years": [
+          "2025-09-20 to 2025-11-20"
+        ],
+        "affected_count": "296"
+      },
+      {
+        "make": "フィアット",
+        "model": "ドブロ",
+        "type_designation": "3DA-K9FYH01",
+        "model_years": [
+          "2025-10-22 to 2025-11-27"
+        ],
+        "affected_count": "14"
+      },
+      {
+        "make": "フィアット",
+        "model": "ドブロ",
+        "type_designation": "3DA-K9FYH01L",
+        "model_years": [
+          "2025-11-27 to 2025-11-27"
+        ],
+        "affected_count": "40"
+      }
+    ],
+    "defect_system": "原動機",
+    "defect_location": "コモンレール",
+    "defect_description": "エンジンのコモンレールにおいて、燃料パイプ接続部を加工する機械の管理が不適切なため、シール性が不足しているものがある。そのため、そのまま使用を続けると、当該部位から燃料が漏れ、最悪の場合、火災に至るおそれがある。",
+    "root_cause": "燃料パイプ接続部を加工する機械の管理が不適切なため、シール性が不足しているものがある。",
+    "consequences": [
+      "当該部位から燃料が漏れる",
+      "最悪の場合、火災に至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "コモンレール",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "コモンレール"
+        ]
+      },
+      {
+        "part_name": "燃料パイプ",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "コモンレール",
+          "燃料パイプ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、コモンレールの刻印と製造ラベルを点検し、該当する場合はコモンレールを良品に交換し、燃料パイプを新品に交換する。",
+    "correction_detail": "全車両について、コモンレールの刻印および製造ラベルを点検し、該当するものはコモンレールを良品に交換するとともに、燃料パイプを新品に交換する。"
+  }
+}

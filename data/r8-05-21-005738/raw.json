@@ -1,0 +1,56 @@
+{
+  "recall_id": "r8-05-21-005738",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005738.html",
+  "date_text": "令和8年5月21日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002001674.pdf",
+    "https://www.mlit.go.jp/report/press/content/002001675.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002001675.pdf",
+  "metadata": {
+    "notification_number": "外-4185",
+    "notification_date": "2026-05-21",
+    "notifier": "Stellantis ジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "アルファロメオ",
+        "model": "ジュリア",
+        "type_designation": "7BA-95229",
+        "model_years": [
+          "2024-11-14 to 2025-12-15"
+        ],
+        "affected_count": "154"
+      }
+    ],
+    "defect_system": "電気装置",
+    "defect_location": "ヘッドライトハーネス（右ヘッドライト）",
+    "defect_description": "右ヘッドライトのハーネスにおいて、ハーネス配索における作業指示が不適切なため、右前輪ホイールインナートリムと干渉しているものがある。そのため、当該ハーネスが車両振動により摩耗して損傷し、そのまま使用を続けると、最悪の場合、右ヘッドライトが点灯しなくなるおそれがある。",
+    "root_cause": "ハーネス配索における作業指示が不適切なため、右ヘッドライトハーネスが右前輪ホイールインナートリムと干渉するものがある。",
+    "consequences": [
+      "最悪の場合、右ヘッドライトが点灯しなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ヘッドライトハーネス（右）",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "ヘッドライトハーネス"
+        ]
+      },
+      {
+        "part_name": "右前輪ホイールインナートリム",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "ヘッドライトハーネス",
+          "干渉部位（ホイールインナートリム）"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ハーネスを適切に固定する。ハーネスを点検して損傷している場合は補修し、ホイールインナートリムが損傷している場合は新品に交換する。",
+    "correction_detail": "全車両で右ヘッドライトハーネスの固定状態（配索）を是正し、適切に固定する。あわせて当該ハーネスを点検し、摩耗等の損傷が認められる場合は補修する。右前輪ホイールインナートリムに損傷がある場合は新品に交換する。"
+  }
+}

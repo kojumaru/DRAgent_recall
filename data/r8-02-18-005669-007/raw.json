@@ -1,0 +1,49 @@
+{
+  "recall_id": "r8-02-18-005669-007",
+  "parent_recall_id": "r8-02-18-005669",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005669.html",
+  "date_text": "令和8年2月18日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001982127.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "外4140",
+    "notification_date": "2026-01-23",
+    "notifier": "井関農機株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "キセキ",
+        "model": "T5S145 他",
+        "type_designation": "一",
+        "model_years": [
+          "2023-06-28 to 2024-12-03"
+        ],
+        "affected_count": "11"
+      }
+    ],
+    "defect_system": "駆動装置（4WD）",
+    "defect_location": "4WDシャフトカバー",
+    "defect_description": "農耕トラクタの4WDシャフトカバーにおいて、取付部の強度が不足している。そのため、そのまま使用を続けると、当該部位に亀裂が発生して破断し、最悪の場合、走行中に脱落して他の交通の妨げとなるおそれがある。",
+    "root_cause": "設計検討が不十分なため。",
+    "consequences": [
+      "亀裂が発生して破断するおそれがある",
+      "最悪の場合、走行中に脱落して他の交通の妨げとなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "4WDシャフトカバー",
+        "part_number": null,
+        "system_path": [
+          "駆動装置",
+          "4WD",
+          "4WDシャフトカバー"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

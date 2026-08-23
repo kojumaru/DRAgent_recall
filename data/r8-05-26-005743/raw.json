@@ -1,0 +1,75 @@
+{
+  "recall_id": "r8-05-26-005743",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005743.html",
+  "date_text": "令和8年5月26日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002002418.pdf",
+    "https://www.mlit.go.jp/report/press/content/002002419.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002002419.pdf",
+  "metadata": {
+    "notification_number": "外-4193",
+    "notification_date": "2026-05-26",
+    "notifier": "ジャガー・ランドローバー・ジャパン",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ランドローバー",
+        "model": "ディスカバリー 3",
+        "type_designation": "ABA-LA40A",
+        "model_years": [
+          "2005-02-10 to 2005-07-01"
+        ],
+        "affected_count": "93"
+      },
+      {
+        "make": "ランドローバー",
+        "model": "ディスカバリー 3",
+        "type_designation": "ABA-LA44",
+        "model_years": [
+          "2005-01-21 to 2005-06-25"
+        ],
+        "affected_count": "50"
+      },
+      {
+        "make": "ランドローバー",
+        "model": "レンジローバー スポーツ",
+        "type_designation": "ABA-LS44",
+        "model_years": [
+          "2005-06-19 to 2005-06-19"
+        ],
+        "affected_count": "1"
+      }
+    ],
+    "defect_system": "車体及び車枠",
+    "defect_location": "牽引フック",
+    "defect_description": "純正アクセサリーの牽引フックにおいて、設計検討が不十分なため、車両受側の中で遊びがあるものがある。そのため、車両牽引時の走行等の振動により、牽引フック取付け部でがたが発生して牽引フックが摩耗し、最悪の場合、被牽引車両が外れるおそれがある。",
+    "root_cause": "設計検討が不十分なため、車両受側の中で遊びがあるものがある。",
+    "consequences": [
+      "車両牽引時の走行等の振動により牽引フック取付け部でがたが発生する",
+      "牽引フックが摩耗する",
+      "最悪の場合、被牽引車両が外れるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "牽引フック",
+        "part_number": null,
+        "system_path": [
+          "車体及び車枠",
+          "牽引フック"
+        ]
+      },
+      {
+        "part_name": "サポートブラケットキット",
+        "part_number": null,
+        "system_path": [
+          "車体及び車枠",
+          "牽引フック"
+        ]
+      }
+    ],
+    "correction_summary": "全車両の使用者に対し、サポートブラケットキットを配布する。なお、サポートブラケットキットの装着は使用者にて行う。",
+    "correction_detail": "対象車両の使用者へサポートブラケットキットを配布し、使用者自身が装着する。"
+  }
+}

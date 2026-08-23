@@ -1,0 +1,224 @@
+{
+  "recall_id": "r8-04-21-005717",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005717.html",
+  "date_text": "令和8年4月21日",
+  "month": 4,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001997261.pdf",
+    "https://www.mlit.go.jp/report/press/content/001997262.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001997262.pdf",
+  "metadata": {
+    "notification_number": "5801",
+    "notification_date": "2026-04-21",
+    "notifier": "UDトラックス株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD4BA 2PG-CD4BA改",
+        "model_years": [
+          "2018-12-19 to 2022-08-26"
+        ],
+        "affected_count": "141"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD4CA 2PG-CD4CA改",
+        "model_years": [
+          "2018-12-19 to 2022-09-02"
+        ],
+        "affected_count": "193"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD4EA 2PG-CD4EA改",
+        "model_years": [
+          "2022-09-20 to 2025-12-02"
+        ],
+        "affected_count": "221"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD4FA 2PG-CD4FA改",
+        "model_years": [
+          "2022-09-28 to 2025-12-05"
+        ],
+        "affected_count": "523"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD5AL 2PG-CD5AL改",
+        "model_years": [
+          "2017-09-25 to 2022-07-25"
+        ],
+        "affected_count": "69"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD5BA",
+        "model_years": [
+          "2017-06-09 to 2022-07-30"
+        ],
+        "affected_count": "505"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD5BL 2PG-CD5BL改",
+        "model_years": [
+          "2017-09-06 to 2022-07-29"
+        ],
+        "affected_count": "445"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD5CA",
+        "model_years": [
+          "2017-04-28 to 2022-08-08"
+        ],
+        "affected_count": "5771"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD5CE",
+        "model_years": [
+          "2018-02-22 to 2022-07-29"
+        ],
+        "affected_count": "644"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD5CL 2PG-CD5CL改",
+        "model_years": [
+          "2017-08-03 to 2022-07-30"
+        ],
+        "affected_count": "532"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD5DL 2RG-CD5DL 2RG-CD5DL改",
+        "model_years": [
+          "2022-08-03 to 2025-11-27"
+        ],
+        "affected_count": "54"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD5EA 2RG-CD5EA",
+        "model_years": [
+          "2022-07-27 to 2025-11-26"
+        ],
+        "affected_count": "277"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD5EL 2RG-CD5EL 2RG-CD5EL改",
+        "model_years": [
+          "2022-07-26 to 2025-11-28"
+        ],
+        "affected_count": "288"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD5FA 2RG-CD5FA 2RG-CD5FA改",
+        "model_years": [
+          "2022-07-26 to 2026-01-05"
+        ],
+        "affected_count": "3002"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD5FE 2RG-CD5FE",
+        "model_years": [
+          "2022-07-27 to 2025-12-01"
+        ],
+        "affected_count": "323"
+      },
+      {
+        "make": "UDトラックス",
+        "model": "クオン",
+        "type_designation": "2PG-CD5FL 2RG-CD5FL",
+        "model_years": [
+          "2022-08-09 to 2025-12-03"
+        ],
+        "affected_count": "300"
+      }
+    ],
+    "defect_system": "走行装置",
+    "defect_location": "ハブベアリング（非駆動の後後軸ハブアッセンブリ）",
+    "defect_description": "非駆動の後後軸ハブアッセンブリにおいて、車両振動等により摩耗したロックワッシャが抜け出し、ハブカバーと干渉し異音が発生することがある。そのまま使用を続けると、干渉により発生した摩耗粉がハブベアリング内に侵入してハブベアリングの焼付きが発生し、最悪の場合、火災に至るおそれがある。",
+    "root_cause": "非駆動の後後軸ハブアッセンブリにおいて、ロックワッシャの摩耗に関する評価が不十分なため。",
+    "consequences": [
+      "ハブカバーと干渉し異音が発生する",
+      "摩耗粉がハブベアリング内に侵入し焼付きが発生する",
+      "最悪の場合、火災に至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ハブベアリング",
+        "part_number": null,
+        "system_path": [
+          "走行装置",
+          "ハブベアリング"
+        ]
+      },
+      {
+        "part_name": "ロックワッシャ",
+        "part_number": null,
+        "system_path": [
+          "走行装置",
+          "後後軸ハブアッセンブリ"
+        ]
+      },
+      {
+        "part_name": "リテーナリング",
+        "part_number": null,
+        "system_path": [
+          "走行装置",
+          "後後軸ハブアッセンブリ"
+        ]
+      },
+      {
+        "part_name": "シーリングリング",
+        "part_number": null,
+        "system_path": [
+          "走行装置",
+          "後後軸ハブアッセンブリ"
+        ]
+      },
+      {
+        "part_name": "ハブナット（非駆動の後後軸）",
+        "part_number": null,
+        "system_path": [
+          "走行装置",
+          "後後軸ハブアッセンブリ"
+        ]
+      },
+      {
+        "part_name": "ハブアッセンブリ",
+        "part_number": null,
+        "system_path": [
+          "走行装置",
+          "後後軸ハブアッセンブリ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、非駆動の後後軸ハブナットにベアリンググリスを塗布したうえで、ロックワッシャ、リテーナリング、シーリングリングを新品に交換する。ロックワッシャの抜け出しが確認された場合には、当該ハブアッセンブリ一式を新品に交換する。",
+    "correction_detail": "全車両について、非駆動の後後軸ハブナットにベアリンググリスを塗布し、ロックワッシャ／リテーナリング／シーリングリングを新品に交換する。点検の結果、ロックワッシャの抜け出しが確認された場合は、当該ハブアッセンブリ一式を新品へ交換する。"
+  }
+}

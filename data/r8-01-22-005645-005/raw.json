@@ -1,0 +1,49 @@
+{
+  "recall_id": "r8-01-22-005645-005",
+  "parent_recall_id": "r8-01-22-005645",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005645.html",
+  "date_text": "令和8年1月22日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001977676.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "外4126",
+    "notification_date": "2025-12-11",
+    "notifier": "ヤンマーアグリ株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ジョンディア",
+        "model": "JD-7R350 他",
+        "type_designation": "不明",
+        "model_years": [
+          "2020-09-23 to 2024-07-16"
+        ],
+        "affected_count": "26"
+      }
+    ],
+    "defect_system": "制動装置（油圧回路）",
+    "defect_location": "ブレーキサプライ配管の一部（油圧ホース）",
+    "defect_description": "農耕用トラクタの油圧回路において、ブレーキサプライ配管の一部である油圧ホースのカシメ処理が不適切なため、油圧ホースのカシメ強度が不足しているものがある。そのため、そのまま使用を続けると油漏れが発生し、最悪の場合、ブレーキが効かなくなるおそれがある。",
+    "root_cause": "油圧ホースのカシメ処理不適切によりカシメ強度不足。",
+    "consequences": [
+      "油漏れが発生するおそれ",
+      "最悪の場合、ブレーキが効かなくなるおそれ"
+    ],
+    "parts": [
+      {
+        "part_name": "油圧ホース（ブレーキサプライ配管の一部）",
+        "part_number": null,
+        "system_path": [
+          "制動装置（油圧回路）",
+          "ブレーキサプライ配管",
+          "油圧ホース"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

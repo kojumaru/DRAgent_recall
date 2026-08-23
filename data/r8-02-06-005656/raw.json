@@ -1,0 +1,711 @@
+{
+  "recall_id": "r8-02-06-005656",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005656.html",
+  "date_text": "令和8年2月6日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001980232.pdf",
+    "https://www.mlit.go.jp/report/press/content/001980233.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001980233.pdf",
+  "metadata": {
+    "notification_number": "5763",
+    "notification_date": "2026-02-06",
+    "notifier": "株式会社 クボタ",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "クボタ",
+        "model": "MR600H",
+        "type_designation": "―",
+        "model_years": [
+          "2021-09-24 to 2025-06-02"
+        ],
+        "affected_count": "114"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR600HGS",
+        "type_designation": "―",
+        "model_years": [
+          "2023-03-08 to 2025-03-17"
+        ],
+        "affected_count": "19"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV601H",
+        "type_designation": "―",
+        "model_years": [
+          "2022-05-11 to 2025-03-20"
+        ],
+        "affected_count": "28"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV601HF",
+        "type_designation": "―",
+        "model_years": [
+          "2023-08-02 to 2024-01-18"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR650H",
+        "type_designation": "―",
+        "model_years": [
+          "2021-10-01 to 2025-04-07"
+        ],
+        "affected_count": "165"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR650H-PC",
+        "type_designation": "―",
+        "model_years": [
+          "2022-03-10 to 2025-04-02"
+        ],
+        "affected_count": "27"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR650HGS",
+        "type_designation": "―",
+        "model_years": [
+          "2023-03-07 to 2025-04-03"
+        ],
+        "affected_count": "30"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR650HGS-PC",
+        "type_designation": "―",
+        "model_years": [
+          "2023-07-20 to 2025-04-22"
+        ],
+        "affected_count": "4"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV651H",
+        "type_designation": "―",
+        "model_years": [
+          "2021-10-15 to 2025-06-04"
+        ],
+        "affected_count": "29"
+      },
+      {
+        "make": "クボタ",
+        "model": "GVK651H",
+        "type_designation": "―",
+        "model_years": [
+          "2021-10-18 to 2025-04-03"
+        ],
+        "affected_count": "5"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV651HF",
+        "type_designation": "―",
+        "model_years": [
+          "2023-08-02 to 2025-03-14"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "クボタ",
+        "model": "GVK651HF",
+        "type_designation": "―",
+        "model_years": [
+          "2023-07-21 to 2023-07-21"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "クボタ",
+        "model": "T2. 650H",
+        "type_designation": "―",
+        "model_years": [
+          "2021-10-21 to 2025-06-11"
+        ],
+        "affected_count": "238"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR700H",
+        "type_designation": "―",
+        "model_years": [
+          "2021-09-09 to 2025-06-03"
+        ],
+        "affected_count": "843"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR700H-PC",
+        "type_designation": "―",
+        "model_years": [
+          "2021-09-14 to 2025-05-15"
+        ],
+        "affected_count": "189"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR700HGS",
+        "type_designation": "―",
+        "model_years": [
+          "2023-01-25 to 2025-06-05"
+        ],
+        "affected_count": "258"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR700HGS-PC",
+        "type_designation": "―",
+        "model_years": [
+          "2023-01-27 to 2025-05-26"
+        ],
+        "affected_count": "124"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV701H",
+        "type_designation": "―",
+        "model_years": [
+          "2022-03-01 to 2025-06-12"
+        ],
+        "affected_count": "65"
+      },
+      {
+        "make": "クボタ",
+        "model": "GVK701H",
+        "type_designation": "―",
+        "model_years": [
+          "2022-05-13 to 2024-09-05"
+        ],
+        "affected_count": "11"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV701HF",
+        "type_designation": "―",
+        "model_years": [
+          "2023-03-09 to 2025-03-18"
+        ],
+        "affected_count": "9"
+      },
+      {
+        "make": "クボタ",
+        "model": "GVK701HF",
+        "type_designation": "―",
+        "model_years": [
+          "2023-03-09 to 2023-07-25"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR800",
+        "type_designation": "―",
+        "model_years": [
+          "2019-02-08 to 2020-01-16",
+          "2020-02-17 to 2025-05-16"
+        ],
+        "affected_count": "181"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR800-PC",
+        "type_designation": "―",
+        "model_years": [
+          "2019-02-01 to 2021-04-07",
+          "2020-01-16 to 2025-03-11"
+        ],
+        "affected_count": "62"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV800",
+        "type_designation": "―",
+        "model_years": [
+          "2019-07-04 to 2019-07-04",
+          "2020-01-09 to 2025-01-14"
+        ],
+        "affected_count": "26"
+      },
+      {
+        "make": "クボタ",
+        "model": "GVK800",
+        "type_designation": "―",
+        "model_years": [
+          "2019-06-07 to 2019-06-07",
+          "2023-04-21 to 2023-04-21"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR900",
+        "type_designation": "YDP-MRB",
+        "model_years": [
+          "2019-02-06 to 2019-12-03",
+          "2020-01-17 to 2025-05-15"
+        ],
+        "affected_count": "105"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV900",
+        "type_designation": "YDP-MRB",
+        "model_years": [
+          "2019-11-11 to 2019-11-11",
+          "2020-01-10 to 2025-05-19"
+        ],
+        "affected_count": "19"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR900-PC",
+        "type_designation": "―",
+        "model_years": [
+          "2019-02-15 to 2019-07-04",
+          "2020-03-11 to 2024-11-15"
+        ],
+        "affected_count": "16"
+      },
+      {
+        "make": "クボタ",
+        "model": "GVK900",
+        "type_designation": "―",
+        "model_years": [
+          "2022-03-01 to 2024-04-08"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000",
+        "type_designation": "YDR-MRA",
+        "model_years": [
+          "2019-01-25 to 2019-12-24",
+          "2020-01-10 to 2025-05-14"
+        ],
+        "affected_count": "511"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV1000",
+        "type_designation": "YDR-MRA",
+        "model_years": [
+          "2019-05-11 to 2019-09-04",
+          "2020-02-17 to 2025-06-05"
+        ],
+        "affected_count": "81"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000-PC",
+        "type_designation": "―",
+        "model_years": [
+          "2019-01-21 to 2019-12-24",
+          "2020-01-10 to 2025-04-18"
+        ],
+        "affected_count": "347"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000-AT",
+        "type_designation": "―",
+        "model_years": [
+          "2019-05-20 to 2019-12-20",
+          "2020-01-08 to 2025-01-15"
+        ],
+        "affected_count": "119"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000-PCAT",
+        "type_designation": "―",
+        "model_years": [
+          "2019-05-24 to 2019-09-09",
+          "2020-01-15 to 2024-08-23"
+        ],
+        "affected_count": "16"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000A-A",
+        "type_designation": "―",
+        "model_years": [
+          "2019-10-31 to 2019-11-28",
+          "2020-08-27 to 2022-02-09"
+        ],
+        "affected_count": "19"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000A-PC-A",
+        "type_designation": "―",
+        "model_years": [
+          "2019-10-31 to 2019-12-23",
+          "2020-08-25 to 2022-11-29"
+        ],
+        "affected_count": "26"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000A-OP",
+        "type_designation": "―",
+        "model_years": [
+          "2019-07-03 to 2019-07-30",
+          "2020-10-26 to 2023-01-20"
+        ],
+        "affected_count": "21"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000A-PC-OP",
+        "type_designation": "―",
+        "model_years": [
+          "2019-07-03 to 2019-08-29",
+          "2020-10-28 to 2022-01-24"
+        ],
+        "affected_count": "11"
+      },
+      {
+        "make": "クボタ",
+        "model": "GVK1000",
+        "type_designation": "―",
+        "model_years": [
+          "2019-05-11 to 2019-07-20",
+          "2020-03-11 to 2025-06-06"
+        ],
+        "affected_count": "42"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR800H",
+        "type_designation": "―",
+        "model_years": [
+          "2019-11-01 to 2019-11-07",
+          "2020-03-04 to 2025-05-27"
+        ],
+        "affected_count": "281"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR800H-PC",
+        "type_designation": "―",
+        "model_years": [
+          "2020-03-11 to 2025-04-29"
+        ],
+        "affected_count": "110"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR800HGS",
+        "type_designation": "―",
+        "model_years": [
+          "2024-10-04 to 2025-05-20"
+        ],
+        "affected_count": "12"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR800HGS-PC",
+        "type_designation": "―",
+        "model_years": [
+          "2025-03-21 to 2025-04-24"
+        ],
+        "affected_count": "4"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV800H",
+        "type_designation": "―",
+        "model_years": [
+          "2020-01-16 to 2025-03-19"
+        ],
+        "affected_count": "16"
+      },
+      {
+        "make": "クボタ",
+        "model": "GVK800H",
+        "type_designation": "―",
+        "model_years": [
+          "2020-04-20 to 2024-12-09"
+        ],
+        "affected_count": "6"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR90OH",
+        "type_designation": "YDP-MRD",
+        "model_years": [
+          "2019-11-08 to 2019-11-08",
+          "2020-03-06 to 2025-05-22"
+        ],
+        "affected_count": "119"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV90OH",
+        "type_designation": "YDP-MRD",
+        "model_years": [
+          "2021-01-11 to 2023-01-20"
+        ],
+        "affected_count": "6"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR900H-PC",
+        "type_designation": "―",
+        "model_years": [
+          "2019-11-07 to 2019-11-07",
+          "2020-03-24 to 2025-04-07"
+        ],
+        "affected_count": "31"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR900HGS",
+        "type_designation": "―",
+        "model_years": [
+          "2025-03-11 to 2025-03-13"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000H",
+        "type_designation": "―",
+        "model_years": [
+          "2019-10-25 to 2019-11-06",
+          "2020-02-27 to 2025-06-10"
+        ],
+        "affected_count": "331"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000H-PC",
+        "type_designation": "―",
+        "model_years": [
+          "2019-10-31 to 2020-01-09",
+          "2020-03-02 to 2025-05-20"
+        ],
+        "affected_count": "141"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000AH-A",
+        "type_designation": "―",
+        "model_years": [
+          "2022-02-22 to 2025-02-26"
+        ],
+        "affected_count": "43"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000AH-PC-A",
+        "type_designation": "―",
+        "model_years": [
+          "2022-02-22 to 2025-04-21"
+        ],
+        "affected_count": "30"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000AH-OP",
+        "type_designation": "―",
+        "model_years": [
+          "2021-11-15 to 2025-03-07"
+        ],
+        "affected_count": "129"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000AH-PC-OP",
+        "type_designation": "―",
+        "model_years": [
+          "2021-11-15 to 2025-04-10"
+        ],
+        "affected_count": "44"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000HGS",
+        "type_designation": "―",
+        "model_years": [
+          "2024-10-01 to 2025-04-24"
+        ],
+        "affected_count": "21"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1000HGS-PC",
+        "type_designation": "―",
+        "model_years": [
+          "2024-10-02 to 2025-05-16"
+        ],
+        "affected_count": "5"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV1000H",
+        "type_designation": "―",
+        "model_years": [
+          "2020-05-19 to 2025-03-14"
+        ],
+        "affected_count": "9"
+      },
+      {
+        "make": "クボタ",
+        "model": "GVK1000H",
+        "type_designation": "―",
+        "model_years": [
+          "2024-11-15 to 2024-11-15"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV1000HF",
+        "type_designation": "―",
+        "model_years": [
+          "2025-04-04 to 2025-04-04"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1050H",
+        "type_designation": "YDR-MRC",
+        "model_years": [
+          "2019-10-23 to 2019-11-01",
+          "2020-06-05 to 2025-05-23"
+        ],
+        "affected_count": "548"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV1050H",
+        "type_designation": "YDR-MRC",
+        "model_years": [
+          "2020-06-08 to 2025-02-06"
+        ],
+        "affected_count": "32"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1050H-PC",
+        "type_designation": "―",
+        "model_years": [
+          "2019-10-23 to 2019-11-06",
+          "2020-06-03 to 2025-05-28"
+        ],
+        "affected_count": "387"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1050HGS",
+        "type_designation": "―",
+        "model_years": [
+          "2024-09-23 to 2025-05-26"
+        ],
+        "affected_count": "39"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1050HGS-PC",
+        "type_designation": "―",
+        "model_years": [
+          "2024-09-24 to 2025-05-19"
+        ],
+        "affected_count": "31"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1050H-AT",
+        "type_designation": "―",
+        "model_years": [
+          "2020-01-31 to 2025-04-28"
+        ],
+        "affected_count": "82"
+      },
+      {
+        "make": "クボタ",
+        "model": "MR1050H-PCAT",
+        "type_designation": "―",
+        "model_years": [
+          "2020-01-22 to 2024-08-28"
+        ],
+        "affected_count": "27"
+      },
+      {
+        "make": "クボタ",
+        "model": "GVK 1050H",
+        "type_designation": "―",
+        "model_years": [
+          "2020-01-30 to 2024-09-10"
+        ],
+        "affected_count": "7"
+      },
+      {
+        "make": "クボタ",
+        "model": "GV1050HF",
+        "type_designation": "―",
+        "model_years": [
+          "2024-11-20 to 2024-11-20"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "クボタ",
+        "model": "GVK1050HF",
+        "type_designation": "―",
+        "model_years": [
+          "2024-11-18 to 2024-11-18"
+        ],
+        "affected_count": "1"
+      }
+    ],
+    "defect_system": "原動機・動力伝達装置",
+    "defect_location": "シャトルバルブ（前後進制御用電磁バルブ）",
+    "defect_description": "農耕トラクタの前後進制御用電磁バルブ(シャトルバルブ)において、検出スイッチの誤作動でエラーが発報し、フェールセーフ機能により走行停止することがある。また、そのまま使用を続けると、走行停止後に走行不能に至るおそれがある。",
+    "root_cause": "1 シャトルバルブ内部の構造が不適切なため、バルブ内部に発生した極微小な油圧の圧力差によりスイッチ作動部部品が押されることで、検出スイッチが誤作動する。2 設計検討が不十分なため、検出スイッチが油浸されることで、検出スイッチ内部の接点に有機物が発生し、導通不良を引き起こすことで、検出スイッチが誤作動する。",
+    "consequences": [
+      "フェールセーフ機能により走行停止することがある",
+      "そのまま使用を続けると、走行停止後に走行不能に至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "シャトルバルブ",
+        "part_number": null,
+        "system_path": [
+          "原動機・動力伝達装置",
+          "シャトルバルブ"
+        ]
+      },
+      {
+        "part_name": "検出スイッチ作動部部品",
+        "part_number": null,
+        "system_path": [
+          "原動機・動力伝達装置",
+          "シャトルバルブ",
+          "検出スイッチ作動部"
+        ]
+      },
+      {
+        "part_name": "検出スイッチ",
+        "part_number": null,
+        "system_path": [
+          "原動機・動力伝達装置",
+          "シャトルバルブ",
+          "検出スイッチ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両について、シャトルバルブの検出スイッチ作動部の部品を対策部品に交換し、対策プログラムに書き換える。",
+    "correction_detail": "1 全車両について、シャトルバルブの検出スイッチ作動部の部品を対策部品に交換する。2 全車両について、対策プログラムに書き換える。"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "recall_id": "r8-06-02-005750",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005750.html",
+  "date_text": "令和8年6月2日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002004234.pdf",
+    "https://www.mlit.go.jp/report/press/content/002004235.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002004235.pdf",
+  "metadata": {
+    "notification_number": "5825",
+    "notification_date": "2026-06-02",
+    "notifier": "ヤマハ発動機株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ヤマハ",
+        "model": "XSR125",
+        "type_designation": "8BJ-RE46J",
+        "model_years": [
+          "2025-12-11 to 2026-03-12"
+        ],
+        "affected_count": "119"
+      }
+    ],
+    "defect_system": "車載式故障診断装置",
+    "defect_location": "エンジンコントロールユニット",
+    "defect_description": "車載式故障診断装置において、外部診断機(スキャンツール)にエンジン停止時の負荷計算値が正しく表示されない。そのため、保安基準に適合しない。",
+    "root_cause": "エンジンコントロールユニットのプログラム検討が不十分なため。",
+    "consequences": [
+      "保安基準に適合しない"
+    ],
+    "parts": [
+      {
+        "part_name": "エンジンコントロールユニット",
+        "part_number": null,
+        "system_path": [
+          "車載式故障診断装置",
+          "エンジンコントロールユニット"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、エンジンコントロールユニットのプログラムを対策仕様に書き換える。",
+    "correction_detail": "全車両について、エンジンコントロールユニットのプログラムを対策仕様に書き換える。"
+  }
+}

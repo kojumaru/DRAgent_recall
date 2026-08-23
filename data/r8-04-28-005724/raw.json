@@ -1,0 +1,56 @@
+{
+  "recall_id": "r8-04-28-005724",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005724.html",
+  "date_text": "令和8年4月28日",
+  "month": 4,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001998463.pdf",
+    "https://www.mlit.go.jp/report/press/content/001998464.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001998464.pdf",
+  "metadata": {
+    "notification_number": "外-4176",
+    "notification_date": "2026-04-28",
+    "notifier": "ジャガー・ランドローバー・ジャパン",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ジャガー",
+        "model": "I-PACE",
+        "type_designation": "ZAA-DH1AA",
+        "model_years": [
+          "2018-09-17 to 2020-07-15"
+        ],
+        "affected_count": "230"
+      },
+      {
+        "make": "ジャガー",
+        "model": "I-PACE",
+        "type_designation": "ZAA-DH1CA",
+        "model_years": [
+          "2018-04-23 to 2019-09-25"
+        ],
+        "affected_count": "73"
+      }
+    ],
+    "defect_system": "電動機",
+    "defect_location": "バッテリー エネルギー コントロール モジュール",
+    "defect_description": "令和5年7月26日付け届出番号「外ー3647」及び、令和5年12月14日付け届出番号「外ー3729」のリコール作業にて、バッテリー・エネルギー・コントロール・モジュールの制御プログラムを書き換えた電動機の電源装置において、車両火災が発生したものがある。",
+    "root_cause": "原因は判明していないが、同タイプの電源装置は、バッテリーパックアッセンブリ内のリチウムイオン電池より火災が発生するおそれがある。",
+    "consequences": [
+      "車両火災が発生するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "バッテリー エネルギー コントロール モジュール",
+        "part_number": null,
+        "system_path": [
+          "電動機",
+          "バッテリー エネルギー コントロール モジュール"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、暫定措置として、バッテリー・エネルギー・コントロール・モジュールの制御プログラムを書き換え、最大充電容量を約90%に制御する。原因及び対策決定後、恒久対策を実施する。",
+    "correction_detail": "全車両、暫定措置として、バッテリー・エネルギー・コントロール・モジュールの制御プログラムを書き換え、最大充電容量を約90%に制御する。なお、不具合の発生原因及び対策が決定し次第、速やかに恒久対策を実施する。"
+  }
+}

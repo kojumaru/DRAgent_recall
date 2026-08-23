@@ -1,0 +1,58 @@
+{
+  "recall_id": "r8-05-07-005731",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005731.html",
+  "date_text": "令和8年5月7日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001999397.pdf",
+    "https://www.mlit.go.jp/report/press/content/001999415.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001999415.pdf",
+  "metadata": {
+    "notification_number": "5817",
+    "notification_date": "2026-05-07",
+    "notifier": "ヤンマーアグリ株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ヤンマー",
+        "model": null,
+        "type_designation": "-",
+        "model_years": [
+          "2024-10-11 to 2026-03-17"
+        ],
+        "affected_count": "189"
+      },
+      {
+        "make": "ヤンマー",
+        "model": null,
+        "type_designation": "-",
+        "model_years": [
+          "2024-09-27 to 2026-03-17"
+        ],
+        "affected_count": "88"
+      }
+    ],
+    "defect_system": "乗降口",
+    "defect_location": "キャビンドアロック（ドアノブ固定ボルト）",
+    "defect_description": "刈取脱穀作業車のキャビンにおいて、ドアノブの固定ボルトの締め付けトルクが不適切なため、ドアノブ作動時にボルトが次第に緩むことがある。そのため、そのまま使用を続けると、ボルトが脱落し、ドアノブが支点から外れ、キャビン内側および外側からドアの開閉ができなくなるおそれがある。",
+    "root_cause": "ドアノブの固定ボルトの締め付けトルクが不適切なため。",
+    "consequences": [
+      "ボルトが脱落し、ドアノブが支点から外れる",
+      "キャビン内側および外側からドアの開閉ができなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "キャビンドアロック（ドアノブ固定ボルト）",
+        "part_number": null,
+        "system_path": [
+          "乗降口",
+          "キャビンドアロック",
+          "ドアノブ固定ボルト"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ドアノブの固定ボルトを規定トルクで締め付ける。ボルトが脱落している場合は新品のボルトを規定トルクで締め付ける。",
+    "correction_detail": "全車両についてドアノブの固定ボルトを規定トルクで締め付ける。点検の結果、ボルトが脱落している場合は新品ボルトに交換のうえ規定トルクで締め付ける。"
+  }
+}

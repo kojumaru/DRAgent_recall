@@ -1,0 +1,55 @@
+{
+  "recall_id": "r8-01-14-005641",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005641.html",
+  "date_text": "令和8年1月14日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/1_5762_ichiranhyou.pdf",
+    "https://www.mlit.go.jp/report/press/content/2_5762_setumeizu.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/2_5762_setumeizu.pdf",
+  "metadata": {
+    "notification_number": "5762",
+    "notification_date": "2026-01-14",
+    "notifier": "トヨタ車体株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "トヨタ オート ボデー",
+        "model": "コムス",
+        "type_designation": "ZAD-TAK30",
+        "model_years": [
+          "2012-07-04 to 2021-08-02"
+        ],
+        "affected_count": "8536"
+      }
+    ],
+    "defect_system": "制動装置",
+    "defect_location": "パーキングブレーキケーブル",
+    "defect_description": "パーキングブレーキケーブルにおいて、設計検討が不十分なため、パーキングブレーキ操作時にケーブルのカシメ部付近に応力が発生することがある。そのため、パーキングブレーキを繰り返し操作するとケーブルが破断し、最悪の場合、パーキングブレーキが効かなくなり、車両が動き出すおそれがある。",
+    "root_cause": "設計検討が不十分なため、パーキングブレーキ操作時にケーブルのカシメ部付近に応力が発生することがある。",
+    "consequences": [
+      "最悪の場合、パーキングブレーキが効かなくなり、車両が動き出すおそれがある。"
+    ],
+    "parts": [
+      {
+        "part_name": "パーキングブレーキケーブル",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "パーキングブレーキケーブル"
+        ]
+      },
+      {
+        "part_name": "スペーサ",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "パーキングブレーキ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、パーキングブレーキケーブルを対策品と交換し、スペーサを追加する。",
+    "correction_detail": "全車両、パーキングブレーキケーブルを対策品と交換し、スペーサを追加する。"
+  }
+}

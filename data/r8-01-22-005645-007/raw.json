@@ -1,0 +1,58 @@
+{
+  "recall_id": "r8-01-22-005645-007",
+  "parent_recall_id": "r8-01-22-005645",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005645.html",
+  "date_text": "令和8年1月22日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001977676.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "5751",
+    "notification_date": "2025-12-15",
+    "notifier": "東プレ株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "いすぐ",
+        "model": "エルフ",
+        "type_designation": "ZAB-NLR48AM",
+        "model_years": [
+          "2025-03-03 to 2025-05-20"
+        ],
+        "affected_count": "15"
+      }
+    ],
+    "defect_system": "電気装置（冷凍装置用電源配線）",
+    "defect_location": "電源配線接続用カプラー（防水パッキン）",
+    "defect_description": "バッテリー式電気自動車の冷凍装置用電源配線において、設計検討が不十分なため、屈曲した状態で配線を固定したことで、配線接続用カプラーに負荷が掛かり、内部の防水パッキンに隙間が生じることがある。そのため、カプラー内部に水が浸入し電源配線が漏電することで、警告が表示されて車両の保護機能が作動し、車両が完全に停止すると再始動できず、走行不能となる。",
+    "root_cause": "設計検討不十分により屈曲状態で配線固定→カプラーに負荷→防水パッキンに隙間→浸水・漏電。",
+    "consequences": [
+      "カプラー内部に水が浸入し漏電する",
+      "車両の保護機能が作動し車両が停止する",
+      "完全停止後に再始動できず走行不能となる"
+    ],
+    "parts": [
+      {
+        "part_name": "冷凍装置用電源配線",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "冷凍装置用電源配線"
+        ]
+      },
+      {
+        "part_name": "配線接続用カプラー（防水パッキン）",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "冷凍装置用電源配線",
+          "配線接続用カプラー"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

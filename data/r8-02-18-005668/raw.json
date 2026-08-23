@@ -1,0 +1,139 @@
+{
+  "recall_id": "r8-02-18-005668",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005668.html",
+  "date_text": "令和8年2月18日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001982124.pdf",
+    "https://www.mlit.go.jp/report/press/content/001982125.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001982125.pdf",
+  "metadata": {
+    "notification_number": "5774",
+    "notification_date": "2026-02-18",
+    "notifier": "株式会社 トランテックス",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "日野",
+        "model": "日野 プロフィア",
+        "type_designation": "QPG-FW1EZEG / QPG-FW1EZEJ",
+        "model_years": [
+          "2014-05-09 to 2017-08-21"
+        ],
+        "affected_count": "331"
+      },
+      {
+        "make": "日野",
+        "model": "日野 プロフィア",
+        "type_designation": "QPG-FW1EXEG / QPG-FW1EXEJ / QKG-FW1EXEG / QKG-FW1EXEJ",
+        "model_years": [
+          "2014-07-08 to 2017-08-05"
+        ],
+        "affected_count": "176"
+      },
+      {
+        "make": "日野",
+        "model": "日野 プロフィア",
+        "type_designation": "QPG-FW1EBEG",
+        "model_years": [
+          "2014-11-07 to 2014-11-15"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "日野",
+        "model": "日野 プロフィア",
+        "type_designation": "QPG-FW1EYEG",
+        "model_years": [
+          "2015-10-20 to 2017-01-25"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "日野",
+        "model": "日野 プロフィア",
+        "type_designation": "QPG-FW1ABEG",
+        "model_years": [
+          "2015-02-18 to 2016-06-10"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "日野",
+        "model": "日野 プロフィア",
+        "type_designation": "QPG-FW1AXEG",
+        "model_years": [
+          "2017-03-27 to 2017-03-27"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "日野",
+        "model": "日野 プロフィア",
+        "type_designation": "2DG-FW1AHG",
+        "model_years": [
+          "2017-07-26 to 2017-08-10"
+        ],
+        "affected_count": "4"
+      },
+      {
+        "make": "いすぐ",
+        "model": "ギガ",
+        "type_designation": "QKG-CYJ77A",
+        "model_years": [
+          "2015-10-05 to 2015-10-07"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "QKG-FS54VZ",
+        "model_years": [
+          "2014-07-04 to 2014-10-06"
+        ],
+        "affected_count": "3"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう スーパーグレート",
+        "type_designation": "QPG-FS64VZ",
+        "model_years": [
+          "2015-10-28 to 2016-07-11"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "UD トラックス",
+        "model": "クオン",
+        "type_designation": "QKG-CG5ZA",
+        "model_years": [
+          "2015-05-23 to 2015-05-23"
+        ],
+        "affected_count": "1"
+      }
+    ],
+    "defect_system": "ウイングパワーユニット",
+    "defect_location": "ウイングパワーユニット取付ブラケット（溶接部）",
+    "defect_description": "ウイングパワーユニット取付ブラケットにおいて、溶接管理が不適切なため、強度が不足しているものがある。そのため、そのままの状態で使用を続けると、走行振動等で溶接部に亀裂が発生し、亀裂が進展して破断、最悪の場合、ウイングパワーユニットが脱落し、他の交通を妨げるおそれがある。",
+    "root_cause": "溶接管理が不適切なため、ウイングパワーユニット取付ブラケットの強度が不足しているものがある。",
+    "consequences": [
+      "走行振動等で溶接部に亀裂が発生する",
+      "亀裂が進展して破断する",
+      "最悪の場合、ウイングパワーユニットが脱落し、他の交通を妨げるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ウイングパワーユニット取付ブラケット",
+        "part_number": null,
+        "system_path": [
+          "ウイングパワーユニット",
+          "取付ブラケット"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、対策品ブラケットを追加し取付ける。",
+    "correction_detail": "全車両、対策品ブラケットを追加し取付ける。"
+  }
+}

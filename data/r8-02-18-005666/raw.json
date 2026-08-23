@@ -1,0 +1,605 @@
+{
+  "recall_id": "r8-02-18-005666",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005666.html",
+  "date_text": "令和8年2月18日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001981831.pdf",
+    "https://www.mlit.go.jp/report/press/content/001981832.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001981832.pdf",
+  "metadata": {
+    "notification_number": "5778",
+    "notification_date": "2026-02-18",
+    "notifier": "日野自動車株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2SG-XKC605M",
+        "model_years": [
+          "2025-01-17 to 2025-02-12"
+        ],
+        "affected_count": "10"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2SG-XKU605M",
+        "model_years": [
+          "2025-01-23 to 2025-02-25"
+        ],
+        "affected_count": "6"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2SG-XKU655M",
+        "model_years": [
+          "2025-02-17 to 2025-02-26"
+        ],
+        "affected_count": "4"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2SG-XKU710M",
+        "model_years": [
+          "2025-01-21 to 2025-02-18"
+        ],
+        "affected_count": "9"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2SG-XKU712M",
+        "model_years": [
+          "2025-01-17 to 2025-02-27"
+        ],
+        "affected_count": "11"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2KG-XZC600T",
+        "model_years": [
+          "2025-01-09 to 2025-02-25"
+        ],
+        "affected_count": "42"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2KG-XZC605M",
+        "model_years": [
+          "2024-12-26 to 2025-02-13"
+        ],
+        "affected_count": "81"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2KG-XZC630T",
+        "model_years": [
+          "2025-02-05 to 2025-02-05"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2KG-XZC645M",
+        "model_years": [
+          "2025-01-06 to 2025-01-28"
+        ],
+        "affected_count": "4"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2KG-XZC655M",
+        "model_years": [
+          "2024-12-26 to 2025-02-10"
+        ],
+        "affected_count": "14"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZC675M",
+        "model_years": [
+          "2025-01-08 to 2025-02-06"
+        ],
+        "affected_count": "6"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2KG-XZC710M",
+        "model_years": [
+          "2025-02-10 to 2025-02-15"
+        ],
+        "affected_count": "9"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZU600E / 2KG-XZU600E / 2KG-XZU600F / 2KG-XZU600T / 2KG-XZU600X",
+        "model_years": [
+          "2024-12-26 to 2025-02-25"
+        ],
+        "affected_count": "438"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZU605M / 2KG-XZU605M / 2KG-XZU605X",
+        "model_years": [
+          "2024-12-26 to 2025-02-18"
+        ],
+        "affected_count": "254"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2KG-XZU630T",
+        "model_years": [
+          "2025-01-10 to 2025-02-25"
+        ],
+        "affected_count": "29"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZU640M / 2KG-XZU640F / 2KG-XZU640M",
+        "model_years": [
+          "2024-12-26 to 2025-02-17"
+        ],
+        "affected_count": "24"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2KG-XZU642F / 2KG-XZU642J",
+        "model_years": [
+          "2025-01-07 to 2025-02-13"
+        ],
+        "affected_count": "18"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2KG-XZU645M",
+        "model_years": [
+          "2025-01-07 to 2025-02-13"
+        ],
+        "affected_count": "24"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2KG-XZU650F / 2KG-XZU650M",
+        "model_years": [
+          "2024-12-26 to 2025-02-14"
+        ],
+        "affected_count": "69"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2KG-XZU652F",
+        "model_years": [
+          "2025-01-08 to 2025-02-10"
+        ],
+        "affected_count": "14"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZU655M / 2KG-XZU655M",
+        "model_years": [
+          "2024-12-26 to 2025-02-14"
+        ],
+        "affected_count": "59"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZU675M / 2DG-XZU675T",
+        "model_years": [
+          "2024-12-26 to 2025-02-14"
+        ],
+        "affected_count": "86"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZU685M",
+        "model_years": [
+          "2024-12-26 to 2025-02-28"
+        ],
+        "affected_count": "54"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZU695M",
+        "model_years": [
+          "2024-12-26 to 2025-02-13"
+        ],
+        "affected_count": "28"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZU700M / 2KG-XZU700M / 2KG-XZU700X",
+        "model_years": [
+          "2024-12-26 to 2025-02-13"
+        ],
+        "affected_count": "183"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2KG-XZU702M",
+        "model_years": [
+          "2024-12-26 to 2025-02-13"
+        ],
+        "affected_count": "13"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZU710M / 2KG-XZU710M",
+        "model_years": [
+          "2024-12-26 to 2025-02-14"
+        ],
+        "affected_count": "196"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZU712M / 2KG-XZU712M",
+        "model_years": [
+          "2024-12-26 to 2025-02-14"
+        ],
+        "affected_count": "193"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZU720M / 2KG-XZU720M",
+        "model_years": [
+          "2024-12-26 to 2025-02-14"
+        ],
+        "affected_count": "107"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZU722M / 2KG-XZU722M",
+        "model_years": [
+          "2024-12-26 to 2025-02-14"
+        ],
+        "affected_count": "125"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2KG-XZU730M",
+        "model_years": [
+          "2025-01-06 to 2025-02-12"
+        ],
+        "affected_count": "21"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZU732M",
+        "model_years": [
+          "2025-02-05 to 2025-02-15"
+        ],
+        "affected_count": "3"
+      },
+      {
+        "make": "日野",
+        "model": "日野 デュトロ",
+        "type_designation": "2DG-XZU775M",
+        "model_years": [
+          "2025-01-06 to 2025-02-13"
+        ],
+        "affected_count": "29"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 200 / トヨタ ダイナ 300",
+        "type_designation": "2SG-XKC605",
+        "model_years": [
+          "2025-01-07 to 2025-02-24"
+        ],
+        "affected_count": "5"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 200 / トヨタ ダイナ 300",
+        "type_designation": "2SG-XKU605",
+        "model_years": [
+          "2025-01-31 to 2025-01-31"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 200 / トヨタ ダイナ 300",
+        "type_designation": "2SG-XKU710",
+        "model_years": [
+          "2025-01-09 to 2025-01-09"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 200 / トヨタ ダイナ 300",
+        "type_designation": "2QG-XKU712",
+        "model_years": [
+          "2025-01-21 to 2025-01-28"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 200 / トヨタ ダイナ 300",
+        "type_designation": "2KG-XZC600D",
+        "model_years": [
+          "2025-01-21 to 2025-02-14"
+        ],
+        "affected_count": "13"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 200 / トヨタ ダイナ 300",
+        "type_designation": "2DG-XZC605 / 2KG-XZC605",
+        "model_years": [
+          "2024-12-26 to 2025-05-29"
+        ],
+        "affected_count": "220"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 200 / トヨタ ダイナ 300",
+        "type_designation": "2KG-XZC645",
+        "model_years": [
+          "2025-01-07 to 2025-02-21"
+        ],
+        "affected_count": "30"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 200 / トヨタ ダイナ 300",
+        "type_designation": "2KG-XZC655",
+        "model_years": [
+          "2024-12-26 to 2025-03-10"
+        ],
+        "affected_count": "16"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 200 / トヨタ ダイナ 300",
+        "type_designation": "2DG-XZC675 / 2DG-XZC675D",
+        "model_years": [
+          "2025-01-09 to 2025-06-03"
+        ],
+        "affected_count": "15"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 200 / トヨタ ダイナ 300",
+        "type_designation": "2KG-XZC710",
+        "model_years": [
+          "2025-01-07 to 2025-02-10"
+        ],
+        "affected_count": "15"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2KG-XZU600A / 2KG-XZU600D / 2KG-XZU600H",
+        "model_years": [
+          "2025-01-16 to 2025-05-09"
+        ],
+        "affected_count": "59"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2DG-XZU605 / 2KG-XZU605 / 2KG-XZU605A",
+        "model_years": [
+          "2024-12-26 to 2025-06-17"
+        ],
+        "affected_count": "169"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2KG-XZU640",
+        "model_years": [
+          "2025-01-13 to 2025-02-20"
+        ],
+        "affected_count": "6"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2KG-XZU645",
+        "model_years": [
+          "2025-01-06 to 2025-05-21"
+        ],
+        "affected_count": "21"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2KG-XZU650",
+        "model_years": [
+          "2025-01-09 to 2025-04-18"
+        ],
+        "affected_count": "24"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2KG-XZU652W",
+        "model_years": [
+          "2025-02-04 to 2025-02-04"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2DG-XZU655 / 2KG-XZU655",
+        "model_years": [
+          "2024-12-26 to 2025-07-08"
+        ],
+        "affected_count": "59"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2DG-XZU675 / 2DG-XZU675D",
+        "model_years": [
+          "2025-01-06 to 2025-04-24"
+        ],
+        "affected_count": "33"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2DG-XZU685",
+        "model_years": [
+          "2025-01-06 to 2025-02-19"
+        ],
+        "affected_count": "13"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2DG-XZU695",
+        "model_years": [
+          "2025-01-06 to 2025-02-13"
+        ],
+        "affected_count": "12"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2KG-XZU700 / 2KG-XZU700A",
+        "model_years": [
+          "2025-01-13 to 2025-03-04"
+        ],
+        "affected_count": "10"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2KG-XZU702",
+        "model_years": [
+          "2025-02-03 to 2025-02-03"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2DG-XZU710 / 2KG-XZU710",
+        "model_years": [
+          "2024-12-26 to 2025-06-10"
+        ],
+        "affected_count": "96"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2DG-XZU712 / 2KG-XZU712",
+        "model_years": [
+          "2025-01-07 to 2025-06-03"
+        ],
+        "affected_count": "35"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2KG-XZU720",
+        "model_years": [
+          "2025-01-17 to 2025-05-08"
+        ],
+        "affected_count": "37"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2DG-XZU722 / 2KG-XZU722",
+        "model_years": [
+          "2025-01-10 to 2025-06-30"
+        ],
+        "affected_count": "78"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 400",
+        "type_designation": "2KG-XZU730",
+        "model_years": [
+          "2025-01-06 to 2025-04-14"
+        ],
+        "affected_count": "12"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 200 / トヨタ ダイナ 300",
+        "type_designation": "2DG-XZU732",
+        "model_years": [
+          "2025-02-04 to 2025-02-10"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ ダイナ 200 / トヨタ ダイナ 300",
+        "type_designation": "2DG-XZU775",
+        "model_years": [
+          "2025-01-09 to 2025-04-15"
+        ],
+        "affected_count": "10"
+      }
+    ],
+    "defect_system": "電気装置",
+    "defect_location": "コンビネーションメータ",
+    "defect_description": "コンビネーションメータにおいて、基板を構成する素子の部品管理が不適切なため、誤品を組付けたものがある。そのため、使用過程で当該素子が高温になると半田が溶融し、素子が電気回路上に脱落することで短絡して、速度計や走行距離計等が作動しなくなり、保安基準に適合しないおそれがある。",
+    "root_cause": "基板を構成する素子の部品管理が不適切なため、誤品を組付けたものがある。",
+    "consequences": [
+      "短絡して速度計や走行距離計等が作動しなくなり、保安基準に適合しないおそれがある。"
+    ],
+    "parts": [
+      {
+        "part_name": "コンビネーションメータ",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "コンビネーションメータ"
+        ]
+      },
+      {
+        "part_name": "基板構成素子",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "コンビネーションメータ",
+          "基板構成素子"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、コンビネーションメータの製造番号を点検し、該当する場合は良品と交換する。",
+    "correction_detail": "コンビネーションメータの製造番号を点検し、該当する場合は良品と交換する。"
+  }
+}

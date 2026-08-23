@@ -1,0 +1,103 @@
+{
+  "recall_id": "r8-04-22-005714",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005714.html",
+  "date_text": "令和8年4月22日",
+  "month": 4,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001997184.pdf",
+    "https://www.mlit.go.jp/report/press/content/001997185.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001997185.pdf",
+  "metadata": {
+    "notification_number": "5808",
+    "notification_date": "2026-04-22",
+    "notifier": "日野自動車株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-SH1EDGG / 2DG-SH1EDGJ",
+        "model_years": [
+          "2018-07-09 to 2022-03-03"
+        ],
+        "affected_count": "4166"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-SH1EEGG",
+        "model_years": [
+          "2018-07-10 to 2022-02-25"
+        ],
+        "affected_count": "1173"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-SH1EGGG",
+        "model_years": [
+          "2018-08-29 to 2022-02-22"
+        ],
+        "affected_count": "192"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-SS1EKGA / 2DG-SS1EKGG",
+        "model_years": [
+          "2018-07-19 to 2022-02-14"
+        ],
+        "affected_count": "87"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-SS1EKHA",
+        "model_years": [
+          "2018-07-13 to 2022-03-03"
+        ],
+        "affected_count": "1392"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "(計 7 型式)",
+        "model_years": [
+          "2018-07-09 to 2022-03-03"
+        ],
+        "affected_count": "7010"
+      }
+    ],
+    "defect_system": "原動機",
+    "defect_location": "エンジン制御コンピュータ（エンジン制御プログラム）",
+    "defect_description": "E13Cエンジン制御コンピュータにおいて、(1) DPR再生用制御プログラムが不適切なため、高回転高負荷条件でのDPR再生中に尿素SCR触媒温度が想定より高温となり、触媒劣化の進行が早くなることがある。そのため、そのまま使用を続けると排出ガス中の窒素酸化物の排出値が規制値を超えるおそれがある。(2) SCR触媒劣化判定プログラムが不適切なため、正常な触媒を異常と誤判定し、警告灯が点灯するおそれがある。",
+    "root_cause": "DPR再生用制御プログラムが不適切、ならびにSCR触媒劣化判定プログラムが不適切であるため。",
+    "consequences": [
+      "排出ガス中の窒素酸化物（NOx）の排出値が規制値を超えるおそれがある",
+      "正常な触媒を異常と誤判定し、警告灯が点灯するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "エンジン制御コンピュータ（エンジン制御プログラム）",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "エンジン制御コンピュータ",
+          "エンジン制御プログラム"
+        ]
+      },
+      {
+        "part_name": "尿素SCR触媒",
+        "part_number": null,
+        "system_path": [
+          "排出ガス浄化装置",
+          "SCR",
+          "触媒"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、エンジン制御コンピュータのプログラムを対策仕様に書き換える。併せて、基準に沿って触媒を点検し、基準超過の場合は新品に交換し、暫定措置で追加した触媒の浄化率点検を点検整備項目から削除する。",
+    "correction_detail": "全車両、エンジン制御コンピュータのプログラムを対策仕様に書き換える。全車両、弊社が定めた基準に沿って触媒の点検を行い、基準を超える場合は触媒を新品に交換する。また、暫定措置でメンテナンスノートの点検整備項目に追加した触媒の浄化率点検を削除する。"
+  }
+}

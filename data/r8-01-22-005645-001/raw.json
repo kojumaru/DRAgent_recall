@@ -1,0 +1,48 @@
+{
+  "recall_id": "r8-01-22-005645-001",
+  "parent_recall_id": "r8-01-22-005645",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005645.html",
+  "date_text": "令和8年1月22日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001977676.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "5744",
+    "notification_date": "2025-12-02",
+    "notifier": "ヤマハ発動機株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ヤマハ",
+        "model": "ヤマハセローXT225W",
+        "type_designation": "4JG",
+        "model_years": [
+          "1996-07-11 to 1996-07-11"
+        ],
+        "affected_count": "1"
+      }
+    ],
+    "defect_system": "速度計（速度伝達系）",
+    "defect_location": "交換修理用部品の速度伝達用ギヤユニット",
+    "defect_description": "交換修理用部品の速度伝達用ギヤユニットにおいて、当該ユニット内部部品の材質が不適切なため、硬度が不足しているものがある。そのため、アクスルシャフトを締め付ける際に速度伝達用ギヤユニットが変形してタイヤの回転が伝わらず、速度計が作動しなくなり、保安基準に適合しないおそれがある。",
+    "root_cause": "当該ユニット内部部品の材質が不適切で硬度不足。",
+    "consequences": [
+      "速度計が作動しなくなる",
+      "保安基準に適合しないおそれ"
+    ],
+    "parts": [
+      {
+        "part_name": "速度伝達用ギヤユニット（交換修理用部品）",
+        "part_number": null,
+        "system_path": [
+          "速度計（速度伝達系）",
+          "速度伝達用ギヤユニット"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

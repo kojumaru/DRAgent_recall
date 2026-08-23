@@ -1,0 +1,167 @@
+{
+  "recall_id": "r8-05-21-005737",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005737.html",
+  "date_text": "令和8年5月21日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002001671.pdf",
+    "https://www.mlit.go.jp/report/press/content/002001672.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002001672.pdf",
+  "metadata": {
+    "notification_number": "外-4183",
+    "notification_date": "2026-05-21",
+    "notifier": "スカニアジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "スカニア",
+        "model": "スカニア",
+        "type_designation": "2DG-A4X2ACG",
+        "model_years": [
+          "2018-05-02 to 2020-07-08"
+        ],
+        "affected_count": "56"
+      },
+      {
+        "make": "スカニア",
+        "model": "スカニア",
+        "type_designation": "2DG-A4X2ACGL",
+        "model_years": [
+          "2020-08-27 to 2022-03-09"
+        ],
+        "affected_count": "31"
+      },
+      {
+        "make": "スカニア",
+        "model": "スカニア",
+        "type_designation": "2DG-A4X2AEG",
+        "model_years": [
+          "2018-05-28 to 2022-07-15"
+        ],
+        "affected_count": "36"
+      },
+      {
+        "make": "スカニア",
+        "model": "スカニア",
+        "type_designation": "2DG-A4X2BEG",
+        "model_years": [
+          "2019-01-09 to 2019-06-13"
+        ],
+        "affected_count": "3"
+      },
+      {
+        "make": "スカニア",
+        "model": "スカニア",
+        "type_designation": "2KG-A4X2ACG",
+        "model_years": [
+          "2019-04-29 to 2022-07-07"
+        ],
+        "affected_count": "8"
+      },
+      {
+        "make": "スカニア",
+        "model": "スカニア",
+        "type_designation": "2KG-A4X2AEG",
+        "model_years": [
+          "2018-12-03 to 2022-02-10"
+        ],
+        "affected_count": "21"
+      },
+      {
+        "make": "スカニア",
+        "model": "スカニア",
+        "type_designation": "2KG-A4X2BEG",
+        "model_years": [
+          "2018-06-12 to 2021-09-20"
+        ],
+        "affected_count": "6"
+      },
+      {
+        "make": "スカニア",
+        "model": "スカニア",
+        "type_designation": "2PG-A4X2ACG",
+        "model_years": [
+          "2018-05-02 to 2022-03-09"
+        ],
+        "affected_count": "33"
+      },
+      {
+        "make": "スカニア",
+        "model": "スカニア",
+        "type_designation": "2PG-A4X2ACGL",
+        "model_years": [
+          "2019-09-09 to 2022-02-28"
+        ],
+        "affected_count": "10"
+      },
+      {
+        "make": "スカニア",
+        "model": "スカニア",
+        "type_designation": "2PG-A4X2AEG",
+        "model_years": [
+          "2018-05-30 to 2022-03-09"
+        ],
+        "affected_count": "36"
+      },
+      {
+        "make": "スカニア",
+        "model": "スカニア",
+        "type_designation": "2PG-A4X2AFG",
+        "model_years": [
+          "2019-05-24 to 2021-09-07"
+        ],
+        "affected_count": "10"
+      },
+      {
+        "make": "スカニア",
+        "model": "スカニア",
+        "type_designation": "2PG-A4X2BEG",
+        "model_years": [
+          "2019-04-05 to 2022-07-05"
+        ],
+        "affected_count": "30"
+      },
+      {
+        "make": "スカニア",
+        "model": "スカニア",
+        "type_designation": "不明",
+        "model_years": [
+          "2017-01-30 to 2024-12-19"
+        ],
+        "affected_count": "1329"
+      }
+    ],
+    "defect_system": "制動装置",
+    "defect_location": "エアドライヤ再生制御バルブ",
+    "defect_description": "エア圧力制御システム(APS)において、(1)エアドライヤ再生制御バルブのシールの材質が不適切なため、圧縮空気中の油分でシールが軟化してエア圧力の気密が保持できないことがある。(2)制御プログラムが不適切なため、外気温度が低い時に圧縮空気中の水分が氷結し、バルブの密閉を妨げてエア圧力の気密が保持できないことがある。そのため、エア漏れが発生して警告灯が点灯し、そのまま使用を続けるとエア圧力が下がって非常ブレーキがかかり走行不能となる。又は、エンジン始動時後にエア圧力が上がらずにパーキングブレーキが解除できず、走行不能となるおそれがある。",
+    "root_cause": "エアドライヤ再生制御バルブのシール材質が不適切で、圧縮空気中の油分によりシールが軟化することがあること、ならびに制御プログラムが不適切で外気温低温時に圧縮空気中の水分が氷結しバルブ密閉を妨げることがあるため。",
+    "consequences": [
+      "エア漏れが発生して警告灯が点灯する",
+      "使用を続けるとエア圧力が下がって非常ブレーキがかかり走行不能となる",
+      "エンジン始動時後にエア圧力が上がらずパーキングブレーキが解除できず走行不能となるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "エアドライヤ再生制御バルブ",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "エア圧力制御システム(APS)",
+          "エアドライヤ再生制御バルブ"
+        ]
+      },
+      {
+        "part_name": "エアドライヤ再生制御バルブ用シール",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "エア圧力制御システム(APS)",
+          "エアドライヤ再生制御バルブ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、エアドライヤ再生制御バルブを対策品に交換するとともに、外気温度が低い時に圧縮空気中の水分の氷結を防止する対策プログラムに書き換える。さらに当該バルブを定期交換部品(1年)に設定し、メンテナンスノートへ定期交換時期を追記したシールを貼付する。",
+    "correction_detail": "エアドライヤ再生制御バルブを対策品へ交換し、外気温低温時の圧縮空気中水分の氷結を防止する対策プログラムへ書換えを実施する。あわせて、エアドライヤ再生制御バルブを定期交換部品に設定し、メンテナンスノートに定期交換時期(1年)の記載を追加したシールを貼付する。"
+  }
+}

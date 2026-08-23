@@ -1,0 +1,84 @@
+{
+  "recall_id": "r8-05-14-005735",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005735.html",
+  "date_text": "令和8年5月14日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002000460.pdf",
+    "https://www.mlit.go.jp/report/press/content/002000461.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002000461.pdf",
+  "metadata": {
+    "notification_number": "外-4182",
+    "notification_date": "2026-05-14",
+    "notifier": "フォルクスワーゲングループ ジャパン株式会社 代表取締役 アダムパスタナック",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "アウディ",
+        "model": "アウディ e-tron",
+        "type_designation": "ZAA-GEEAS",
+        "model_years": [
+          "2020-08-14 to 2023-02-20"
+        ],
+        "affected_count": "225"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ e-tron 50",
+        "type_designation": "ZAA-GEEASB",
+        "model_years": [
+          "2020-12-07 to 2023-01-31"
+        ],
+        "affected_count": "89"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ e-tron S",
+        "type_designation": "ZAA-GEEAV",
+        "model_years": [
+          "2022-03-04 to 2023-02-20"
+        ],
+        "affected_count": "35"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ SQ8 e-tron",
+        "type_designation": "ZAA-GEEAV",
+        "model_years": [
+          "2023-11-27 to 2024-05-17"
+        ],
+        "affected_count": "16"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q8 e-tron",
+        "type_designation": "ZAA-GEEDE",
+        "model_years": [
+          "2023-05-10 to 2024-08-26"
+        ],
+        "affected_count": "304"
+      }
+    ],
+    "defect_system": "制動装置",
+    "defect_location": "ブレーキサーボのプッシュロッド（ブレーキペダルとブレーキサーボを連結するプッシュロッドの締結部）",
+    "defect_description": "ブレーキペダルとブレーキサーボを連結するプッシュロッドにおいて、締結部の締め付けが不十分なものがある。そのため、締結部が緩み、そのまま使用を続けると、最悪の場合、締結部が外れ、ブレーキペダルを操作してもブレーキが効かなくなるおそれがある。",
+    "root_cause": "製造工程の設備管理が不適切なため。",
+    "consequences": [
+      "最悪の場合、締結部が外れ、ブレーキペダルを操作してもブレーキが効かなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ブレーキサーボのプッシュロッド",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "ブレーキサーボ",
+          "プッシュロッド"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、プッシュロッドの締結部を点検し、規定トルクで締め付ける。",
+    "correction_detail": "全車両、ブレーキペダルとブレーキサーボを連結するプッシュロッドの締結部を点検し、規定トルクで締め付ける。"
+  }
+}

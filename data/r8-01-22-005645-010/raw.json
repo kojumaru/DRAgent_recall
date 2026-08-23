@@ -1,0 +1,48 @@
+{
+  "recall_id": "r8-01-22-005645-010",
+  "parent_recall_id": "r8-01-22-005645",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005645.html",
+  "date_text": "令和8年1月22日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001977676.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "外4135",
+    "notification_date": "2025-12-24",
+    "notifier": "帝国繊維株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ROSENBAUER",
+        "model": "パンター 他",
+        "type_designation": "不明",
+        "model_years": [
+          "2025-02-01 to 2025-09-01"
+        ],
+        "affected_count": "7"
+      }
+    ],
+    "defect_system": "駆動装置（ハブリダクション機構）",
+    "defect_location": "プラネタリギアピン",
+    "defect_description": "ハブリダクション機構の構成部品であるプラネタリギアピンにおいて、製造工程が不適切なため、強度が不足しているものがある。そのため、使用過程でプラネタリギアピンが摩耗し、最悪の場合、折れてギアに噛みこみ、走行不能となるおそれがある。",
+    "root_cause": "製造工程が不適切でプラネタリギアピンの強度不足。",
+    "consequences": [
+      "最悪の場合、プラネタリギアピンが折れてギアに噛みこみ走行不能となるおそれ"
+    ],
+    "parts": [
+      {
+        "part_name": "プラネタリギアピン",
+        "part_number": null,
+        "system_path": [
+          "駆動装置",
+          "ハブリダクション機構",
+          "プラネタリギアピン"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

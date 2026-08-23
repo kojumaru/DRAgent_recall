@@ -1,0 +1,76 @@
+{
+  "recall_id": "r8-06-04-005751",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005751.html",
+  "date_text": "令和8年6月4日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002004703.pdf",
+    "https://www.mlit.go.jp/report/press/content/002004704.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002004704.pdf",
+  "metadata": {
+    "notification_number": "外-4197",
+    "notification_date": "2026-06-04",
+    "notifier": "HONDA DVLPMT. & MFG. OF AMERICA, LLC",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ホンダ",
+        "model": "CR-V",
+        "type_designation": "ZBA-ZC8",
+        "model_years": [
+          "2024-06-24 to 2025-10-27",
+          "2025-11-19 to 2026-02-19"
+        ],
+        "affected_count": "118"
+      }
+    ],
+    "defect_system": "その他",
+    "defect_location": "パンク応急修理用具",
+    "defect_description": "パンク応急修理用具において、応急修理用ホースの口金構造及び圧力逃し弁の開弁圧力調整が不適切なため、当該ホースが正しく接続されていない状態でパンク修理を行うと、修理剤ボトル内部に過大な圧力が加わることがある。そのため、使用中または使用後の保管中にボトル内部の圧力が耐圧を超えると、修理剤ボトルが破損して構成部品が飛散し、最悪の場合、使用者が負傷するおそれがある。",
+    "root_cause": "応急修理用ホースの口金構造及び圧力逃し弁の開弁圧力調整が不適切なため。",
+    "consequences": [
+      "修理剤ボトルが破損して構成部品が飛散する",
+      "最悪の場合、使用者が負傷するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "パンク応急修理用具",
+        "part_number": null,
+        "system_path": [
+          "その他",
+          "パンク応急修理用具"
+        ]
+      },
+      {
+        "part_name": "応急修理用ホース",
+        "part_number": null,
+        "system_path": [
+          "その他",
+          "パンク応急修理用具",
+          "応急修理用ホース"
+        ]
+      },
+      {
+        "part_name": "圧力逃し弁",
+        "part_number": null,
+        "system_path": [
+          "その他",
+          "パンク応急修理用具",
+          "圧力逃し弁"
+        ]
+      },
+      {
+        "part_name": "修理剤ボトル",
+        "part_number": null,
+        "system_path": [
+          "その他",
+          "パンク応急修理用具",
+          "修理剤ボトル"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、パンク応急修理用具を対策品と交換する。部品の準備に時間を要することから、使用者にパンク応急修理用具の使用停止を要請して部品を回収し、部品準備が整い次第、改めて案内し対策品と交換する。",
+    "correction_detail": "全車両についてパンク応急修理用具を対策品へ交換する。部品準備が整うまでの間は、使用者に当該用具の使用停止を要請のうえ回収し、準備完了後に再案内して対策品と交換する。"
+  }
+}

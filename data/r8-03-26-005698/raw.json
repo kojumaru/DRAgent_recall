@@ -1,0 +1,73 @@
+{
+  "recall_id": "r8-03-26-005698",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005698.html",
+  "date_text": "令和8年3月26日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001990858.pdf",
+    "https://www.mlit.go.jp/report/press/content/001990859.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001990859.pdf",
+  "metadata": {
+    "notification_number": "5796",
+    "notification_date": "2026-03-26",
+    "notifier": "本田技研工業株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ホンダ",
+        "model": "CB1000 HORNET / CB1000 HORNET SP",
+        "type_designation": "8BL-SC86",
+        "model_years": [
+          "2024-11-27 to 2025-08-22"
+        ],
+        "affected_count": "620"
+      }
+    ],
+    "defect_system": "電気配線",
+    "defect_location": "メインハーネス（アングルセンサカプラ）",
+    "defect_description": "電気配線において、メインハーネスとパワーリレーコードの固定方法が不適切なため、メインハーネスと接続するアングルセンサカプラが燃料ホースのロック部に干渉しているものがある。そのため、そのまま使用を続けると、燃料ホースが外れて燃料が漏れ、最悪の場合、火災に至るおそれがある。",
+    "root_cause": "メインハーネスとパワーリレーコードの固定方法が不適切なため、アングルセンサカプラが燃料ホースのロック部に干渉するものがある。",
+    "consequences": [
+      "燃料ホースが外れて燃料が漏れる",
+      "最悪の場合、火災に至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "メインハーネス",
+        "part_number": null,
+        "system_path": [
+          "電気配線",
+          "メインハーネス"
+        ]
+      },
+      {
+        "part_name": "パワーリレーコード",
+        "part_number": null,
+        "system_path": [
+          "電気配線",
+          "パワーリレーコード"
+        ]
+      },
+      {
+        "part_name": "アングルセンサカプラ",
+        "part_number": null,
+        "system_path": [
+          "電気配線",
+          "メインハーネス",
+          "アングルセンサカプラ"
+        ]
+      },
+      {
+        "part_name": "燃料ホース",
+        "part_number": null,
+        "system_path": [
+          "燃料装置",
+          "燃料ホース"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、パワーリレーコードをメインハーネスとテープで固定する。また、燃料ホースを新品と交換する。",
+    "correction_detail": "全車両、パワーリレーコードをメインハーネスとテープで固定する。併せて燃料ホースを新品と交換する。"
+  }
+}

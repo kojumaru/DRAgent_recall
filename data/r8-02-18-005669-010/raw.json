@@ -1,0 +1,66 @@
+{
+  "recall_id": "r8-02-18-005669-010",
+  "parent_recall_id": "r8-02-18-005669",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005669.html",
+  "date_text": "令和8年2月18日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001982127.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "外 4149",
+    "notification_date": "2026-01-30",
+    "notifier": "Stellantis ジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "シトロエン",
+        "model": "C3",
+        "type_designation": "3AA-C2HN09",
+        "model_years": [
+          "2025-08-30 to 2025-10-14"
+        ],
+        "affected_count": "26"
+      }
+    ],
+    "defect_system": "制動装置",
+    "defect_location": "ブレーキペダル—ロッド連結部（ピン固定クリップ）",
+    "defect_description": "ブレーキペダルにおいて、ブレーキペダルとロッドを連結しているピンの固定クリップが適切に組付けられていないものがある。そのため、そのまま使用を続けると、固定クリップが外れ、ブレーキペダルとロッドを連結しているピンが脱落し、最悪の場合、ブレーキペダルを踏んでもブレーキが効かなくなるおそれがある。",
+    "root_cause": "作業指示が不十分なため。",
+    "consequences": [
+      "固定クリップが外れ、連結ピンが脱落するおそれがある",
+      "最悪の場合、ブレーキが効かなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ブレーキペダル",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "ブレーキペダル"
+        ]
+      },
+      {
+        "part_name": "連結ピン固定クリップ",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "ブレーキペダル",
+          "固定クリップ"
+        ]
+      },
+      {
+        "part_name": "連結ピン",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "ブレーキペダル",
+          "連結ピン"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

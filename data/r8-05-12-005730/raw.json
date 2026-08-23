@@ -1,0 +1,56 @@
+{
+  "recall_id": "r8-05-12-005730",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005730.html",
+  "date_text": "令和8年5月12日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001999400.pdf",
+    "https://www.mlit.go.jp/report/press/content/001999401.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001999401.pdf",
+  "metadata": {
+    "notification_number": "5815",
+    "notification_date": "2026-05-12",
+    "notifier": "ヤマハ発動機株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ヤマハ",
+        "model": "TENERE700",
+        "type_designation": "8BL-DM17J",
+        "model_years": [
+          "2025-02-13 to 2025-08-29"
+        ],
+        "affected_count": "466"
+      }
+    ],
+    "defect_system": "方向指示器",
+    "defect_location": "計器盤内の方向指示器回路",
+    "defect_description": "計器盤内の方向指示器回路において、回路の断線状態を検出する制御が適切に作動せず、当該回路が断線状態であると誤判定することがある。そのため、方向指示器が作動しなくなるおそれがある。",
+    "root_cause": "設計が不適切なため。",
+    "consequences": [
+      "方向指示器が作動しなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "方向指示器回路（計器盤内）",
+        "part_number": null,
+        "system_path": [
+          "方向指示器",
+          "計器盤",
+          "方向指示器回路"
+        ]
+      },
+      {
+        "part_name": "計器盤",
+        "part_number": null,
+        "system_path": [
+          "方向指示器",
+          "計器盤"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、計器盤を対策品に交換する。また、計器盤を交換する際は、その時点の走行距離をメンテナンスノートに記録する。",
+    "correction_detail": "全車両について計器盤を対策品に交換する。交換時に、その時点の走行距離をメンテナンスノートへ記録する。"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "recall_id": "r8-04-08-005708",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005708.html",
+  "date_text": "令和8年4月8日",
+  "month": 4,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001994680.pdf",
+    "https://www.mlit.go.jp/report/press/content/001994681.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001994681.pdf",
+  "metadata": {
+    "notification_number": "5803",
+    "notification_date": "2026-04-08",
+    "notifier": "トヨタ自動車株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "レクサス",
+        "model": "RC F",
+        "type_designation": "DBA-USC10 / 5BA-USC10",
+        "model_years": [
+          "2014-08-26 to 2022-02-11"
+        ],
+        "affected_count": "2755"
+      },
+      {
+        "make": "レクサス",
+        "model": "GS F",
+        "type_designation": "DBA-URL10",
+        "model_years": [
+          "2015-10-26 to 2020-08-04"
+        ],
+        "affected_count": "1658"
+      }
+    ],
+    "defect_system": "燃料装置",
+    "defect_location": "燃料ポンプ（低圧燃料ポンプ）",
+    "defect_description": "低圧燃料ポンプにおいて、インペラ(樹脂製羽根車)の材料選定の検討が不十分であったため、燃料により膨潤して変形することがある。そのため、インペラがポンプケースと接触して燃料ポンプが作動不良となり、最悪の場合、走行中エンストに至るおそれがある。",
+    "root_cause": "インペラ(樹脂製羽根車)の材料選定の検討が不十分であったため、燃料により膨潤して変形することがある。",
+    "consequences": [
+      "走行中エンストに至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "低圧燃料ポンプ",
+        "part_number": null,
+        "system_path": [
+          "燃料装置",
+          "燃料ポンプ"
+        ]
+      },
+      {
+        "part_name": "インペラ（樹脂製羽根車）",
+        "part_number": null,
+        "system_path": [
+          "燃料装置",
+          "燃料ポンプ",
+          "インペラ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、低圧燃料ポンプを対策品と交換する。",
+    "correction_detail": "全車両、低圧燃料ポンプを対策品と交換する。"
+  }
+}

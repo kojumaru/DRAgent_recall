@@ -1,0 +1,103 @@
+{
+  "recall_id": "r8-06-10-005754",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005754.html",
+  "date_text": "令和8年6月10日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002005419.pdf",
+    "https://www.mlit.go.jp/report/press/content/002005420.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002005420.pdf",
+  "metadata": {
+    "notification_number": "5828",
+    "notification_date": "2026-06-10",
+    "notifier": "日野自動車株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FR1AHA / 2DG-FR1AHB / 2DG-FR1AHC / 2DG-FR1AHE / 2DG-FR1AHG / 2DG-FR1AHJ / 2NG-FR1AHH / 2NG-FR1AHS",
+        "model_years": [
+          "2017-06-06 to 2024-04-22"
+        ],
+        "affected_count": "10600"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FR1AJA / 2DG-FR1AJE / 2DG-FR1AJG",
+        "model_years": [
+          "2017-08-21 to 2024-04-11"
+        ],
+        "affected_count": "471"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FS1AGA / 2DG-FS1AGE",
+        "model_years": [
+          "2017-06-09 to 2024-04-25"
+        ],
+        "affected_count": "4872"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FS1AHA / 2DG-FS1AHB / 2DG-FS1AHC / 2DG-FS1AHE / 2DG-FS1AHG / 2DG-FS1AHJ",
+        "model_years": [
+          "2017-06-13 to 2024-04-20"
+        ],
+        "affected_count": "1913"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FS1AJA / 2DG-FS1AJE",
+        "model_years": [
+          "2017-06-21 to 2024-04-19"
+        ],
+        "affected_count": "1342"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FW1AHB / 2DG-FW1AHC / 2DG-FW1AHG / 2DG-FW1AHJ / 2NG-FW1AHH / 2NG-FW1AHS",
+        "model_years": [
+          "2017-06-26 to 2024-04-25"
+        ],
+        "affected_count": "26369"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FW1AJG / 2DG-FW1AJJ",
+        "model_years": [
+          "2017-06-30 to 2023-03-21"
+        ],
+        "affected_count": "286"
+      }
+    ],
+    "defect_system": "原動機",
+    "defect_location": "ヘッドカバー",
+    "defect_description": "原動機において、ヘッドカバー内のブローバイガス排気口位置が不適切なため、坂路の連続走行によりヘッドカバー内に必要以上のオイルが滞留した際に、当該排気口を経由して燃焼室にオイルが廻り込むことがある。そのため、燃焼室内で異常燃焼することでコンロッドやエンジンが破損し、最悪の場合、火災に至るおそれがある。",
+    "root_cause": "ヘッドカバー内のブローバイガス排気口位置が不適切なため。",
+    "consequences": [
+      "燃焼室内で異常燃焼する",
+      "コンロッドやエンジンが破損する",
+      "最悪の場合、火災に至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ヘッドカバー",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "ヘッドカバー"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ヘッドカバーを対策品に交換する。",
+    "correction_detail": "全車両、ヘッドカバーを対策品に交換する。"
+  }
+}

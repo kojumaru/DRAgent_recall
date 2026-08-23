@@ -1,0 +1,139 @@
+{
+  "recall_id": "r8-04-21-005713",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005713.html",
+  "date_text": "令和8年4月21日",
+  "month": 4,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001997180.pdf",
+    "https://www.mlit.go.jp/report/press/content/001997181.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001997181.pdf",
+  "metadata": {
+    "notification_number": "5811",
+    "notification_date": "2026-04-21",
+    "notifier": "本田技研工業株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ホンダ",
+        "model": "ベンリィeⅠ",
+        "type_designation": "ZAD-EF07",
+        "model_years": [
+          "2022-12-02 to 2023-04-22"
+        ],
+        "affected_count": "23907"
+      },
+      {
+        "make": "ホンダ",
+        "model": "ベンリィ e Ⅰ プロ",
+        "type_designation": "ZAD-EF08",
+        "model_years": [
+          "2022-12-02 to 2023-04-22"
+        ],
+        "affected_count": "23907"
+      },
+      {
+        "make": "ホンダ",
+        "model": "ベンリィ e I MD",
+        "type_designation": "ZAD-EF09",
+        "model_years": [
+          "2022-12-02 to 2023-04-22"
+        ],
+        "affected_count": "23907"
+      },
+      {
+        "make": "ホンダ",
+        "model": "ベンリィeⅡ",
+        "type_designation": "ZAD-EF10",
+        "model_years": [
+          "2022-12-02 to 2023-04-22"
+        ],
+        "affected_count": "23907"
+      },
+      {
+        "make": "ホンダ",
+        "model": "ベンリィ e Ⅱ プロ",
+        "type_designation": "ZAD-EF11",
+        "model_years": [
+          "2022-12-02 to 2023-04-22"
+        ],
+        "affected_count": "23907"
+      },
+      {
+        "make": "ホンダ",
+        "model": "ベンリィ eⅡMD",
+        "type_designation": "ZAD-EF12",
+        "model_years": [
+          "2022-12-02 to 2023-04-22"
+        ],
+        "affected_count": "23907"
+      },
+      {
+        "make": "ホンダ",
+        "model": "ジャイロ e:",
+        "type_designation": "ZAD-EF13",
+        "model_years": [
+          "2022-12-02 to 2023-04-22"
+        ],
+        "affected_count": "23907"
+      },
+      {
+        "make": "ホンダ",
+        "model": "ジャイロ キャノピーe:",
+        "type_designation": "ZAD-EF14",
+        "model_years": [
+          "2022-12-02 to 2023-04-22"
+        ],
+        "affected_count": "23907"
+      },
+      {
+        "make": "ホンダ",
+        "model": "EM1 e:",
+        "type_designation": "ZAD-EF16",
+        "model_years": [
+          "2022-12-02 to 2023-04-22"
+        ],
+        "affected_count": "23907"
+      },
+      {
+        "make": "ホンダ",
+        "model": "CUV e:",
+        "type_designation": "ZAD-EF18",
+        "model_years": [
+          "2022-12-02 to 2023-04-22"
+        ],
+        "affected_count": "23907"
+      }
+    ],
+    "defect_system": "その他",
+    "defect_location": "着脱式可搬バッテリ",
+    "defect_description": "電動二輪車に搭載する着脱式可搬バッテリにおいて、バッテリセルの外装加工管理及び電極層の外径設定が不適切なため、加工時の残留応力と電極層膨張の応力によりセル外装に亀裂が発生し、電解液が漏れることがある。そのため、セル電圧の低下による充電不良、または、漏れた電解液により金属が析出し短絡して、最悪の場合、セルが発火し火災に至るおそれがある。",
+    "root_cause": "バッテリセルの外装加工管理及び電極層の外径設定が不適切なため、加工時の残留応力と電極層膨張の応力によりセル外装に亀裂が発生する。",
+    "consequences": [
+      "セル電圧低下による充電不良",
+      "漏れた電解液により金属が析出し短絡",
+      "最悪の場合、セルが発火し火災に至るおそれ"
+    ],
+    "parts": [
+      {
+        "part_name": "着脱式可搬バッテリ",
+        "part_number": null,
+        "system_path": [
+          "その他",
+          "着脱式可搬バッテリ"
+        ]
+      },
+      {
+        "part_name": "バッテリセル",
+        "part_number": null,
+        "system_path": [
+          "その他",
+          "着脱式可搬バッテリ",
+          "バッテリセル"
+        ]
+      }
+    ],
+    "correction_summary": "全数、着脱式可搬バッテリを対策品に交換する。",
+    "correction_detail": "全数、着脱式可搬バッテリを対策品に交換する。"
+  }
+}

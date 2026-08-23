@@ -1,0 +1,102 @@
+{
+  "recall_id": "r8-03-26-005699",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005699.html",
+  "date_text": "令和8年3月26日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001990890.pdf",
+    "https://www.mlit.go.jp/report/press/content/001990891.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001990891.pdf",
+  "metadata": {
+    "notification_number": "外-4164",
+    "notification_date": "2026-03-26",
+    "notifier": "Stellantis ジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ジープ",
+        "model": "ラングラー アンリミテッド",
+        "type_designation": "3BA-JL20L",
+        "model_years": [
+          "2020-11-07 to 2022-06-10"
+        ],
+        "affected_count": "1637"
+      },
+      {
+        "make": "ジープ",
+        "model": "ラングラー アンリミテッド",
+        "type_designation": "3BA-JL36L",
+        "model_years": [
+          "2020-11-07 to 2021-12-05"
+        ],
+        "affected_count": "3149"
+      },
+      {
+        "make": "ジープ",
+        "model": "ラングラー",
+        "type_designation": "3BA-JL36S",
+        "model_years": [
+          "2020-11-07 to 2021-09-01"
+        ],
+        "affected_count": "307"
+      },
+      {
+        "make": "ジープ",
+        "model": "ラングラー",
+        "type_designation": "7BA-JL36S",
+        "model_years": [
+          "2021-04-23 to 2021-09-01"
+        ],
+        "affected_count": "92"
+      },
+      {
+        "make": "ジープ",
+        "model": "ラングラー アンリミテッド",
+        "type_designation": "ABA-JL20L",
+        "model_years": [
+          "2018-09-10 to 2020-12-12"
+        ],
+        "affected_count": "3641"
+      },
+      {
+        "make": "ジープ",
+        "model": "ラングラー アンリミテッド",
+        "type_designation": "ABA-JL36L",
+        "model_years": [
+          "2018-09-10 to 2020-11-13"
+        ],
+        "affected_count": "6560"
+      },
+      {
+        "make": "ジープ",
+        "model": "ラングラー",
+        "type_designation": "ABA-JL36S",
+        "model_years": [
+          "2018-09-10 to 2020-09-16"
+        ],
+        "affected_count": "380"
+      }
+    ],
+    "defect_system": "電気装置",
+    "defect_location": "メータークラスター",
+    "defect_description": "メータークラスターにおいて、製造管理が不適切なため、制御プログラムの設定値が誤っているものがある。そのため、排出ガス浄化装置が故障した場合、エンジン警告灯が点灯せず、保安基準に適合しないおそれがある。",
+    "root_cause": "製造管理が不適切なため、制御プログラムの設定値が誤っているものがある。",
+    "consequences": [
+      "排出ガス浄化装置が故障した場合にエンジン警告灯が点灯しない",
+      "保安基準に適合しないおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "メータークラスター",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "メータークラスター"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、エンジン警告灯の点灯有無を点検し、不点灯の場合は、メータークラスターの制御プログラムを対策仕様に更新する。",
+    "correction_detail": "全車両についてエンジン警告灯の点灯有無を点検し、エンジン警告灯が不点灯の場合はメータークラスターの制御プログラムを対策仕様に更新する。"
+  }
+}

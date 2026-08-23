@@ -1,0 +1,55 @@
+{
+  "recall_id": "r8-01-22-005645-004",
+  "parent_recall_id": "r8-01-22-005645",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005645.html",
+  "date_text": "令和8年1月22日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001977676.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "5747",
+    "notification_date": "2025-12-10",
+    "notifier": "ヤマハ発動機株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ヤマハ",
+        "model": "AR-07 他",
+        "type_designation": "試作",
+        "model_years": [
+          "2025-01-15 to 2025-04-16"
+        ],
+        "affected_count": "11"
+      }
+    ],
+    "defect_system": "後退時車両直後確認装置",
+    "defect_location": "バックカメラ／モニター",
+    "defect_description": "後退時車両直後確認装置において、当該装置の装着条件に関する法規の確認が不足していたため、バックカメラとモニターが取付けられていない。そのため、保安基準に適合しない。",
+    "root_cause": "装着条件に関する法規確認不足により、バックカメラとモニターを未装着。",
+    "consequences": [
+      "保安基準に適合しない"
+    ],
+    "parts": [
+      {
+        "part_name": "バックカメラ",
+        "part_number": null,
+        "system_path": [
+          "後退時車両直後確認装置",
+          "バックカメラ"
+        ]
+      },
+      {
+        "part_name": "モニター",
+        "part_number": null,
+        "system_path": [
+          "後退時車両直後確認装置",
+          "モニター"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

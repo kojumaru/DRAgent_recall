@@ -1,0 +1,58 @@
+{
+  "recall_id": "r8-01-22-005645-008",
+  "parent_recall_id": "r8-01-22-005645",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005645.html",
+  "date_text": "令和8年1月22日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001977676.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "外4132",
+    "notification_date": "2025-12-18",
+    "notifier": "メルセデス·ベンツ日本合同会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "メルセデス·ベンツ",
+        "model": "G450d 他",
+        "type_designation": "3CA-465310C 他",
+        "model_years": [
+          "2025-06-30 to 2025-07-22"
+        ],
+        "affected_count": "5"
+      }
+    ],
+    "defect_system": "運転支援システム（レーダーセンサ）",
+    "defect_location": "フロント·ショートレンジ·レーダー·センサ（電子基板）",
+    "defect_description": "フロント·ショートレンジ·レーダー·センサの電子基板において、製造工程が不適切なため、基盤の一部に銅のメッキが正しく施されていないものがある。そのため、使用過程で導通不良を起こして当該センサが正常に物体を検出できず、運転支援システムが警告メッセージの表示と共に作動を停止するほか、最悪の場合、警告メッセージがなく衝突被害軽減ブレーキが作動しないおそれがある。",
+    "root_cause": "製造工程不適切により電子基板の一部で銅メッキ不良→導通不良。",
+    "consequences": [
+      "運転支援システムが警告メッセージ表示とともに作動停止するおそれ",
+      "最悪の場合、警告メッセージなしに衝突被害軽減ブレーキが作動しないおそれ"
+    ],
+    "parts": [
+      {
+        "part_name": "フロント·ショートレンジ·レーダー·センサ",
+        "part_number": null,
+        "system_path": [
+          "運転支援システム",
+          "レーダーセンサ",
+          "フロント·ショートレンジ·レーダー·センサ"
+        ]
+      },
+      {
+        "part_name": "電子基板",
+        "part_number": null,
+        "system_path": [
+          "運転支援システム",
+          "レーダーセンサ",
+          "電子基板"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

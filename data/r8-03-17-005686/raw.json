@@ -1,0 +1,83 @@
+{
+  "recall_id": "r8-03-17-005686",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005686.html",
+  "date_text": "令和8年3月17日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001987099.pdf",
+    "https://www.mlit.go.jp/report/press/content/001987100.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001987100.pdf",
+  "metadata": {
+    "notification_number": "5782",
+    "notification_date": "2026-03-17",
+    "notifier": "日立建機株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "日立",
+        "model": "CP220-3",
+        "type_designation": "KDP-CP220",
+        "model_years": [
+          "2010-11-19 to 2013-02-01"
+        ],
+        "affected_count": "165"
+      },
+      {
+        "make": "住友",
+        "model": "HN220WHH-2",
+        "type_designation": "KDP-N22A2",
+        "model_years": [
+          "2011-10-13 to 2012-06-29"
+        ],
+        "affected_count": "7"
+      },
+      {
+        "make": "日立",
+        "model": "ZC220P-5",
+        "type_designation": "WDP-TAB",
+        "model_years": [
+          "2014-10-10 to 2014-10-31"
+        ],
+        "affected_count": "13"
+      },
+      {
+        "make": "日立",
+        "model": "CP220-3",
+        "type_designation": "KDP-CP220",
+        "model_years": [
+          "2009-02-12 to 2010-09-24"
+        ],
+        "affected_count": "3"
+      }
+    ],
+    "defect_system": "動力伝達装置",
+    "defect_location": "走行用油圧ポンプ",
+    "defect_description": "タイヤローラーの走行用油圧ポンプにおいて、加工不良により強度が不足するピンリンクがある。そのため、当該ピンリンクの摩耗が進行し、ポンプ内で脱落することによりピンリンクが他の内部部品を損傷させる。",
+    "root_cause": "ポンプ内で使用されているピンリンクを加工する設備の管理が不適切なため。",
+    "consequences": [
+      "最悪の場合、駐車ブレーキの解除ができなくなり走行不能となるおそれがある。"
+    ],
+    "parts": [
+      {
+        "part_name": "走行用油圧ポンプ",
+        "part_number": null,
+        "system_path": [
+          "動力伝達装置",
+          "走行用油圧ポンプ"
+        ]
+      },
+      {
+        "part_name": "ピンリンク",
+        "part_number": null,
+        "system_path": [
+          "動力伝達装置",
+          "走行用油圧ポンプ",
+          "ピンリンク"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、走行用油圧ポンプを良品に交換する。",
+    "correction_detail": "全車両、走行用油圧ポンプを良品に交換する。交換修理用部品として出荷し組み付けられた可能性のある車両についても、同様の改善を実施する。"
+  }
+}

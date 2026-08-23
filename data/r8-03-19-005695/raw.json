@@ -1,0 +1,67 @@
+{
+  "recall_id": "r8-03-19-005695",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005695.html",
+  "date_text": "令和8年3月19日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001989596.pdf",
+    "https://www.mlit.go.jp/report/press/content/001989597.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001989597.pdf",
+  "metadata": {
+    "notification_number": "5789",
+    "notification_date": "2026-03-19",
+    "notifier": "本田技研工業株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ホンダ",
+        "model": "CB1000F / CB1000F SE",
+        "type_designation": "8BL-SC94",
+        "model_years": [
+          "2025-10-10 to 2025-11-26"
+        ],
+        "affected_count": "1341"
+      },
+      {
+        "make": "ホンダ",
+        "model": "CB1000 HORNET / CB1000 HORNET SP",
+        "type_designation": "8BL-SC86",
+        "model_years": [
+          "2024-11-27 to 2025-08-22"
+        ],
+        "affected_count": "620"
+      }
+    ],
+    "defect_system": "原動機",
+    "defect_location": "ピストン、トップリング",
+    "defect_description": "原動機において、ピストン及びトップリングの設計が不適切なため、ピストンとトップリングの隙間が広く、エンジンが高回転の状態からエンジンブレーキによる減速を繰り返すと、エンジンオイルが燃焼室まで吸い上げられて燃焼し、オイル消費量が増えることがある。そのため、オイルの潤滑不良で異音が発生し、そのまま使用を続けると、走行中にエンジンが破損し、後輪がロックして転倒する、または、火災に至るおそれがある。",
+    "root_cause": "ピストン及びトップリングの設計が不適切なため、ピストンとトップリングの隙間が広いこと。",
+    "consequences": [
+      "オイルの潤滑不良で異音が発生する",
+      "走行中にエンジンが破損する",
+      "後輪がロックして転倒するおそれがある",
+      "火災に至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ピストン",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "ピストン"
+        ]
+      },
+      {
+        "part_name": "トップリング",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "トップリング"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ピストン及びトップリングを対策品と交換する。また、エンジンを点検し、異音がある場合はエンジンをアッセンブリで交換する。",
+    "correction_detail": "全車両についてピストン及びトップリングを対策品に交換する。併せてエンジンを点検し、異音が認められる場合はエンジンをアッセンブリで交換する。"
+  }
+}

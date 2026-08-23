@@ -1,0 +1,72 @@
+{
+  "recall_id": "r8-06-18-005763",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005763.html",
+  "date_text": "令和8年6月18日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002007315.pdf",
+    "https://www.mlit.go.jp/report/press/content/002007316.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002007316.pdf",
+  "metadata": {
+    "notification_number": "5837",
+    "notification_date": "2026-06-18",
+    "notifier": "本田技研工業株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ホンダ",
+        "model": "Dunk",
+        "type_designation": "2BH-AF78",
+        "model_years": [
+          "2024-09-26 to 2024-09-27"
+        ],
+        "affected_count": "7"
+      }
+    ],
+    "defect_system": "制動装置",
+    "defect_location": "前輪ブレーキケーブル",
+    "defect_description": "前輪ブレーキにおいて、製造時の部品管理及び工場内修理作業が不適切なため、マスタシリンダ内に空気が混入した状態で前輪ブレーキケーブルが過剰に調整されたものがある。そのため、使用過程で意図せずブレーキ液圧がかかり続けて前輪ブレーキが引きずり、最悪の場合、前輪がロックして転倒するおそれがある。",
+    "root_cause": "製造時の部品管理及び工場内修理作業が不適切なため、マスタシリンダ内に空気が混入した状態で前輪ブレーキケーブルが過剰に調整されたこと。",
+    "consequences": [
+      "前輪ブレーキが引きずる",
+      "最悪の場合、前輪がロックして転倒するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "前輪ブレーキケーブル",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "前輪ブレーキケーブル"
+        ]
+      },
+      {
+        "part_name": "前輪ブレーキディスク",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "前輪ブレーキ"
+        ]
+      },
+      {
+        "part_name": "前輪ブレーキパッド",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "前輪ブレーキ"
+        ]
+      },
+      {
+        "part_name": "前輪キャリパアッセンブリ",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "前輪ブレーキ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、前輪ブレーキディスク、前輪ブレーキパッド及び前輪キャリパアッセンブリを新品と交換し、前輪ブレーキケーブルを適切に調整してエア抜き作業を実施する。",
+    "correction_detail": "全車両について、前輪ブレーキディスク、前輪ブレーキパッド及び前輪キャリパアッセンブリを新品と交換する。あわせて前輪ブレーキケーブルを適切に調整し、マスタシリンダ内の空気混入を除去するためエア抜き作業を実施する。"
+  }
+}

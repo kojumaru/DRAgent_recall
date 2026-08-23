@@ -1,0 +1,94 @@
+{
+  "recall_id": "r8-01-28-005649",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005649.html",
+  "date_text": "令和8年1月28日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001978609.pdf",
+    "https://www.mlit.go.jp/report/press/content/001978610.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001978610.pdf",
+  "metadata": {
+    "notification_number": "5770",
+    "notification_date": "2026-01-28",
+    "notifier": "トヨタ自動車株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "トヨタ",
+        "model": "プリウス",
+        "type_designation": "6AA-MXWH60",
+        "model_years": [
+          "2022-11-24 to 2025-11-03"
+        ],
+        "affected_count": "140314"
+      },
+      {
+        "make": "トヨタ",
+        "model": "プリウス",
+        "type_designation": "6LA-MXWH61",
+        "model_years": [
+          "2023-02-15 to 2025-11-04"
+        ],
+        "affected_count": "24119"
+      },
+      {
+        "make": "トヨタ",
+        "model": "プリウス",
+        "type_designation": "6AA-MXWH65",
+        "model_years": [
+          "2022-11-24 to 2025-11-03"
+        ],
+        "affected_count": "26370"
+      },
+      {
+        "make": "トヨタ",
+        "model": "プリウス",
+        "type_designation": "6AA-ZVW60",
+        "model_years": [
+          "2022-11-24 to 2025-11-03"
+        ],
+        "affected_count": "41796"
+      },
+      {
+        "make": "トヨタ",
+        "model": "プリウス",
+        "type_designation": "6AA-ZVW65",
+        "model_years": [
+          "2022-11-24 to 2025-11-03"
+        ],
+        "affected_count": "6905"
+      }
+    ],
+    "defect_system": "乗降口",
+    "defect_location": "後席ドアの開スイッチ（電気配線）",
+    "defect_description": "後席ドアの開スイッチにおいて、当該スイッチ付近に水が溜まっている状態で極端なドア強閉を行うと、一時的にシール性が低下して回路内に浸水し短絡することがある。そのため、半ドアとなって警告灯が点灯し、最悪の場合、意図せずドアが開くおそれがある。",
+    "root_cause": "後席ドアの開スイッチにおいて回路設計が不十分なため。",
+    "consequences": [
+      "半ドアとなって警告灯が点灯する",
+      "最悪の場合、意図せずドアが開くおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "後席ドア回路（リレー付電気配線）",
+        "part_number": null,
+        "system_path": [
+          "乗降口",
+          "後席ドア",
+          "電気配線"
+        ]
+      },
+      {
+        "part_name": "後席ドアの開スイッチ",
+        "part_number": null,
+        "system_path": [
+          "乗降口",
+          "後席ドア",
+          "開スイッチ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、左右の後席ドア回路に意図しないドア開を防止するリレー付電気配線を追加する。",
+    "correction_detail": "左右の後席ドア回路に、意図しないドア開を防止するリレー付電気配線を追加する。"
+  }
+}

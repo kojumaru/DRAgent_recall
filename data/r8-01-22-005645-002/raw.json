@@ -1,0 +1,66 @@
+{
+  "recall_id": "r8-01-22-005645-002",
+  "parent_recall_id": "r8-01-22-005645",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005645.html",
+  "date_text": "令和8年1月22日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001977676.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "外4125",
+    "notification_date": "2025-12-04",
+    "notifier": "ビー·エム·ダブリュー株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "BMW",
+        "model": "BMW M8 ガブリオレ",
+        "type_designation": "7BA-AE44M",
+        "model_years": [
+          "2024-04-19 to 2024-04-19"
+        ],
+        "affected_count": "1"
+      }
+    ],
+    "defect_system": "エンジン（潤滑装置）",
+    "defect_location": "エンジンオイルポンプとアッパーオイルパン締結ボルト／ロアオイルパン内",
+    "defect_description": "エンジンオイルポンプにおいて、製造工程が不適切なため、エンジンオイルポンプとアッパーオイルパンを締結しているボルトが規定トルクで締め付けられていないものがある。そのため、走行振動等により当該ボルトが緩んでロアオイルパン内に脱落することで、オイルポンプチェーンが損傷してエンジンへのオイル供給不足になりチェックコントロールメッセージが表示され、コンロッドベアリングやメインベアリングの摩耗が促進して異音が発生するおそれがある。そのまま使用を続けると、コンロッドによる圧縮機能低下やクランクシャフトの回転異常が生じて失火して、最悪の場合、走行中にエンジンが停止するおそれがある。",
+    "root_cause": "製造工程が不適切で、締結ボルトが規定トルクで締付けられていない。",
+    "consequences": [
+      "エンジンへのオイル供給不足",
+      "異音が発生するおそれ",
+      "最悪の場合、走行中にエンジンが停止するおそれ"
+    ],
+    "parts": [
+      {
+        "part_name": "エンジンオイルポンプ",
+        "part_number": null,
+        "system_path": [
+          "エンジン（潤滑装置）",
+          "エンジンオイルポンプ"
+        ]
+      },
+      {
+        "part_name": "エンジンオイルポンプ-アッパーオイルパン締結ボルト",
+        "part_number": null,
+        "system_path": [
+          "エンジン（潤滑装置）",
+          "締結部",
+          "締結ボルト"
+        ]
+      },
+      {
+        "part_name": "オイルポンプチェーン",
+        "part_number": null,
+        "system_path": [
+          "エンジン（潤滑装置）",
+          "オイルポンプチェーン"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

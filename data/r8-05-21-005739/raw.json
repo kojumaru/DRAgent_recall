@@ -1,0 +1,76 @@
+{
+  "recall_id": "r8-05-21-005739",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005739.html",
+  "date_text": "令和8年5月21日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002001677.pdf",
+    "https://www.mlit.go.jp/report/press/content/002001678.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002001678.pdf",
+  "metadata": {
+    "notification_number": "外-4188",
+    "notification_date": "2026-05-21",
+    "notifier": "フォルクスワーゲングループ ジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "アウディ",
+        "model": "アウディ Q5 TFSIq",
+        "type_designation": "3AA-GU20S",
+        "model_years": [
+          "2025-08-25 to 2025-11-10"
+        ],
+        "affected_count": "23"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ SQ5 エアサス",
+        "type_designation": "3AA-GUSA",
+        "model_years": [
+          "2025-08-25 to 2025-11-10"
+        ],
+        "affected_count": "25"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ SQ5",
+        "type_designation": "3AA-GUSS",
+        "model_years": [
+          "2025-11-10 to 2025-11-10"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "アウディ",
+        "model": "アウディ Q5 TDIq",
+        "type_designation": "3CA-GU20",
+        "model_years": [
+          "2025-08-25 to 2025-11-10"
+        ],
+        "affected_count": "90"
+      }
+    ],
+    "defect_system": "座席ベルト",
+    "defect_location": "前席シートベルトのシートベルトテンショナー",
+    "defect_description": "前席シートベルトのシートベルトテンショナーにおいて、衝突時にプリテンショナー機構が作動した際、シートベルトの拘束力を保持するロック機構が正しく作動しないことがある。そのため、シートベルトがたるみ、衝突時の乗員保護性能が低下するおそれがある。",
+    "root_cause": "内部構成部品の製造管理が不適切なため。",
+    "consequences": [
+      "シートベルトがたるむ",
+      "衝突時の乗員保護性能が低下するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "シートベルトテンショナー",
+        "part_number": null,
+        "system_path": [
+          "座席ベルト",
+          "前席シートベルト",
+          "シートベルトテンショナー"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、前席シートベルト(左右もしくはどちらか片側)を良品と交換する。",
+    "correction_detail": "全車両、前席シートベルト(左右もしくはどちらか片側)を良品と交換する。"
+  }
+}

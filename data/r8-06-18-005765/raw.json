@@ -1,0 +1,118 @@
+{
+  "recall_id": "r8-06-18-005765",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005765.html",
+  "date_text": "令和8年6月18日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002007348.pdf",
+    "https://www.mlit.go.jp/report/press/content/002007349.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002007349.pdf",
+  "metadata": {
+    "notification_number": "5832",
+    "notification_date": "2026-06-18",
+    "notifier": "トヨタ自動車株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "トヨタ",
+        "model": "シェンタ",
+        "type_designation": "5BA-MXPC10G",
+        "model_years": [
+          "2022-06-15 to 2025-02-13"
+        ],
+        "affected_count": "35242"
+      },
+      {
+        "make": "トヨタ",
+        "model": "シェンタ",
+        "type_designation": "5BA-MXPC12G",
+        "model_years": [
+          "2022-06-15 to 2026-03-17"
+        ],
+        "affected_count": "3944"
+      },
+      {
+        "make": "トヨタ",
+        "model": "シェンタ",
+        "type_designation": "6AA-MXPL10G",
+        "model_years": [
+          "2022-06-15 to 2025-02-13"
+        ],
+        "affected_count": "100144"
+      },
+      {
+        "make": "トヨタ",
+        "model": "シェンタ",
+        "type_designation": "6AA-MXPL12G",
+        "model_years": [
+          "2022-06-15 to 2026-03-17"
+        ],
+        "affected_count": "4361"
+      },
+      {
+        "make": "トヨタ",
+        "model": "シェンタ",
+        "type_designation": "6AA-MXPL15G",
+        "model_years": [
+          "2022-06-15 to 2025-02-13"
+        ],
+        "affected_count": "17499"
+      }
+    ],
+    "defect_system": "乗車装置",
+    "defect_location": "シートベルト（2列目座席バックル／非装着時警報装置）",
+    "defect_description": "二列目座席シートベルト非装着時警報装置において、バックル電気配線の配索検討が不十分なため、シートベルト脱着時に当該配線に繰返し負荷がかかり断線することがある。そのため、シートベルト装着状態が正しく警報されないおそれがある。",
+    "root_cause": "バックル電気配線の配索検討が不十分なため、シートベルト脱着時に当該配線に繰返し負荷がかかること。",
+    "consequences": [
+      "シートベルト装着状態が正しく警報されないおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "二列目左側座席バックル（電気配線）",
+        "part_number": null,
+        "system_path": [
+          "乗車装置",
+          "シートベルト",
+          "バックル"
+        ]
+      },
+      {
+        "part_name": "二列目右側座席バックル",
+        "part_number": null,
+        "system_path": [
+          "乗車装置",
+          "シートベルト",
+          "バックル"
+        ]
+      },
+      {
+        "part_name": "保護カバー",
+        "part_number": null,
+        "system_path": [
+          "乗車装置",
+          "シートベルト",
+          "バックル"
+        ]
+      },
+      {
+        "part_name": "シートクッションカバー",
+        "part_number": null,
+        "system_path": [
+          "乗車装置",
+          "シート"
+        ]
+      },
+      {
+        "part_name": "リクライニングカバー",
+        "part_number": null,
+        "system_path": [
+          "乗車装置",
+          "シート"
+        ]
+      }
+    ],
+    "correction_summary": "該当車両において、二列目左側座席バックルの電気配線の配索を点検し、異常がある場合はバックルを新品に交換する。二列目右側座席バックルを新品に交換および保護カバーを追加するとともに、関連するシートクッションカバーおよびリクライニングカバーを対策品に交換する。",
+    "correction_detail": "1) 二列目左側座席バックルの電気配線の配索を点検し、異常がある場合はバックルを新品に交換する。2) 二列目右側座席バックルを新品に交換し、保護カバーを追加する。あわせて関連するシートクッションカバーおよびリクライニングカバーを対策品に交換する。"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "recall_id": "r8-01-22-005645-009",
+  "parent_recall_id": "r8-01-22-005645",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005645.html",
+  "date_text": "令和8年1月22日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001977676.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "5756",
+    "notification_date": "2025-12-23",
+    "notifier": "株式会社小松製作所",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "コマツ",
+        "model": "WA100-8 他",
+        "type_designation": "YDP-WA138 他",
+        "model_years": [
+          "2025-06-03 to 2025-07-04"
+        ],
+        "affected_count": "36"
+      }
+    ],
+    "defect_system": "操舵装置",
+    "defect_location": "ステアリングホイールとステアリングコラムの締結部（ナット）",
+    "defect_description": "ショベル·ローダのステアリングホイールとステアリングコラムの締結部において、作業指示が不適切なため、ナットが規定トルクで締付けられていないものがある。そのため、操舵等の入力によりナットが緩み、ステアリングホイール操作時にガタつきが発生するおそれがある。",
+    "root_cause": "作業指示が不適切でナットが規定トルクで締付けられていない。",
+    "consequences": [
+      "ナットが緩み、ステアリングホイール操作時にガタつきが発生するおそれ"
+    ],
+    "parts": [
+      {
+        "part_name": "ステアリングホイール-ステアリングコラム締結ナット",
+        "part_number": null,
+        "system_path": [
+          "操舵装置",
+          "締結部",
+          "ナット"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

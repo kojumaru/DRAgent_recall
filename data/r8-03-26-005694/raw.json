@@ -1,0 +1,183 @@
+{
+  "recall_id": "r8-03-26-005694",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005694.html",
+  "date_text": "令和8年3月26日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001989285.pdf",
+    "https://www.mlit.go.jp/report/press/content/001989286.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001989286.pdf",
+  "metadata": {
+    "notification_number": "5791",
+    "notification_date": "2026-03-26",
+    "notifier": "ダイハツ工業株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ダイハツ",
+        "model": "ムーヴ",
+        "type_designation": "DBA-LA150S",
+        "model_years": [
+          "2018-09-18 to 2018-12-24"
+        ],
+        "affected_count": "13567"
+      },
+      {
+        "make": "ダイハツ",
+        "model": "ムーヴ",
+        "type_designation": "DBA-LA150S 3BA-LA150S 5BA-LA150S",
+        "model_years": [
+          "2019-01-16 to 2023-06-21"
+        ],
+        "affected_count": "159065"
+      },
+      {
+        "make": "ダイハツ",
+        "model": "ムーヴ",
+        "type_designation": "DBA-LA160S",
+        "model_years": [
+          "2018-09-18 to 2018-12-21"
+        ],
+        "affected_count": "3152"
+      },
+      {
+        "make": "ダイハツ",
+        "model": "ムーヴ",
+        "type_designation": "DBA-LA160S 3BA-LA160S 5BA-LA160S",
+        "model_years": [
+          "2019-01-16 to 2023-06-21"
+        ],
+        "affected_count": "35825"
+      },
+      {
+        "make": "ダイハツ",
+        "model": "ウェイク",
+        "type_designation": "DBA-LA700S 3BA-LA700S 4BA-LA700S",
+        "model_years": [
+          "2016-09-22 to 2022-08-08"
+        ],
+        "affected_count": "108530"
+      },
+      {
+        "make": "ダイハツ",
+        "model": "ウェイク",
+        "type_designation": "DBA-LA710S 3BA-LA710S 4BA-LA710S",
+        "model_years": [
+          "2016-09-22 to 2022-08-05"
+        ],
+        "affected_count": "19868"
+      },
+      {
+        "make": "ダイハツ",
+        "model": "ハイゼット キャディー",
+        "type_designation": "HBD-LA700V",
+        "model_years": [
+          "2016-09-22 to 2021-03-26"
+        ],
+        "affected_count": "3179"
+      },
+      {
+        "make": "ダイハツ",
+        "model": "ハイゼット キャディー",
+        "type_designation": "HBD-LA710V",
+        "model_years": [
+          "2016-09-23 to 2021-03-27"
+        ],
+        "affected_count": "1067"
+      },
+      {
+        "make": "スバル",
+        "model": "ステラ",
+        "type_designation": "DBA-LA150F",
+        "model_years": [
+          "2018-09-18 to 2018-12-21"
+        ],
+        "affected_count": "1089"
+      },
+      {
+        "make": "スバル",
+        "model": "ステラ",
+        "type_designation": "DBA-LA150F 5BA-LA150F",
+        "model_years": [
+          "2019-01-16 to 2023-06-21"
+        ],
+        "affected_count": "11761"
+      },
+      {
+        "make": "スバル",
+        "model": "ステラ",
+        "type_designation": "DBA-LA160F",
+        "model_years": [
+          "2018-09-18 to 2018-12-21"
+        ],
+        "affected_count": "585"
+      },
+      {
+        "make": "スバル",
+        "model": "ステラ",
+        "type_designation": "DBA-LA160F 5BA-LA160F",
+        "model_years": [
+          "2019-01-16 to 2023-06-21"
+        ],
+        "affected_count": "5737"
+      },
+      {
+        "make": "トヨタ",
+        "model": "ピクシス メガ",
+        "type_designation": "DBA-LA700A 3BA-LA700A 4BA-LA700A",
+        "model_years": [
+          "2016-09-22 to 2022-08-05"
+        ],
+        "affected_count": "35720"
+      },
+      {
+        "make": "トヨタ",
+        "model": "ピクシス メガ",
+        "type_designation": "DBA-LA710A 3BA-LA710A 4BA-LA710A",
+        "model_years": [
+          "2016-09-22 to 2022-08-05"
+        ],
+        "affected_count": "6818"
+      }
+    ],
+    "defect_system": "その他",
+    "defect_location": "カウルルーバー（止水シール部）／ブレーキブースタ",
+    "defect_description": "カウルルーバーにおいて、車体への組付け指示が不十分であったため、止水シール部から雨水等がブレーキブースタに滴下するものがある。そのため、ブレーキブースタに錆が発生し、そのままの状態で使用を続けると、錆が早期に進行して、最悪の場合、ブレーキブースタに穴があき、ブレーキペダルの操作力が増大し、制動距離が長くなるおそれがある。",
+    "root_cause": "車体への組付け指示が不十分であったため。",
+    "consequences": [
+      "最悪の場合、ブレーキブースタに穴があく",
+      "ブレーキペダルの操作力が増大する",
+      "制動距離が長くなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "カウルルーバー",
+        "part_number": null,
+        "system_path": [
+          "その他",
+          "カウルルーバー"
+        ]
+      },
+      {
+        "part_name": "カウルルーバー止水シール",
+        "part_number": null,
+        "system_path": [
+          "その他",
+          "カウルルーバー",
+          "止水シール"
+        ]
+      },
+      {
+        "part_name": "ブレーキブースタ",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "ブレーキブースタ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ブレーキブースタを点検し、錆の状況に応じて防錆剤塗布、カウルルーバー止水シールの対策品交換、またはブレーキブースタ新品交換（止水シール対策品交換を含む）を行う。",
+    "correction_detail": "全車両、ブレーキブースタを点検し、いずれかの改善措置を行う。1) 錆がない又は錆が軽微な場合には防錆剤を塗布する。2) ブレーキブースタ下端部に雨水等の滴下による広範囲の錆が認められた場合には、防錆剤の塗布に加えてカウルルーバーの止水シールを対策品に交換する。3) 錆が進行して剥がれまたは穴あきがある場合には、ブレーキブースタを新品に交換するとともにカウルルーバーの止水シールを対策品に交換する。"
+  }
+}

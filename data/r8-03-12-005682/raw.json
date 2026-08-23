@@ -1,0 +1,48 @@
+{
+  "recall_id": "r8-03-12-005682",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005682.html",
+  "date_text": "令和8年3月12日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001995269.pdf",
+    "https://www.mlit.go.jp/report/press/content/001986128.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001986128.pdf",
+  "metadata": {
+    "notification_number": "装20",
+    "notification_date": "2026-03-12",
+    "notifier": "住友ゴム工業株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "住友ゴム工業株式会社",
+        "model": "DUNLOP SP062",
+        "type_designation": "265/70R19.5 140/138J",
+        "model_years": [
+          "2024-04-27 to 2024-06-01"
+        ],
+        "affected_count": "239"
+      }
+    ],
+    "defect_system": "タイヤ（大型トラック・バス用スタッドレスタイヤ）",
+    "defect_location": "サイドウォール部",
+    "defect_description": "大型トラック·バス用スタッドレスタイヤにおいて、製造工程における検出機器の管理が不十分なため、サイドウォール部に配置しているスチール材料へのゴム付きが不足し、タイヤ内面のゴム厚みが薄くなるものがある。そのため、走行中にサイドウォール部が損傷(膨れ·亀裂)してエアが漏れ、最悪の場合、タイヤのバーストが発生するおそれがある。",
+    "root_cause": "製造工程における検出機器の管理が不十分なため、サイドウォール部に配置しているスチール材料へのゴム付きが不足し、タイヤ内面のゴム厚みが薄くなるものがある。",
+    "consequences": [
+      "走行中にサイドウォール部が損傷（膨れ・亀裂）してエアが漏れる",
+      "最悪の場合、タイヤのバーストが発生するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "サイドウォール部（スチール材料配置部）",
+        "part_number": null,
+        "system_path": [
+          "タイヤ",
+          "サイドウォール部"
+        ]
+      }
+    ],
+    "correction_summary": "不具合対象タイヤを良品タイヤと交換する。",
+    "correction_detail": "不具合対象タイヤ（商品名:DUNLOP SP062、型式:265/70R19.5 140/138J）のうち、対象範囲（年週コード:1XMW 1624の一部識別番号、年週コード:1XMW 2024又は2124の全数）に該当するタイヤを回収し、良品タイヤと交換する。"
+  }
+}

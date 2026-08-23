@@ -1,0 +1,58 @@
+{
+  "recall_id": "r8-02-18-005669-002",
+  "parent_recall_id": "r8-02-18-005669",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005669.html",
+  "date_text": "令和8年2月18日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001982127.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "5745",
+    "notification_date": "2026-01-13",
+    "notifier": "豊和工業株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "いすぐ",
+        "model": "フォワード",
+        "type_designation": "2PG-FTR90U4",
+        "model_years": [
+          "2016-01-05 to 2025-02-11"
+        ],
+        "affected_count": "30"
+      }
+    ],
+    "defect_system": "油圧装置（作業装置の油圧回路）",
+    "defect_location": "チェックバルブ、油圧ホース（清掃車作業装置）",
+    "defect_description": "清掃車の作業装置の油圧回路において、作業用エンジン等からの熱により配管内の圧力が上昇することがある。そのため、圧力により作業装置のチェックバルブが開かず、作業装置停止後、清掃装置(左右ブラシ)が格納できないことから、他の交通を妨げるおそれがある。また、繰り返し高い圧力を油圧ホースが受けると、破損するおそれがある。",
+    "root_cause": "チェックバルブの選定が不十分なため。",
+    "consequences": [
+      "清掃装置(左右ブラシ)が格納できず、他の交通を妨げるおそれがある",
+      "油圧ホースが破損するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "チェックバルブ",
+        "part_number": null,
+        "system_path": [
+          "油圧装置",
+          "油圧回路",
+          "チェックバルブ"
+        ]
+      },
+      {
+        "part_name": "油圧ホース",
+        "part_number": null,
+        "system_path": [
+          "油圧装置",
+          "油圧回路",
+          "油圧ホース"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

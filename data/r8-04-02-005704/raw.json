@@ -1,0 +1,56 @@
+{
+  "recall_id": "r8-04-02-005704",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005704.html",
+  "date_text": "令和8年4月2日",
+  "month": 4,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001992187.pdf",
+    "https://www.mlit.go.jp/report/press/content/001992188.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001992188.pdf",
+  "metadata": {
+    "notification_number": "5795",
+    "notification_date": "2026-04-02",
+    "notifier": "スズキ株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "スズキ",
+        "model": "e ビターラ",
+        "type_designation": "ZAA-PA2AS",
+        "model_years": [
+          "2025-10-24 to 2026-01-05"
+        ],
+        "affected_count": "141"
+      },
+      {
+        "make": "スズキ",
+        "model": "e ビターラ",
+        "type_designation": "ZAA-PB3AS",
+        "model_years": [
+          "2025-10-24 to 2025-12-26"
+        ],
+        "affected_count": "101"
+      }
+    ],
+    "defect_system": "座席ベルト等",
+    "defect_location": "取扱説明書",
+    "defect_description": "取扱説明書に記載されたチャイルドシート(以下、CRS)適合表において、車両の後席中央座席にi-Size用固定具が装備されていないにもかかわらず、CRS装着の有無について、適合表に「有」と誤って記載しているため、保安基準に適合しない。",
+    "root_cause": "取扱説明書のCRS適合表において、後席中央座席のi-Size用固定具の有無の記載を誤り、「無」であるべきところを「有」と誤記したため。",
+    "consequences": [
+      "保安基準に適合しない"
+    ],
+    "parts": [
+      {
+        "part_name": "取扱説明書",
+        "part_number": null,
+        "system_path": [
+          "座席ベルト等",
+          "取扱説明書"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、取扱説明書にi-Size仕様のCRS着席位置の後席中央において、正しい記載である「無」と記載された訂正シールを貼付けする。",
+    "correction_detail": "取扱説明書のi-Size仕様CRS着席位置（後席中央）の記載について、「有」となっている箇所を正しい「無」に訂正するため、訂正シールを貼付する。"
+  }
+}

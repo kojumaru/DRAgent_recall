@@ -1,0 +1,84 @@
+{
+  "recall_id": "r8-06-10-005755",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005755.html",
+  "date_text": "令和8年6月10日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002005465.pdf",
+    "https://www.mlit.go.jp/report/press/content/002005466.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002005466.pdf",
+  "metadata": {
+    "notification_number": "5798",
+    "notification_date": "2026-06-10",
+    "notifier": "株式会社ロジスネクスト",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ロジスネクスト",
+        "model": "アレシス",
+        "type_designation": "ZAF-22C0",
+        "model_years": [
+          "2024-02-16 to 2025-11-27"
+        ],
+        "affected_count": "781"
+      },
+      {
+        "make": "ロジスネクスト",
+        "model": "アレシス",
+        "type_designation": "ZAF-24C0",
+        "model_years": [
+          "2024-02-26 to 2025-11-26"
+        ],
+        "affected_count": "389"
+      },
+      {
+        "make": "ロジスネクスト",
+        "model": "アレシス",
+        "type_designation": "ZAF-24D0",
+        "model_years": [
+          "2024-09-19 to 2025-11-27"
+        ],
+        "affected_count": "3"
+      },
+      {
+        "make": "ロジスネクスト",
+        "model": "アレシス",
+        "type_designation": "ZAF-25C0",
+        "model_years": [
+          "2024-02-20 to 2025-11-10"
+        ],
+        "affected_count": "26"
+      }
+    ],
+    "defect_system": "制動灯",
+    "defect_location": "ブレーキスイッチ",
+    "defect_description": "バッテリ式フォークリフトのブレーキスイッチにおいて、スイッチ内部の構成部品の加工が不適切なため、ブレーキペダル操作時にブレーキスイッチが固着し制動灯が点灯したままとなることがある。そのため、そのまま使用を続けると、ブレーキスイッチを固定するブラケットが変形して制動時のブレーキペダルの操作力が増加し、最悪の場合、ブレーキスイッチの固定位置がずれて制動灯が点灯しなくなるおそれがある。",
+    "root_cause": "スイッチ内部の構成部品の加工が不適切なため。",
+    "consequences": [
+      "ブレーキスイッチを固定するブラケットが変形し、制動時のブレーキペダルの操作力が増加する",
+      "最悪の場合、ブレーキスイッチの固定位置がずれて制動灯が点灯しなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ブレーキスイッチ",
+        "part_number": null,
+        "system_path": [
+          "制動灯",
+          "ブレーキスイッチ"
+        ]
+      },
+      {
+        "part_name": "取付ブラケット",
+        "part_number": null,
+        "system_path": [
+          "制動灯",
+          "ブレーキスイッチ",
+          "取付ブラケット"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ブレーキスイッチを対策品に交換する。また、取付ブラケットが変形している場合は修理し、破損している場合は取付ブラケットを交換する。",
+    "correction_detail": "全車両についてブレーキスイッチを対策品に交換する。併せて、ブレーキスイッチ取付ブラケットを点検し、変形している場合は修理、破損している場合は取付ブラケットを交換する。"
+  }
+}

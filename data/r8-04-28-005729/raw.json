@@ -1,0 +1,113 @@
+{
+  "recall_id": "r8-04-28-005729",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005729.html",
+  "date_text": "令和8年4月28日",
+  "month": 4,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001998819.pdf",
+    "https://www.mlit.go.jp/report/press/content/001998820.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001998820.pdf",
+  "metadata": {
+    "notification_number": "外-4184",
+    "notification_date": "2026-04-28",
+    "notifier": "トライアンフモーターサイクルズジャパン株式会社 代表取締役 大貫陽介",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "トライアンフ",
+        "model": "ボンネビル T100",
+        "type_designation": "2BL-DGJ900",
+        "model_years": [
+          "2021-02-03 to 2022-06-24"
+        ],
+        "affected_count": "252"
+      },
+      {
+        "make": "トライアンフ",
+        "model": "ストリートツイン",
+        "type_designation": "2BL-DGJ900",
+        "model_years": [
+          "2020-11-23 to 2022-07-07"
+        ],
+        "affected_count": "232"
+      },
+      {
+        "make": "トライアンフ",
+        "model": "ストリートスクランブラー",
+        "type_designation": "2BL-DGJ900",
+        "model_years": [
+          "2021-02-13 to 2022-08-11"
+        ],
+        "affected_count": "267"
+      },
+      {
+        "make": "トライアンフ",
+        "model": "ボンネビル T120",
+        "type_designation": "2BL-DHJ1200",
+        "model_years": [
+          "2021-05-28 to 2021-05-28"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "トライアンフ",
+        "model": "ボンネビル T100",
+        "type_designation": "8BL-DGJ900",
+        "model_years": [
+          "2022-05-21 to 2023-11-29"
+        ],
+        "affected_count": "387"
+      },
+      {
+        "make": "トライアンフ",
+        "model": "スピードツイン 900",
+        "type_designation": "8BL-DGJ900",
+        "model_years": [
+          "2022-07-07 to 2023-11-30"
+        ],
+        "affected_count": "862"
+      },
+      {
+        "make": "トライアンフ",
+        "model": "スクランブラー-900",
+        "type_designation": "8BL-DGJ900",
+        "model_years": [
+          "2022-05-09 to 2023-11-26"
+        ],
+        "affected_count": "285"
+      },
+      {
+        "make": "トライアンフ",
+        "model": "ボンネビル T120",
+        "type_designation": "8BL-DHJ1200",
+        "model_years": [
+          "2021-03-04 to 2023-12-01"
+        ],
+        "affected_count": "1467"
+      }
+    ],
+    "defect_system": "電気装置",
+    "defect_location": "コネクタ端子（発電機側ハーネスとメインワイヤーハーネスを繋ぐコネクタ）",
+    "defect_description": "発電機側ハーネスとメインワイヤーハーネスを繋ぐコネクタ端子において、走行振動等により当該端子表面のメッキが摩耗することにより母材が露出し、酸化して腐食することがある。そのため、コネクタ端子が導通不良により発熱し、そのまま使用を続けると、最悪の場合、当該コネクタが溶損して火災となるおそれがある。",
+    "root_cause": "設計検討が不十分なため。",
+    "consequences": [
+      "コネクタ端子が導通不良により発熱する",
+      "当該コネクタが溶損する",
+      "火災となるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "コネクタ端子（発電機側ハーネス-メインワイヤーハーネス接続）",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "ハーネス",
+          "コネクタ端子"
+        ]
+      }
+    ],
+    "correction_summary": "発電機側ハーネスとメインワイヤーハーネス間のコネクタ接続を廃止し、専用の固定具を用いて配線を固定する。",
+    "correction_detail": "発電機側ハーネスとメインワイヤーハーネス間のコネクタ接続を廃止し、専用の固定具を用いて配線を固定する。"
+  }
+}

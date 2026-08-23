@@ -1,0 +1,102 @@
+{
+  "recall_id": "r8-05-14-005733",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005733.html",
+  "date_text": "令和8年5月14日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002000437.pdf",
+    "https://www.mlit.go.jp/report/press/content/002000438.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002000438.pdf",
+  "metadata": {
+    "notification_number": "外-4177",
+    "notification_date": "2026-05-14",
+    "notifier": "Stellantis ジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ジープ",
+        "model": "グランド チェロキー",
+        "type_designation": "3LA-WL20",
+        "model_years": [
+          "2023-10-14 to 2024-03-04"
+        ],
+        "affected_count": "88"
+      },
+      {
+        "make": "ジープ",
+        "model": "グランド チェロキー",
+        "type_designation": "3LA-WL20A",
+        "model_years": [
+          "2023-08-18 to 2024-04-11"
+        ],
+        "affected_count": "112"
+      },
+      {
+        "make": "ジープ",
+        "model": "グランド チェロキー",
+        "type_designation": "7BA-WL20",
+        "model_years": [
+          "2023-06-25 to 2024-07-30"
+        ],
+        "affected_count": "611"
+      },
+      {
+        "make": "ジープ",
+        "model": "グランド チェロキーL",
+        "type_designation": "7BA-WL36L",
+        "model_years": [
+          "2023-06-25 to 2024-03-04"
+        ],
+        "affected_count": "34"
+      },
+      {
+        "make": "ジープ",
+        "model": "グランド チェロキーL",
+        "type_designation": "7BA-WL36LA",
+        "model_years": [
+          "2023-08-18 to 2024-03-22"
+        ],
+        "affected_count": "291"
+      },
+      {
+        "make": "ジープ",
+        "model": "グランド チェロキー",
+        "type_designation": "7BA-WL20",
+        "model_years": [
+          "2023-05-15 to 2023-05-15"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "ジープ",
+        "model": "グランド チェロキーL",
+        "type_designation": "7BA-WL36L",
+        "model_years": [
+          "2022-05-14 to 2022-06-26"
+        ],
+        "affected_count": "2"
+      }
+    ],
+    "defect_system": "座席",
+    "defect_location": "後席シートのヘッドレスト（2列目左右シート）",
+    "defect_description": "2列目左右シートのヘッドレストにおいて、折り畳み機構が適切に作動しないものがある。そのため、当該シートの背もたれを折り畳んだ状態から元に戻す際に、ヘッドレストが正しい位置に固定できず、保安基準に適合しないおそれがある。",
+    "root_cause": "製造工程が不適切なため。",
+    "consequences": [
+      "ヘッドレストが正しい位置に固定できず、保安基準に適合しないおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "後席シートのヘッドレスト（2列目左右）折り畳み機構",
+        "part_number": null,
+        "system_path": [
+          "座席",
+          "後席シート",
+          "ヘッドレスト"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、当該ヘッドレストの折り畳み機構を点検し、正しい位置に確実に固定できないものは、ヘッドレストを良品に交換する。",
+    "correction_detail": "当該ヘッドレストの折り畳み機構を点検し、正しい位置に確実に固定できないものについてヘッドレストを良品に交換する。交換修理用部品が組付けられた車両は、同様の改善を実施する。"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "recall_id": "r8-01-14-005643",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005643.html",
+  "date_text": "令和8年1月14日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/1_5766_ichiranhyou.pdf",
+    "https://www.mlit.go.jp/report/press/content/2_5766_setumeizu.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/2_5766_setumeizu.pdf",
+  "metadata": {
+    "notification_number": "5766",
+    "notification_date": "2026-01-14",
+    "notifier": "トヨタ車体株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "トヨタ オート ボデー",
+        "model": "コムス",
+        "type_designation": "ZAD-TAK30",
+        "model_years": [
+          "2012-07-04 to 2025-10-07"
+        ],
+        "affected_count": "11752"
+      }
+    ],
+    "defect_system": "電気装置",
+    "defect_location": "充電器",
+    "defect_description": "充電器において、充電制御プログラムが不適切なため、過充電となることがある。そのため、過充電の繰り返しにより、駆動用鉛蓄電池内部のセル間接続部の劣化が促進され、当該電池内部が断線して電源が消失し、最悪の場合、走行中に走行不能となるおそれがある。",
+    "root_cause": "充電器の充電制御プログラムが不適切なため。",
+    "consequences": [
+      "駆動用鉛蓄電池内部が断線して電源が消失する",
+      "最悪の場合、走行中に走行不能となるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "充電器",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "充電器"
+        ]
+      },
+      {
+        "part_name": "駆動用鉛蓄電池",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "駆動用鉛蓄電池"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、充電器を対策品と交換する。なお、充電器交換後に駆動用鉛蓄電池が断線した場合は、駆動用鉛蓄電池を新品に交換する。",
+    "correction_detail": "全車両について充電器を対策品に交換する。充電器交換後に駆動用鉛蓄電池が断線した場合は、駆動用鉛蓄電池を新品に交換する。"
+  }
+}

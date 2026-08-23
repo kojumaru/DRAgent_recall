@@ -1,0 +1,57 @@
+{
+  "recall_id": "r8-03-26-005702",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005702.html",
+  "date_text": "令和8年3月26日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001991207.pdf",
+    "https://www.mlit.go.jp/report/press/content/001991208.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001991208.pdf",
+  "metadata": {
+    "notification_number": "改715",
+    "notification_date": "2026-03-26",
+    "notifier": "フォードモーターカンパニー アジアにおける代表者 Susanto, Bagus（製作者名: フォードモーターカンパニー）",
+    "recall_type": "改善対策",
+    "affected_vehicles": [
+      {
+        "make": "フォード",
+        "model": "リンカーン ナビゲーター",
+        "type_designation": "不明",
+        "model_years": [
+          "2014-07-09 to 2015-02-24"
+        ],
+        "affected_count": "16"
+      }
+    ],
+    "defect_system": "後退時車両直後確認装置",
+    "defect_location": "リヤビューカメラ",
+    "defect_description": "リヤビューカメラにおいて、製造工程が不適切なため端子がカメラ内部のプリント基板に正しくはんだ付けされておらず、接触不良となっているものがある。そのため、通電性が不十分となり断続的に映像が映らなくなり、後退時に衝突するおそれがある。",
+    "root_cause": "製造工程が不適切なため、端子がカメラ内部のプリント基板に正しくはんだ付けされていない。",
+    "consequences": [
+      "断続的に映像が映らなくなる",
+      "後退時に衝突するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "リヤビューカメラ",
+        "part_number": null,
+        "system_path": [
+          "後退時車両直後確認装置",
+          "リヤビューカメラ"
+        ]
+      },
+      {
+        "part_name": "プリント基板",
+        "part_number": null,
+        "system_path": [
+          "後退時車両直後確認装置",
+          "リヤビューカメラ",
+          "プリント基板"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、リヤビューカメラを良品に交換する。",
+    "correction_detail": "全車両のリヤビューカメラについて、良品に交換する。"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "recall_id": "r8-05-28-005748",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005748.html",
+  "date_text": "令和8年5月28日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002002982.pdf",
+    "https://www.mlit.go.jp/report/press/content/002002983.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002002983.pdf",
+  "metadata": {
+    "notification_number": "外 4192",
+    "notification_date": "2026-05-28",
+    "notifier": "ルノー·ジャポン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ルノー",
+        "model": "アルカナ",
+        "type_designation": "7AA-LJLH4MH",
+        "model_years": [
+          "2021-11-24 to 2024-12-04"
+        ],
+        "affected_count": "1972"
+      }
+    ],
+    "defect_system": "暖房装置",
+    "defect_location": "ヒーターコア",
+    "defect_description": "原動機の冷却水において、冷却水精製時の作業指示が不適切なため、冷却水路内に不純物が生成されて車室内の暖房に用いるヒーターコア内部に詰まりが生じることがある。そのため、そのまま使用を続けると、加熱された冷却水が流れにくい状態となって、最悪の場合、暖房及びデフロスタ機能が低下するおそれがある。",
+    "root_cause": "冷却水精製時の作業指示が不適切なため、冷却水路内に不純物が生成されること。",
+    "consequences": [
+      "暖房機能が低下するおそれがある",
+      "デフロスタ機能が低下するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ヒーターコア",
+        "part_number": null,
+        "system_path": [
+          "暖房装置",
+          "ヒーターコア"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、冷却水を良品に交換し、暖房機能を点検する。送風温度が十分に温まらない場合は、ヒーターコアを洗浄または交換する。",
+    "correction_detail": "全車両、冷却水を良品に交換する。また、暖房機能を点検し、吹き出し口の送風温度が十分に温まらない場合は、ヒーターコアを洗浄または交換する。"
+  }
+}

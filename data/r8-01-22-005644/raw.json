@@ -1,0 +1,222 @@
+{
+  "recall_id": "r8-01-22-005644",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005644.html",
+  "date_text": "令和8年1月22日",
+  "month": 1,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001977673.pdf",
+    "https://www.mlit.go.jp/report/press/content/001977674.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001977674.pdf",
+  "metadata": {
+    "notification_number": "5768",
+    "notification_date": "2026-01-22",
+    "notifier": "三菱ふそうトラック·バス株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "三菱",
+        "model": "ふそう キャンター",
+        "type_designation": "2RG-FBA20",
+        "model_years": [
+          "2024-02-01 to 2024-07-22"
+        ],
+        "affected_count": "1000"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう キャンター",
+        "type_designation": "2RG-FBAV0",
+        "model_years": [
+          "2024-02-01 to 2024-07-24"
+        ],
+        "affected_count": "309"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう キャンター",
+        "type_designation": "2RG-FDA20",
+        "model_years": [
+          "2024-02-01 to 2024-07-01"
+        ],
+        "affected_count": "225"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう キャンター",
+        "type_designation": "2RG-FDA40",
+        "model_years": [
+          "2024-04-09 to 2024-05-14"
+        ],
+        "affected_count": "4"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう キャンター",
+        "type_designation": "2RG-FDA50",
+        "model_years": [
+          "2024-02-26 to 2024-05-21"
+        ],
+        "affected_count": "64"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう キャンター",
+        "type_designation": "2RG-FDA60",
+        "model_years": [
+          "2024-02-14 to 2024-07-05"
+        ],
+        "affected_count": "64"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう キャンター",
+        "type_designation": "2RG-FEA20",
+        "model_years": [
+          "2024-02-05 to 2024-07-01"
+        ],
+        "affected_count": "219"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう キャンター",
+        "type_designation": "2RG-FEAV0",
+        "model_years": [
+          "2024-02-01 to 2024-07-22"
+        ],
+        "affected_count": "985"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう キャンター",
+        "type_designation": "2RG-FEB20",
+        "model_years": [
+          "2024-02-05 to 2024-07-02"
+        ],
+        "affected_count": "100"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう キャンター",
+        "type_designation": "2RG-FGA20",
+        "model_years": [
+          "2024-02-19 to 2024-06-17"
+        ],
+        "affected_count": "45"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう キャンター",
+        "type_designation": "2RG-FGA50",
+        "model_years": [
+          "2024-02-13 to 2024-07-25"
+        ],
+        "affected_count": "57"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう キャンター",
+        "type_designation": "2TG-FBA00",
+        "model_years": [
+          "2024-02-23 to 2024-07-23"
+        ],
+        "affected_count": "102"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう キャンター",
+        "type_designation": "2TG-FDA00",
+        "model_years": [
+          "2024-02-22 to 2024-07-23"
+        ],
+        "affected_count": "81"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう eCANTER",
+        "type_designation": "ZAB-FEAVK",
+        "model_years": [
+          "2024-02-21 to 2024-07-04"
+        ],
+        "affected_count": "407"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう eCANTER",
+        "type_designation": "ZAB-FEBVK",
+        "model_years": [
+          "2024-05-20 to 2024-05-20"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう ローザ",
+        "type_designation": "2RG-BE740E",
+        "model_years": [
+          "2024-02-12 to 2024-07-03"
+        ],
+        "affected_count": "55"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう ローザ",
+        "type_designation": "2RG-BE740G",
+        "model_years": [
+          "2024-02-07 to 2024-07-08"
+        ],
+        "affected_count": "315"
+      },
+      {
+        "make": "三菱",
+        "model": "ふそう ローザ",
+        "type_designation": "2RG-BE740J",
+        "model_years": [
+          "2024-02-09 to 2024-12-04"
+        ],
+        "affected_count": "65"
+      }
+    ],
+    "defect_system": "緩衝装置",
+    "defect_location": "アッパーアームシャフト",
+    "defect_description": "独立懸架式サスペンションのアッパーアームシャフトにおいて、製造時の熱処理が不適切なため、当該部位の強度が不足しているものがある。そのため、走行中の振動や衝撃によってアッパーアームシャフトが折損し、最悪の場合、路面に脱落することがある。また、アッパーアームが車両内側の部品と干渉して操縦安定性が低下し、バスにおいては、アッパーアームがブレーキパイプと干渉し、そのまま使用を続けると、ブレーキパイプが損傷し、ブレーキ液漏れに至りブレーキ機能が低下するおそれがある。",
+    "root_cause": "製造時の熱処理が不適切なため、アッパーアームシャフトの強度が不足しているものがある。",
+    "consequences": [
+      "走行中の振動や衝撃によってアッパーアームシャフトが折損する",
+      "最悪の場合、路面に脱落することがある",
+      "アッパーアームが車両内側の部品と干渉して操縦安定性が低下する",
+      "（バス）アッパーアームがブレーキパイプと干渉し、ブレーキパイプ損傷→ブレーキ液漏れ→ブレーキ機能が低下するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "アッパーアームシャフト",
+        "part_number": null,
+        "system_path": [
+          "緩衝装置",
+          "独立懸架式サスペンション",
+          "アッパーアームシャフト"
+        ]
+      },
+      {
+        "part_name": "アッパーアームASSY",
+        "part_number": null,
+        "system_path": [
+          "緩衝装置",
+          "独立懸架式サスペンション",
+          "アッパーアーム"
+        ]
+      },
+      {
+        "part_name": "ブレーキパイプ",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "配管",
+          "ブレーキパイプ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、左右のアッパーアームシャフトの生産ロット刻印を点検し、製造不良の生産ロットであった場合、良品のアッパーアームASSYと交換する。",
+    "correction_detail": "左右のアッパーアームシャフトの生産ロット刻印を点検し、製造不良の生産ロットに該当する場合は、良品のアッパーアームASSYに交換する。"
+  }
+}

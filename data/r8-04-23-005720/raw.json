@@ -1,0 +1,56 @@
+{
+  "recall_id": "r8-04-23-005720",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005720.html",
+  "date_text": "令和8年4月23日",
+  "month": 4,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001997681.pdf",
+    "https://www.mlit.go.jp/report/press/content/001997682.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001997682.pdf",
+  "metadata": {
+    "notification_number": "外-4174",
+    "notification_date": "2026-04-23",
+    "notifier": "ゼネラルモーターズ·ジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "キャデラック",
+        "model": "エスカレード",
+        "type_designation": "7BA-T1UL",
+        "model_years": [
+          "2020-12-10 to 2024-12-03"
+        ],
+        "affected_count": "796"
+      },
+      {
+        "make": "キャデラック",
+        "model": "CT5",
+        "type_designation": "7BA-A2LL",
+        "model_years": [
+          "2023-08-01 to 2023-08-01"
+        ],
+        "affected_count": "1"
+      }
+    ],
+    "defect_system": "電気装置",
+    "defect_location": "ボディーコントロールモジュール",
+    "defect_description": "ボディーコントロールモジュールにおいて、設計検討が不十分なため、プログラムに不備がある。そのため、ヘッドランプコントロールモジュールとの通信が途絶えた場合、警告メッセージが出ないため、保安基準に適合しない。",
+    "root_cause": "設計検討が不十分なため、プログラムに不備がある。",
+    "consequences": [
+      "ヘッドランプコントロールモジュールとの通信が途絶えた場合に警告メッセージが表示されず、保安基準に適合しない。"
+    ],
+    "parts": [
+      {
+        "part_name": "ボディーコントロールモジュール",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "ボディーコントロールモジュール"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ボディーコントロールモジュールのソフトウェアを対策プログラムに書き換える。",
+    "correction_detail": "全車両、ボディーコントロールモジュールのソフトウェアを対策プログラムに書き換える。"
+  }
+}

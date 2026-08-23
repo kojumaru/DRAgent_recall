@@ -1,0 +1,170 @@
+{
+  "recall_id": "r8-02-25-005676",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005676.html",
+  "date_text": "令和8年2月25日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001983316.pdf",
+    "https://www.mlit.go.jp/report/press/content/001983317.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001983317.pdf",
+  "metadata": {
+    "notification_number": "5779",
+    "notification_date": "2026-02-25",
+    "notifier": "株式会社 豊田自動織機",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "トヨタ",
+        "model": "トヨタ フォークリフト",
+        "type_designation": "3FBK5",
+        "model_years": [
+          "2001-03-19 to 2002-12-27"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ フォークリフト",
+        "type_designation": "ZAF- A3FBK5",
+        "model_years": [
+          "2016-03-01 to 2021-03-11"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ フォークリフト",
+        "type_designation": "ZAF- A3FBK5",
+        "model_years": [
+          "2012-11-15 to 2012-11-15"
+        ],
+        "affected_count": "1"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ フォークリフト",
+        "type_designation": "3FBK9",
+        "model_years": [
+          "1996-12-11 to 2004-06-25"
+        ],
+        "affected_count": "8"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ フォークリフト",
+        "type_designation": "ZAF- A3FBK9",
+        "model_years": [
+          "2006-06-27 to 2023-07-17"
+        ],
+        "affected_count": "20"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ フォークリフト",
+        "type_designation": "ZAF- A3FBK9",
+        "model_years": [
+          "2021-12-20 to 2024-02-02"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ フォークリフト",
+        "type_designation": "3FB9",
+        "model_years": [
+          "1996-09-06 to 2006-05-22"
+        ],
+        "affected_count": "394"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ フォークリフト",
+        "type_designation": "ZAF- A3FB9",
+        "model_years": [
+          "2006-07-11 to 2025-05-14"
+        ],
+        "affected_count": "630"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ フォークリフト",
+        "type_designation": "3FG9",
+        "model_years": [
+          "1997-03-28 to 2008-07-04"
+        ],
+        "affected_count": "279"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ フォークリフト",
+        "type_designation": "403FG9",
+        "model_years": [
+          "1997-03-28 to 2008-08-07"
+        ],
+        "affected_count": "862"
+      },
+      {
+        "make": "トヨタ",
+        "model": "トヨタ フォークリフト",
+        "type_designation": "A3FG9",
+        "model_years": [
+          "2008-09-18 to 2025-08-27"
+        ],
+        "affected_count": "389"
+      }
+    ],
+    "defect_system": "灯火装置、反射器",
+    "defect_location": "尾灯、制動灯、後退灯、後部反射器",
+    "defect_description": "小型特殊自動車のフォークリフトにおいて、(1)尾灯、制動灯および後退灯の設計指示が不適切なため、全高2.0mを超える車両に尾灯、制動灯および後退灯を備えていないものがある。(2)後部反射器の設計検討が不十分なため、車両最外側から後部反射器の最外縁までの距離が400mmを超えるものがある。そのため、保安基準に適合しないおそれがある。",
+    "root_cause": "(1)尾灯、制動灯および後退灯の設計指示が不適切なため。(2)後部反射器の設計検討が不十分なため。",
+    "consequences": [
+      "保安基準に適合しないおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "尾灯",
+        "part_number": null,
+        "system_path": [
+          "灯火装置",
+          "尾灯"
+        ]
+      },
+      {
+        "part_name": "制動灯",
+        "part_number": null,
+        "system_path": [
+          "灯火装置",
+          "制動灯"
+        ]
+      },
+      {
+        "part_name": "後退灯",
+        "part_number": null,
+        "system_path": [
+          "灯火装置",
+          "後退灯"
+        ]
+      },
+      {
+        "part_name": "後部反射器",
+        "part_number": null,
+        "system_path": [
+          "反射器",
+          "後部反射器"
+        ]
+      },
+      {
+        "part_name": "後部反射器 取付けブラケット",
+        "part_number": null,
+        "system_path": [
+          "反射器",
+          "後部反射器",
+          "取付けブラケット"
+        ]
+      }
+    ],
+    "correction_summary": "全高2.0mを超える車両に尾灯、制動灯、後退灯を備える。全車両、後部反射器の取付けブラケットを対策品に交換する。",
+    "correction_detail": "1 全高2.0mを超える車両に、尾灯、制動灯、後退灯を備える。2 全車両、後部反射器の取付けブラケットを対策品に交換する。"
+  }
+}

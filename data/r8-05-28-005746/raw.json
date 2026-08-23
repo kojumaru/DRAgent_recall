@@ -1,0 +1,190 @@
+{
+  "recall_id": "r8-05-28-005746",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005746.html",
+  "date_text": "令和8年5月28日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002002847.pdf",
+    "https://www.mlit.go.jp/report/press/content/002002848.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002002848.pdf",
+  "metadata": {
+    "notification_number": "5824",
+    "notification_date": "2026-05-28",
+    "notifier": "本田技研工業株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ホンダ",
+        "model": "LEGEND",
+        "type_designation": "DAA-KC2",
+        "model_years": [
+          "2017-09-27 to 2017-11-08",
+          "2018-01-15 to 2020-09-28",
+          "2018-06-12 to 2020-09-11"
+        ],
+        "affected_count": "1652"
+      },
+      {
+        "make": "ホンダ",
+        "model": "LEGEND",
+        "type_designation": "6AA-KC2",
+        "model_years": [
+          "2020-11-03 to 2021-12-21",
+          "2021-12-13 to 2021-12-13"
+        ],
+        "affected_count": "423"
+      },
+      {
+        "make": "ホンダ",
+        "model": "シビック",
+        "type_designation": "6BA-FL1",
+        "model_years": [
+          "2021-07-05 to 2021-09-07"
+        ],
+        "affected_count": "1112"
+      },
+      {
+        "make": "ホンダ オブ ザ ユーケ",
+        "model": "シビック",
+        "type_designation": "DBA-FK7",
+        "model_years": [
+          "2017-11-20 to 2018-12-10",
+          "2018-12-07 to 2019-10-14"
+        ],
+        "affected_count": "17402"
+      },
+      {
+        "make": "ホンダ オブ ザ ユーケ",
+        "model": "シビック",
+        "type_designation": "6BA-FK7",
+        "model_years": [
+          "2019-12-12 to 2020-11-02",
+          "2020-10-23 to 2021-04-08"
+        ],
+        "affected_count": "8398"
+      },
+      {
+        "make": "ホンダ オブ ザ ユーケ",
+        "model": "シビック",
+        "type_designation": "DBA-FK8",
+        "model_years": [
+          "2017-11-15 to 2018-06-26",
+          "2018-03-01 to 2018-12-04",
+          "2018-12-07 to 2019-10-04"
+        ],
+        "affected_count": "5366"
+      },
+      {
+        "make": "ホンダ オブ ザ ユーケ",
+        "model": "シビック",
+        "type_designation": "6BA-FK8",
+        "model_years": [
+          "2020-09-16 to 2020-10-21",
+          "2020-10-23 to 2021-04-14"
+        ],
+        "affected_count": "1763"
+      }
+    ],
+    "defect_system": "燃料装置",
+    "defect_location": "低圧燃料ポンプ",
+    "defect_description": "無鉛プレミアムガソリン指定車に搭載した低圧燃料ポンプにおいて、ポンプ作動検査時の検査用液が不適切なため、インペラ(樹脂製羽根車)に検査用液が浸透して強度が低下し、亀裂が生じることがある。そのため、冷熱の繰り返しによりインペラの亀裂が進展して燃料により膨潤し、ポンプカバーと接触して作動不良となり、最悪の場合、走行中にエンジンが停止して再始動できなくなるおそれがある。",
+    "root_cause": "ポンプ作動検査時の検査用液が不適切なため、インペラ(樹脂製羽根車)に検査用液が浸透して強度が低下し、亀裂が生じることがある。",
+    "consequences": [
+      "走行中にエンジンが停止するおそれがある",
+      "エンジンが停止後、再始動できなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "低圧燃料ポンプ",
+        "part_number": "17045-TY3-010",
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ"
+        ]
+      },
+      {
+        "part_name": "低圧燃料ポンプ",
+        "part_number": "17045-TY3-000",
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ"
+        ]
+      },
+      {
+        "part_name": "低圧燃料ポンプ",
+        "part_number": "17045-TGH-415",
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ"
+        ]
+      },
+      {
+        "part_name": "低圧燃料ポンプ",
+        "part_number": "17045-TBA-X02",
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ"
+        ]
+      },
+      {
+        "part_name": "低圧燃料ポンプ",
+        "part_number": "17045-TGH-G00",
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ"
+        ]
+      },
+      {
+        "part_name": "低圧燃料ポンプ",
+        "part_number": "17045-TV8-305",
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ"
+        ]
+      },
+      {
+        "part_name": "低圧燃料ポンプ",
+        "part_number": "17045-TBA-X00",
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ"
+        ]
+      },
+      {
+        "part_name": "低圧燃料ポンプ",
+        "part_number": "17045-TV8-E00",
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ"
+        ]
+      },
+      {
+        "part_name": "低圧燃料ポンプ",
+        "part_number": "17045-TET-H71",
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ"
+        ]
+      },
+      {
+        "part_name": "低圧燃料ポンプ",
+        "part_number": "17708-SJA-A51",
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ"
+        ]
+      },
+      {
+        "part_name": "低圧燃料ポンプ",
+        "part_number": "17708-SJA-A52",
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、低圧燃料ポンプを対策品と交換する。",
+    "correction_detail": "全車両、低圧燃料ポンプを対策品と交換する。交換修理用部品として出荷し、組付けられた車両が特定できないものについても、当該部品が組付けられた車両は同様の改善を実施する。"
+  }
+}

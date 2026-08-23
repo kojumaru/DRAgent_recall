@@ -1,0 +1,116 @@
+{
+  "recall_id": "r8-06-18-005766",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005766.html",
+  "date_text": "令和8年6月18日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002007354.pdf",
+    "https://www.mlit.go.jp/report/press/content/002007355.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002007355.pdf",
+  "metadata": {
+    "notification_number": "5833",
+    "notification_date": "2026-06-18",
+    "notifier": "トヨタ自動車株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "トヨタ",
+        "model": "bZ4X",
+        "type_designation": "ZAA-XEAM11",
+        "model_years": [
+          "2025-10-21 to 2026-01-20",
+          "2025-10-06 to 2026-02-02"
+        ],
+        "affected_count": "1484"
+      },
+      {
+        "make": "トヨタ",
+        "model": "bZ4X",
+        "type_designation": "ZAA-XEAM11",
+        "model_years": [
+          "2025-10-21 to 2026-01-20",
+          "2025-10-06 to 2026-02-02"
+        ],
+        "affected_count": "1393"
+      },
+      {
+        "make": "トヨタ",
+        "model": "bZ4X",
+        "type_designation": "ZAA-XEAM15",
+        "model_years": [
+          "2025-10-21 to 2026-01-15",
+          "2025-09-03 to 2026-02-03"
+        ],
+        "affected_count": "831"
+      },
+      {
+        "make": "トヨタ",
+        "model": "bZ4X",
+        "type_designation": "ZAA-XEAM15",
+        "model_years": [
+          "2025-10-21 to 2026-01-15",
+          "2025-09-03 to 2026-02-03"
+        ],
+        "affected_count": "847"
+      },
+      {
+        "make": "レクサス",
+        "model": "RZ350e",
+        "type_designation": "ZAA-XEBM20",
+        "model_years": [
+          "2025-11-10 to 2026-01-14"
+        ],
+        "affected_count": "54"
+      },
+      {
+        "make": "レクサス",
+        "model": "RZ500e",
+        "type_designation": "ZAA-XEBM25",
+        "model_years": [
+          "2025-10-08 to 2026-01-14"
+        ],
+        "affected_count": "48"
+      },
+      {
+        "make": "スバル",
+        "model": "ソルテラ",
+        "type_designation": "ZAA-XEAM11X",
+        "model_years": [
+          "2025-10-22 to 2026-01-15"
+        ],
+        "affected_count": "20"
+      },
+      {
+        "make": "スバル",
+        "model": "ソルテラ",
+        "type_designation": "ZAA-XEAM15X",
+        "model_years": [
+          "2025-10-21 to 2026-01-16"
+        ],
+        "affected_count": "131"
+      }
+    ],
+    "defect_system": "電動機用電源装置",
+    "defect_location": "駆動用バッテリコンピュータ",
+    "defect_description": "バッテリEV（電気自動車）システムにおいて、特定の条件下でバッテリ制御状態を正しく認識できなくなり、異常と誤判定することがある。そのため、警告灯が点灯するとともに、当該システムが停止し、走行不能となるおそれがある。",
+    "root_cause": "駆動用バッテリコンピュータの制御プログラムの検討が不十分なため。",
+    "consequences": [
+      "警告灯が点灯する",
+      "当該システムが停止する",
+      "走行不能となるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "駆動用バッテリコンピュータ",
+        "part_number": null,
+        "system_path": [
+          "電動機用電源装置",
+          "駆動用バッテリコンピュータ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、駆動用バッテリコンピュータの制御プログラムを対策仕様に修正する。",
+    "correction_detail": "全車両に対し、駆動用バッテリコンピュータの制御プログラムを対策仕様に修正する（書き換え）。"
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "recall_id": "r8-02-26-005674",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005674.html",
+  "date_text": "令和8年2月26日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001982653.pdf",
+    "https://www.mlit.go.jp/report/press/content/001982654.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001982654.pdf",
+  "metadata": {
+    "notification_number": "外-4145",
+    "notification_date": "2026-02-26",
+    "notifier": "Stellantis ジャパン株式会社 代表取締役社長 成田仁",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "プジョー",
+        "model": "3008",
+        "type_designation": "3DA-P84AH01",
+        "model_years": [
+          "2020-08-06 to 2023-03-29"
+        ],
+        "affected_count": "1876"
+      },
+      {
+        "make": "プジョー",
+        "model": "3008",
+        "type_designation": "LDA-P84AH01",
+        "model_years": [
+          "2018-07-13 to 2020-06-22"
+        ],
+        "affected_count": "2679"
+      },
+      {
+        "make": "プジョー",
+        "model": "5008",
+        "type_designation": "3DA-P87AH01",
+        "model_years": [
+          "2020-07-14 to 2023-03-29"
+        ],
+        "affected_count": "1749"
+      },
+      {
+        "make": "プジョー",
+        "model": "5008",
+        "type_designation": "LDA-P87AH01",
+        "model_years": [
+          "2018-06-21 to 2020-06-22"
+        ],
+        "affected_count": "1851"
+      },
+      {
+        "make": "プジョー",
+        "model": "308",
+        "type_designation": "3DA-T9AH01",
+        "model_years": [
+          "2020-07-14 to 2020-08-31"
+        ],
+        "affected_count": "13"
+      },
+      {
+        "make": "プジョー",
+        "model": "308",
+        "type_designation": "3DA-T9WAH01",
+        "model_years": [
+          "2020-08-06 to 2020-08-31"
+        ],
+        "affected_count": "10"
+      },
+      {
+        "make": "プジョー",
+        "model": "308",
+        "type_designation": "3DA-T9WYH01",
+        "model_years": [
+          "2020-07-14 to 2021-07-07"
+        ],
+        "affected_count": "457"
+      },
+      {
+        "make": "プジョー",
+        "model": "308",
+        "type_designation": "3DA-T9YH01",
+        "model_years": [
+          "2020-07-14 to 2021-08-07"
+        ],
+        "affected_count": "549"
+      },
+      {
+        "make": "プジョー",
+        "model": "308",
+        "type_designation": "LDA-T9AH01",
+        "model_years": [
+          "2018-06-21 to 2020-06-22"
+        ],
+        "affected_count": "316"
+      },
+      {
+        "make": "プジョー",
+        "model": "308",
+        "type_designation": "LDA-T9WAH01",
+        "model_years": [
+          "2018-05-11 to 2020-04-18"
+        ],
+        "affected_count": "298"
+      },
+      {
+        "make": "プジョー",
+        "model": "308",
+        "type_designation": "LDA-T9WYH01",
+        "model_years": [
+          "2018-11-27 to 2020-10-20"
+        ],
+        "affected_count": "878"
+      },
+      {
+        "make": "プジョー",
+        "model": "308",
+        "type_designation": "LDA-T9YH01",
+        "model_years": [
+          "2018-11-27 to 2020-09-14"
+        ],
+        "affected_count": "1238"
+      },
+      {
+        "make": "プジョー",
+        "model": "508",
+        "type_designation": "3DA-R8AH01",
+        "model_years": [
+          "2019-02-20 to 2023-08-28"
+        ],
+        "affected_count": "1339"
+      },
+      {
+        "make": "プジョー",
+        "model": "リフター",
+        "type_designation": "3DA-K9PYH01",
+        "model_years": [
+          "2020-07-14 to 2022-09-08"
+        ],
+        "affected_count": "1139"
+      },
+      {
+        "make": "プジョー",
+        "model": "リフター",
+        "type_designation": "不明",
+        "model_years": [
+          "2019-10-30 to 2020-08-06"
+        ],
+        "affected_count": "167"
+      },
+      {
+        "make": "シトロエン",
+        "model": "ベルランゴ",
+        "type_designation": "3DA-K9CYH01",
+        "model_years": [
+          "2020-07-14 to 2022-12-05"
+        ],
+        "affected_count": "4961"
+      },
+      {
+        "make": "シトロエン",
+        "model": "ベルランゴ",
+        "type_designation": "不明",
+        "model_years": [
+          "2019-10-30 to 2020-04-18"
+        ],
+        "affected_count": "164"
+      },
+      {
+        "make": "シトロエン",
+        "model": "C4スペース ツアラー",
+        "type_designation": "3DA-B787AH01",
+        "model_years": [
+          "2019-02-02 to 2021-05-03"
+        ],
+        "affected_count": "561"
+      },
+      {
+        "make": "シトロエン",
+        "model": "C5 エアクロス",
+        "type_designation": "3DA-C84AH01",
+        "model_years": [
+          "2019-02-02 to 2023-04-27"
+        ],
+        "affected_count": "1355"
+      },
+      {
+        "make": "DS",
+        "model": "DS 7",
+        "type_designation": "3DA-X74AH01",
+        "model_years": [
+          "2019-12-24 to 2023-02-11"
+        ],
+        "affected_count": "351"
+      },
+      {
+        "make": "DS",
+        "model": "DS 7",
+        "type_designation": "LDA-X74AH01",
+        "model_years": [
+          "2018-07-13 to 2020-04-18"
+        ],
+        "affected_count": "414"
+      }
+    ],
+    "defect_system": "原動機",
+    "defect_location": "エンジンコントロールユニット",
+    "defect_description": "エンジンコントロールユニットにおいて、制御プログラムが不適切なため、尿素SCRシステムが故障した場合、警告灯が点灯せず、保安基準に適合しない。",
+    "root_cause": "エンジンコントロールユニットの制御プログラムが不適切なため。",
+    "consequences": [
+      "尿素SCRシステムが故障しても警告灯が点灯しない",
+      "保安基準に適合しない"
+    ],
+    "parts": [
+      {
+        "part_name": "エンジンコントロールユニット",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "エンジンコントロールユニット"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、エンジンコントロールユニットの制御プログラムを対策仕様に更新する。",
+    "correction_detail": "全車両、エンジンコントロールユニットの制御プログラムを対策仕様に更新する。"
+  }
+}

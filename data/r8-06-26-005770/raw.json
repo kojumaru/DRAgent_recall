@@ -1,0 +1,93 @@
+{
+  "recall_id": "r8-06-26-005770",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005770.html",
+  "date_text": "令和8年6月26日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002008018.pdf",
+    "https://www.mlit.go.jp/report/press/content/002008019.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002008019.pdf",
+  "metadata": {
+    "notification_number": "外-4206",
+    "notification_date": "2026-06-26",
+    "notifier": "ビー·エム·ダブリュー株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "BMW",
+        "model": "BMW R1300GS",
+        "type_designation": "8BL-R137A",
+        "model_years": [
+          "2023-07-06 to 2025-07-18"
+        ],
+        "affected_count": "1927"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW R1300GSA",
+        "type_designation": "8BL-R137A",
+        "model_years": [
+          "2024-07-05 to 2025-07-23"
+        ],
+        "affected_count": "1381"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW S1000RR",
+        "type_designation": "8BL-S10AC",
+        "model_years": [
+          "2024-10-22 to 2025-07-21"
+        ],
+        "affected_count": "684"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW S1000R",
+        "type_designation": "8BL-S10AC",
+        "model_years": [
+          "2025-01-06 to 2025-07-22"
+        ],
+        "affected_count": "244"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW M1000RR",
+        "type_designation": "8BL-S10AC",
+        "model_years": [
+          "2025-01-16 to 2025-07-22"
+        ],
+        "affected_count": "127"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW M1000R",
+        "type_designation": "8BL-S10AC",
+        "model_years": [
+          "2025-01-06 to 2025-07-23"
+        ],
+        "affected_count": "258"
+      }
+    ],
+    "defect_system": "燃料装置",
+    "defect_location": "燃料タンク",
+    "defect_description": "燃料ポンプ取付部のシールリングにおいて、作業指示が不適切なため、正しく組付けられず、シール性が損なわれているものがある。そのため、そのまま使用を続けると、燃料が漏れるおそれがある。",
+    "root_cause": "作業指示が不適切なため、燃料ポンプ取付部のシールリングが正しく組付けられず、シール性が損なわれているものがある。",
+    "consequences": [
+      "燃料が漏れるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "シールリング（燃料ポンプ取付部）",
+        "part_number": null,
+        "system_path": [
+          "燃料装置",
+          "燃料タンク",
+          "燃料ポンプ取付部"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、燃料漏れを点検し、必要に応じて燃料ポンプのシールリングを新品に交換して適切に組付ける。",
+    "correction_detail": "全車両について燃料漏れの有無を点検し、燃料漏れが認められる等必要に応じて燃料ポンプ取付部のシールリングを新品に交換したうえで、適切に組付ける。"
+  }
+}

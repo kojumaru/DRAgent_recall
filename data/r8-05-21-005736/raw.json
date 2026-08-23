@@ -1,0 +1,56 @@
+{
+  "recall_id": "r8-05-21-005736",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005736.html",
+  "date_text": "令和8年5月21日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002001667.pdf",
+    "https://www.mlit.go.jp/report/press/content/002001668.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002001668.pdf",
+  "metadata": {
+    "notification_number": "外-4148",
+    "notification_date": "2026-05-21",
+    "notifier": "ビー・エム・ダブリュー株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "BMW",
+        "model": "BMW 525i ツーリング",
+        "type_designation": "GH-DS25",
+        "model_years": [
+          "2003-10-13 to 2003-12-17"
+        ],
+        "affected_count": "16"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 530i ツーリング",
+        "type_designation": "GH-DS30",
+        "model_years": [
+          "2003-10-01 to 2003-12-17"
+        ],
+        "affected_count": "3"
+      }
+    ],
+    "defect_system": "エアバッグ装置",
+    "defect_location": "インフレータ（運転席用エアバッグ）",
+    "defect_description": "運転席用エアバッグのインフレーター(膨張装置)の補給用部品において、ガス発生剤の吸湿防止が不適切なものがある。そのため、車両の修理時に当該インフレーターに交換し、そのままの状態で使用を続けると、高い湿度の環境下で大きな温度変化の繰り返しによりガス発生剤が劣化し、エアバッグ展開時にインフレーター容器が破損するおそれがある。",
+    "root_cause": "運転席用エアバッグのインフレーター(膨張装置)の補給用部品において、ガス発生剤の吸湿防止が不適切なものがある。",
+    "consequences": [
+      "エアバッグ展開時にインフレーター容器が破損するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "エアバッグ装置（インフレータ）",
+        "part_number": null,
+        "system_path": [
+          "エアバッグ装置",
+          "インフレータ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、エアバッグインフレーターを確認し、該当するインフレーターであった場合には対策品に交換する。",
+    "correction_detail": "全車両、エアバッグインフレーターを確認し、該当するインフレーターであった場合には対策品に交換する。"
+  }
+}

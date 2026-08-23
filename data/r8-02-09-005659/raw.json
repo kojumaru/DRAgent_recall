@@ -1,0 +1,102 @@
+{
+  "recall_id": "r8-02-09-005659",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005659.html",
+  "date_text": "令和8年2月9日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001980628.pdf",
+    "https://www.mlit.go.jp/report/press/content/001980629.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001980629.pdf",
+  "metadata": {
+    "notification_number": "5757",
+    "notification_date": "2026-02-09",
+    "notifier": "ヤンマー建機株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ヤンマー",
+        "model": "V3-7",
+        "type_designation": "YDM-V37",
+        "model_years": [
+          "2022-11-14 to 2025-04-18"
+        ],
+        "affected_count": "316"
+      },
+      {
+        "make": "ヤンマー",
+        "model": "V3-7S",
+        "type_designation": "V37E",
+        "model_years": [
+          "2022-10-16 to 2025-01-28"
+        ],
+        "affected_count": "472"
+      },
+      {
+        "make": "ヤンマー",
+        "model": "V4-7",
+        "type_designation": "YDM-V47",
+        "model_years": [
+          "2022-11-11 to 2025-03-07"
+        ],
+        "affected_count": "568"
+      },
+      {
+        "make": "ヤンマー",
+        "model": "V5-7",
+        "type_designation": "YDM-V57",
+        "model_years": [
+          "2022-11-17 to 2025-02-05"
+        ],
+        "affected_count": "82"
+      },
+      {
+        "make": "コベルコ",
+        "model": "LK40Z-6",
+        "type_designation": "YDM-RW06",
+        "model_years": [
+          "2022-12-06 to 2024-12-05"
+        ],
+        "affected_count": "44"
+      },
+      {
+        "make": "コベルコ",
+        "model": "LK40ZST-6",
+        "type_designation": "RV06",
+        "model_years": [
+          "2022-12-05 to 2024-12-06"
+        ],
+        "affected_count": "64"
+      },
+      {
+        "make": "コベルコ",
+        "model": "LK50Z-6",
+        "type_designation": "YDM-RX06",
+        "model_years": [
+          "2022-12-07 to 2025-02-14"
+        ],
+        "affected_count": "167"
+      }
+    ],
+    "defect_system": "室内灯",
+    "defect_location": "ルームランプ",
+    "defect_description": "ショベル・ローダのルームランプにおいて、作業指示が不適切なため、取付時にルームランプの取付爪が折損しているものがある。そのため、車両振動によりルームランプが脱落し、ルームランプ金属部がキャビン本体に接触して電気回路がショートすると、ヒューズが断線してモニタが不点灯になる。",
+    "root_cause": "作業指示が不適切なため、取付時にルームランプの取付爪が折損しているものがある。",
+    "consequences": [
+      "ヒューズが断線してモニタが不点灯になる",
+      "最悪の場合、方向指示器が作動しなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "室内灯（ルームランプ）",
+        "part_number": null,
+        "system_path": [
+          "室内灯",
+          "ルームランプ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ルームランプの取付状態を点検し、取付爪が折損している場合はルームランプを適切な方法にて新品に交換する。",
+    "correction_detail": "全車両についてルームランプの取付状態を点検し、取付爪の折損が認められる場合は、適切な方法でルームランプを新品に交換する。"
+  }
+}

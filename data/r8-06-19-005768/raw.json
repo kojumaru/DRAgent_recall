@@ -1,0 +1,49 @@
+{
+  "recall_id": "r8-06-19-005768",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005768.html",
+  "date_text": "令和8年6月19日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002007523.pdf",
+    "https://www.mlit.go.jp/report/press/content/002007524.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002007524.pdf",
+  "metadata": {
+    "notification_number": "外-4199",
+    "notification_date": "2026-06-19",
+    "notifier": "ドゥカティジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ドゥカティ",
+        "model": "パニガーレV4／パニガーレV4 S",
+        "type_designation": "8BL-5D00",
+        "model_years": [
+          "2024-09-23 to 2025-09-22"
+        ],
+        "affected_count": "295"
+      }
+    ],
+    "defect_system": "制動装置",
+    "defect_location": "リアブレーキペダル（リアブレーキペダルとプッシュロッドを接続するピボットピン）",
+    "defect_description": "制動装置において、リアブレーキペダルとプッシュロッドを接続するピボットピンが錆びることがある。そのため、そのまま使用を続けると、リアブレーキペダルの動きが渋くなり、最悪の場合、ブレーキが引きずるおそれがある。",
+    "root_cause": "リアブレーキペダルとプッシュロッドを接続するピボットピンの設計検討が不十分なため。",
+    "consequences": [
+      "リアブレーキペダルの動きが渋くなる",
+      "最悪の場合、ブレーキが引きずるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ピボットピン（リアブレーキペダルとプッシュロッド接続部）",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "リアブレーキペダル",
+          "ピボットピン"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ピボットピンを対策品に交換する。",
+    "correction_detail": "全車両について、リアブレーキペダルとプッシュロッドを接続するピボットピンを対策品に交換する。"
+  }
+}

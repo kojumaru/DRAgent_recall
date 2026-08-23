@@ -1,0 +1,85 @@
+{
+  "recall_id": "r8-02-05-005655",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005655.html",
+  "date_text": "令和8年2月5日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001980216.pdf",
+    "https://www.mlit.go.jp/report/press/content/001980217.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001980217.pdf",
+  "metadata": {
+    "notification_number": "外-4142",
+    "notification_date": "2026-02-05",
+    "notifier": "Stellantis ジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "プジョー",
+        "model": "308",
+        "type_designation": "ABA-T9WHN02",
+        "model_years": [
+          "2015-11-30 to 2018-12-25"
+        ],
+        "affected_count": "923"
+      },
+      {
+        "make": "プジョー",
+        "model": "308",
+        "type_designation": "LDA-T9WAH01",
+        "model_years": [
+          "2016-07-08 to 2019-04-09"
+        ],
+        "affected_count": "813"
+      },
+      {
+        "make": "プジョー",
+        "model": "308",
+        "type_designation": "LDA-T9WBH01",
+        "model_years": [
+          "2016-06-23 to 2018-09-06"
+        ],
+        "affected_count": "1370"
+      },
+      {
+        "make": "プジョー",
+        "model": "308",
+        "type_designation": "LDA-T9WYH01",
+        "model_years": [
+          "2018-11-27 to 2019-03-19"
+        ],
+        "affected_count": "352"
+      }
+    ],
+    "defect_system": "座席ベルト等",
+    "defect_location": "リアシートベルトアンカー",
+    "defect_description": "リアシートベルトアンカーにおいて、設計検討が不十分なため、取付部の強度が不足しているものがある。そのため、車両衝突時に荷重がかかると、リアシートベルトアンカーが外れ、乗員を適切に拘束できず、保安基準に適合しないおそれがある。",
+    "root_cause": "設計検討が不十分なため、取付部の強度が不足しているものがある。",
+    "consequences": [
+      "車両衝突時に荷重がかかるとリアシートベルトアンカーが外れる",
+      "乗員を適切に拘束できない",
+      "保安基準に適合しないおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "リアシートベルトアンカー",
+        "part_number": null,
+        "system_path": [
+          "座席ベルト等",
+          "リアシートベルトアンカー"
+        ]
+      },
+      {
+        "part_name": "リアシートベルトアンカー取付部（左右）",
+        "part_number": null,
+        "system_path": [
+          "座席ベルト等",
+          "リアシートベルトアンカー",
+          "取付部"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、リアシートベルトアンカー取付部(左右)に補強材を取り付ける。",
+    "correction_detail": "全車両、リアシートベルトアンカー取付部(左右)に補強材を取り付ける。"
+  }
+}

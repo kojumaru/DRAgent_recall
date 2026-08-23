@@ -8,8 +8,9 @@ import TopEventReviewPanel from './components/TopEventReviewPanel';
 import {
   getFailureModeReview, getTopEventReview,
   getSpecReview, saveSpecReview,
-  listBenchmarkCases, getBenchmarkCase, getBenchmarkFTA,
-  getBenchmarkPerItemScore, getBenchmarkExpertReviews, saveBenchmarkExpertReview,
+  listRecalls, getRecall, getFTA, listFTAIndices,
+  getPerItemScore, getExpertReviews, saveExpertReview,
+  downloadReviews,
 } from './api';
 import type {
   RecallListItem, RecallDetail, FTATree, FTANode,
@@ -113,6 +114,13 @@ function computeCoverage(
   return { nItems: items.length, nExperts: expertReviews.length, coverageLlm, coverageHuman, isExpertLevel, items };
 }
 
+// トップ事象レビューの総合verdict（event_reviews[]から計算）
+function teVerdict(r: TopEventReview | null): 'approved' | 'needs_fix' | null {
+  if (!r?.event_reviews?.length) return null;
+  if (r.event_reviews.some((e) => e.verdict === 'needs_fix')) return 'needs_fix';
+  return 'approved';
+}
+
 // ─────────────────────────────────────────────────────────────
 // スコアバッジ
 // ─────────────────────────────────────────────────────────────
@@ -131,20 +139,51 @@ function ScoreBadge({ score }: { score: number }) {
 // ─────────────────────────────────────────────────────────────
 
 function ResultsPanel({
-  caseId, perItemScore, expertReviews,
+  caseId, perItemScore, expertReviews, specReview, failureModeReview, topEventReview, hasFta, hasDiagramMasked,
 }: {
   caseId: string;
   perItemScore: PerItemScore | null;
   expertReviews: ExpertReview[];
+  specReview: SpecReview | null;
+  failureModeReview: FailureModeReview | null;
+  topEventReview: TopEventReview | null;
+  hasFta: boolean;
+  hasDiagramMasked: boolean;
 }) {
   const coverage = useMemo(
     () => (perItemScore ? computeCoverage(perItemScore, expertReviews) : null),
     [perItemScore, expertReviews],
   );
 
-  if (!perItemScore) {
-    return (
-      <div className="p-4">
+  const steps = [
+    { label: '① 仕様書レビュー',   done: specReview?.verdict === 'approved',        warn: specReview?.verdict === 'needs_fix', desc: specReview ? `${specReview.verdict === 'approved' ? '承認済み' : '要修正'} (${specReview.reviewer})` : '未レビュー' },
+    { label: '② マスク済み図',      done: hasDiagramMasked,                          warn: false,                                desc: hasDiagramMasked ? '存在する' : '未作成' },
+    { label: '③ 故障モードレビュー', done: failureModeReview?.verdict === 'approved', warn: failureModeReview?.verdict === 'needs_fix', desc: failureModeReview ? `${failureModeReview.verdict === 'approved' ? '承認済み' : '要修正'}` : '未レビュー' },
+    { label: '④ トップ事象レビュー', done: teVerdict(topEventReview) === 'approved', warn: teVerdict(topEventReview) === 'needs_fix', desc: topEventReview ? `${teVerdict(topEventReview) === 'approved' ? '承認済み' : '要修正'}` : '未レビュー' },
+    { label: '⑤ FTA生成',           done: hasFta,                                    warn: false,                                desc: hasFta ? '生成済み' : '未生成' },
+    { label: '⑥ LLM判定',           done: perItemScore !== null,                     warn: false,                                desc: perItemScore ? 'スコアあり' : '未実行' },
+    { label: '⑦ FTA評価（専門家）',  done: expertReviews.length > 0,                  warn: false,                                desc: expertReviews.length > 0 ? `${expertReviews.length}名評価済み` : '未評価' },
+  ];
+
+  return (
+    <div className="flex flex-col gap-5 p-4 text-[13px]">
+      {/* ステップ状況 */}
+      <section>
+        <h2 className="mb-2 text-sm font-bold text-neutral-800">作業ステップ状況</h2>
+        <div className="flex flex-col divide-y divide-neutral-100 rounded border border-neutral-200 bg-white text-[12px]">
+          {steps.map(({ label, done, warn, desc }) => (
+            <div key={label} className="flex items-center gap-3 px-3 py-2">
+              <span className={`shrink-0 text-base ${done ? 'text-green-500' : warn ? 'text-amber-500' : 'text-neutral-300'}`}>
+                {done ? '●' : warn ? '▲' : '○'}
+              </span>
+              <span className={`flex-1 font-medium ${done ? 'text-neutral-800' : 'text-neutral-400'}`}>{label}</span>
+              <span className={`text-[11px] ${done ? 'text-green-600' : warn ? 'text-amber-600' : 'text-neutral-400'}`}>{desc}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {!perItemScore && (
         <div className="rounded border border-amber-200 bg-amber-50 p-3 text-[12px] text-amber-800">
           <p className="mb-1 font-semibold">LLM判定スコアがまだありません</p>
           <p className="text-neutral-600">FTAツリー生成 → judge_recall.py を実行してください。</p>
@@ -152,74 +191,70 @@ function ResultsPanel({
             python scripts/judge_recall.py --tree sessions/.../ROUND-NNNN/tree.yaml --label cases/{caseId}/recall_label.json
           </code>
         </div>
-      </div>
-    );
-  }
+      )}
 
-  if (!expertReviews.length) {
-    return (
-      <div className="p-4">
+      {perItemScore && !expertReviews.length && (
         <div className="rounded border border-amber-200 bg-amber-50 p-3 text-[12px] text-amber-800">
           <p className="font-semibold">専門家評価がまだありません</p>
-          <p className="mt-1 text-neutral-600">👤 専門家モードで評価を入力してください。</p>
+          <p className="mt-1 text-neutral-600">⑤ FTA評価タブで評価を入力してください。</p>
         </div>
-      </div>
-    );
-  }
-
-  if (!coverage) {
-    return <div className="p-4 text-[12px] text-neutral-400">LLMと専門家の共通項目がなく Coverage を計算できません。</div>;
-  }
-
-  const verdictBg    = coverage.isExpertLevel === true  ? 'bg-green-50 border-green-300'
-                     : coverage.isExpertLevel === false ? 'bg-red-50 border-red-300'
-                     : 'bg-neutral-50 border-neutral-200';
-  const verdictText  = coverage.isExpertLevel === true  ? '✅ 専門家相当'
-                     : coverage.isExpertLevel === false ? '❌ 専門家相当でない'
-                     : '— 専門家1人（判定不可）';
-  const verdictColor = coverage.isExpertLevel === true  ? 'text-green-800'
-                     : coverage.isExpertLevel === false ? 'text-red-800'
-                     : 'text-neutral-600';
-
-  const pctLlm   = (coverage.coverageLlm * 100).toFixed(1);
-  const pctHuman = coverage.coverageHuman !== null ? (coverage.coverageHuman * 100).toFixed(1) : null;
-  const fmItems  = coverage.items.filter((i) => i.key.startsWith('fm:'));
-  const ccItems  = coverage.items.filter((i) => i.key.startsWith('cc:'));
-
-  return (
-    <div className="flex flex-col gap-5 p-4 text-[13px]">
-      <div className={`rounded-lg border p-4 ${verdictBg}`}>
-        <p className={`text-lg font-bold ${verdictColor}`}>{verdictText}</p>
-        <p className="mt-1 text-[11px] text-neutral-500">
-          Coverage_LLM ({pctLlm}%) {coverage.coverageHuman !== null ? `≥ Coverage_human (${pctHuman}%)` : '（専門家1人のため leave-one-out 不可）'}
-          &nbsp;· δ=0
-        </p>
-      </div>
-      <div className="grid grid-cols-3 gap-3">
-        {[
-          { label: 'Coverage_LLM',   value: `${pctLlm}%`,   sub: `${coverage.items.filter((i) => i.hit).length}/${coverage.nItems} 項目一致` },
-          { label: 'Coverage_human', value: pctHuman ? `${pctHuman}%` : '—', sub: pctHuman ? 'leave-one-out' : '専門家2人以上で計算可' },
-          { label: '参加専門家',       value: `${coverage.nExperts} 人`, sub: `評価項目 ${coverage.nItems} 件` },
-        ].map(({ label, value, sub }) => (
-          <div key={label} className="flex flex-col items-center rounded border border-neutral-200 bg-neutral-50 py-3 px-2">
-            <span className="text-[10px] text-neutral-400">{label}</span>
-            <span className="text-xl font-bold text-neutral-800">{value}</span>
-            <span className="text-[10px] text-neutral-400">{sub}</span>
-          </div>
-        ))}
-      </div>
-      {fmItems.length > 0 && (
-        <section>
-          <h3 className="mb-2 text-xs font-bold text-neutral-600">故障モード 項目別</h3>
-          <ItemTable items={fmItems} />
-        </section>
       )}
-      {ccItems.length > 0 && (
-        <section>
-          <h3 className="mb-2 text-xs font-bold text-neutral-600">因果連鎖 項目別</h3>
-          <ItemTable items={ccItems} />
-        </section>
+
+      {perItemScore && expertReviews.length > 0 && !coverage && (
+        <div className="p-2 text-[12px] text-neutral-400">LLMと専門家の共通項目がなく Coverage を計算できません。</div>
       )}
+
+      {coverage && (() => {
+        const verdictBg    = coverage.isExpertLevel === true  ? 'bg-green-50 border-green-300'
+                           : coverage.isExpertLevel === false ? 'bg-red-50 border-red-300'
+                           : 'bg-neutral-50 border-neutral-200';
+        const verdictText  = coverage.isExpertLevel === true  ? '✅ 専門家相当'
+                           : coverage.isExpertLevel === false ? '❌ 専門家相当でない'
+                           : '— 専門家1人（判定不可）';
+        const verdictColor = coverage.isExpertLevel === true  ? 'text-green-800'
+                           : coverage.isExpertLevel === false ? 'text-red-800'
+                           : 'text-neutral-600';
+        const pctLlm   = (coverage.coverageLlm * 100).toFixed(1);
+        const pctHuman = coverage.coverageHuman !== null ? (coverage.coverageHuman * 100).toFixed(1) : null;
+        const fmItems  = coverage.items.filter((i) => i.key.startsWith('fm:'));
+        const ccItems  = coverage.items.filter((i) => i.key.startsWith('cc:'));
+        return (
+          <>
+            <div className={`rounded-lg border p-4 ${verdictBg}`}>
+              <p className={`text-lg font-bold ${verdictColor}`}>{verdictText}</p>
+              <p className="mt-1 text-[11px] text-neutral-500">
+                Coverage_LLM ({pctLlm}%) {coverage.coverageHuman !== null ? `≥ Coverage_human (${pctHuman}%)` : '（専門家1人のため leave-one-out 不可）'}
+                &nbsp;· δ=0
+              </p>
+            </div>
+            <div className="grid grid-cols-3 gap-3">
+              {[
+                { label: 'Coverage_LLM',   value: `${pctLlm}%`,   sub: `${coverage.items.filter((i) => i.hit).length}/${coverage.nItems} 項目一致` },
+                { label: 'Coverage_human', value: pctHuman ? `${pctHuman}%` : '—', sub: pctHuman ? 'leave-one-out' : '専門家2人以上で計算可' },
+                { label: '参加専門家',       value: `${coverage.nExperts} 人`, sub: `評価項目 ${coverage.nItems} 件` },
+              ].map(({ label, value, sub }) => (
+                <div key={label} className="flex flex-col items-center rounded border border-neutral-200 bg-neutral-50 py-3 px-2">
+                  <span className="text-[10px] text-neutral-400">{label}</span>
+                  <span className="text-xl font-bold text-neutral-800">{value}</span>
+                  <span className="text-[10px] text-neutral-400">{sub}</span>
+                </div>
+              ))}
+            </div>
+            {fmItems.length > 0 && (
+              <section>
+                <h3 className="mb-2 text-xs font-bold text-neutral-600">故障モード 項目別</h3>
+                <ItemTable items={fmItems} />
+              </section>
+            )}
+            {ccItems.length > 0 && (
+              <section>
+                <h3 className="mb-2 text-xs font-bold text-neutral-600">因果連鎖 項目別</h3>
+                <ItemTable items={ccItems} />
+              </section>
+            )}
+          </>
+        );
+      })()}
     </div>
   );
 }
@@ -254,11 +289,97 @@ function ItemTable({ items }: { items: { key: string; llm: number; experts: numb
 }
 
 // ─────────────────────────────────────────────────────────────
+// ケース一覧サイドバー
+// ─────────────────────────────────────────────────────────────
+
+function CaseSidebar({
+  cases, selectedId, onSelect,
+}: {
+  cases: RecallListItem[];
+  selectedId: string | null;
+  onSelect: (id: string) => void;
+}) {
+  // 届出番号から日付文字列（r8-01-13-... → R8/01/13）
+  const dateFromId = (id: string) => {
+    const m = id.match(/^r(\d+)-(\d+)-(\d+)/);
+    return m ? `R${m[1]}/${m[2]}/${m[3]}` : '';
+  };
+
+  return (
+    <nav className="flex w-56 shrink-0 flex-col border-r border-neutral-200 bg-white overflow-hidden">
+      <div className="border-b border-neutral-200 px-3 py-2">
+        <p className="text-[10px] font-bold uppercase tracking-wide text-neutral-400">リコール一覧</p>
+      </div>
+      <div className="flex-1 overflow-y-auto">
+        {cases.map((c) => {
+          const selected = c.id === selectedId;
+          const complete = c.has_spec && c.has_label && c.has_input;
+          return (
+            <button
+              key={c.id}
+              onClick={() => complete && onSelect(c.id)}
+              disabled={!complete}
+              title={!complete ? '仕様書・故障モード・トップ事象のすべての生成が必要です' : undefined}
+              className={`w-full border-b border-neutral-100 px-3 py-2 text-left transition-colors border-l-2 ${
+                !complete
+                  ? 'cursor-not-allowed opacity-40 border-l-transparent'
+                  : selected
+                  ? 'bg-indigo-50 border-l-indigo-500'
+                  : 'hover:bg-neutral-50 border-l-transparent'
+              }`}
+            >
+              {/* 日付 */}
+              <p className="text-[9px] text-neutral-400">{dateFromId(c.id)}</p>
+              {/* 会社名 */}
+              <p className={`truncate text-[11px] font-semibold ${selected ? 'text-indigo-800' : 'text-neutral-700'}`}>
+                {c.notifier || c.id}
+              </p>
+              {/* 部品名 */}
+              <p className="truncate text-[10px] text-neutral-500">{c.defect_location}</p>
+            </button>
+          );
+        })}
+      </div>
+    </nav>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
+// FTA生成準備状況
+// ─────────────────────────────────────────────────────────────
+
+interface FtaReadiness {
+  ready: boolean;
+  missing: string[];
+}
+
+function FtaReadinessPanel({ readiness }: { readiness: FtaReadiness }) {
+  if (readiness.ready) {
+    return (
+      <div className="rounded border border-green-300 bg-green-50 p-3 text-[12px]">
+        <p className="font-semibold text-green-800">FTA生成の準備が整っています</p>
+        <p className="mt-0.5 text-green-700">仕様書・マスク済み図・トップ事象がすべて専門家承認済みです。</p>
+      </div>
+    );
+  }
+  return (
+    <div className="rounded border border-red-300 bg-red-50 p-3 text-[12px]">
+      <p className="font-semibold text-red-800">FTA未生成 — 以下が不足しているため生成できません</p>
+      <ul className="mt-1 flex flex-col gap-0.5">
+        {readiness.missing.map((m) => (
+          <li key={m} className="text-red-700">・{m}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
 // 左パネル（LLM / 専門家モード）
 // ─────────────────────────────────────────────────────────────
 
 function LeftPanel({
-  caseId, detail, fta, perItemScore, expertReviews, mode, onExpertReviewSaved,
+  caseId, detail, fta, perItemScore, expertReviews, mode, specReview, topEventReview, readiness, onExpertReviewSaved,
 }: {
   caseId: string;
   detail: RecallDetail;
@@ -266,9 +387,24 @@ function LeftPanel({
   perItemScore: PerItemScore | null;
   expertReviews: ExpertReview[];
   mode: Mode;
+  specReview: SpecReview | null;
+  topEventReview: TopEventReview | null;
+  readiness: FtaReadiness;
   onExpertReviewSaved: (r: ExpertReview) => void;
 }) {
   const label = detail.label;
+
+  // 専門家承認済みトップ事象（FTAに紐づくトップ事象のレビューを参照）
+  const effectiveTopEvent = (() => {
+    if (!fta?.top_event) return '';
+    if (!topEventReview?.event_reviews?.length) return fta.top_event;
+    const matched = topEventReview.event_reviews.find(
+      (e) => e.top_event === fta.top_event || e.top_event.includes(fta.top_event) || fta.top_event.includes(e.top_event)
+    );
+    if (matched?.verdict === 'needs_fix' && matched?.suggested) return matched.suggested;
+    return fta.top_event;
+  })();
+  const topEventVerdictComputed = teVerdict(topEventReview);
 
   const coverage = useMemo(
     () => (perItemScore ? computeCoverage(perItemScore, expertReviews) : null),
@@ -306,12 +442,20 @@ function LeftPanel({
       <hr className="border-neutral-200" />
 
       {/* トップ事象 */}
-      {fta?.top_event && (
+      {effectiveTopEvent && (
         <>
           <section>
-            <p className="mb-1 text-xs font-semibold text-neutral-500">トップ事象</p>
+            <p className="mb-1 text-xs font-semibold text-neutral-500">
+              トップ事象
+              {topEventVerdictComputed === 'approved' && (
+                <span className="ml-1 text-green-600">（専門家承認済み）</span>
+              )}
+              {topEventVerdictComputed === 'needs_fix' && effectiveTopEvent !== fta?.top_event && (
+                <span className="ml-1 text-orange-600">（専門家修正案を適用）</span>
+              )}
+            </p>
             <p className="rounded border border-indigo-100 bg-indigo-50 px-3 py-2 text-[13px] font-medium text-indigo-900">
-              {fta.top_event}
+              {effectiveTopEvent}
             </p>
           </section>
           <hr className="border-neutral-200" />
@@ -341,6 +485,48 @@ function LeftPanel({
       {/* LLMモード専用 */}
       {mode === 'llm' && (
         <>
+          {/* FTA生成準備状況 — FTAがない場合のみ表示 */}
+          {!fta && (
+            <>
+              <FtaReadinessPanel readiness={readiness} />
+              <hr className="border-neutral-200" />
+            </>
+          )}
+
+          {/* 専門家承認済み仕様書 */}
+          <section>
+            <h2 className="mb-1 text-sm font-bold text-neutral-800">
+              専門家承認済み仕様書
+              {specReview?.verdict === 'approved' ? (
+                <span className="ml-2 text-[11px] font-normal text-green-600">✓ 承認済み（{specReview.reviewer}）</span>
+              ) : (
+                <span className="ml-2 text-[11px] font-normal text-red-500">未承認</span>
+              )}
+            </h2>
+            {detail.spec ? (
+              <div className="max-h-64 overflow-y-auto rounded border border-neutral-200 bg-neutral-50 p-2 font-mono text-[10px] leading-relaxed text-neutral-700 whitespace-pre-wrap break-words">
+                {detail.spec.replace(/<!--.*?-->/gs, '').trim()}
+              </div>
+            ) : (
+              <p className="text-[12px] text-neutral-400">spec_FTA.md がありません</p>
+            )}
+          </section>
+          <hr className="border-neutral-200" />
+
+          {/* マスク済み図（2枚目） */}
+          <section>
+            <h2 className="mb-1 text-sm font-bold text-neutral-800">部品図（マスク済み）</h2>
+            <div className="overflow-auto rounded border border-neutral-200 bg-neutral-50" style={{ maxHeight: 300 }}>
+              <img
+                src={`/api/benchmark/cases/${caseId}/diagram_masked`}
+                alt="diagram masked"
+                className="w-full object-contain"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+              />
+            </div>
+          </section>
+          <hr className="border-neutral-200" />
+
           {perItemScore ? (
             <>
               <section>
@@ -414,7 +600,7 @@ function LeftPanel({
           failureModes={label?.failure_modes ?? []}
           existingReviews={expertReviews}
           onSaved={onExpertReviewSaved}
-          saveReview={saveBenchmarkExpertReview}
+          saveReview={saveExpertReview}
         />
       )}
     </div>
@@ -425,7 +611,7 @@ function LeftPanel({
 // App
 // ─────────────────────────────────────────────────────────────
 
-const API_BASE = '/api/benchmark/cases';
+const API_BASE = '/api/recalls';
 
 export default function App() {
   const [mode, setMode]                           = useState<Mode>(() => (localStorage.getItem('ftaMode') as Mode) ?? 'failure_mode');
@@ -433,6 +619,8 @@ export default function App() {
   const [selectedId, setSelectedId]               = useState<string | null>(null);
   const [detail, setDetail]                       = useState<RecallDetail | null>(null);
   const [fta, setFta]                             = useState<FTATree | null>(null);
+  const [ftaIndices, setFtaIndices]               = useState<number[]>([]);
+  const [ftaIndex, setFtaIndex]                   = useState(0);
   const [expertReviews, setExpertReviews]         = useState<ExpertReview[]>([]);
   const [perItemScore, setPerItemScore]           = useState<PerItemScore | null>(null);
   const [specReview, setSpecReview]               = useState<SpecReview | null>(null);
@@ -444,12 +632,28 @@ export default function App() {
 
   const switchMode = (m: Mode) => { setMode(m); localStorage.setItem('ftaMode', m); };
 
+  // サイドバー幅（px）
+  const SIDEBAR_WIDTH = 208; // w-52 = 13rem = 208px
+
+  const readiness = useMemo<FtaReadiness>(() => {
+    const selectedCase = cases.find((c) => c.id === selectedId);
+    const specOk = specReview?.verdict === 'approved';
+    const topEventOk = teVerdict(topEventReview) === 'approved';
+    const diagramOk = selectedCase?.has_diagram_masked ?? false;
+    const missing: string[] = [];
+    if (!specOk) missing.push('仕様書（専門家承認済み）が未承認または未レビューです');
+    if (!diagramOk) missing.push('マスク済み図（diagram_masked.png）が存在しません');
+    if (!topEventOk) missing.push('トップ事象（専門家承認済み）が未承認または未レビューです');
+    return { ready: missing.length === 0, missing };
+  }, [cases, selectedId, specReview, topEventReview]);
+
   const handleDividerMouseDown = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
     isDragging.current = true;
     const onMove = (ev: MouseEvent) => {
       if (!isDragging.current) return;
-      setLeftWidth(Math.max(160, Math.min(ev.clientX, window.innerWidth - 160)));
+      const contentX = ev.clientX - SIDEBAR_WIDTH - 1; // サイドバー分を引く
+      setLeftWidth(Math.max(160, Math.min(contentX, window.innerWidth - SIDEBAR_WIDTH - 160)));
     };
     const onUp = () => {
       isDragging.current = false;
@@ -461,7 +665,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    listBenchmarkCases().then((list) => {
+    listRecalls().then((list) => {
       setCases(list);
       setSelectedId((prev) => prev ?? (list.length > 0 ? list[0].id : null));
     });
@@ -470,20 +674,23 @@ export default function App() {
   useEffect(() => {
     if (!selectedId) return;
     setLoading(true);
-    setDetail(null); setFta(null); setExpertReviews([]); setPerItemScore(null);
+    setDetail(null); setFta(null); setFtaIndices([]); setFtaIndex(0);
+    setExpertReviews([]); setPerItemScore(null);
     setSpecReview(null); setFailureModeReview(null); setTopEventReview(null);
 
     Promise.all([
-      getBenchmarkCase(selectedId),
-      getBenchmarkFTA(selectedId).catch(() => null),
-      getBenchmarkExpertReviews(selectedId),
-      getBenchmarkPerItemScore(selectedId),
+      getRecall(selectedId),
+      getFTA(selectedId).catch(() => null),
+      listFTAIndices(selectedId),
+      getExpertReviews(selectedId),
+      getPerItemScore(selectedId),
       getSpecReview(selectedId, API_BASE),
       getFailureModeReview(selectedId, API_BASE),
       getTopEventReview(selectedId, API_BASE),
-    ]).then(([d, f, er, ps, sr, fmr, ter]) => {
+    ]).then(([d, f, fi, er, ps, sr, fmr, ter]) => {
       setDetail(d as RecallDetail);
       setFta(f as FTATree | null);
+      setFtaIndices(fi as number[]);
       setExpertReviews(er as ExpertReview[]);
       setPerItemScore(ps as PerItemScore | null);
       setSpecReview(sr as SpecReview | null);
@@ -492,49 +699,91 @@ export default function App() {
     }).finally(() => setLoading(false));
   }, [selectedId]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const MODES = [
-    { key: 'spec'         as Mode, label: '📝 仕様書',     active: 'bg-amber-600 text-white' },
-    { key: 'failure_mode' as Mode, label: '⚠️ 故障モード', active: 'bg-rose-600 text-white' },
-    { key: 'top_event'    as Mode, label: '🎯 トップ事象', active: 'bg-orange-600 text-white' },
-    { key: 'llm'          as Mode, label: '⚖️ LLM判定',    active: 'bg-indigo-600 text-white' },
-    { key: 'expert'       as Mode, label: '👤 専門家',     active: 'bg-emerald-600 text-white' },
-    { key: 'results'      as Mode, label: '📊 結果',        active: 'bg-violet-600 text-white' },
+  // ftaIndex が変わったら FTA を再読み込み
+  useEffect(() => {
+    if (!selectedId || ftaIndex === 0) return;
+    getFTA(selectedId, ftaIndex).then(setFta).catch(() => setFta(null));
+  }, [selectedId, ftaIndex]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // タブのバッジ状態（選択中ケースのレビュー結果に基づく）
+  const modeStatus: Record<Mode, 'ok' | 'ng' | null> = {
+    spec:         specReview?.verdict === 'approved' ? 'ok' : specReview ? 'ng' : null,
+    failure_mode: failureModeReview?.verdict === 'approved' ? 'ok' : failureModeReview ? 'ng' : null,
+    top_event:    teVerdict(topEventReview) === 'approved' ? 'ok' : teVerdict(topEventReview) === 'needs_fix' ? 'ng' : null,
+    llm:          perItemScore ? 'ok' : null,
+    expert:       expertReviews.length > 0 ? 'ok' : null,
+    results:      fta ? 'ok' : null,
+  };
+
+  const MODES: { key: Mode; label: string; active: string; hint: string }[] = [
+    { key: 'spec',         label: '① 仕様書',     active: 'bg-amber-600 text-white',   hint: 'リコール情報から生成した仕様書をレビュー' },
+    { key: 'failure_mode', label: '② 故障モード', active: 'bg-rose-600 text-white',    hint: '正解ラベルの故障モードをレビュー' },
+    { key: 'top_event',    label: '③ トップ事象', active: 'bg-orange-600 text-white',  hint: 'FTAのトップ事象をレビュー' },
+    { key: 'llm',          label: '④ LLM判定',    active: 'bg-indigo-600 text-white',  hint: 'LLMによるFTA評価スコアを確認' },
+    { key: 'expert',       label: '⑤ FTA評価',    active: 'bg-emerald-600 text-white', hint: '専門家によるFTAの5段階評価を入力' },
+    { key: 'results',      label: '⑥ 結果',        active: 'bg-violet-600 text-white',  hint: '全ステップの完了状況とCoverageスコア' },
   ];
 
   return (
     <div className="flex h-screen flex-col bg-neutral-50 font-sans">
       {/* ヘッダー */}
-      <header className="flex items-center gap-3 border-b border-neutral-200 bg-white px-5 py-2.5 shadow-sm">
+      <header className="flex items-center gap-2 border-b border-neutral-200 bg-white px-4 py-2 shadow-sm">
         <div className="flex shrink-0 overflow-hidden rounded-lg border border-neutral-200">
-          {MODES.map(({ key, label, active }) => (
-            <button
-              key={key}
-              onClick={() => switchMode(key)}
-              className={`px-3 py-1.5 text-[12px] font-semibold transition-colors ${
-                mode === key ? active : 'bg-white text-neutral-500 hover:bg-neutral-50'
-              }`}
-            >
-              {label}
-            </button>
-          ))}
+          {MODES.map(({ key, label, active, hint }) => {
+            const status = selectedId ? modeStatus[key] : null;
+            return (
+              <button
+                key={key}
+                onClick={() => switchMode(key)}
+                title={hint}
+                className={`relative flex items-center gap-1 px-3 py-1.5 text-[12px] font-semibold transition-colors ${
+                  mode === key ? active : 'bg-white text-neutral-500 hover:bg-neutral-50'
+                }`}
+              >
+                {label}
+                {status === 'ok' && (
+                  <span className={`text-[9px] font-bold ${mode === key ? 'text-white/80' : 'text-green-500'}`}>●</span>
+                )}
+                {status === 'ng' && (
+                  <span className={`text-[9px] font-bold ${mode === key ? 'text-white/80' : 'text-amber-500'}`}>▲</span>
+                )}
+                {status === null && (
+                  <span className={`text-[9px] font-bold ${mode === key ? 'text-white/40' : 'text-neutral-300'}`}>○</span>
+                )}
+              </button>
+            );
+          })}
         </div>
-
-        <span className="shrink-0 text-xs font-semibold text-neutral-400">ケース</span>
-        <select
-          value={selectedId ?? ''}
-          onChange={(e) => setSelectedId(e.target.value || null)}
-          className="min-w-0 flex-1 rounded border border-neutral-300 bg-white px-2 py-1.5 text-[12px] text-neutral-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        {selectedId && (
+          <div className="ml-2 min-w-0 flex-1">
+            <p className="truncate text-[11px] text-neutral-500">
+              <span className="font-semibold text-neutral-800">{selectedId}</span>
+              {detail?.raw?.metadata && (
+                <span className="ml-2">{detail.raw.metadata.affected_vehicles?.[0]?.model} — {detail.raw.metadata.defect_location}</span>
+              )}
+            </p>
+          </div>
+        )}
+        <button
+          onClick={() => downloadReviews().catch((e) => alert(e.message))}
+          className="ml-auto shrink-0 rounded border border-neutral-300 bg-white px-3 py-1 text-[12px] font-semibold text-neutral-600 hover:bg-neutral-50 active:bg-neutral-100"
+          title="レビュー済みデータを ZIP でダウンロード"
         >
-          {cases.map((c) => (
-            <option key={c.id} value={c.id}>
-              {c.id} — {c.vehicle} / {c.defect_location}{c.has_fta ? ' ✅' : ''}
-            </option>
-          ))}
-        </select>
+          レビューデータをエクスポート
+        </button>
       </header>
 
       {/* メインエリア */}
       <div className="flex flex-1 overflow-hidden select-none">
+        {/* ケース一覧サイドバー */}
+        <CaseSidebar cases={cases} selectedId={selectedId} onSelect={(id) => {
+          setSelectedId(id);
+          setSpecReview(null); setFailureModeReview(null); setTopEventReview(null);
+          setDetail(null); setFta(null); setFtaIndices([]); setFtaIndex(0);
+          setExpertReviews([]); setPerItemScore(null);
+        }} />
+        <div className="w-px shrink-0 bg-neutral-200" />
+        <div className="flex flex-1 overflow-hidden">
         {mode === 'spec' ? (
           /* 仕様書レビューモード：左=PDF×2+仕様書本文、右=レビューパネル */
           <>
@@ -549,22 +798,40 @@ export default function App() {
                       <iframe src={`${API_BASE}/${selectedId}/pdf`} className="h-full w-full" title="recall pdf" />
                     </div>
                   </div>
-                  {/* 図面（加工済み） */}
-                  <div>
-                    <p className="mb-1 text-[11px] font-semibold text-neutral-500">図面（加工済み）</p>
-                    <div className="overflow-auto rounded border border-neutral-200 bg-neutral-50" style={{ maxHeight: 340 }}>
-                      <img src={`${API_BASE}/${selectedId}/diagram_masked`} alt="diagram masked" className="w-full object-contain" />
+                  {/* 改善箇所説明図PDF */}
+                  {cases.find(c => c.id === selectedId)?.has_diagram_pdf && (
+                    <div>
+                      <p className="mb-1 text-[11px] font-semibold text-neutral-500">改善箇所説明図</p>
+                      <div className="overflow-hidden rounded border border-neutral-200" style={{ height: 280 }}>
+                        <iframe src={`${API_BASE}/${selectedId}/diagram`} className="h-full w-full" title="diagram pdf" />
+                      </div>
                     </div>
+                  )}
+                  {/* リコール → 仕様書 フロー */}
+                  <div className="flex items-center gap-2 py-1">
+                    <div className="h-px flex-1 bg-neutral-200" />
+                    <span className="shrink-0 rounded bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-700">
+                      ↓ リコール情報から仕様書を自動生成
+                    </span>
+                    <div className="h-px flex-1 bg-neutral-200" />
                   </div>
                   {/* spec_FTA.md 本文 */}
                   {detail?.spec ? (
-                    <div>
-                      <p className="mb-1 text-[11px] font-semibold text-neutral-500">spec_FTA.md</p>
+                    <div className="flex flex-col gap-2">
+                      <p className="text-[11px] font-semibold text-neutral-500">
+                        部品正常仕様書（spec_FTA.md）
+                      </p>
+                      {/* 注意書き */}
+                      <div className="rounded border border-blue-200 bg-blue-50 px-3 py-2 text-[10px] text-blue-700 leading-relaxed">
+                        <span className="font-semibold">FTA生成への入力について：</span>
+                        仕様書本文（黒文字）と下のマスク済み図がFTAエージェントに入力されます。
+                        <span className="font-semibold text-blue-400"> 青文字の根拠情報（出典URL等）は入力されません。</span>
+                      </div>
                       <div className="rounded border border-neutral-200 bg-neutral-50 p-3 font-mono text-[11px] leading-relaxed text-neutral-700 whitespace-pre-wrap break-words">
                         {detail.spec.split('\n').map((line, i) => {
-                          const m = line.match(/^<!--\s*\[出典\]\s*(.*?)\s*-->$/);
-                          if (m) {
-                            const parts = m[1].split(/(https?:\/\/\S+)/);
+                          const mSrc = line.match(/^<!--\s*\[出典\]\s*(.*?)\s*-->$/);
+                          if (mSrc) {
+                            const parts = mSrc[1].split(/(https?:\/\/\S+)/);
                             return (
                               <span key={i} className="block text-[10px] text-blue-400 italic pl-2 my-0.5">
                                 {parts.map((p, j) =>
@@ -572,6 +839,14 @@ export default function App() {
                                     ? <a key={j} href={p} target="_blank" rel="noreferrer" className="underline hover:text-blue-600">{p}</a>
                                     : p
                                 )}
+                              </span>
+                            );
+                          }
+                          const mAi = line.match(/^<!--\s*\[AI推論\]\s*(.*?)\s*-->$/);
+                          if (mAi) {
+                            return (
+                              <span key={i} className="block text-[10px] text-red-400 italic pl-2 my-0.5">
+                                AI推論: {mAi[1]}
                               </span>
                             );
                           }
@@ -587,6 +862,34 @@ export default function App() {
                       </code>
                     </div>
                   ) : null}
+                  {/* 仕様書の後 → マスク済み図（FTA生成への入力） */}
+                  {detail?.spec && (
+                    <>
+                      <div className="flex items-center gap-2 py-1">
+                        <div className="h-px flex-1 bg-neutral-200" />
+                        <span className="shrink-0 rounded bg-indigo-100 px-2 py-0.5 text-[10px] font-semibold text-indigo-700">
+                          ↓ FTA生成時にあわせて入力される図
+                        </span>
+                        <div className="h-px flex-1 bg-neutral-200" />
+                      </div>
+                      <div>
+                        <p className="mb-1 text-[11px] font-semibold text-neutral-500">
+                          部品図（故障説明マスク済み）
+                        </p>
+                        <div className="overflow-auto rounded border border-neutral-200 bg-neutral-50" style={{ maxHeight: 300 }}>
+                          <img
+                            src={`${API_BASE}/${selectedId}/diagram_masked`}
+                            alt="diagram masked"
+                            className="w-full object-contain"
+                            onError={(e) => {
+                              const el = e.currentTarget.parentElement!;
+                              el.innerHTML = '<p class="p-3 text-[11px] text-neutral-400">diagram_masked.png がありません</p>';
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               )}
             </aside>
@@ -597,6 +900,7 @@ export default function App() {
             <main className="flex-1 overflow-y-auto bg-white">
               {selectedId && (
                 <SpecReviewPanel
+                  key={selectedId}
                   recallId={selectedId}
                   spec={detail?.spec ?? ''}
                   existingReview={specReview}
@@ -614,16 +918,18 @@ export default function App() {
                 <div className="flex flex-col gap-3 p-3">
                   <div>
                     <p className="mb-1 text-[11px] font-semibold text-neutral-500">リコール届出書</p>
-                    <div className="overflow-hidden rounded border border-neutral-200" style={{ height: 340 }}>
+                    <div className="overflow-hidden rounded border border-neutral-200" style={{ height: 300 }}>
                       <iframe src={`${API_BASE}/${selectedId}/pdf`} className="h-full w-full" title="recall pdf" />
                     </div>
                   </div>
-                  <div>
-                    <p className="mb-1 text-[11px] font-semibold text-neutral-500">図面（加工済み）</p>
-                    <div className="overflow-auto rounded border border-neutral-200 bg-neutral-50" style={{ maxHeight: 340 }}>
-                      <img src={`${API_BASE}/${selectedId}/diagram_masked`} alt="diagram masked" className="w-full object-contain" />
+                  {cases.find(c => c.id === selectedId)?.has_diagram_pdf && (
+                    <div>
+                      <p className="mb-1 text-[11px] font-semibold text-neutral-500">改善箇所説明図</p>
+                      <div className="overflow-hidden rounded border border-neutral-200" style={{ height: 280 }}>
+                        <iframe src={`${API_BASE}/${selectedId}/diagram`} className="h-full w-full" title="diagram pdf" />
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               )}
             </aside>
@@ -667,6 +973,11 @@ export default function App() {
                   caseId={selectedId}
                   perItemScore={perItemScore}
                   expertReviews={expertReviews}
+                  specReview={specReview}
+                  failureModeReview={failureModeReview}
+                  topEventReview={topEventReview}
+                  hasFta={fta !== null}
+                  hasDiagramMasked={cases.find((c) => c.id === selectedId)?.has_diagram_masked ?? false}
                 />
               )}
             </aside>
@@ -674,14 +985,38 @@ export default function App() {
               onMouseDown={handleDividerMouseDown}
               className="w-1 shrink-0 cursor-col-resize bg-neutral-200 hover:bg-violet-400 active:bg-violet-500 transition-colors"
             />
-            <main className="flex-1 overflow-hidden">
-              {fta ? (
-                <ReactFlowProvider>
-                  <FTAFlow ftaNodes={addMatchCategories(fta.nodes, detail?.label) as any} readOnly={true} />
-                </ReactFlowProvider>
-              ) : !loading && (
-                <div className="flex h-full items-center justify-center text-sm text-neutral-400">FTA データがありません</div>
+            <main className="flex-1 overflow-hidden flex flex-col">
+              {/* FTAインデックスセレクター（複数FTAがある場合） */}
+              {ftaIndices.length > 1 && (
+                <div className="shrink-0 flex gap-1 border-b border-neutral-200 bg-white px-3 py-2">
+                  {ftaIndices.map((idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setFtaIndex(idx)}
+                      className={`rounded px-3 py-1 text-[11px] font-semibold transition-colors ${
+                        ftaIndex === idx
+                          ? 'bg-violet-600 text-white'
+                          : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+                      }`}
+                    >
+                      FTA {idx + 1}
+                    </button>
+                  ))}
+                </div>
               )}
+              <div className="flex-1 overflow-hidden">
+                {fta ? (
+                  <ReactFlowProvider>
+                    <FTAFlow ftaNodes={addMatchCategories(fta.nodes, detail?.label) as any} readOnly={true} />
+                  </ReactFlowProvider>
+                ) : !loading && (
+                  <div className="flex h-full items-center justify-center p-8">
+                    <div className="max-w-sm w-full">
+                      <FtaReadinessPanel readiness={readiness} />
+                    </div>
+                  </div>
+                )}
+              </div>
             </main>
           </>
         ) : (
@@ -697,6 +1032,9 @@ export default function App() {
                   perItemScore={perItemScore}
                   expertReviews={expertReviews}
                   mode={mode}
+                  specReview={specReview}
+                  topEventReview={topEventReview}
+                  readiness={readiness}
                   onExpertReviewSaved={(r) => {
                     setExpertReviews((prev) => {
                       const idx = prev.findIndex((e) => e.reviewer === r.reviewer);
@@ -711,20 +1049,44 @@ export default function App() {
               onMouseDown={handleDividerMouseDown}
               className="w-1 shrink-0 cursor-col-resize bg-neutral-200 hover:bg-indigo-400 active:bg-indigo-500 transition-colors"
             />
-            <main className="flex-1 overflow-hidden">
+            <main className="flex-1 overflow-hidden flex flex-col">
               {loading && (
                 <div className="flex h-full items-center justify-center text-sm text-neutral-400">読み込み中...</div>
               )}
-              {fta ? (
-                <ReactFlowProvider>
-                  <FTAFlow ftaNodes={addMatchCategories(fta.nodes, detail?.label) as any} readOnly={true} />
-                </ReactFlowProvider>
-              ) : !loading && (
-                <div className="flex h-full items-center justify-center text-sm text-neutral-400">FTA データがありません</div>
+              {ftaIndices.length > 1 && (
+                <div className="shrink-0 flex gap-1 border-b border-neutral-200 bg-white px-3 py-2">
+                  {ftaIndices.map((idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setFtaIndex(idx)}
+                      className={`rounded px-3 py-1 text-[11px] font-semibold transition-colors ${
+                        ftaIndex === idx
+                          ? 'bg-indigo-600 text-white'
+                          : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+                      }`}
+                    >
+                      FTA {idx + 1}
+                    </button>
+                  ))}
+                </div>
               )}
+              <div className="flex-1 overflow-hidden">
+                {fta ? (
+                  <ReactFlowProvider>
+                    <FTAFlow ftaNodes={addMatchCategories(fta.nodes, detail?.label) as any} readOnly={true} />
+                  </ReactFlowProvider>
+                ) : !loading && (
+                  <div className="flex h-full items-center justify-center p-8">
+                    <div className="max-w-sm w-full">
+                      <FtaReadinessPanel readiness={readiness} />
+                    </div>
+                  </div>
+                )}
+              </div>
             </main>
           </>
         )}
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,59 @@
+{
+  "recall_id": "r8-03-12-005684",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005684.html",
+  "date_text": "令和8年3月12日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001986242.pdf",
+    "https://www.mlit.go.jp/report/press/content/001986243.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001986243.pdf",
+  "metadata": {
+    "notification_number": "外-4159",
+    "notification_date": "2026-03-12",
+    "notifier": "Thai Honda Co., Ltd.",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ホンダ",
+        "model": "Rebel 250",
+        "type_designation": "8BK-MC49",
+        "model_years": [
+          "2022-12-14 to 2024-09-20",
+          "2024-09-27 to 2025-03-19"
+        ],
+        "affected_count": "22666"
+      },
+      {
+        "make": "ホンダ",
+        "model": "CL250",
+        "type_designation": "8BK-MC57",
+        "model_years": [
+          "2023-01-11 to 2024-07-24",
+          "2024-11-22 to 2025-02-23"
+        ],
+        "affected_count": "8804"
+      }
+    ],
+    "defect_system": "施錠装置",
+    "defect_location": "ハンドルロック（固定ボルト）",
+    "defect_description": "施錠装置において、ハンドルロックを固定するボルトの締付け方法が不適切なため、ボルトの締結力が不足しているものがある。そのため、そのまま使用を続けると、ボルトが緩み停車時にハンドルがロックできないおそれがある。また、外れたボルトがフレームに挟まると、最悪の場合、ハンドルが転舵できず転倒するおそれがある。",
+    "root_cause": "ハンドルロックを固定するボルトの締付け方法が不適切なため、ボルトの締結力が不足しているものがある。",
+    "consequences": [
+      "ボルトが緩み停車時にハンドルがロックできないおそれがある",
+      "外れたボルトがフレームに挟まると、最悪の場合、ハンドルが転舵できず転倒するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "ハンドルロック締付けボルト",
+        "part_number": null,
+        "system_path": [
+          "施錠装置",
+          "ハンドルロック"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、ハンドルロック締付けボルトを新品に交換し、規定トルクで締め付ける。なお、部品の準備に時間を要することから、不具合内容を周知し、準備でき次第、改めて連絡する。",
+    "correction_detail": "全車両、ハンドルロック締付けボルトを新品に交換し、規定トルクで締め付ける。部品準備に時間を要するため、不具合内容を周知し、準備でき次第、改めて連絡する。"
+  }
+}

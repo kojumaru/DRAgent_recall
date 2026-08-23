@@ -6,10 +6,20 @@ export interface RecallListItem {
   notifier: string;
   vehicle: string;
   defect_location: string;
+  notification_date?: string;
+  has_diagram_pdf?: boolean;
   has_review: boolean;
   has_spec: boolean;
+  has_label: boolean;
+  has_input: boolean;
   has_fta: boolean;
+  fta_count?: number;
   has_spec_review: boolean;
+  spec_review_improved?: boolean;
+  has_diagram_masked?: boolean;
+  has_diagram_original?: boolean;
+  has_top_event_review?: boolean;
+  has_failure_mode_review?: boolean;
 }
 
 
@@ -83,6 +93,21 @@ export interface FTANode {
   sub_type: string;
 }
 
+export async function downloadReviews(): Promise<void> {
+  const res = await fetch(`${BASE}/export/reviews`);
+  if (!res.ok) throw new Error('エクスポートに失敗しました');
+  const blob = await res.blob();
+  const disposition = res.headers.get('Content-Disposition') ?? '';
+  const match = disposition.match(/filename=([^\s;]+)/);
+  const filename = match ? match[1] : 'fta_reviews.zip';
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 export async function listRecalls(): Promise<RecallListItem[]> {
   const res = await fetch(`${BASE}/recalls`);
   return res.json();
@@ -93,9 +118,18 @@ export async function getRecall(id: string): Promise<RecallDetail> {
   return res.json();
 }
 
-export async function getFTA(id: string): Promise<FTATree> {
-  const res = await fetch(`${BASE}/recalls/${id}/fta`);
+export async function getFTA(id: string, index?: number): Promise<FTATree> {
+  const url = index !== undefined && index > 0
+    ? `${BASE}/recalls/${id}/fta?index=${index}`
+    : `${BASE}/recalls/${id}/fta`;
+  const res = await fetch(url);
   if (!res.ok) throw new Error('fta not found');
+  return res.json();
+}
+
+export async function listFTAIndices(id: string): Promise<number[]> {
+  const res = await fetch(`${BASE}/recalls/${id}/fta/list`);
+  if (!res.ok) return [];
   return res.json();
 }
 
@@ -180,6 +214,7 @@ export interface SpecReview {
   verdict: 'approved' | 'needs_fix' | 'skipped';
   comment: string;
   section_reviews: Record<string, SpecSectionReview>;
+  skill_improved_at?: string;
 }
 
 export interface SpecReviewSubmission {
@@ -205,6 +240,12 @@ export async function saveSpecReview(id: string, body: SpecReviewSubmission, bas
     const err = await res.json().catch(() => ({ detail: res.statusText }));
     throw new Error(err.detail ?? '保存に失敗しました');
   }
+  return res.json();
+}
+
+export async function markSpecReviewImproved(id: string, base = `${BASE}/recalls`): Promise<SpecReview> {
+  const res = await fetch(`${base}/${id}/spec_review/mark_improved`, { method: 'POST' });
+  if (!res.ok) throw new Error('マーク失敗');
   return res.json();
 }
 
@@ -262,18 +303,25 @@ export async function saveFailureModeReview(id: string, body: FailureModeReviewS
 // トップ事象レビュー
 // ---------------------------------------------------------------------------
 
+export interface TopEventEventReview {
+  top_event: string;
+  verdict: 'approved' | 'needs_fix';
+  suggested: string;
+  comment: string;
+}
+
 export interface TopEventReview {
   reviewer: string;
   reviewed_at: string;
-  verdict: 'approved' | 'needs_fix';
-  suggested_top_event: string;
-  comment: string;
+  event_reviews: TopEventEventReview[];
+  missing_items?: string[];
+  comment?: string;
 }
 
 export interface TopEventReviewSubmission {
   reviewer: string;
-  verdict: 'approved' | 'needs_fix';
-  suggested_top_event: string;
+  event_reviews: TopEventEventReview[];
+  missing_items: string[];
   comment: string;
 }
 
@@ -288,6 +336,26 @@ export async function saveTopEventReview(id: string, body: TopEventReviewSubmiss
     method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body),
   });
   if (!res.ok) { const err = await res.json().catch(() => ({ detail: res.statusText })); throw new Error(err.detail ?? '保存に失敗しました'); }
+  return res.json();
+}
+
+export interface SkillImproveJob {
+  job_id: string;
+  status: 'running' | 'done' | 'error';
+  output: string;
+  started_at?: string;
+  finished_at?: string;
+}
+
+export async function startSkillImprove(id: string, base = `${BASE}/recalls`): Promise<SkillImproveJob> {
+  const res = await fetch(`${base}/${id}/skill_improve`, { method: 'POST' });
+  if (!res.ok) throw new Error('skill-improve 起動失敗');
+  return res.json();
+}
+
+export async function getSkillImproveStatus(id: string, base = `${BASE}/recalls`): Promise<SkillImproveJob | null> {
+  const res = await fetch(`${base}/${id}/skill_improve`);
+  if (!res.ok) return null;
   return res.json();
 }
 

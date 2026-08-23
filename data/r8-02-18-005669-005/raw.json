@@ -1,0 +1,66 @@
+{
+  "recall_id": "r8-02-18-005669-005",
+  "parent_recall_id": "r8-02-18-005669",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005669.html",
+  "date_text": "令和8年2月18日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001982127.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "5764",
+    "notification_date": "2026-01-14",
+    "notifier": "株式会社小松製作所",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "コマツ",
+        "model": "WA100-8 他",
+        "type_designation": "YDP-WA138 他",
+        "model_years": [
+          "2007-12-04 to 2023-10-31"
+        ],
+        "affected_count": "17"
+      }
+    ],
+    "defect_system": "作動油系（作動油タンク）",
+    "defect_location": "作動油タンクブリーザ（カバー、ケース、バヨネット、Oリング）",
+    "defect_description": "ショベル·ローダの交換修理用部品の作動油タンクブリーザにおいて、ケース部のバヨネット(樹脂)とカバー部のバヨネット(アルミ)に隙間が生じているものがある。また、Oリングのつぶし代が小さくなるものがある。そのため、Oリングで隙間を十分に埋めることができなくなり、そのまま使用を続けると、作動油タンクの内圧により作動油が著しく漏れることがある。",
+    "root_cause": "カバーとケースを密着させる溝の寸法管理が不適切、かつOリングの寸法検討が不十分なため。",
+    "consequences": [
+      "作動油が著しく漏れることがある"
+    ],
+    "parts": [
+      {
+        "part_name": "作動油タンクブリーザ",
+        "part_number": null,
+        "system_path": [
+          "作動油系",
+          "作動油タンク",
+          "作動油タンクブリーザ"
+        ]
+      },
+      {
+        "part_name": "Oリング",
+        "part_number": null,
+        "system_path": [
+          "作動油系",
+          "作動油タンクブリーザ",
+          "Oリング"
+        ]
+      },
+      {
+        "part_name": "バヨネット（ケース部：樹脂／カバー部：アルミ）",
+        "part_number": null,
+        "system_path": [
+          "作動油系",
+          "作動油タンクブリーザ",
+          "バヨネット"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

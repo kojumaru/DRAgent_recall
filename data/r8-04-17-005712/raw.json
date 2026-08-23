@@ -1,0 +1,150 @@
+{
+  "recall_id": "r8-04-17-005712",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005712.html",
+  "date_text": "令和8年4月17日",
+  "month": 4,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001996669.pdf",
+    "https://www.mlit.go.jp/report/press/content/001996670.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001996670.pdf",
+  "metadata": {
+    "notification_number": "外-4172",
+    "notification_date": "2026-04-17",
+    "notifier": "フォルクスワーゲングループ ジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "フォルクスワーゲン",
+        "model": "ゴルフ 1.5 TSI",
+        "type_designation": "3AA-CDDXD",
+        "model_years": [
+          "2024-08-23 to 2025-08-07"
+        ],
+        "affected_count": "3706"
+      },
+      {
+        "make": "フォルクスワーゲン",
+        "model": "ゴルフ GTI",
+        "type_designation": "7BA-CDDNP",
+        "model_years": [
+          "2024-08-20 to 2025-08-13"
+        ],
+        "affected_count": "962"
+      },
+      {
+        "make": "フォルクスワーゲン",
+        "model": "ゴルフ TDI/110kW",
+        "type_designation": "3DA-CDDTT",
+        "model_years": [
+          "2024-09-25 to 2025-08-13"
+        ],
+        "affected_count": "1956"
+      },
+      {
+        "make": "フォルクスワーゲン",
+        "model": "ゴルフ R 2.0/245kW",
+        "type_designation": "7BA-CDDNFF",
+        "model_years": [
+          "2024-09-26 to 2025-11-19"
+        ],
+        "affected_count": "882"
+      },
+      {
+        "make": "フォルクスワーゲン",
+        "model": "ゴルフヴァリアント 1.5 TSI",
+        "type_designation": "3AA-CDDXDV",
+        "model_years": [
+          "2024-09-03 to 2025-08-13"
+        ],
+        "affected_count": "1744"
+      },
+      {
+        "make": "フォルクスワーゲン",
+        "model": "ゴルフヴァリアント TDI/110kW",
+        "type_designation": "3DA-CDDTSV",
+        "model_years": [
+          "2024-09-25 to 2025-11-19"
+        ],
+        "affected_count": "1324"
+      },
+      {
+        "make": "フォルクスワーゲン",
+        "model": "ゴルフ R ヴァリアント",
+        "type_designation": "7BA-CDDNFV",
+        "model_years": [
+          "2024-10-10 to 2025-08-05"
+        ],
+        "affected_count": "594"
+      },
+      {
+        "make": "フォルクスワーゲン",
+        "model": "パサート 1.5 TSI",
+        "type_designation": "3AA-CJ15V",
+        "model_years": [
+          "2024-08-26 to 2025-07-03"
+        ],
+        "affected_count": "836"
+      },
+      {
+        "make": "フォルクスワーゲン",
+        "model": "パサート GTE",
+        "type_designation": "3LA-CJ15V",
+        "model_years": [
+          "2024-09-02 to 2025-07-04"
+        ],
+        "affected_count": "321"
+      },
+      {
+        "make": "フォルクスワーゲン",
+        "model": "パサート 2.0 TDI",
+        "type_designation": "3DA-CJ20V",
+        "model_years": [
+          "2024-10-09 to 2025-07-04"
+        ],
+        "affected_count": "363"
+      },
+      {
+        "make": "フォルクスワーゲン",
+        "model": "ティグアン 1.5 TSI",
+        "type_designation": "3AA-CT15",
+        "model_years": [
+          "2024-08-23 to 2025-10-09"
+        ],
+        "affected_count": "1947"
+      },
+      {
+        "make": "フォルクスワーゲン",
+        "model": "ティグアン 2.0 TDI",
+        "type_designation": "3DA-CT20",
+        "model_years": [
+          "2024-10-15 to 2025-08-06"
+        ],
+        "affected_count": "1086"
+      }
+    ],
+    "defect_system": "かじ取装置",
+    "defect_location": "電動パワーステアリング（コントロールユニット）",
+    "defect_description": "電動パワーステアリングのコントロールユニットにおいて、制御プログラムの設計検討が不十分なため、電動パワーステアリングモーターの内部部品が高温状態になると、異常検知システムが当該モーター等の機械振動を故障状態と検知することがある。そのため、警告灯が点灯すると共にステアリングアシスト機能が無効化され、ステアリング操作力が増大するおそれがある。",
+    "root_cause": "制御プログラムの設計検討が不十分なため。",
+    "consequences": [
+      "警告灯が点灯する",
+      "ステアリングアシスト機能が無効化される",
+      "ステアリング操作力が増大するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "電動パワーステアリングコントロールユニット",
+        "part_number": null,
+        "system_path": [
+          "かじ取装置",
+          "電動パワーステアリング",
+          "コントロールユニット"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、電動パワーステアリングコントロールユニットのプログラムを対策プログラムに書き換える。",
+    "correction_detail": "全車両、電動パワーステアリングコントロールユニットのプログラムを対策プログラムに書き換える。",
+    "notification_number_total": null
+  }
+}

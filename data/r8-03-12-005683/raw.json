@@ -1,0 +1,67 @@
+{
+  "recall_id": "r8-03-12-005683",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005683.html",
+  "date_text": "令和8年3月12日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001986239.pdf",
+    "https://www.mlit.go.jp/report/press/content/001986240.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001986240.pdf",
+  "metadata": {
+    "notification_number": "5786",
+    "notification_date": "2026-03-12",
+    "notifier": "本田技研工業株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ホンダ",
+        "model": "CBR600RR",
+        "type_designation": "8BL-PC40",
+        "model_years": [
+          "2024-01-11 to 2025-10-15"
+        ],
+        "affected_count": "2389"
+      }
+    ],
+    "defect_system": "原動機",
+    "defect_location": "シリンダ",
+    "defect_description": "原動機において、シリンダ加工の工程管理が不適切なため、シリンダ表面が粗くなり、走行中にエンジンオイルが燃焼室まで吸い上げられて燃焼し、オイル消費量が増えることがある。そのため、オイルの潤滑不良で異音が発生し、そのまま使用を続けると、走行中にエンジンが破損し、後輪がロックして転倒する、または、火災に至るおそれがある。",
+    "root_cause": "シリンダ加工の工程管理が不適切なため、シリンダ表面が粗くなる。",
+    "consequences": [
+      "走行中にエンジンが破損する",
+      "後輪がロックして転倒する",
+      "火災に至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "シリンダ",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "シリンダ"
+        ]
+      },
+      {
+        "part_name": "エンジンサブアッセンブリ",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "エンジン",
+          "エンジンサブアッセンブリ"
+        ]
+      },
+      {
+        "part_name": "エンジンアッセンブリ",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "エンジン",
+          "エンジンアッセンブリ"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、エンジンを点検し、異常がある場合はシリンダの良品が組み込まれたエンジンサブアッセンブリに交換する。また、異音がある場合はエンジンをアッセンブリで交換する。",
+    "correction_detail": "全車両のエンジンを点検し、異常が認められる場合はシリンダ良品組込みのエンジンサブアッセンブリに交換する。さらに異音がある場合はエンジンをアッセンブリで交換する。"
+  }
+}

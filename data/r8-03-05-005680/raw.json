@@ -1,0 +1,182 @@
+{
+  "recall_id": "r8-03-05-005680",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005680.html",
+  "date_text": "令和8年3月5日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001984758.pdf",
+    "https://www.mlit.go.jp/report/press/content/001984759.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001984759.pdf",
+  "metadata": {
+    "notification_number": "5787",
+    "notification_date": "2026-03-05",
+    "notifier": "日野自動車株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FN1AGG",
+        "model_years": [
+          "2019-05-08 to 2021-06-10"
+        ],
+        "affected_count": "44"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FN1AJG",
+        "model_years": [
+          "2019-04-11 to 2021-07-15"
+        ],
+        "affected_count": "223"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FQ1AJG 2DG-FQ1AJJ",
+        "model_years": [
+          "2019-04-02 to 2021-07-16"
+        ],
+        "affected_count": "99"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FR1AHA 2DG-FR1AHG 2DG-FR1AHJ 2NG-FR1AHH 2NG-FR1AHS",
+        "model_years": [
+          "2019-04-02 to 2021-07-17"
+        ],
+        "affected_count": "1926"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FR1AJG",
+        "model_years": [
+          "2019-05-22 to 2021-07-06"
+        ],
+        "affected_count": "14"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FR1EHG 2DG-FR1EHJ",
+        "model_years": [
+          "2019-03-26 to 2021-07-17"
+        ],
+        "affected_count": "466"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FS1AHA 2DG-FS1AHG 2DG-FS1AHJ",
+        "model_years": [
+          "2019-04-02 to 2021-07-16"
+        ],
+        "affected_count": "210"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FS1EHA 2DG-FS1EHG",
+        "model_years": [
+          "2019-04-04 to 2021-07-13"
+        ],
+        "affected_count": "120"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FW1AHG 2DG-FW1AHJ 2NG-FW1AHH 2NG-FW1AHS",
+        "model_years": [
+          "2019-04-01 to 2021-07-19"
+        ],
+        "affected_count": "4943"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FW1AJG 2DG-FW1AJJ",
+        "model_years": [
+          "2019-04-16 to 2021-07-14"
+        ],
+        "affected_count": "25"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-FW1EHG 2DG-FW1EHJ",
+        "model_years": [
+          "2019-04-04 to 2021-07-17"
+        ],
+        "affected_count": "671"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-SH1AGGG",
+        "model_years": [
+          "2020-05-01 to 2021-07-16"
+        ],
+        "affected_count": "86"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-SH1EDGG 2DG-SH1EDGJ",
+        "model_years": [
+          "2020-05-01 to 2021-07-17"
+        ],
+        "affected_count": "1189"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-SH1EEGG",
+        "model_years": [
+          "2020-05-01 to 2021-07-19"
+        ],
+        "affected_count": "389"
+      },
+      {
+        "make": "日野",
+        "model": "日野プロフィア",
+        "type_designation": "2DG-SH1EGGG",
+        "model_years": [
+          "2020-05-25 to 2021-06-18"
+        ],
+        "affected_count": "33"
+      }
+    ],
+    "defect_system": "電気装置",
+    "defect_location": "車両制御ECU",
+    "defect_description": "車両制御ECUにおいて、制御値の書き込みプログラムが不適切なため、エンジンECUに誤った車両識別番号(VIN)が書き込まれることがある。そのため、故障診断ツールにて車両識別番号を表示できず、保安基準に適合しないおそれがある。",
+    "root_cause": "車両制御ECUの制御値の書き込みプログラムが不適切なため。",
+    "consequences": [
+      "故障診断ツールにて車両識別番号を表示できない",
+      "保安基準に適合しないおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "車両制御ECU",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "車両制御ECU"
+        ]
+      },
+      {
+        "part_name": "エンジンECU",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "エンジンECU"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、車両制御ECUのプログラムを対策仕様に書き換える。",
+    "correction_detail": "全車両、車両制御ECUのプログラムを対策仕様に書き換える。"
+  }
+}

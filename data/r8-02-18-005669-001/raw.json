@@ -1,0 +1,93 @@
+{
+  "recall_id": "r8-02-18-005669-001",
+  "parent_recall_id": "r8-02-18-005669",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005669.html",
+  "date_text": "令和8年2月18日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001982127.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "5758",
+    "notification_date": "2026-01-07",
+    "notifier": "三菱ロジスネクスト株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ニチュ三菱",
+        "model": null,
+        "type_designation": "YDM-KF18D 他",
+        "model_years": [
+          "2025-06-17 to 2025-07-08"
+        ],
+        "affected_count": "36"
+      }
+    ],
+    "defect_system": "排出ガス再循環装置",
+    "defect_location": "EGRバルブ、EGRパイプ、パイプステー、ハーネスステー、クーラーステー（取付ボルト）",
+    "defect_description": "排出ガス再循環装置(EGRバルブ、EGRパイプ)、パイプステー、ハーネスステー及びクーラーステーにおいて、取付ボルトが規定のトルクで締め付けられていないものがある。そのため、そのまま使用し続けると、ボルトが緩み、排気ガスが漏れるおそれがある。または、異物吸入や、脱落した部品が発電装置に巻き込まれてエンジンが破損し、走行不能となるおそれがある。",
+    "root_cause": "取付ボルトの締付トルク管理が不十分なため。",
+    "consequences": [
+      "排気ガスが漏れるおそれがある",
+      "異物吸入のおそれがある",
+      "脱落した部品が発電装置に巻き込まれてエンジンが破損し、走行不能となるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "EGRバルブ",
+        "part_number": null,
+        "system_path": [
+          "排出ガス再循環装置",
+          "EGRバルブ"
+        ]
+      },
+      {
+        "part_name": "EGRパイプ",
+        "part_number": null,
+        "system_path": [
+          "排出ガス再循環装置",
+          "EGRパイプ"
+        ]
+      },
+      {
+        "part_name": "パイプステー",
+        "part_number": null,
+        "system_path": [
+          "排出ガス再循環装置",
+          "取付部品",
+          "パイプステー"
+        ]
+      },
+      {
+        "part_name": "ハーネスステー",
+        "part_number": null,
+        "system_path": [
+          "排出ガス再循環装置",
+          "取付部品",
+          "ハーネスステー"
+        ]
+      },
+      {
+        "part_name": "クーラーステー",
+        "part_number": null,
+        "system_path": [
+          "排出ガス再循環装置",
+          "取付部品",
+          "クーラーステー"
+        ]
+      },
+      {
+        "part_name": "取付ボルト",
+        "part_number": null,
+        "system_path": [
+          "排出ガス再循環装置",
+          "取付部品",
+          "取付ボルト"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

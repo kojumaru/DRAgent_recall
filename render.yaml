@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: fta-evaluator-viewer
+    runtime: python
+    buildCommand: pip install -r requirements.txt && cd viewer/frontend && npm install && npm run build
+    startCommand: bash start.sh
+    envVars:
+      - key: DATA_DIR
+        value: /mnt/data
+    disk:
+      name: fta-data
+      mountPath: /mnt/data
+      sizeGB: 1

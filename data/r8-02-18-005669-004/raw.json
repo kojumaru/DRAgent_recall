@@ -1,0 +1,48 @@
+{
+  "recall_id": "r8-02-18-005669-004",
+  "parent_recall_id": "r8-02-18-005669",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005669.html",
+  "date_text": "令和8年2月18日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001982127.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "外4136",
+    "notification_date": "2026-01-13",
+    "notifier": "フォルクスワーゲングループジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ベントレー",
+        "model": "ベンテイガ PHEV",
+        "type_designation": "7LA-BADCB",
+        "model_years": [
+          "2023-07-03 to 2024-01-15"
+        ],
+        "affected_count": "48"
+      }
+    ],
+    "defect_system": "高電圧バッテリー",
+    "defect_location": "高電圧バッテリーモジュール",
+    "defect_description": "高電圧バッテリーモジュールにおいて、使用過程で重要な技術パラメータに偏差が生じることがある。そのため、高電圧バッテリーの充電時に当該モジュールが過熱し、最悪の場合、火災に至るおそれがある。",
+    "root_cause": "製造工程が不適切なため。",
+    "consequences": [
+      "高電圧バッテリーの充電時に当該モジュールが過熱するおそれがある",
+      "最悪の場合、火災に至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "高電圧バッテリーモジュール",
+        "part_number": null,
+        "system_path": [
+          "高電圧バッテリー",
+          "バッテリーモジュール"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

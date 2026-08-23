@@ -1,0 +1,71 @@
+{
+  "recall_id": "r8-05-28-005747",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005747.html",
+  "date_text": "令和8年5月28日",
+  "month": 5,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002002850.pdf",
+    "https://www.mlit.go.jp/report/press/content/002002851.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002002851.pdf",
+  "metadata": {
+    "notification_number": "外-4194",
+    "notification_date": "2026-05-28",
+    "notifier": "HONDA DVLPMT. & MFG. OF AMERICA, LLC",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ホンダ オブ アメリカ",
+        "model": "NSX",
+        "type_designation": "CAA-NC1",
+        "model_years": [
+          "2018-01-18 to 2018-03-22",
+          "2018-03-01 to 2018-10-10",
+          "2018-10-10 to 2019-12-11"
+        ],
+        "affected_count": "235"
+      },
+      {
+        "make": "ホンダ オブ アメリカ",
+        "model": "NSX",
+        "type_designation": "5AA-NC1",
+        "model_years": [
+          "2019-12-12 to 2021-01-25",
+          "2021-03-18 to 2021-06-09",
+          "2022-02-11 to 2022-10-24"
+        ],
+        "affected_count": "55"
+      }
+    ],
+    "defect_system": "燃料装置",
+    "defect_location": "低圧燃料ポンプ（インペラ／ポンプカバー）",
+    "defect_description": "無鉛プレミアムガソリン指定車に搭載した低圧燃料ポンプにおいて、ポンプ作動検査時の検査用液が不適切なため、インペラ（樹脂製羽根車）に検査用液が浸透して強度が低下し、亀裂が生じることがある。そのため、冷熱の繰り返しによりインペラの亀裂が進展して燃料により膨潤し、ポンプカバーと接触して作動不良となり、最悪の場合、走行中にエンジンが停止して再始動できなくなるおそれがある。",
+    "root_cause": "ポンプ作動検査時の検査用液が不適切なため、インペラ（樹脂製羽根車）に検査用液が浸透して強度低下・亀裂発生が生じることがあるため。",
+    "consequences": [
+      "走行中にエンジンが停止するおそれがある",
+      "再始動できなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "低圧燃料ポンプモジュール",
+        "part_number": "17045-T6N-X02",
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ",
+          "低圧燃料ポンプモジュール"
+        ]
+      },
+      {
+        "part_name": "低圧燃料ポンプモジュール",
+        "part_number": "17045-T6N-X01",
+        "system_path": [
+          "燃料装置",
+          "低圧燃料ポンプ",
+          "低圧燃料ポンプモジュール"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、低圧燃料ポンプモジュールを対策品と交換する。",
+    "correction_detail": "対象車両について低圧燃料ポンプモジュールを対策品に交換する。あわせて、交換修理用部品として出荷し組付けられた車両が特定できないものについても、当該部品が組付けられた車両は同様の改善（低圧燃料ポンプモジュールの対策品交換）を実施する。"
+  }
+}

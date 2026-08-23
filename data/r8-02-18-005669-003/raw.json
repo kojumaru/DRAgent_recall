@@ -1,0 +1,48 @@
+{
+  "recall_id": "r8-02-18-005669-003",
+  "parent_recall_id": "r8-02-18-005669",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005669.html",
+  "date_text": "令和8年2月18日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001982127.pdf"
+  ],
+  "diagram_pdf_url": null,
+  "metadata": {
+    "notification_number": "5746",
+    "notification_date": "2026-01-13",
+    "notifier": "豊和工業株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "いすぐ",
+        "model": "エルフ",
+        "type_designation": "2RG-NMR88M",
+        "model_years": [
+          "2023-12-28 to 2025-06-26"
+        ],
+        "affected_count": "20"
+      }
+    ],
+    "defect_system": "油圧装置（作業装置の油圧回路）",
+    "defect_location": "チェックバルブ（清掃車作業装置）",
+    "defect_description": "清掃車の作業装置の油圧回路において、作業用エンジン等からの熱により配管内の圧力が上昇することがある。そのため、圧力により作業装置のチェックバルブが開かず、作業装置停止後、清掃装置(左右ブラシ及びフード)が格納できないことから、他の交通を妨げるおそれがある。",
+    "root_cause": "チェックバルブの選定が不十分なため。",
+    "consequences": [
+      "清掃装置(左右ブラシ及びフード)が格納できず、他の交通を妨げるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "チェックバルブ",
+        "part_number": null,
+        "system_path": [
+          "油圧装置",
+          "油圧回路",
+          "チェックバルブ"
+        ]
+      }
+    ],
+    "correction_summary": null,
+    "correction_detail": null
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "recall_id": "r8-04-28-005726",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005726.html",
+  "date_text": "令和8年4月28日",
+  "month": 4,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001998472.pdf",
+    "https://www.mlit.go.jp/report/press/content/001998473.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001998473.pdf",
+  "metadata": {
+    "notification_number": "5809",
+    "notification_date": "2026-04-28",
+    "notifier": "株式会社 クボタ 代表取締役 社長 花田 晋吾",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "クボタ",
+        "model": "DR575",
+        "type_designation": "YDN-C524",
+        "model_years": [
+          "2020-01-14 to 2025-06-19"
+        ],
+        "affected_count": "14"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR575",
+        "type_designation": "-",
+        "model_years": [
+          "2019-06-27 to 2019-07-24"
+        ],
+        "affected_count": "10"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR575",
+        "type_designation": "-",
+        "model_years": [
+          "2020-01-07 to 2025-12-16"
+        ],
+        "affected_count": "520"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR595",
+        "type_designation": "YDP-C523",
+        "model_years": [
+          "2018-09-13 to 2019-08-27"
+        ],
+        "affected_count": "7"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR595",
+        "type_designation": "YDP-C523",
+        "model_years": [
+          "2020-02-19 to 2021-03-19"
+        ],
+        "affected_count": "6"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR595",
+        "type_designation": "-",
+        "model_years": [
+          "2018-08-24 to 2019-10-10"
+        ],
+        "affected_count": "117"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR595",
+        "type_designation": "-",
+        "model_years": [
+          "2020-01-16 to 2026-01-15"
+        ],
+        "affected_count": "599"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR6130",
+        "type_designation": "YDR-C615",
+        "model_years": [
+          "2018-07-16 to 2019-10-10"
+        ],
+        "affected_count": "167"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR6130",
+        "type_designation": "YDR-C615",
+        "model_years": [
+          "2020-01-07 to 2020-10-01"
+        ],
+        "affected_count": "85"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR6130",
+        "type_designation": "-",
+        "model_years": [
+          "2018-12-13 to 2019-10-07"
+        ],
+        "affected_count": "189"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR6130",
+        "type_designation": "-",
+        "model_years": [
+          "2019-12-20 to 2026-01-19"
+        ],
+        "affected_count": "1216"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR6130A",
+        "type_designation": "-",
+        "model_years": [
+          "2019-07-16 to 2019-07-23"
+        ],
+        "affected_count": "6"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR6130A",
+        "type_designation": "-",
+        "model_years": [
+          "2019-12-19 to 2025-12-10"
+        ],
+        "affected_count": "130"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR6115",
+        "type_designation": "-",
+        "model_years": [
+          "2018-07-16 to 2019-10-10"
+        ],
+        "affected_count": "202"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR6115",
+        "type_designation": "-",
+        "model_years": [
+          "2019-12-23 to 2026-01-19"
+        ],
+        "affected_count": "1053"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR7130",
+        "type_designation": "YDR-C701",
+        "model_years": [
+          "2022-07-11 to 2025-12-15"
+        ],
+        "affected_count": "116"
+      },
+      {
+        "make": "クボタ",
+        "model": "DR7130",
+        "type_designation": "-",
+        "model_years": [
+          "2022-07-06 to 2025-12-10"
+        ],
+        "affected_count": "81"
+      }
+    ],
+    "defect_system": "灯火装置",
+    "defect_location": "作業灯、後退灯（制御ユニットの制御）",
+    "defect_description": "1 刈取脱穀作業車の制御ユニットにおいて、刈取作業中にグレンタンク(収穫した作物を保管する部位)のもみが満杯になった際、前面ガラス上面に備える作業灯が点滅する。そのため、当該作業灯は点滅灯火に該当することから保安基準に適合しない。2 自動運転での刈取機能を有する刈取脱穀作業車の制御ユニットにおいて、自動運転作業時、周囲への注意喚起として後進を開始する3秒以上前に後退灯が点灯する。そのため、当該後退灯は車両が前進中に自動で点灯することから保安基準に適合しない。",
+    "root_cause": "制御ユニットにおいて設計検討が不十分であったため。",
+    "consequences": [
+      "作業灯が点滅灯火に該当し、保安基準に適合しない",
+      "後退灯が前進中に自動で点灯し、保安基準に適合しない"
+    ],
+    "parts": [
+      {
+        "part_name": "作業灯",
+        "part_number": null,
+        "system_path": [
+          "灯火装置",
+          "作業灯"
+        ]
+      },
+      {
+        "part_name": "後退灯",
+        "part_number": null,
+        "system_path": [
+          "灯火装置",
+          "後退灯"
+        ]
+      },
+      {
+        "part_name": "制御ユニット",
+        "part_number": null,
+        "system_path": [
+          "灯火装置",
+          "制御ユニット"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、制御ユニットのプログラムを対策プログラムに書き換える。",
+    "correction_detail": "全車両について、制御ユニットのプログラムを対策プログラムに書き換える。"
+  }
+}

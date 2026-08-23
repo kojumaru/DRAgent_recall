@@ -1,0 +1,102 @@
+{
+  "recall_id": "r8-02-06-005658",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005658.html",
+  "date_text": "令和8年2月6日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001980261.pdf",
+    "https://www.mlit.go.jp/report/press/content/001980262.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001980262.pdf",
+  "metadata": {
+    "notification_number": "外-3923",
+    "notification_date": "2026-02-06",
+    "notifier": "フォードモーターカンパニー アジアにおける代表者 Susanto, Bagus（製作者名: フォード自動車株式会社）",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "フォード",
+        "model": "エクスプローラー",
+        "type_designation": "ABA-1FMHK8",
+        "model_years": [
+          "2010-10-18 to 2015-03-09"
+        ],
+        "affected_count": "2895"
+      },
+      {
+        "make": "フォード",
+        "model": "エクスプローラー",
+        "type_designation": "ABA-1FMHK9",
+        "model_years": [
+          "2011-06-16 to 2015-05-02"
+        ],
+        "affected_count": "3247"
+      },
+      {
+        "make": "フォード",
+        "model": "エクスプローラー",
+        "type_designation": "ABA-1FM5K8",
+        "model_years": [
+          "2015-06-15 to 2015-11-07"
+        ],
+        "affected_count": "266"
+      },
+      {
+        "make": "フォード",
+        "model": "エクスプローラー",
+        "type_designation": "ABA-1FM5KH",
+        "model_years": [
+          "2015-04-10 to 2015-11-09"
+        ],
+        "affected_count": "729"
+      },
+      {
+        "make": "フォード",
+        "model": "エクスプローラー",
+        "type_designation": "ABA-1FM5KT",
+        "model_years": [
+          "2015-07-12 to 2015-12-07"
+        ],
+        "affected_count": "237"
+      }
+    ],
+    "defect_system": "外装",
+    "defect_location": "Aピラーカバー（左右）",
+    "defect_description": "外装としてAピラーの左右に備え付けられているカバーにおいて、製造工程が不適切なため、取付クリップで確実に固定されていないものがある。そのため、走行中の振動等により取付クリップが緩み、異音が発生する。最悪の場合、すべての取付クリップが外れて当該部品が脱落するおそれがある。",
+    "root_cause": "製造工程が不適切なため、取付クリップで確実に固定されていないものがある。",
+    "consequences": [
+      "走行中の振動等により取付クリップが緩み、異音が発生する",
+      "最悪の場合、すべての取付クリップが外れて当該部品が脱落するおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "Aピラーカバー",
+        "part_number": null,
+        "system_path": [
+          "外装",
+          "Aピラーカバー"
+        ]
+      },
+      {
+        "part_name": "取付クリップ",
+        "part_number": null,
+        "system_path": [
+          "外装",
+          "Aピラーカバー",
+          "取付クリップ"
+        ]
+      },
+      {
+        "part_name": "マウントブラケット",
+        "part_number": null,
+        "system_path": [
+          "外装",
+          "Aピラーカバー",
+          "マウントブラケット"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、左右Aピラーのカバーの取付状態を点検し、取付不良（浮き等）がある場合はAピラーカバーおよび取付クリップを新品に交換し、マウントブラケットの損傷が確認された場合は当該部品も新品に交換する。",
+    "correction_detail": "全車両について左右Aピラーのカバーの取付状態を点検する。点検の結果、取付不良となっている（浮き等がある）場合は、Aピラーのカバーおよび取付クリップを新品に交換する。あわせてマウントブラケットの損傷状態を点検し、損傷が確認された場合には当該部品を新品に交換する。"
+  }
+}

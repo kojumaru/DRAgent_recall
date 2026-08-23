@@ -1,0 +1,56 @@
+{
+  "recall_id": "r8-04-23-005718",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005718.html",
+  "date_text": "令和8年4月23日",
+  "month": 4,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001997496.pdf",
+    "https://www.mlit.go.jp/report/press/content/001997497.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001997497.pdf",
+  "metadata": {
+    "notification_number": "5807",
+    "notification_date": "2026-04-23",
+    "notifier": "スズキ株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "スズキ",
+        "model": "エスクード",
+        "type_designation": "5AA-YEH1S",
+        "model_years": [
+          "2022-03-08 to 2024-04-01"
+        ],
+        "affected_count": "3301"
+      }
+    ],
+    "defect_system": "電気装置",
+    "defect_location": "鉛バッテリ（バッテリ内セル間溶接部）",
+    "defect_description": "鉛バッテリにおいて、製造時のバッテリ内セル間溶接部の電流管理値が不適切なため、モーター走行からエンジン走行への切り替え時のエンジン再始動による大電流で、セル間溶接部が発熱し破断することがある。そのため、バッテリ内の導通が損なわれる。",
+    "root_cause": "製造時のバッテリ内セル間溶接部の電流管理値が不適切なため。",
+    "consequences": [
+      "最悪の場合、モーター走行からエンジン走行に切り替わる際にエンジンが再始動できず、動力が損なわれ走行不能に至るおそれがある。"
+    ],
+    "parts": [
+      {
+        "part_name": "鉛バッテリ",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "鉛バッテリ"
+        ]
+      },
+      {
+        "part_name": "バッテリ内セル間溶接部",
+        "part_number": null,
+        "system_path": [
+          "電気装置",
+          "鉛バッテリ",
+          "セル間溶接部"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、鉛バッテリの製造番号を確認し、該当バッテリが使用されている場合は対策品と交換する。",
+    "correction_detail": "全車両について鉛バッテリの製造番号を確認し、該当する鉛バッテリが装着されている車両は対策品の鉛バッテリに交換する。"
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "recall_id": "r8-02-25-005672",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005672.html",
+  "date_text": "令和8年2月25日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001982618.pdf",
+    "https://www.mlit.go.jp/report/press/content/001982619.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001982619.pdf",
+  "metadata": {
+    "notification_number": "外-4155",
+    "notification_date": "2026-02-25",
+    "notifier": "ビー·エム·ダブリュー株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "BMW",
+        "model": "BMW 220i",
+        "type_designation": "3BA-12CM20",
+        "model_years": [
+          "2021-08-18 to 2022-10-24",
+          "2022-11-11 to 2022-12-21"
+        ],
+        "affected_count": "365"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 318i",
+        "type_designation": "3BA-5F20",
+        "model_years": [
+          "2020-11-26 to 2021-04-12",
+          "2021-04-12 to 2022-10-19",
+          "2022-10-26 to 2022-12-22",
+          "2020-09-18 to 2021-02-10",
+          "2021-02-10 to 2021-09-09",
+          "2021-10-26 to 2022-04-29",
+          "2022-06-24 to 2022-09-26"
+        ],
+        "affected_count": "2023"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 318i Touring",
+        "type_designation": "3BA-6K20",
+        "model_years": [
+          "2020-09-18 to 2021-02-10",
+          "2021-02-10 to 2021-09-10",
+          "2021-10-21 to 2022-05-12",
+          "2022-07-04 to 2022-09-22"
+        ],
+        "affected_count": "1152"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 320i",
+        "type_designation": "3BA-5F20",
+        "model_years": [
+          "2020-11-20 to 2021-04-08",
+          "2021-04-12 to 2022-10-25",
+          "2022-10-28 to 2022-12-21",
+          "2020-09-18 to 2021-02-01",
+          "2021-02-26 to 2021-09-15",
+          "2021-11-03 to 2022-04-22",
+          "2022-07-05 to 2022-09-26"
+        ],
+        "affected_count": "1232"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 320i Touring",
+        "type_designation": "3BA-6K20",
+        "model_years": [
+          "2020-09-18 to 2021-02-09",
+          "2021-02-10 to 2021-10-28",
+          "2021-11-04 to 2022-05-10",
+          "2022-06-28 to 2022-09-14"
+        ],
+        "affected_count": "640"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 320d xDrive",
+        "type_designation": "3DA-5V20",
+        "model_years": [
+          "2020-11-03 to 2021-04-12",
+          "2021-04-12 to 2022-10-14",
+          "2022-10-27 to 2023-02-22",
+          "2020-10-12 to 2021-02-05",
+          "2021-02-10 to 2021-09-30",
+          "2021-10-05 to 2022-05-12",
+          "2022-05-25 to 2022-09-28"
+        ],
+        "affected_count": "2736"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 320d xDrive Touring",
+        "type_designation": "3DA-6L20",
+        "model_years": [
+          "2024-06-29 to 2022-09-28",
+          "2023-07-04 to 2023-07-04",
+          "2023-10-13 to 2023-10-13"
+        ],
+        "affected_count": "387"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 320d xDrive Tr.",
+        "type_designation": "3DA-6L20",
+        "model_years": [
+          "2020-09-18 to 2021-02-23",
+          "2021-02-10 to 2021-10-04",
+          "2021-10-04 to 2022-05-11",
+          "2022-05-16 to 2022-06-28"
+        ],
+        "affected_count": "2749"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 330i",
+        "type_designation": "3BA-5F20",
+        "model_years": [
+          "2020-11-21 to 2021-04-07",
+          "2021-04-13 to 2021-09-23",
+          "2020-09-21 to 2021-02-02",
+          "2021-02-10 to 2021-09-24",
+          "2021-11-05 to 2021-11-05"
+        ],
+        "affected_count": "125"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 420i クーペ",
+        "type_designation": "3BA-12AP20",
+        "model_years": [
+          "2020-08-25 to 2020-11-09",
+          "2020-11-13 to 2021-03-19",
+          "2021-03-23 to 2021-09-08",
+          "2021-09-21 to 2022-01-13",
+          "2022-01-24 to 2022-06-15",
+          "2022-06-20 to 2022-08-31"
+        ],
+        "affected_count": "1603"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 420i カブリオレ",
+        "type_designation": "3BA-12AP20",
+        "model_years": [
+          "2020-10-29 to 2020-11-20",
+          "2020-12-08 to 2021-03-23",
+          "2021-03-23 to 2021-09-06",
+          "2021-09-21 to 2022-01-20",
+          "2022-02-02 to 2022-05-30",
+          "2022-06-20 to 2022-09-06"
+        ],
+        "affected_count": "472"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 420i グランクーペ",
+        "type_designation": "3BA-12AV20",
+        "model_years": [
+          "2021-07-05 to 2021-10-04",
+          "2021-10-04 to 2022-05-11",
+          "2022-05-12 to 2022-09-30"
+        ],
+        "affected_count": "1242"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 420d xDrive グランクーペ",
+        "type_designation": "3DA-32AX20",
+        "model_years": [
+          "2022-02-22 to 2022-04-22",
+          "2022-05-17 to 2022-09-30"
+        ],
+        "affected_count": "404"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 523i",
+        "type_designation": "3BA-JR20S",
+        "model_years": [
+          "2020-09-09 to 2020-11-04",
+          "2020-12-15 to 2021-02-08",
+          "2021-03-25 to 2021-07-05",
+          "2021-09-24 to 2022-01-13",
+          "2022-01-26 to 2022-05-02",
+          "2022-06-30 to 2022-09-02",
+          "2020-10-01 to 2020-10-13",
+          "2020-10-20 to 2024-09-22"
+        ],
+        "affected_count": "236"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 523d xDrive",
+        "type_designation": "3DA-JF20",
+        "model_years": [
+          "2020-07-31 to 2020-11-10",
+          "2020-11-11 to 2021-03-17",
+          "2021-03-29 to 2021-09-02",
+          "2021-09-28 to 2022-01-21",
+          "2022-01-24 to 2022-06-20",
+          "2022-06-21 to 2022-09-06",
+          "2020-09-09 to 2020-10-21",
+          "2020-10-20 to 2024-09-22"
+        ],
+        "affected_count": "995"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 523d xDrive ツーリング",
+        "type_designation": "3DA-JP20",
+        "model_years": [
+          "2020-08-18 to 2020-11-10",
+          "2020-11-30 to 2021-03-22",
+          "2021-03-26 to 2021-08-23",
+          "2021-10-04 to 2022-01-21",
+          "2022-01-25 to 2022-07-11",
+          "2022-06-21 to 2022-09-06"
+        ],
+        "affected_count": "351"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW 530i ツーリング",
+        "type_designation": "3BA-JT20T",
+        "model_years": [
+          "2022-07-06 to 2022-08-30"
+        ],
+        "affected_count": "23"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW X3 xDrive20i",
+        "type_designation": "3BA-TY20",
+        "model_years": [
+          "2020-10-16 to 2022-11-03"
+        ],
+        "affected_count": "219"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW X3 xDrive20d",
+        "type_designation": "3DA-UZ20",
+        "model_years": [
+          "2021-07-14 to 2021-07-15",
+          "2021-08-13 to 2021-09-14",
+          "2020-09-28 to 2024-02-29"
+        ],
+        "affected_count": "4466"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW X4 xDrive20d",
+        "type_designation": "3DA-VJ20",
+        "model_years": [
+          "2020-12-18 to 2021-02-11",
+          "2021-02-12 to 2021-04-30",
+          "2021-05-01 to 2021-07-28",
+          "2021-08-12 to 2021-10-10",
+          "2021-10-13 to 2022-01-05",
+          "2022-01-11 to 2022-03-28",
+          "2022-04-06 to 2022-07-31",
+          "2022-06-22 to 2022-09-14",
+          "2022-09-15 to 2022-12-07",
+          "2022-12-13 to 2022-12-16",
+          "2023-11-05 to 2023-11-05"
+        ],
+        "affected_count": "1665"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW X4 xDrive30i",
+        "type_designation": "3BA-2V20",
+        "model_years": [
+          "2021-01-21 to 2021-01-22",
+          "2021-02-21 to 2021-04-23",
+          "2021-05-08 to 2021-07-23",
+          "2021-08-11 to 2021-10-10",
+          "2021-10-21 to 2022-01-04",
+          "2022-01-11 to 2022-03-29",
+          "2022-03-30 to 2022-06-13",
+          "2022-07-14 to 2022-09-13",
+          "2022-09-15 to 2022-11-10"
+        ],
+        "affected_count": "159"
+      },
+      {
+        "make": "BMW",
+        "model": "BMW Z4 sDrive 20i",
+        "type_designation": "3BA-HF20",
+        "model_years": [
+          "2020-09-03 to 2020-10-16",
+          "2020-10-19 to 2022-06-27"
+        ],
+        "affected_count": "406"
+      }
+    ],
+    "defect_system": "始動装置",
+    "defect_location": "スタータ（始動用リレー接点部）",
+    "defect_description": "スタータにおいて、始動用リレーの耐久性が不十分なため、エンジン始動やアイドリングストップの繰返しにより接点が異常摩耗して、接点部に摩耗粉が堆積することがある。そのため、そのまま使用を続けると、エンジン始動不能となったり、最悪の場合、スタータ起動時または走行時等、火災に至るおそれがある。",
+    "root_cause": "始動用リレーの耐久性が不十分なため。",
+    "consequences": [
+      "エンジン始動不能となるおそれがある",
+      "最悪の場合、スタータ起動時または走行時等、火災に至るおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "スタータ",
+        "part_number": null,
+        "system_path": [
+          "始動装置",
+          "スタータ"
+        ]
+      },
+      {
+        "part_name": "始動用リレー",
+        "part_number": null,
+        "system_path": [
+          "始動装置",
+          "スタータ",
+          "始動用リレー"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、当該スタータを対策品と交換する。",
+    "correction_detail": "全車両、当該スタータを対策品と交換する。"
+  }
+}

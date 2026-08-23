@@ -1,0 +1,120 @@
+{
+  "recall_id": "r8-03-25-005696",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005696.html",
+  "date_text": "令和8年3月25日",
+  "month": 3,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001990510.pdf",
+    "https://www.mlit.go.jp/report/press/content/001990511.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001990511.pdf",
+  "metadata": {
+    "notification_number": "5785",
+    "notification_date": "2026-03-25",
+    "notifier": "三菱マヒンドラ農機株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "三菱",
+        "model": "V465",
+        "type_designation": "YDN-VC65B",
+        "model_years": [
+          "2022-01-31 to 2023-11-30"
+        ],
+        "affected_count": "59"
+      },
+      {
+        "make": "三菱",
+        "model": "V465",
+        "type_designation": "YDN-VC65B",
+        "model_years": [
+          "2023-12-26 to 2024-01-12"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "三菱",
+        "model": "V565",
+        "type_designation": "YDN-VC65B",
+        "model_years": [
+          "2022-01-27 to 2023-08-04"
+        ],
+        "affected_count": "20"
+      },
+      {
+        "make": "三菱",
+        "model": "V475A",
+        "type_designation": "YDN-VC75C",
+        "model_years": [
+          "2022-01-27 to 2023-08-08"
+        ],
+        "affected_count": "22"
+      },
+      {
+        "make": "三菱",
+        "model": "V475A",
+        "type_designation": "YDN-VC75C",
+        "model_years": [
+          "2023-12-27 to 2024-01-15"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "三菱",
+        "model": "V575A",
+        "type_designation": "YDN-VC75C",
+        "model_years": [
+          "2022-01-27 to 2023-09-27"
+        ],
+        "affected_count": "83"
+      },
+      {
+        "make": "三菱",
+        "model": "V575A",
+        "type_designation": "YDN-VC75C",
+        "model_years": [
+          "2024-01-25 to 2024-02-02"
+        ],
+        "affected_count": "2"
+      },
+      {
+        "make": "三菱",
+        "model": "VCH750A",
+        "type_designation": "YDN-VC75D",
+        "model_years": [
+          "2022-01-26 to 2024-01-18"
+        ],
+        "affected_count": "38"
+      }
+    ],
+    "defect_system": "動力伝達装置",
+    "defect_location": "主変速レバー（支点部、皿ばね、レバー支点部溶接箇所）",
+    "defect_description": "刈取脱穀作業車の主変速レバーにおいて、支点部及び皿ばねの設計検討が不十分なため、主変速レバー支点部に過大な負荷がかかることがある。そのため、そのまま使用を続けると、変速レバー操作が重くなり、最悪の場合、レバー支点部溶接箇所が破損して外れ、走行不能となるおそれがある。",
+    "root_cause": "支点部及び皿ばねの設計検討が不十分なため、主変速レバー支点部に過大な負荷がかかることがある。",
+    "consequences": [
+      "変速レバー操作が重くなる",
+      "最悪の場合、レバー支点部溶接箇所が破損して外れ、走行不能となるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "主変速レバー",
+        "part_number": null,
+        "system_path": [
+          "動力伝達装置",
+          "主変速レバー"
+        ]
+      },
+      {
+        "part_name": "皿ばね",
+        "part_number": null,
+        "system_path": [
+          "動力伝達装置",
+          "主変速レバー",
+          "皿ばね"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、皿ばねを対策品に交換する。全車両、主変速レバーを対策品に交換する。",
+    "correction_detail": "1 全車両、皿ばねを対策品に交換する。2 全車両、主変速レバーを対策品に交換する。"
+  }
+}

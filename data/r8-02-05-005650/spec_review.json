@@ -1,0 +1,36 @@
+{
+  "reviewer": "テスト",
+  "reviewed_at": "2026-08-23T16:56:12.780735+00:00",
+  "verdict": "skipped",
+  "comment": "テスト",
+  "section_reviews": {
+    "1": {
+      "verdict": "skipped",
+      "comment": ""
+    },
+    "2": {
+      "verdict": "skipped",
+      "comment": ""
+    },
+    "3": {
+      "verdict": "skipped",
+      "comment": ""
+    },
+    "4": {
+      "verdict": "skipped",
+      "comment": ""
+    },
+    "5": {
+      "verdict": "skipped",
+      "comment": ""
+    },
+    "6": {
+      "verdict": "skipped",
+      "comment": ""
+    },
+    "7": {
+      "verdict": "skipped",
+      "comment": ""
+    }
+  }
+}

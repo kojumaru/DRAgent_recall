@@ -1,0 +1,56 @@
+{
+  "recall_id": "r8-02-18-005663",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005663.html",
+  "date_text": "令和8年2月18日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001981746.pdf",
+    "https://www.mlit.go.jp/report/press/content/001981747.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001981747.pdf",
+  "metadata": {
+    "notification_number": "外-4152",
+    "notification_date": "2026-02-18",
+    "notifier": "メルセデス·ベンツ日本合同会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "メルセデス·ベンツ",
+        "model": "C220d ステーションワゴン",
+        "type_designation": "3CA-206204C",
+        "model_years": [
+          "2024-02-05 to 2024-04-22"
+        ],
+        "affected_count": "84"
+      },
+      {
+        "make": "メルセデス·ベンツ",
+        "model": "C220d 4MATIC All-Terrain",
+        "type_designation": "3CA-206214C",
+        "model_years": [
+          "2023-10-10 to 2024-04-08"
+        ],
+        "affected_count": "40"
+      }
+    ],
+    "defect_system": "動力伝達装置",
+    "defect_location": "トランスミッション·コントロールユニット",
+    "defect_description": "トランスミッション·コントロールユニットにおいて、製造指示が不適切なため、仕様の異なる制御プログラムが誤って書き込まれたものがある。そのため、OBDが正しく動作せず、最悪の場合、排出ガス値が規制値を超えるおそれがある。",
+    "root_cause": "製造指示が不適切なため、仕様の異なる制御プログラムが誤って書き込まれたものがある。",
+    "consequences": [
+      "最悪の場合、排出ガス値が規制値を超えるおそれがある。"
+    ],
+    "parts": [
+      {
+        "part_name": "トランスミッション·コントロールユニット",
+        "part_number": null,
+        "system_path": [
+          "動力伝達装置",
+          "トランスミッション·コントロールユニット"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、トランスミッション·コントロールユニットの制御プログラムを正規の制御プログラムに書き換える。",
+    "correction_detail": "全車両、トランスミッション·コントロールユニットの制御プログラムを正規の制御プログラムに書き換える。"
+  }
+}

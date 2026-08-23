@@ -1,0 +1,75 @@
+{
+  "recall_id": "r8-06-19-005767",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005767.html",
+  "date_text": "令和8年6月19日",
+  "month": 6,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/002007520.pdf",
+    "https://www.mlit.go.jp/report/press/content/002007521.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/002007521.pdf",
+  "metadata": {
+    "notification_number": "外-4187",
+    "notification_date": "2026-06-19",
+    "notifier": "ドゥカティジャパン株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "ドゥカティ",
+        "model": "パニガーレV4",
+        "type_designation": "8BL-5D00",
+        "model_years": [
+          "2024-09-23 to 2025-10-20"
+        ],
+        "affected_count": "343"
+      },
+      {
+        "make": "ドゥカティ",
+        "model": "ストリートファイターV4",
+        "type_designation": "8BL-7F00",
+        "model_years": [
+          "2025-03-29 to 2025-10-20"
+        ],
+        "affected_count": "131"
+      }
+    ],
+    "defect_system": "制動装置",
+    "defect_location": "リアブレーキホース（遮熱チューブ、リアブレーキホースリテイナー）",
+    "defect_description": "制動装置において、リアブレーキホースリティナー及び遮熱チューブの設計検討が不十分なため、遮熱性能が不足している。そのため、走行中にブレーキホース至近の排気管から発せられる放射熱により、ブレーキホース表面被覆に損傷が発生し、そのまま使用を続けるとブレーキフルードが漏れて、最悪の場合、リアブレーキが作動しなくなるおそれがある。",
+    "root_cause": "リアブレーキホースリティナー及び遮熱チューブの設計検討が不十分なため、遮熱性能が不足している。",
+    "consequences": [
+      "ブレーキフルードが漏れる",
+      "最悪の場合、リアブレーキが作動しなくなるおそれがある"
+    ],
+    "parts": [
+      {
+        "part_name": "リアブレーキホースの遮熱チューブ",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "リアブレーキホース",
+          "遮熱チューブ"
+        ]
+      },
+      {
+        "part_name": "リアブレーキホースリテイナー",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "リアブレーキホース",
+          "リアブレーキホースリテイナー"
+        ]
+      },
+      {
+        "part_name": "リアブレーキホース",
+        "part_number": null,
+        "system_path": [
+          "制動装置",
+          "リアブレーキホース"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、リアブレーキホースリテイナーを対策品に交換する。なお、リアブレーキホースを点検して損傷が確認できた場合、リアブレーキホースを新品に交換する。",
+    "correction_detail": "全車両でリアブレーキホースリテイナーを対策品に交換する。加えてリアブレーキホースを点検し、損傷が確認できた場合はリアブレーキホースを新品に交換する。"
+  }
+}

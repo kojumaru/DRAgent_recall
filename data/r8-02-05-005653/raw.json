@@ -1,0 +1,73 @@
+{
+  "recall_id": "r8-02-05-005653",
+  "press_url": "https://www.mlit.go.jp/report/press/jidosha08_hh_005653.html",
+  "date_text": "令和8年2月5日",
+  "month": 2,
+  "pdf_urls": [
+    "https://www.mlit.go.jp/report/press/content/001980068.pdf",
+    "https://www.mlit.go.jp/report/press/content/001980069.pdf"
+  ],
+  "diagram_pdf_url": "https://www.mlit.go.jp/report/press/content/001980069.pdf",
+  "metadata": {
+    "notification_number": "5772",
+    "notification_date": "2026-02-05",
+    "notifier": "スズキ株式会社",
+    "recall_type": "リコール",
+    "affected_vehicles": [
+      {
+        "make": "スズキ",
+        "model": "ジムニー",
+        "type_designation": "3BA-JB64W",
+        "model_years": [
+          "2025-09-10 to 2025-12-03"
+        ],
+        "affected_count": "1211"
+      }
+    ],
+    "defect_system": "原動機",
+    "defect_location": "エンジン制御用コントローラ",
+    "defect_description": "マニュアルトランスミッション車両のエンジン制御用コントローラにおいて、イグニッションコイルの通電制御が不適切であったため、クラッチ操作によりエンストした際、イグニッションコイルに過電流が流れることがある。そのため最悪の場合、イグニッションコイルヒューズが溶断しエンジンが始動できなくなるおそれがある。",
+    "root_cause": "イグニッションコイルの通電制御が不適切であったため。",
+    "consequences": [
+      "最悪の場合、イグニッションコイルヒューズが溶断しエンジンが始動できなくなるおそれがある。"
+    ],
+    "parts": [
+      {
+        "part_name": "エンジン制御用コントローラ",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "エンジン制御用コントローラ"
+        ]
+      },
+      {
+        "part_name": "イグニッションコイルヒューズ",
+        "part_number": null,
+        "system_path": [
+          "原動機",
+          "点火系",
+          "イグニッションコイルヒューズ"
+        ]
+      },
+      {
+        "part_name": "リレーボックスカバー",
+        "part_number": null,
+        "system_path": [
+          "電装",
+          "リレーボックス",
+          "リレーボックスカバー"
+        ]
+      },
+      {
+        "part_name": "オーナーズマニュアル",
+        "part_number": null,
+        "system_path": [
+          "付属品",
+          "オーナーズマニュアル"
+        ]
+      }
+    ],
+    "correction_summary": "全車両、エンジン制御用コントローラの制御プログラムを対策ソフトウェアに書き換え、イグニッションコイルヒューズ、リレーボックスカバー、オーナーズマニュアルを対策品と交換する。",
+    "correction_detail": "全車両、エンジン制御用コントローラの制御プログラムを対策ソフトウェアに書き換え、イグニッションコイルヒューズ、リレーボックスカバー、オーナーズマニュアルを対策品と交換する。"
+  }
+}
