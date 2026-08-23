@@ -256,17 +256,18 @@ def get_recall_diagram_original(recall_id: str):
 
 @app.get("/api/recalls/{recall_id}/pdf")
 def get_pdf(recall_id: str):
-    # parent_recall_id があればそちらのPDFを使う
+    from fastapi.responses import RedirectResponse
     raw_path = DATA_DIR / recall_id / "raw.json"
-    if raw_path.exists():
-        raw = json.loads(raw_path.read_text("utf-8"))
-        ocr_id = raw.get("parent_recall_id", recall_id)
-    else:
-        ocr_id = recall_id
+    raw = json.loads(raw_path.read_text("utf-8")) if raw_path.exists() else {}
+    ocr_id = raw.get("parent_recall_id", recall_id)
     pdf_path = PDF_DIR / f"{ocr_id}.pdf"
-    if not pdf_path.exists():
-        raise HTTPException(404, "PDF not found")
-    return FileResponse(pdf_path, media_type="application/pdf")
+    if pdf_path.exists():
+        return FileResponse(pdf_path, media_type="application/pdf")
+    # ローカルにない場合は raw.json の pdf_urls[0] にリダイレクト
+    pdf_urls = raw.get("pdf_urls") or []
+    if pdf_urls:
+        return RedirectResponse(url=pdf_urls[0])
+    raise HTTPException(404, "PDF not found")
 
 
 @app.get("/api/recalls/{recall_id}/diagram")
