@@ -1,4 +1,4 @@
-# fta-evaluator
+# recall-fta
 
 **すべてのスキルとデータの中心リポジトリ。** Claude Code はここから起動する。
 
@@ -18,10 +18,10 @@
 
 ```
 【収集】
-fta-spec-generator/scripts/collect_recalls.py
-  → data/{recall_id}/raw.json
+scripts/collect_recalls.py
+  → data/{recall_id}/raw.json + data/{recall_id}/recall.pdf
 
-【生成】（Claude Code を fta-evaluator/ で起動）
+【生成】（Claude Code を recall-fta/ で起動）
 /generate-spec {recall_id}        → data/{recall_id}/spec_FTA.md
 /generate-label {recall_id}       → data/{recall_id}/label.json
 /generate-input {recall_id}       → data/{recall_id}/input.yaml
@@ -34,8 +34,8 @@ input.yaml → fta-agent → output.yaml
 /evaluate-fta {recall_id}    → data/{recall_id}/score.json
 
 【専門家レビュー】
-viewer（Render）で spec/label/input を確認
-  → レビューデータをエクスポート → Slack でエンジニアに共有
+viewer（https://dragent-recall.onrender.com）で spec/label/input を確認
+  → ZIPエクスポート → Slack でエンジニアに共有
 
 【スキル改善】
 エンジニアが受け取ったレビューデータをもとに Claude と対話して skills/*.md を直接編集
@@ -44,28 +44,29 @@ viewer（Render）で spec/label/input を確認
 ## ディレクトリ構成
 
 ```
-fta-evaluator/
+recall-fta/
 ├── skills/
-│   ├── spec-gen.md        — 仕様書生成
+│   ├── generate-spec.md          — 仕様書生成
 │   ├── generate-label.md         — 正解ラベル生成
 │   ├── update-failure-modes.md   — 故障モードのみ更新
 │   ├── generate-input.md         — FTA入力（input.yaml）生成
 │   └── evaluate-fta.md           — FTA評価
+├── scripts/
+│   ├── collect_recalls.py  — 国交省サイト巡回 → raw.json 収集
+│   └── pipeline.py         — PDF取得・OCR・メタ情報抽出（collect_recalls.py が import）
 ├── data/{recall_id}/
-│   ├── raw.json           — 収集済みリコールデータ（fta-spec-generator から）
+│   ├── raw.json           — 収集済みリコールデータ
 │   ├── recall.pdf         — リコール届出書PDF
-│   ├── spec_FTA.md        — /spec-gen が生成
+│   ├── spec_FTA.md        — /generate-spec が生成
 │   ├── label.json         — /generate-label が生成
 │   ├── input.yaml         — /generate-input が生成
 │   ├── output.yaml        — fta-agent が生成（コピー）
-│   └── score.json         — /judge が生成
-├── viewer/
-│   ├── backend/main.py    — FastAPI（Render にデプロイ済み）
-│   └── frontend/          — React ビューワー
-└── scripts/
-    └── objective_eval.py  — 決定論的評価（/judge から呼び出し）
+│   └── score.json         — /evaluate-fta が生成
+└── viewer/
+    ├── backend/main.py    — FastAPI（Render にデプロイ済み）
+    └── frontend/          — React ビューワー
 ```
 
 ## 環境変数
 
-`.env.example` 参照。Azure OpenAI（judge 用）が必要。Azure Document Intelligence は不要。
+`.env.example` 参照。Azure OpenAI（仕様書生成・judge用）+ Azure Document Intelligence（OCR用）が必要。
