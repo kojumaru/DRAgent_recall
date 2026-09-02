@@ -6,11 +6,11 @@
 
 | スキル | コマンド | 役割 | 入力 → 出力 |
 |---|---|---|---|
-| spec-gen | `/spec-gen <recall_id>` | 仕様書生成 | raw.json → spec_FTA.md |
-| extract-label | `/extract-label <recall_id>` | 正解ラベル生成 | raw.json → label.json |
-| failure-mode | `/failure-mode <recall_id>` | 故障モードのみ更新 | label.json → label.json |
-| convert-input | `/convert-input <recall_id>` | FTA入力生成 | spec_FTA.md + raw.json → input.yaml |
-| judge | `/judge <recall_id>` | FTA評価 | output.yaml + label.json → score.json |
+| generate-spec | `/generate-spec <recall_id>` | 仕様書生成 | raw.json → spec_FTA.md |
+| generate-label | `/generate-label <recall_id>` | 正解ラベル生成 | raw.json → label.json |
+| update-failure-modes | `/update-failure-modes <recall_id>` | 故障モードのみ更新 | label.json → label.json |
+| generate-input | `/generate-input <recall_id>` | FTA入力生成 | spec_FTA.md + raw.json → input.yaml |
+| evaluate-fta | `/evaluate-fta <recall_id>` | FTA評価 | output.yaml + label.json → score.json |
 
 スキル定義: [`skills/`](./skills/)
 
@@ -22,16 +22,16 @@ fta-spec-generator/scripts/collect_recalls.py
   → data/{recall_id}/raw.json
 
 【生成】（Claude Code を fta-evaluator/ で起動）
-/spec-gen {recall_id}        → data/{recall_id}/spec_FTA.md
-/extract-label {recall_id}   → data/{recall_id}/label.json
-/convert-input {recall_id}   → data/{recall_id}/input.yaml
+/generate-spec {recall_id}        → data/{recall_id}/spec_FTA.md
+/generate-label {recall_id}       → data/{recall_id}/label.json
+/generate-input {recall_id}       → data/{recall_id}/input.yaml
 
 【FTA生成】（fta-agent、触らない）
 input.yaml → fta-agent → output.yaml
   → data/{recall_id}/output.yaml にコピー
 
 【評価】
-/judge {recall_id}           → data/{recall_id}/score.json
+/evaluate-fta {recall_id}    → data/{recall_id}/score.json
 
 【専門家レビュー】
 viewer（Render）で spec/label/input を確認
@@ -47,16 +47,16 @@ viewer（Render）で spec/label/input を確認
 fta-evaluator/
 ├── skills/
 │   ├── spec-gen.md        — 仕様書生成
-│   ├── extract-label.md   — 正解ラベル生成
-│   ├── failure-mode.md    — 故障モードのみ更新
-│   ├── convert-input.md   — FTA入力（input.yaml）生成
-│   └── judge.md           — FTA評価
+│   ├── generate-label.md         — 正解ラベル生成
+│   ├── update-failure-modes.md   — 故障モードのみ更新
+│   ├── generate-input.md         — FTA入力（input.yaml）生成
+│   └── evaluate-fta.md           — FTA評価
 ├── data/{recall_id}/
 │   ├── raw.json           — 収集済みリコールデータ（fta-spec-generator から）
 │   ├── recall.pdf         — リコール届出書PDF
 │   ├── spec_FTA.md        — /spec-gen が生成
-│   ├── label.json         — /extract-label が生成
-│   ├── input.yaml         — /convert-input が生成
+│   ├── label.json         — /generate-label が生成
+│   ├── input.yaml         — /generate-input が生成
 │   ├── output.yaml        — fta-agent が生成（コピー）
 │   └── score.json         — /judge が生成
 ├── viewer/

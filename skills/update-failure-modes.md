@@ -1,5 +1,5 @@
 ---
-name: failure-mode
+name: update-failure-modes
 description: >
   raw.json から正解ラベルの failure_modes を生成・更新する。
   「{部品名}が{機能名}を喪失する」形式で記述し、label.json に書き込む。

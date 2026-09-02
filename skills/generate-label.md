@@ -1,5 +1,5 @@
 ---
-name: extract-label
+name: generate-label
 description: >
   raw.json から FTA評価用の正解ラベル（label.json）を生成する。
   target_component / failure_modes / top_event / causal_chain の全フィールドを対話的に抽出する。

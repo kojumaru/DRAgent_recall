@@ -1,5 +1,5 @@
 ---
-name: judge
+name: evaluate-fta
 description: >
   output.yaml（FTA生成結果）と label.json（正解ラベル）を比較して評価スコアを算出する。
   3軸総合評価（score.json）・項目別評価（per_item_score.json）・客観評価（objective_eval.py）を実行する。

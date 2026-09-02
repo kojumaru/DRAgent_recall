@@ -1,5 +1,5 @@
 ---
-name: spec-gen
+name: generate-spec
 description: >
   国交省リコール raw.json から部品正常仕様書（spec_FTA.md）を対話的に生成する。
   自律ループではなくユーザーと1ステップずつ進める。

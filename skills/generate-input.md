@@ -1,5 +1,5 @@
 ---
-name: convert-input
+name: generate-input
 description: >
   spec_FTA.md + raw.json から fta-agent 用 input.yaml を生成する。
   label.json は参照しない（故障情報の混入を防ぐため）。
