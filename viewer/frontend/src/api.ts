@@ -206,6 +206,7 @@ export async function getExpertReviews(id: string): Promise<ExpertReview[]> {
 export interface SpecSectionReview {
   verdict: 'approved' | 'needs_fix' | 'skipped';
   comment: string;
+  corrected_text?: string;
 }
 
 export interface SpecReview {
@@ -273,6 +274,7 @@ export interface FailureModeReview {
   reviewed_at: string;
   verdict: 'approved' | 'needs_fix';
   item_reviews: Record<string, 'approved' | 'needs_fix'>;
+  item_suggested?: Record<string, string>;
   missing_items: string[];
   comment: string;
 }
@@ -281,6 +283,7 @@ export interface FailureModeReviewSubmission {
   reviewer: string;
   verdict: 'approved' | 'needs_fix';
   item_reviews: Record<string, 'approved' | 'needs_fix'>;
+  item_suggested?: Record<string, string>;
   missing_items: string[];
   comment: string;
 }

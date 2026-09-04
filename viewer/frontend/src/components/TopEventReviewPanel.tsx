@@ -52,7 +52,7 @@ export default function TopEventReviewPanel({
     const init: Record<string, string> = {};
     for (const te of topEvents) {
       const existing = existingReview?.event_reviews?.find((e) => e.top_event === te);
-      init[te] = existing?.suggested ?? '';
+      init[te] = existing?.suggested ?? te;
     }
     return init;
   });
@@ -148,10 +148,13 @@ export default function TopEventReviewPanel({
                 style ? style.bg : 'border-neutral-200 bg-white'
               }`}
             >
-              <div className="flex items-center justify-between gap-2">
-                <span className={`text-[12px] font-semibold ${style?.text ?? 'text-neutral-700'}`}>
-                  {te}
-                </span>
+              <div className="flex items-center justify-between gap-2 mb-2">
+                <div className="min-w-0">
+                  <p className="text-[9px] font-semibold uppercase tracking-wide text-neutral-400 mb-0.5">原文</p>
+                  <span className={`text-[12px] font-semibold ${style?.text ?? 'text-neutral-700'}`}>
+                    {te}
+                  </span>
+                </div>
                 <div className="flex shrink-0 gap-1">
                   {(['approved', 'needs_fix'] as Verdict[]).map((v) => (
                     <VerdictButton
@@ -163,15 +166,15 @@ export default function TopEventReviewPanel({
                   ))}
                 </div>
               </div>
-              {verdict === 'needs_fix' && (
-                <input
-                  type="text"
-                  value={suggested[te] ?? ''}
+              <div>
+                <p className="text-[9px] font-semibold uppercase tracking-wide text-neutral-400 mb-1">修正テキスト（直接編集可）</p>
+                <textarea
+                  value={suggested[te] ?? te}
                   onChange={(e) => setSuggested((prev) => ({ ...prev, [te]: e.target.value }))}
-                  placeholder="修正後のトップ事象（任意）"
-                  className="mt-2 w-full rounded border border-red-200 bg-white px-2 py-1 text-[11px] placeholder-neutral-300 focus:outline-none focus:ring-1 focus:ring-red-400"
+                  className="w-full rounded border border-indigo-200 bg-white px-2 py-1 text-[11px] text-neutral-700 focus:outline-none focus:ring-1 focus:ring-indigo-400"
+                  rows={2}
                 />
-              )}
+              </div>
             </div>
           );
         })}

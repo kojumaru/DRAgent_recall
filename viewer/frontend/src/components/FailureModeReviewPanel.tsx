@@ -46,6 +46,13 @@ export default function FailureModeReviewPanel({
     }
     return init;
   });
+  const [itemSuggested, setItemSuggested] = useState<Record<string, string>>(() => {
+    const init: Record<string, string> = {};
+    for (const m of failureModes) {
+      init[m] = existingReview?.item_suggested?.[m] ?? m;
+    }
+    return init;
+  });
   const [missingInput, setMissingInput] = useState('');
   const [missingItems, setMissingItems] = useState<string[]>(existingReview?.missing_items ?? []);
   const [comment, setComment] = useState(existingReview?.comment ?? '');
@@ -85,6 +92,7 @@ export default function FailureModeReviewPanel({
         item_reviews: Object.fromEntries(
           Object.entries(itemReviews).map(([k, v]) => [k, v ?? 'needs_fix'])
         ) as Record<string, 'approved' | 'needs_fix'>,
+        item_suggested: itemSuggested,
         missing_items: missingItems,
         comment,
       };
@@ -137,10 +145,13 @@ export default function FailureModeReviewPanel({
                 style ? style.bg : 'border-neutral-200 bg-white'
               }`}
             >
-              <div className="flex items-center justify-between gap-2">
-                <span className={`text-[12px] font-semibold ${style?.text ?? 'text-neutral-700'}`}>
-                  {mode}
-                </span>
+              <div className="flex items-center justify-between gap-2 mb-2">
+                <div className="min-w-0">
+                  <p className="text-[9px] font-semibold uppercase tracking-wide text-neutral-400 mb-0.5">原文</p>
+                  <span className={`text-[12px] font-semibold ${style?.text ?? 'text-neutral-700'}`}>
+                    {mode}
+                  </span>
+                </div>
                 <div className="flex shrink-0 gap-1">
                   {(['approved', 'needs_fix'] as ItemVerdict[]).map((v) => (
                     <VerdictButton
@@ -151,6 +162,15 @@ export default function FailureModeReviewPanel({
                     />
                   ))}
                 </div>
+              </div>
+              <div>
+                <p className="text-[9px] font-semibold uppercase tracking-wide text-neutral-400 mb-1">修正テキスト（直接編集可）</p>
+                <textarea
+                  value={itemSuggested[mode] ?? mode}
+                  onChange={(e) => setItemSuggested((prev) => ({ ...prev, [mode]: e.target.value }))}
+                  className="w-full rounded border border-indigo-200 bg-white px-2 py-1 text-[11px] text-neutral-700 focus:outline-none focus:ring-1 focus:ring-indigo-400"
+                  rows={2}
+                />
               </div>
             </div>
           );

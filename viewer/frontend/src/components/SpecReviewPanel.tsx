@@ -2,6 +2,22 @@ import { useState } from 'react';
 import { saveSpecReview } from '../api';
 import type { SpecReview, SpecReviewSubmission, SpecSectionReview } from '../api';
 
+// セクション番号ごとの本文を spec から切り出す（コンポーネント外）
+function parseSections(text: string, sections: { num: string; name: string }[]): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (let i = 0; i < sections.length; i++) {
+    const s = sections[i];
+    const next = sections[i + 1];
+    const startRe = new RegExp(`## ${s.num}\\.`);
+    const endRe = next ? new RegExp(`## ${next.num}\\.`) : null;
+    const startIdx = text.search(startRe);
+    if (startIdx < 0) { out[s.num] = ''; continue; }
+    const endIdx = endRe ? text.search(endRe) : -1;
+    out[s.num] = endIdx > 0 ? text.slice(startIdx, endIdx) : text.slice(startIdx);
+  }
+  return out;
+}
+
 const SECTIONS: { num: string; name: string }[] = [
   { num: '1', name: '対象部品の特定' },
   { num: '2', name: 'システム内での役割' },
@@ -103,11 +119,16 @@ export default function SpecReviewPanel({
 }) {
   const [reviewer, setReviewer] = useState(existingReview?.reviewer ?? '');
   const [overallComment, setOverallComment] = useState(existingReview?.comment ?? '');
-  const [sections, setSections] = useState<Record<string, { verdict: SectionVerdict | null; comment: string }>>(() => {
-    const init: Record<string, { verdict: SectionVerdict | null; comment: string }> = {};
+  const [sections, setSections] = useState<Record<string, { verdict: SectionVerdict | null; comment: string; corrected_text: string }>>(() => {
+    const sectionTexts = parseSections(spec, SECTIONS);
+    const init: Record<string, { verdict: SectionVerdict | null; comment: string; corrected_text: string }> = {};
     for (const s of SECTIONS) {
       const existing = existingReview?.section_reviews?.[s.num];
-      init[s.num] = { verdict: existing?.verdict ?? null, comment: existing?.comment ?? '' };
+      init[s.num] = {
+        verdict: existing?.verdict ?? null,
+        comment: existing?.comment ?? '',
+        corrected_text: existing?.corrected_text ?? sectionTexts[s.num] ?? '',
+      };
     }
     return init;
   });
@@ -115,7 +136,7 @@ export default function SpecReviewPanel({
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState('');
 
-  const setSection = (num: string, field: 'verdict' | 'comment', value: string) => {
+  const setSection = (num: string, field: 'verdict' | 'comment' | 'corrected_text', value: string) => {
     setSections((prev) => ({ ...prev, [num]: { ...prev[num], [field]: value } }));
   };
 
@@ -150,7 +171,7 @@ export default function SpecReviewPanel({
     try {
       const sectionReviews: Record<string, SpecSectionReview> = {};
       for (const [num, s] of Object.entries(sections)) {
-        sectionReviews[num] = { verdict: s.verdict ?? 'skipped', comment: s.comment };
+        sectionReviews[num] = { verdict: s.verdict ?? 'skipped', comment: s.comment, corrected_text: s.corrected_text };
       }
       const body: SpecReviewSubmission = {
         reviewer,
@@ -162,8 +183,9 @@ export default function SpecReviewPanel({
       setReviewer('');
       setOverallComment('');
       setSections(() => {
-        const reset: Record<string, { verdict: SectionVerdict | null; comment: string }> = {};
-        for (const s of SECTIONS) reset[s.num] = { verdict: null, comment: '' };
+        const sectionTexts = parseSections(spec, SECTIONS);
+        const reset: Record<string, { verdict: SectionVerdict | null; comment: string; corrected_text: string }> = {};
+        for (const s of SECTIONS) reset[s.num] = { verdict: null, comment: '', corrected_text: sectionTexts[s.num] ?? '' };
         return reset;
       });
       setSaved(true);
@@ -175,23 +197,7 @@ export default function SpecReviewPanel({
     }
   };
 
-  // セクション番号ごとの本文を spec から切り出す
-  const parseSections = (text: string): Record<string, string> => {
-    const out: Record<string, string> = {};
-    for (let i = 0; i < SECTIONS.length; i++) {
-      const s = SECTIONS[i];
-      const next = SECTIONS[i + 1];
-      const startRe = new RegExp(`## ${s.num}\\.`);
-      const endRe = next ? new RegExp(`## ${next.num}\\.`) : null;
-      const startIdx = text.search(startRe);
-      if (startIdx < 0) { out[s.num] = ''; continue; }
-      const endIdx = endRe ? text.search(endRe) : -1;
-      out[s.num] = endIdx > 0 ? text.slice(startIdx, endIdx) : text.slice(startIdx);
-    }
-    return out;
-  };
-
-  const sectionTexts = parseSections(spec);
+  const sectionTexts = parseSections(spec, SECTIONS);
 
   const reviewedCount = Object.values(sections).filter((s) => s.verdict !== null).length;
   const allDone = reviewedCount === SECTIONS.length;
@@ -248,24 +254,36 @@ export default function SpecReviewPanel({
                 </div>
               </div>
 
-              {/* 仕様書テキスト */}
+              {/* 原文テキスト */}
               {sectionTexts[s.num] && (
-                <div className="mb-2 rounded bg-white/60 p-2 font-mono text-[10px] leading-relaxed text-neutral-600 break-words">
+                <div className="mb-2 rounded bg-neutral-100 border border-neutral-200 p-2 font-mono text-[10px] leading-relaxed text-neutral-500 break-words">
+                  <p className="mb-1 text-[9px] font-semibold uppercase tracking-wide text-neutral-400">原文</p>
                   {sectionTexts[s.num].split('\n').map((line, li) => {
                     const mAi = line.match(/^<!--\s*\[AI推論\]\s*(.*?)\s*-->$/);
-                    if (mAi) return <span key={li} className="block whitespace-pre-wrap text-neutral-700">{mAi[1]}</span>;
-                    if (/^<!--/.test(line)) return null; // [出典]等は非表示
+                    if (mAi) return <span key={li} className="block whitespace-pre-wrap text-neutral-600">{mAi[1]}</span>;
+                    if (/^<!--/.test(line)) return null;
                     return <span key={li} className="block whitespace-pre-wrap">{line}</span>;
                   })}
                 </div>
               )}
 
-              {/* コメント（needs_fix 時は常に表示、他は折り畳み） */}
+              {/* 直接編集可能なテキスト */}
+              <div className="mb-2">
+                <p className="mb-1 text-[9px] font-semibold uppercase tracking-wide text-neutral-400">修正テキスト（直接編集可）</p>
+                <textarea
+                  value={state.corrected_text}
+                  onChange={(e) => setSection(s.num, 'corrected_text', e.target.value)}
+                  className="w-full rounded border border-indigo-200 bg-white px-2 py-1.5 font-mono text-[11px] leading-relaxed text-neutral-700 focus:outline-none focus:ring-1 focus:ring-indigo-400"
+                  rows={4}
+                />
+              </div>
+
+              {/* コメント（needs_fix 時） */}
               {state.verdict === 'needs_fix' && (
                 <textarea
                   value={state.comment}
                   onChange={(e) => setSection(s.num, 'comment', e.target.value)}
-                  placeholder="修正が必要な点を記入してください"
+                  placeholder="修正が必要な点を記入してください（任意）"
                   className="w-full rounded border border-red-200 bg-white px-2 py-1 text-[11px] text-neutral-700 placeholder-neutral-300 focus:outline-none focus:ring-1 focus:ring-red-400"
                   rows={2}
                 />

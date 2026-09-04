@@ -299,42 +299,56 @@ function CaseSidebar({
   selectedId: string | null;
   onSelect: (id: string) => void;
 }) {
-  // 届出番号から日付文字列（r8-01-13-... → R8/01/13）
   const dateFromId = (id: string) => {
     const m = id.match(/^r(\d+)-(\d+)-(\d+)/);
     return m ? `R${m[1]}/${m[2]}/${m[3]}` : '';
   };
 
+  // FB可能 = 仕様書・故障モード・トップ事象がすべて生成済み
+  const fbCases = cases.filter((c) => c.has_spec && c.has_label && c.has_input);
+  // FB完了 = 3種のレビューがすべて保存済み
+  const fbDoneCount = fbCases.filter((c) => c.has_spec_review && c.has_failure_mode_review && c.has_top_event_review).length;
+  const fbRemaining = fbCases.length - fbDoneCount;
+
   return (
     <nav className="flex w-56 shrink-0 flex-col border-r border-neutral-200 bg-white overflow-hidden">
       <div className="border-b border-neutral-200 px-3 py-2">
         <p className="text-[10px] font-bold uppercase tracking-wide text-neutral-400">リコール一覧</p>
+        {fbCases.length > 0 && (
+          <p className="mt-1 text-[11px]">
+            <span className={fbRemaining > 0 ? 'font-semibold text-amber-600' : 'font-semibold text-green-600'}>
+              {fbRemaining > 0 ? `残り ${fbRemaining} 件` : '✓ 全件完了'}
+            </span>
+            <span className="ml-1 text-neutral-400">/ {fbCases.length} 件</span>
+          </p>
+        )}
       </div>
       <div className="flex-1 overflow-y-auto">
-        {cases.map((c) => {
+        {fbCases.map((c) => {
           const selected = c.id === selectedId;
-          const complete = c.has_spec && c.has_label && c.has_input;
+          const fbDone = !!(c.has_spec_review && c.has_failure_mode_review && c.has_top_event_review);
           return (
             <button
               key={c.id}
-              onClick={() => complete && onSelect(c.id)}
-              disabled={!complete}
-              title={!complete ? '仕様書・故障モード・トップ事象のすべての生成が必要です' : undefined}
+              onClick={() => onSelect(c.id)}
               className={`w-full border-b border-neutral-100 px-3 py-2 text-left transition-colors border-l-2 ${
-                !complete
-                  ? 'cursor-not-allowed opacity-40 border-l-transparent'
-                  : selected
+                selected
                   ? 'bg-indigo-50 border-l-indigo-500'
+                  : fbDone
+                  ? 'hover:bg-green-50 border-l-green-400'
                   : 'hover:bg-neutral-50 border-l-transparent'
               }`}
             >
-              {/* 日付 */}
-              <p className="text-[9px] text-neutral-400">{dateFromId(c.id)}</p>
-              {/* 会社名 */}
+              <div className="flex items-center justify-between gap-1">
+                <p className="text-[9px] text-neutral-400">{dateFromId(c.id)}</p>
+                {fbDone
+                  ? <span className="shrink-0 text-[9px] font-bold text-green-600">✓ FB完了</span>
+                  : <span className="shrink-0 text-[9px] font-semibold text-amber-500">FB未</span>
+                }
+              </div>
               <p className={`truncate text-[11px] font-semibold ${selected ? 'text-indigo-800' : 'text-neutral-700'}`}>
                 {c.notifier || c.id}
               </p>
-              {/* 部品名 */}
               <p className="truncate text-[10px] text-neutral-500">{c.defect_location}</p>
             </button>
           );

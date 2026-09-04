@@ -416,6 +416,7 @@ def get_expert_reviews(recall_id: str):
 class SpecSectionReview(BaseModel):
     verdict: str  # "approved" | "needs_fix" | "skipped"
     comment: str = ""
+    corrected_text: str = ""
 
 class SpecReviewSubmission(BaseModel):
     reviewer: str
@@ -587,6 +588,7 @@ class FailureModeReviewSubmission(BaseModel):
     reviewer: str
     verdict: str  # "approved" | "needs_fix"
     item_reviews: dict[str, str] = {}   # {mode: "approved"|"needs_fix"}
+    item_suggested: dict[str, str] = {}  # {mode: "修正後テキスト"}
     missing_items: list[str] = []
     comment: str = ""
 
@@ -612,6 +614,7 @@ def save_failure_mode_review(recall_id: str, body: FailureModeReviewSubmission):
         "reviewed_at": datetime.now(timezone.utc).isoformat(),
         "verdict": body.verdict,
         "item_reviews": body.item_reviews,
+        "item_suggested": body.item_suggested,
         "missing_items": body.missing_items,
         "comment": body.comment,
     })
@@ -886,6 +889,7 @@ def save_benchmark_failure_mode_review(case_id: str, body: FailureModeReviewSubm
         "reviewed_at": datetime.now(timezone.utc).isoformat(),
         "verdict": body.verdict,
         "item_reviews": body.item_reviews,
+        "item_suggested": body.item_suggested,
         "missing_items": body.missing_items,
         "comment": body.comment,
     })
