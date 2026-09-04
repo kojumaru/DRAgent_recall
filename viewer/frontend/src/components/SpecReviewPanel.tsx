@@ -110,6 +110,58 @@ function SavedReviewToggle({ review }: { review: SpecReview }) {
   );
 }
 
+const REVIEWERS = ['佐々木さん', '神戸さん', 'その他'] as const;
+
+function ReviewerSelect({
+  value, onChange,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  const preset = REVIEWERS.slice(0, 2) as readonly string[];
+  const choice = preset.includes(value) ? value : value ? 'その他' : '';
+  const [otherText, setOtherText] = useState(preset.includes(value) ? '' : value);
+
+  const handleChoice = (r: string) => {
+    if (r === 'その他') {
+      onChange(otherText);
+    } else {
+      onChange(r);
+    }
+  };
+
+  return (
+    <div className="flex flex-col gap-1.5">
+      <div className="flex gap-4 flex-wrap">
+        {REVIEWERS.map((r) => (
+          <label key={r} className="flex items-center gap-1.5 text-[12px] cursor-pointer select-none">
+            <input
+              type="radio"
+              name="reviewer-spec"
+              checked={choice === r}
+              onChange={() => {
+                if (r === 'その他') { onChange(otherText); }
+                else { onChange(r); }
+              }}
+              className="accent-indigo-600"
+            />
+            {r}
+          </label>
+        ))}
+      </div>
+      {choice === 'その他' && (
+        <input
+          type="text"
+          value={otherText}
+          onChange={(e) => { setOtherText(e.target.value); onChange(e.target.value); }}
+          placeholder="名前を入力"
+          className="rounded border border-neutral-300 px-2 py-1.5 text-[12px] focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        />
+      )}
+    </div>
+  );
+}
+
 export default function SpecReviewPanel({
   recallId,
   spec,
@@ -254,7 +306,21 @@ export default function SpecReviewPanel({
                       key={v}
                       current={state.verdict}
                       value={v}
-                      onClick={() => setSection(s.num, 'verdict', v)}
+                      onClick={() => {
+                        if (v === 'needs_fix') {
+                          setSections((prev) => ({
+                            ...prev,
+                            [s.num]: {
+                              ...prev[s.num],
+                              verdict: 'needs_fix',
+                              // spec が非同期ロードされるため、クリック時の sectionTexts から設定する
+                              corrected_text: prev[s.num].corrected_text || stripComments(sectionTexts[s.num]),
+                            },
+                          }));
+                        } else {
+                          setSection(s.num, 'verdict', v);
+                        }
+                      }}
                     />
                   ))}
                 </div>
@@ -303,13 +369,7 @@ export default function SpecReviewPanel({
 
       {/* 全体コメント + 保存 */}
       <div className="flex flex-col gap-2 border-t border-neutral-200 pt-3">
-        <input
-          type="text"
-          value={reviewer}
-          onChange={(e) => setReviewer(e.target.value)}
-          placeholder="レビュアー名"
-          className="rounded border border-neutral-300 px-2 py-1.5 text-[12px] focus:outline-none focus:ring-2 focus:ring-indigo-400"
-        />
+        <ReviewerSelect value={reviewer} onChange={setReviewer} />
         <textarea
           value={overallComment}
           onChange={(e) => setOverallComment(e.target.value)}

@@ -2,6 +2,34 @@ import { useState } from 'react';
 import type { FailureModeReview, FailureModeReviewSubmission } from '../api';
 import DiffView from './DiffView';
 
+const REVIEWERS = ['佐々木さん', '神戸さん', 'その他'] as const;
+
+function ReviewerSelect({ value, onChange, name }: { value: string; onChange: (v: string) => void; name: string }) {
+  const preset = REVIEWERS.slice(0, 2) as readonly string[];
+  const choice = preset.includes(value) ? value : value ? 'その他' : '';
+  const [otherText, setOtherText] = useState(preset.includes(value) ? '' : value);
+  return (
+    <div className="flex flex-col gap-1.5">
+      <div className="flex gap-4 flex-wrap">
+        {REVIEWERS.map((r) => (
+          <label key={r} className="flex items-center gap-1.5 text-[12px] cursor-pointer select-none">
+            <input type="radio" name={name} checked={choice === r}
+              onChange={() => onChange(r === 'その他' ? otherText : r)}
+              className="accent-indigo-600" />
+            {r}
+          </label>
+        ))}
+      </div>
+      {choice === 'その他' && (
+        <input type="text" value={otherText}
+          onChange={(e) => { setOtherText(e.target.value); onChange(e.target.value); }}
+          placeholder="名前を入力"
+          className="rounded border border-neutral-300 px-2 py-1.5 text-[12px] focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+      )}
+    </div>
+  );
+}
+
 type ItemVerdict = 'approved' | 'needs_fix';
 
 const VERDICT_STYLES: Record<ItemVerdict, { bg: string; text: string; label: string }> = {
@@ -216,13 +244,7 @@ export default function FailureModeReviewPanel({
 
       {/* 保存フォーム */}
       <div className="flex flex-col gap-2 border-t border-neutral-200 pt-3">
-        <input
-          type="text"
-          value={reviewer}
-          onChange={(e) => setReviewer(e.target.value)}
-          placeholder="レビュアー名"
-          className="rounded border border-neutral-300 px-2 py-1.5 text-[12px] focus:outline-none focus:ring-2 focus:ring-indigo-400"
-        />
+        <ReviewerSelect value={reviewer} onChange={setReviewer} name="reviewer-fm" />
         <textarea
           value={comment}
           onChange={(e) => setComment(e.target.value)}
