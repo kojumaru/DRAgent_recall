@@ -133,7 +133,7 @@ export default function SpecReviewPanel({
       init[s.num] = {
         verdict: existing?.verdict ?? null,
         comment: existing?.comment ?? '',
-        corrected_text: existing?.corrected_text ?? stripComments(sectionTexts[s.num] ?? ''),
+        corrected_text: existing?.corrected_text || stripComments(sectionTexts[s.num] ?? ''),
       };
     }
     return init;
@@ -265,8 +265,6 @@ export default function SpecReviewPanel({
                 <div className="mb-2 rounded bg-neutral-100 border border-neutral-200 p-2 font-mono text-[10px] leading-relaxed text-neutral-500 break-words">
                   <p className="mb-1 text-[9px] font-semibold uppercase tracking-wide text-neutral-400">原文</p>
                   {sectionTexts[s.num].split('\n').map((line, li) => {
-                    const mAi = line.match(/^<!--\s*\[AI推論\]\s*(.*?)\s*-->$/);
-                    if (mAi) return <span key={li} className="block whitespace-pre-wrap text-neutral-600">{mAi[1]}</span>;
                     if (/^<!--/.test(line)) return null;
                     return <span key={li} className="block whitespace-pre-wrap">{line}</span>;
                   })}

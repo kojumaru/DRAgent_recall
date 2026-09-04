@@ -139,7 +139,7 @@ function ScoreBadge({ score }: { score: number }) {
 // ─────────────────────────────────────────────────────────────
 
 function ResultsPanel({
-  caseId, perItemScore, expertReviews, specReview, failureModeReview, topEventReview, hasFta, hasDiagramMasked,
+  caseId, perItemScore, expertReviews, specReview, failureModeReview, topEventReview, hasFta,
 }: {
   caseId: string;
   perItemScore: PerItemScore | null;
@@ -148,7 +148,6 @@ function ResultsPanel({
   failureModeReview: FailureModeReview | null;
   topEventReview: TopEventReview | null;
   hasFta: boolean;
-  hasDiagramMasked: boolean;
 }) {
   const coverage = useMemo(
     () => (perItemScore ? computeCoverage(perItemScore, expertReviews) : null),
@@ -157,12 +156,11 @@ function ResultsPanel({
 
   const steps = [
     { label: '① 仕様書レビュー',   done: specReview?.verdict === 'approved',        warn: specReview?.verdict === 'needs_fix', desc: specReview ? `${specReview.verdict === 'approved' ? '承認済み' : '要修正'} (${specReview.reviewer})` : '未レビュー' },
-    { label: '② マスク済み図',      done: hasDiagramMasked,                          warn: false,                                desc: hasDiagramMasked ? '存在する' : '未作成' },
-    { label: '③ 故障モードレビュー', done: failureModeReview?.verdict === 'approved', warn: failureModeReview?.verdict === 'needs_fix', desc: failureModeReview ? `${failureModeReview.verdict === 'approved' ? '承認済み' : '要修正'}` : '未レビュー' },
-    { label: '④ トップ事象レビュー', done: teVerdict(topEventReview) === 'approved', warn: teVerdict(topEventReview) === 'needs_fix', desc: topEventReview ? `${teVerdict(topEventReview) === 'approved' ? '承認済み' : '要修正'}` : '未レビュー' },
-    { label: '⑤ FTA生成',           done: hasFta,                                    warn: false,                                desc: hasFta ? '生成済み' : '未生成' },
-    { label: '⑥ LLM判定',           done: perItemScore !== null,                     warn: false,                                desc: perItemScore ? 'スコアあり' : '未実行' },
-    { label: '⑦ FTA評価（専門家）',  done: expertReviews.length > 0,                  warn: false,                                desc: expertReviews.length > 0 ? `${expertReviews.length}名評価済み` : '未評価' },
+    { label: '② 故障モードレビュー', done: failureModeReview?.verdict === 'approved', warn: failureModeReview?.verdict === 'needs_fix', desc: failureModeReview ? `${failureModeReview.verdict === 'approved' ? '承認済み' : '要修正'}` : '未レビュー' },
+    { label: '③ トップ事象レビュー', done: teVerdict(topEventReview) === 'approved', warn: teVerdict(topEventReview) === 'needs_fix', desc: topEventReview ? `${teVerdict(topEventReview) === 'approved' ? '承認済み' : '要修正'}` : '未レビュー' },
+    { label: '④ FTA生成',           done: hasFta,                                    warn: false,                                desc: hasFta ? '生成済み' : '未生成' },
+    { label: '⑤ LLM判定',           done: perItemScore !== null,                     warn: false,                                desc: perItemScore ? 'スコアあり' : '未実行' },
+    { label: '⑥ FTA評価（専門家）',  done: expertReviews.length > 0,                  warn: false,                                desc: expertReviews.length > 0 ? `${expertReviews.length}名評価済み` : '未評価' },
   ];
 
   return (
@@ -528,20 +526,6 @@ function LeftPanel({
           </section>
           <hr className="border-neutral-200" />
 
-          {/* マスク済み図（2枚目） */}
-          <section>
-            <h2 className="mb-1 text-sm font-bold text-neutral-800">部品図（マスク済み）</h2>
-            <div className="overflow-auto rounded border border-neutral-200 bg-neutral-50" style={{ maxHeight: 300 }}>
-              <img
-                src={`/api/benchmark/cases/${caseId}/diagram_masked`}
-                alt="diagram masked"
-                className="w-full object-contain"
-                onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-              />
-            </div>
-          </section>
-          <hr className="border-neutral-200" />
-
           {perItemScore ? (
             <>
               <section>
@@ -651,16 +635,13 @@ export default function App() {
   const SIDEBAR_WIDTH = 208; // w-52 = 13rem = 208px
 
   const readiness = useMemo<FtaReadiness>(() => {
-    const selectedCase = cases.find((c) => c.id === selectedId);
     const specOk = specReview?.verdict === 'approved';
     const topEventOk = teVerdict(topEventReview) === 'approved';
-    const diagramOk = selectedCase?.has_diagram_masked ?? false;
     const missing: string[] = [];
     if (!specOk) missing.push('仕様書（専門家承認済み）が未承認または未レビューです');
-    if (!diagramOk) missing.push('マスク済み図（diagram_masked.png）が存在しません');
     if (!topEventOk) missing.push('トップ事象（専門家承認済み）が未承認または未レビューです');
     return { ready: missing.length === 0, missing };
-  }, [cases, selectedId, specReview, topEventReview]);
+  }, [specReview, topEventReview]);
 
   const handleDividerMouseDown = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
@@ -857,14 +838,7 @@ export default function App() {
                               </span>
                             );
                           }
-                          const mAi = line.match(/^<!--\s*\[AI推論\]\s*(.*?)\s*-->$/);
-                          if (mAi) {
-                            return (
-                              <span key={i} className="block text-[10px] text-red-400 italic pl-2 my-0.5">
-                                AI推論: {mAi[1]}
-                              </span>
-                            );
-                          }
+                          if (/^<!--/.test(line)) return null;
                           return <span key={i} className="block">{line}</span>;
                         })}
                       </div>
@@ -877,34 +851,6 @@ export default function App() {
                       </code>
                     </div>
                   ) : null}
-                  {/* 仕様書の後 → マスク済み図（FTA生成への入力） */}
-                  {detail?.spec && (
-                    <>
-                      <div className="flex items-center gap-2 py-1">
-                        <div className="h-px flex-1 bg-neutral-200" />
-                        <span className="shrink-0 rounded bg-indigo-100 px-2 py-0.5 text-[10px] font-semibold text-indigo-700">
-                          ↓ FTA生成時にあわせて入力される図
-                        </span>
-                        <div className="h-px flex-1 bg-neutral-200" />
-                      </div>
-                      <div>
-                        <p className="mb-1 text-[11px] font-semibold text-neutral-500">
-                          部品図（故障説明マスク済み）
-                        </p>
-                        <div className="overflow-auto rounded border border-neutral-200 bg-neutral-50" style={{ maxHeight: 300 }}>
-                          <img
-                            src={`${API_BASE}/${selectedId}/diagram_masked`}
-                            alt="diagram masked"
-                            className="w-full object-contain"
-                            onError={(e) => {
-                              const el = e.currentTarget.parentElement!;
-                              el.innerHTML = '<p class="p-3 text-[11px] text-neutral-400">diagram_masked.png がありません</p>';
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </>
-                  )}
                 </div>
               )}
             </aside>
@@ -992,7 +938,6 @@ export default function App() {
                   failureModeReview={failureModeReview}
                   topEventReview={topEventReview}
                   hasFta={fta !== null}
-                  hasDiagramMasked={cases.find((c) => c.id === selectedId)?.has_diagram_masked ?? false}
                 />
               )}
             </aside>
