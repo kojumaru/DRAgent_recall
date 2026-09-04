@@ -1,17 +1,15 @@
 ---
 name: generate-spec
 description: >
-  国交省リコール raw.json から部品正常仕様書（spec_FTA.md）を対話的に生成する。
-  自律ループではなくユーザーと1ステップずつ進める。
-  `/generate-spec <recall_id>` で起動。recall_id 省略時はカレントの data/ を一覧表示して選ばせる。
+  国交省リコール raw.json から部品正常仕様書（spec_FTA.md）を生成する。
+  `/generate-spec <recall_id>` で起動。
 ---
 
-# /generate-spec — 部品正常仕様書の対話的生成
+# /generate-spec — 部品正常仕様書の生成
 
 ## 概要
 
-`agent.py` の自律ループとは異なり、このスキルは **Claude とユーザーの対話** によって仕様書を作る。
-各セクションでユーザーが確認・修正を入れながら進めるため、品質と根拠を都度担保できる。
+raw.json を読み込み、spec_FTA.md を自律的に生成・保存する。
 
 出力: `data/{recall_id}/spec_FTA.md`（クリーンな仕様本文 ＋ HTML コメント形式の情報源）
 
@@ -19,13 +17,10 @@ description: >
 
 ## Step 0 — 入力の解決
 
-`$ARGUMENTS` に recall_id が渡された場合はそれを使う。
-渡されなかった場合は `data/` 配下のディレクトリを列挙し、ユーザーに選ばせる。
+`$ARGUMENTS` から recall_id を取得する。
 
-以下のパスを順に探す（存在する最初のものを使う）:
+以下を Read する:
 - `data/{recall_id}/raw.json`
-
-ファイルが見つからなければユーザーに正しいパスを確認する。
 
 ### 改善箇所説明図（diagram PDF）の読み込み
 
@@ -50,24 +45,15 @@ with urllib.request.urlopen(req, timeout=30) as r, open(out_path, 'wb') as f:
 
 ---
 
-## Step 1 — リコール内容の提示と対象部品の確認
+## Step 1 — リコール内容の読み取りと対象部品の確定
 
-raw.json を Read して以下を表示する:
+raw.json の metadata から以下を読み取る:
 
-```
-【リコール概要】
-届出番号  : {recall_id}
-届出者    : {notifier}
-対象車種  : {affected_vehicles[0].maker} {affected_vehicles[0].model}
-不具合部位: {defect_location}
-不具合系統: {defect_system}
-部品リスト: {parts[].part_name}
-不具合概要: {defect_summary}（仕様書本文には使わない）
-```
+- 届出番号・届出者・対象車種
+- 不具合部位・不具合系統
+- 部品リスト（`parts[].part_name`）
 
-ユーザーに確認: **「仕様書の対象部品をこれでよいですか？ 別の部品にする場合は教えてください。」**
-
-ユーザーの回答を受け取り、対象部品名（`product_name`）を確定する。
+`parts[].part_name` をもとに対象部品名（`product_name`）を確定する。
 
 ---
 

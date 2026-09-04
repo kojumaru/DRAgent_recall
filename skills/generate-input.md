@@ -3,7 +3,7 @@ name: generate-input
 description: >
   spec_FTA.md + raw.json から fta-agent 用 input.yaml を生成する。
   label.json は参照しない（故障情報の混入を防ぐため）。
-  `/convert-input <recall_id>` で起動。recall_id 省略時は data/ を一覧して選ばせる。
+  `/generate-input <recall_id>` で起動。
 ---
 
 # /convert-input — input.yaml 生成
@@ -19,14 +19,11 @@ fta-agent が受け取る `data/{recall_id}/input.yaml` を生成する。
 
 ## Step 0 — 入力解決
 
-`$ARGUMENTS` に recall_id が渡された場合はそれを使う。
-渡されなかった場合は `data/` 配下のディレクトリを列挙してユーザーに選ばせる。
+`$ARGUMENTS` から recall_id を取得する。
 
 以下を Read する:
 - `data/{recall_id}/spec_FTA.md`
 - `data/{recall_id}/raw.json`（top_event の導出にのみ使用）
-
-`data/{recall_id}/input.yaml` が既存の場合は現在の内容を表示して上書き確認する。
 
 ---
 
@@ -55,25 +52,7 @@ consequences が空の場合は `metadata.defect_location + "の不具合"` を�
 
 ---
 
-## Step 2 — 生成内容の確認
-
-以下の形式でユーザーに提示する:
-
-```yaml
-product_name: ...
-purpose: ...
-functions:
-  - ...
-components:
-  - ...
-top_event: ...
-```
-
-「この内容で input.yaml を保存してよいですか？ 修正があれば教えてください。」と確認する。
-
----
-
-## Step 3 — ファイル保存
+## Step 2 — ファイル保存
 
 `data/{recall_id}/input.yaml` に Write する。
 

@@ -8,7 +8,6 @@
 |---|---|---|---|
 | generate-spec | `/generate-spec <recall_id>` | 仕様書生成 | raw.json → spec_FTA.md |
 | generate-label | `/generate-label <recall_id>` | 正解ラベル生成 | raw.json → label.json |
-| update-failure-modes | `/update-failure-modes <recall_id>` | 故障モードのみ更新 | label.json → label.json |
 | generate-input | `/generate-input <recall_id>` | FTA入力生成 | spec_FTA.md + raw.json → input.yaml |
 | evaluate-fta | `/evaluate-fta <recall_id>` | FTA評価 | output.yaml + label.json → score.json |
 
@@ -48,7 +47,6 @@ recall-fta/
 ├── skills/
 │   ├── generate-spec.md          — 仕様書生成
 │   ├── generate-label.md         — 正解ラベル生成
-│   ├── update-failure-modes.md   — 故障モードのみ更新
 │   ├── generate-input.md         — FTA入力（input.yaml）生成
 │   └── evaluate-fta.md           — FTA評価
 ├── scripts/
