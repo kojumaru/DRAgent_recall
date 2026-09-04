@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { saveSpecReview } from '../api';
 import type { SpecReview, SpecReviewSubmission, SpecSectionReview } from '../api';
+import DiffView from './DiffView';
+
+// HTML コメント（<!-- -->）を除去して正規化
+function stripComments(text: string): string {
+  return text.replace(/<!--[\s\S]*?-->/g, '').replace(/\n{3,}/g, '\n\n').trimEnd();
+}
 
 // セクション番号ごとの本文を spec から切り出す（コンポーネント外）
 function parseSections(text: string, sections: { num: string; name: string }[]): Record<string, string> {
@@ -127,7 +133,7 @@ export default function SpecReviewPanel({
       init[s.num] = {
         verdict: existing?.verdict ?? null,
         comment: existing?.comment ?? '',
-        corrected_text: existing?.corrected_text ?? sectionTexts[s.num] ?? '',
+        corrected_text: existing?.corrected_text ?? stripComments(sectionTexts[s.num] ?? ''),
       };
     }
     return init;
@@ -185,7 +191,7 @@ export default function SpecReviewPanel({
       setSections(() => {
         const sectionTexts = parseSections(spec, SECTIONS);
         const reset: Record<string, { verdict: SectionVerdict | null; comment: string; corrected_text: string }> = {};
-        for (const s of SECTIONS) reset[s.num] = { verdict: null, comment: '', corrected_text: sectionTexts[s.num] ?? '' };
+        for (const s of SECTIONS) reset[s.num] = { verdict: null, comment: '', corrected_text: stripComments(sectionTexts[s.num] ?? '') };
         return reset;
       });
       setSaved(true);
@@ -267,26 +273,30 @@ export default function SpecReviewPanel({
                 </div>
               )}
 
-              {/* 直接編集可能なテキスト */}
-              <div className="mb-2">
-                <p className="mb-1 text-[9px] font-semibold uppercase tracking-wide text-neutral-400">修正テキスト（直接編集可）</p>
-                <textarea
-                  value={state.corrected_text}
-                  onChange={(e) => setSection(s.num, 'corrected_text', e.target.value)}
-                  className="w-full rounded border border-indigo-200 bg-white px-2 py-1.5 font-mono text-[11px] leading-relaxed text-neutral-700 focus:outline-none focus:ring-1 focus:ring-indigo-400"
-                  rows={4}
-                />
-              </div>
-
-              {/* コメント（needs_fix 時） */}
+              {/* 要修正時のみ: 直接編集エリア + 差分プレビュー + コメント */}
               {state.verdict === 'needs_fix' && (
-                <textarea
-                  value={state.comment}
-                  onChange={(e) => setSection(s.num, 'comment', e.target.value)}
-                  placeholder="修正が必要な点を記入してください（任意）"
-                  className="w-full rounded border border-red-200 bg-white px-2 py-1 text-[11px] text-neutral-700 placeholder-neutral-300 focus:outline-none focus:ring-1 focus:ring-red-400"
-                  rows={2}
-                />
+                <>
+                  <div className="mb-2">
+                    <p className="mb-1 text-[9px] font-semibold uppercase tracking-wide text-neutral-400">修正テキスト（直接編集可）</p>
+                    <textarea
+                      value={state.corrected_text}
+                      onChange={(e) => setSection(s.num, 'corrected_text', e.target.value)}
+                      className="w-full rounded border border-indigo-200 bg-white px-2 py-1.5 font-mono text-[11px] leading-relaxed text-neutral-700 focus:outline-none focus:ring-1 focus:ring-indigo-400"
+                      rows={4}
+                    />
+                    <DiffView
+                      original={sectionTexts[s.num] ? stripComments(sectionTexts[s.num]) : ''}
+                      modified={state.corrected_text}
+                    />
+                  </div>
+                  <textarea
+                    value={state.comment}
+                    onChange={(e) => setSection(s.num, 'comment', e.target.value)}
+                    placeholder="修正が必要な点を記入してください（任意）"
+                    className="w-full rounded border border-red-200 bg-white px-2 py-1 text-[11px] text-neutral-700 placeholder-neutral-300 focus:outline-none focus:ring-1 focus:ring-red-400"
+                    rows={2}
+                  />
+                </>
               )}
             </div>
           );

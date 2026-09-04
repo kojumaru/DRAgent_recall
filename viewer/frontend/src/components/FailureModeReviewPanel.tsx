@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { FailureModeReview, FailureModeReviewSubmission } from '../api';
+import DiffView from './DiffView';
 
 type ItemVerdict = 'approved' | 'needs_fix';
 
@@ -145,13 +146,10 @@ export default function FailureModeReviewPanel({
                 style ? style.bg : 'border-neutral-200 bg-white'
               }`}
             >
-              <div className="flex items-center justify-between gap-2 mb-2">
-                <div className="min-w-0">
-                  <p className="text-[9px] font-semibold uppercase tracking-wide text-neutral-400 mb-0.5">原文</p>
-                  <span className={`text-[12px] font-semibold ${style?.text ?? 'text-neutral-700'}`}>
-                    {mode}
-                  </span>
-                </div>
+              <div className="flex items-center justify-between gap-2">
+                <span className={`text-[12px] font-semibold ${style?.text ?? 'text-neutral-700'}`}>
+                  {mode}
+                </span>
                 <div className="flex shrink-0 gap-1">
                   {(['approved', 'needs_fix'] as ItemVerdict[]).map((v) => (
                     <VerdictButton
@@ -163,15 +161,18 @@ export default function FailureModeReviewPanel({
                   ))}
                 </div>
               </div>
-              <div>
-                <p className="text-[9px] font-semibold uppercase tracking-wide text-neutral-400 mb-1">修正テキスト（直接編集可）</p>
-                <textarea
-                  value={itemSuggested[mode] ?? mode}
-                  onChange={(e) => setItemSuggested((prev) => ({ ...prev, [mode]: e.target.value }))}
-                  className="w-full rounded border border-indigo-200 bg-white px-2 py-1 text-[11px] text-neutral-700 focus:outline-none focus:ring-1 focus:ring-indigo-400"
-                  rows={2}
-                />
-              </div>
+              {verdict === 'needs_fix' && (
+                <div className="mt-2">
+                  <p className="text-[9px] font-semibold uppercase tracking-wide text-neutral-400 mb-1">修正テキスト（直接編集可）</p>
+                  <textarea
+                    value={itemSuggested[mode] ?? mode}
+                    onChange={(e) => setItemSuggested((prev) => ({ ...prev, [mode]: e.target.value }))}
+                    className="w-full rounded border border-indigo-200 bg-white px-2 py-1 text-[11px] text-neutral-700 focus:outline-none focus:ring-1 focus:ring-indigo-400"
+                    rows={2}
+                  />
+                  <DiffView original={mode} modified={itemSuggested[mode] ?? mode} />
+                </div>
+              )}
             </div>
           );
         })}

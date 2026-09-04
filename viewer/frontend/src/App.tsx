@@ -341,10 +341,11 @@ function CaseSidebar({
             >
               <div className="flex items-center justify-between gap-1">
                 <p className="text-[9px] text-neutral-400">{dateFromId(c.id)}</p>
-                {fbDone
-                  ? <span className="shrink-0 text-[9px] font-bold text-green-600">✓ FB完了</span>
-                  : <span className="shrink-0 text-[9px] font-semibold text-amber-500">FB未</span>
-                }
+                <div className="flex shrink-0 gap-1 text-[9px] font-bold">
+                  <span className={c.has_spec_review ? 'text-green-600' : 'text-neutral-300'} title="仕様書">仕{c.has_spec_review ? '✓' : '○'}</span>
+                  <span className={c.has_top_event_review ? 'text-green-600' : 'text-neutral-300'} title="トップ事象">ト{c.has_top_event_review ? '✓' : '○'}</span>
+                  <span className={c.has_failure_mode_review ? 'text-green-600' : 'text-neutral-300'} title="故障モード">故{c.has_failure_mode_review ? '✓' : '○'}</span>
+                </div>
               </div>
               <p className={`truncate text-[11px] font-semibold ${selected ? 'text-indigo-800' : 'text-neutral-700'}`}>
                 {c.notifier || c.id}
