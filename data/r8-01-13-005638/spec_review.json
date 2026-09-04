@@ -1,0 +1,36 @@
+{
+  "reviewer": "佐々木",
+  "reviewed_at": "2026-08-27T10:03:20.561386+00:00",
+  "verdict": "approved",
+  "comment": "各項目で記載頂いている数値が妥当なのかは確信がないです。\n項目としては概要把握できるので、問題ないです。",
+  "section_reviews": {
+    "1": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "2": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "3": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "4": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "5": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "6": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "7": {
+      "verdict": "approved",
+      "comment": ""
+    }
+  }
+}

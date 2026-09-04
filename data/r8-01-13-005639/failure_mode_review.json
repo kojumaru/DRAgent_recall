@@ -1,0 +1,11 @@
+{
+  "reviewer": "佐々木",
+  "reviewed_at": "2026-08-27T10:17:37.801184+00:00",
+  "verdict": "needs_fix",
+  "item_reviews": {
+    "リヤビューカメラが視認性確保機能を喪失する": "approved",
+    "カメラレンズが光学透過機能を喪失する": "needs_fix"
+  },
+  "missing_items": [],
+  "comment": "・レンズが損傷する。の方が分かりやすいと思いました。"
+}

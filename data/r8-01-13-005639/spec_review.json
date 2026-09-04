@@ -1,0 +1,36 @@
+{
+  "reviewer": "佐々木",
+  "reviewed_at": "2026-08-27T10:11:57.342826+00:00",
+  "verdict": "needs_fix",
+  "comment": "",
+  "section_reviews": {
+    "1": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "2": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "3": {
+      "verdict": "needs_fix",
+      "comment": "ブラケットとリアビューカメラだけで十分と思います。"
+    },
+    "4": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "5": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "6": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "7": {
+      "verdict": "approved",
+      "comment": ""
+    }
+  }
+}

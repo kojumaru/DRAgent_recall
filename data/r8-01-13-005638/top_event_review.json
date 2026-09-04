@@ -1,0 +1,12 @@
+{
+  "reviewer": "佐々木",
+  "reviewed_at": "2026-08-27T10:07:22.174472+00:00",
+  "event_reviews": [
+    {
+      "top_event": "外部診断機にエンジン停止時の負荷計算値が正しく表示されず保安基準に適合しない",
+      "verdict": "approved",
+      "suggested": "",
+      "comment": ""
+    }
+  ]
+}

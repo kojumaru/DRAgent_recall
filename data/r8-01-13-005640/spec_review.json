@@ -1,0 +1,36 @@
+{
+  "reviewer": "佐々木",
+  "reviewed_at": "2026-08-27T10:27:52.879535+00:00",
+  "verdict": "needs_fix",
+  "comment": "",
+  "section_reviews": {
+    "1": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "2": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "3": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "4": {
+      "verdict": "needs_fix",
+      "comment": "製造条件が記載されている。\nガラスの仕様の要件は知見がありません。サイズと透過率くらい？？"
+    },
+    "5": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "6": {
+      "verdict": "needs_fix",
+      "comment": "製造手順が記載されている。\n乗員の視界が確保されることというような内容が出力された方が良いのでは？"
+    },
+    "7": {
+      "verdict": "approved",
+      "comment": ""
+    }
+  }
+}

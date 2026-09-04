@@ -1,0 +1,11 @@
+{
+  "reviewer": "佐々木",
+  "reviewed_at": "2026-09-01T10:54:22.968771+00:00",
+  "verdict": "approved",
+  "item_reviews": {
+    "電子基板が信号伝達機能を喪失する": "approved",
+    "フロント・ショートレンジ・レーダー・センサが物体検出機能を喪失する": "approved"
+  },
+  "missing_items": [],
+  "comment": ""
+}

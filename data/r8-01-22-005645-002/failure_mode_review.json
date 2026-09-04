@@ -1,0 +1,12 @@
+{
+  "reviewer": "佐々木",
+  "reviewed_at": "2026-08-31T08:56:07.078447+00:00",
+  "verdict": "approved",
+  "item_reviews": {
+    "エンジンオイルポンプがオイル供給機能を喪失する": "approved",
+    "締結ボルトが固定機能を喪失する": "approved",
+    "オイルポンプチェーンが回転伝達機能を喪失する": "approved"
+  },
+  "missing_items": [],
+  "comment": ""
+}

@@ -1,0 +1,11 @@
+{
+  "reviewer": "佐々木",
+  "reviewed_at": "2026-08-31T08:54:45.840961+00:00",
+  "verdict": "approved",
+  "item_reviews": {
+    "速度伝達用ギヤユニットが回転伝達機能を喪失する": "approved",
+    "ギヤユニットハウジングが形状保持機能を喪失する": "approved"
+  },
+  "missing_items": [],
+  "comment": ""
+}

@@ -1,0 +1,11 @@
+{
+  "reviewer": "佐々木",
+  "reviewed_at": "2026-08-27T10:29:16.324561+00:00",
+  "verdict": "approved",
+  "item_reviews": {
+    "キャビンガラスが接着保持機能を喪失する": "approved",
+    "プライマーがガラスとフレーム間の密着補助機能を喪失する": "approved"
+  },
+  "missing_items": [],
+  "comment": "シンプルにガラスが外れる。くらいの方がわかりやすい。"
+}

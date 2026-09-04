@@ -302,8 +302,15 @@ function CaseSidebar({
     return m ? `R${m[1]}/${m[2]}/${m[3]}` : '';
   };
 
-  // FB可能 = 仕様書・故障モード・トップ事象がすべて生成済み
-  const fbCases = cases.filter((c) => c.has_spec && c.has_label && c.has_input);
+  // FB可能 = 仕様書・故障モード・トップ事象がすべて生成済み（未完了を先に、完了を後ろに）
+  const fbCases = cases
+    .filter((c) => c.has_spec && c.has_label && c.has_input)
+    .sort((a, b) => {
+      const aDone = !!(a.has_spec_review && a.has_failure_mode_review && a.has_top_event_review);
+      const bDone = !!(b.has_spec_review && b.has_failure_mode_review && b.has_top_event_review);
+      if (aDone !== bDone) return aDone ? 1 : -1;
+      return a.id < b.id ? -1 : 1;
+    });
   // FB完了 = 3種のレビューがすべて保存済み
   const fbDoneCount = fbCases.filter((c) => c.has_spec_review && c.has_failure_mode_review && c.has_top_event_review).length;
   const fbRemaining = fbCases.length - fbDoneCount;

@@ -1,0 +1,11 @@
+{
+  "reviewer": "佐々木",
+  "reviewed_at": "2026-09-01T10:57:56.859330+00:00",
+  "verdict": "needs_fix",
+  "item_reviews": {
+    "締結ナットが締結機能を喪失する": "approved",
+    "テーパースプライン嵌合部が固定機能を喪失する": "needs_fix"
+  },
+  "missing_items": [],
+  "comment": ""
+}

@@ -1,0 +1,36 @@
+{
+  "reviewer": "佐々木",
+  "reviewed_at": "2026-08-31T08:54:06.504193+00:00",
+  "verdict": "approved",
+  "comment": "ギヤユニットの取付位置は知見がなく分かりません。",
+  "section_reviews": {
+    "1": {
+      "verdict": "skipped",
+      "comment": ""
+    },
+    "2": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "3": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "4": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "5": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "6": {
+      "verdict": "approved",
+      "comment": ""
+    },
+    "7": {
+      "verdict": "approved",
+      "comment": ""
+    }
+  }
+}
