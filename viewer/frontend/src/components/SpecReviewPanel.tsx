@@ -262,7 +262,7 @@ export default function SpecReviewPanel({
 
               {/* 原文テキスト */}
               {sectionTexts[s.num] && (
-                <div className="mb-2 rounded bg-neutral-100 border border-neutral-200 p-2 font-mono text-[10px] leading-relaxed text-neutral-500 break-words">
+                <div className="mb-2 rounded border border-neutral-200 bg-white p-2 font-mono text-[10px] leading-relaxed text-neutral-800 break-words">
                   <p className="mb-1 text-[9px] font-semibold uppercase tracking-wide text-neutral-400">原文</p>
                   {sectionTexts[s.num].split('\n').map((line, li) => {
                     if (/^<!--/.test(line)) return null;
@@ -290,7 +290,7 @@ export default function SpecReviewPanel({
                   <textarea
                     value={state.comment}
                     onChange={(e) => setSection(s.num, 'comment', e.target.value)}
-                    placeholder="修正が必要な点を記入してください（任意）"
+                    placeholder="全体的なフィードバックコメントがあれば記入してください"
                     className="w-full rounded border border-red-200 bg-white px-2 py-1 text-[11px] text-neutral-700 placeholder-neutral-300 focus:outline-none focus:ring-1 focus:ring-red-400"
                     rows={2}
                   />

@@ -371,7 +371,7 @@ function FtaReadinessPanel({ readiness }: { readiness: FtaReadiness }) {
     return (
       <div className="rounded border border-green-300 bg-green-50 p-3 text-[12px]">
         <p className="font-semibold text-green-800">FTA生成の準備が整っています</p>
-        <p className="mt-0.5 text-green-700">仕様書・マスク済み図・トップ事象がすべて専門家承認済みです。</p>
+        <p className="mt-0.5 text-green-700">仕様書・トップ事象がすべて専門家承認済みです。</p>
       </div>
     );
   }
@@ -820,7 +820,7 @@ export default function App() {
                       {/* 注意書き */}
                       <div className="rounded border border-blue-200 bg-blue-50 px-3 py-2 text-[10px] text-blue-700 leading-relaxed">
                         <span className="font-semibold">FTA生成への入力について：</span>
-                        仕様書本文（黒文字）と下のマスク済み図がFTAエージェントに入力されます。
+                        仕様書本文（黒文字）がFTAエージェントに入力されます。
                         <span className="font-semibold text-blue-400"> 青文字の根拠情報（出典URL等）は入力されません。</span>
                       </div>
                       <div className="rounded border border-neutral-200 bg-neutral-50 p-3 font-mono text-[11px] leading-relaxed text-neutral-700 whitespace-pre-wrap break-words">
