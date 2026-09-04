@@ -341,8 +341,8 @@ function CaseSidebar({
                 <p className="text-[9px] text-neutral-400">{dateFromId(c.id)}</p>
                 <div className="flex shrink-0 gap-1 text-[9px] font-bold">
                   <span className={c.has_spec_review ? 'text-green-600' : 'text-neutral-300'} title="仕様書">仕{c.has_spec_review ? '✓' : '○'}</span>
-                  <span className={c.has_failure_mode_review ? 'text-green-600' : 'text-neutral-300'} title="故障モード">故{c.has_failure_mode_review ? '✓' : '○'}</span>
                   <span className={c.has_top_event_review ? 'text-green-600' : 'text-neutral-300'} title="トップ事象">ト{c.has_top_event_review ? '✓' : '○'}</span>
+                  <span className={c.has_failure_mode_review ? 'text-green-600' : 'text-neutral-300'} title="故障モード">故{c.has_failure_mode_review ? '✓' : '○'}</span>
                 </div>
               </div>
               <p className={`truncate text-[11px] font-semibold ${selected ? 'text-indigo-800' : 'text-neutral-700'}`}>
@@ -713,8 +713,8 @@ export default function App() {
 
   const MODES: { key: Mode; label: string; active: string; hint: string }[] = [
     { key: 'spec',         label: '① 仕様書',     active: 'bg-amber-600 text-white',   hint: 'リコール情報から生成した仕様書をレビュー' },
-    { key: 'failure_mode', label: '② 故障モード', active: 'bg-rose-600 text-white',    hint: '正解ラベルの故障モードをレビュー' },
-    { key: 'top_event',    label: '③ トップ事象', active: 'bg-orange-600 text-white',  hint: 'FTAのトップ事象をレビュー' },
+    { key: 'top_event',    label: '② トップ事象', active: 'bg-orange-600 text-white',  hint: 'FTAのトップ事象をレビュー' },
+    { key: 'failure_mode', label: '③ 故障モード', active: 'bg-rose-600 text-white',    hint: '正解ラベルの故障モードをレビュー' },
     { key: 'llm',          label: '④ LLM判定',    active: 'bg-indigo-600 text-white',  hint: 'LLMによるFTA評価スコアを確認' },
     { key: 'expert',       label: '⑤ FTA評価',    active: 'bg-emerald-600 text-white', hint: '専門家によるFTAの5段階評価を入力' },
     { key: 'results',      label: '⑥ 結果',        active: 'bg-violet-600 text-white',  hint: '全ステップの完了状況とCoverageスコア' },
