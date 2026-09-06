@@ -161,14 +161,16 @@ def render_recall(rid: str, lines: list[str]):
                     lines.append(f"**FB ({fb_icon})**: {sc}")
                 else:
                     lines.append(f"**FB ({fb_icon})**: （コメントなし）")
-                # 専門家修正テキストがあれば表示
+                # 専門家修正テキストがあれば表示、なければその旨を明示
                 if corrected:
-                    # corrected_textはセクションヘッダ込みのことがあるので除去
                     corrected_body = re.sub(r"^## \d+\..+\n", "", corrected).strip()
                     lines.append("")
                     lines.append("*専門家修正後:*")
                     for l in corrected_body.splitlines():
                         lines.append(f"> {l}" if l.strip() else ">")
+                elif sv == "needs_fix":
+                    lines.append("")
+                    lines.append("*専門家による直接修正なし*")
                 lines.append("")
 
         # 全体コメントがあるのにセクション別に何も表示されなかった場合→仕様書全体を表示
@@ -206,20 +208,16 @@ def render_recall(rid: str, lines: list[str]):
                 (item_suggested.get(k) or "").strip() and (item_suggested.get(k) or "").strip() != k
                 for k in item_reviews
             )
-            if has_suggested:
-                lines.append("| 故障モード（AI出力） | 判定 | 専門家修正案 |")
-                lines.append("|---|---|---|")
-                for fm_text, verdict in item_reviews.items():
-                    suggested_fm = (item_suggested.get(fm_text) or "").strip()
-                    if suggested_fm and suggested_fm != fm_text:
-                        lines.append(f"| {fm_text} | {fmt_verdict(verdict)} | {suggested_fm} |")
-                    else:
-                        lines.append(f"| {fm_text} | {fmt_verdict(verdict)} | — |")
-            else:
-                lines.append("| 故障モード（AI出力） | 判定 |")
-                lines.append("|---|---|")
-                for fm_text, verdict in item_reviews.items():
-                    lines.append(f"| {fm_text} | {fmt_verdict(verdict)} |")
+            lines.append("| 故障モード（AI出力） | 判定 | 専門家修正案 |")
+            lines.append("|---|---|---|")
+            for fm_text, verdict in item_reviews.items():
+                suggested_fm = (item_suggested.get(fm_text) or "").strip()
+                if suggested_fm and suggested_fm != fm_text:
+                    lines.append(f"| {fm_text} | {fmt_verdict(verdict)} | {suggested_fm} |")
+                elif verdict == "needs_fix":
+                    lines.append(f"| {fm_text} | {fmt_verdict(verdict)} | （直接修正なし） |")
+                else:
+                    lines.append(f"| {fm_text} | {fmt_verdict(verdict)} | — |")
             lines.append("")
 
         if missing:
