@@ -1,0 +1,43 @@
+{
+  "reviewer": "佐々木さん",
+  "reviewed_at": "2026-09-04T13:45:19.637673+00:00",
+  "verdict": "needs_fix",
+  "comment": "",
+  "section_reviews": {
+    "1": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "2": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "3": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "4": {
+      "verdict": "needs_fix",
+      "comment": "",
+      "corrected_text": "## 4. 作用荷重条件\n\n- 走行中の空力荷重（風圧）：最高速度での走行時に発生する動圧\n\n- 走行振動荷重：路面の凹凸・不整路面から車体を経由して伝達される繰り返し振動\n- 取付クリップへの引張・剪断複合荷重：空力荷重と振動の重畳による複合荷重\n- 熱サイクル：仕様環境での温度変化による取付クリップおよびカバーの膨張収縮"
+    },
+    "5": {
+      "verdict": "needs_fix",
+      "comment": "",
+      "corrected_text": "## 5. 強度・変形要件\n\n- 取付クリップ保持力：各クリップは設計引抜荷重（通常 50〜150 N/クリップ）以上の保持力を有すること\n\n- Aピラーカバー全体の脱落防止：全取付クリップの保持力合計が、走行最高速度における空力荷重の安全率 3 倍以上であること\n- 耐振動疲労：10〜100 Hz・振幅 0.5 mm の振動を10万サイクル以上与えた後も取付クリップが所定の保持力を維持すること\n- 変形量：通常走行中のカバー変形量が 2 mm 以内に収まること（異音・干渉防止）"
+    },
+    "6": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "7": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "reviewer": "佐々木さん",
+  "reviewed_at": "2026-09-04T22:12:56.949257+00:00",
+  "verdict": "approved",
+  "item_reviews": {
+    "EGR関連部品の取付ボルトが緩む": "approved",
+    "EGRパイプから排気ガスが漏れる": "approved"
+  },
+  "item_suggested": {
+    "EGR関連部品の取付ボルトが緩む": "EGR関連部品の取付ボルトが緩む",
+    "EGRパイプから排気ガスが漏れる": "EGRパイプから排気ガスが漏れる"
+  },
+  "missing_items": [],
+  "comment": ""
+}

@@ -1,0 +1,15 @@
+{
+  "reviewer": "佐々木さん",
+  "reviewed_at": "2026-09-04T11:48:50.049191+00:00",
+  "verdict": "needs_fix",
+  "item_reviews": {
+    "プラネタリギアピンが摩耗する": "needs_fix",
+    "プラネタリギアピンが折損する": "approved"
+  },
+  "item_suggested": {
+    "プラネタリギアピンが摩耗する": "不要",
+    "プラネタリギアピンが折損する": "プラネタリギアピンが折損する"
+  },
+  "missing_items": [],
+  "comment": ""
+}

@@ -1,0 +1,15 @@
+{
+  "reviewer": "佐々木さん",
+  "reviewed_at": "2026-09-04T21:37:56.619961+00:00",
+  "verdict": "needs_fix",
+  "item_reviews": {
+    "仕様の異なる制御プログラムが誤って書き込まれている": "needs_fix",
+    "OBDが正しく動作しない": "approved"
+  },
+  "item_suggested": {
+    "仕様の異なる制御プログラムが誤って書き込まれている": "不要",
+    "OBDが正しく動作しない": "OBDが正しく動作しない"
+  },
+  "missing_items": [],
+  "comment": ""
+}

@@ -1,0 +1,15 @@
+{
+  "reviewer": "佐々木さん",
+  "reviewed_at": "2026-09-04T11:06:00.956552+00:00",
+  "verdict": "needs_fix",
+  "item_reviews": {
+    "充電器が過充電となる": "needs_fix",
+    "駆動用鉛蓄電池内部が断線して電源が消失する": "needs_fix"
+  },
+  "item_suggested": {
+    "充電器が過充電となる": "不要",
+    "駆動用鉛蓄電池内部が断線して電源が消失する": "駆動用鉛蓄電池の内部断線"
+  },
+  "missing_items": [],
+  "comment": ""
+}

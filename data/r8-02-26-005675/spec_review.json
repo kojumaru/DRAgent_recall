@@ -1,0 +1,43 @@
+{
+  "reviewer": "佐々木さん",
+  "reviewed_at": "2026-09-04T23:04:10.982511+00:00",
+  "verdict": "needs_fix",
+  "comment": "",
+  "section_reviews": {
+    "1": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "2": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "3": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "4": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "5": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "6": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "7": {
+      "verdict": "needs_fix",
+      "comment": "数値は断定できないので、修正お願いします。",
+      "corrected_text": "## 7. 使用環境・要求条件\n\n- 動作温度範囲：−40〜+125 ℃（ISO 16750-5 温度クラスT3準拠、エンジンルーム/ステアリングギヤボックス近傍の高温環境対応）\n- 振動耐性：10〜2,000 Hz、最大加速度 50 m/s²（ISO 16750-3 準拠）\n- 電源変動耐性：動作電圧 9〜16 V DC、瞬時過電圧 32 V まで耐性（ISO 16750-2 準拠）\n- 機能安全：ISO 26262 ASIL D（操舵系として最高安全要求レベル）。ステアリングモーメントセンサーは冗長構成（主センサー＋補助センサー）が必要\n- 法規適合：保安基準第29条（かじ取り装置）、UN-R79（電動ステアリング装置の要件）に適合\n- 電磁適合性：CISPR 25、ISO 11452 に適合。特にモーター駆動に伴うノイズの放射を規定値内に制御すること"
+    }
+  }
+}

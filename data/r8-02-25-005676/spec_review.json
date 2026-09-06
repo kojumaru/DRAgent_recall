@@ -1,0 +1,43 @@
+{
+  "reviewer": "佐々木さん",
+  "reviewed_at": "2026-09-04T22:37:46.533568+00:00",
+  "verdict": "approved",
+  "comment": "",
+  "section_reviews": {
+    "1": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "2": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "3": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "4": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "5": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "6": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "7": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    }
+  }
+}

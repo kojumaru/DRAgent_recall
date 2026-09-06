@@ -1,0 +1,12 @@
+{
+  "reviewer": "佐々木さん",
+  "reviewed_at": "2026-09-04T22:45:12.561581+00:00",
+  "event_reviews": [
+    {
+      "top_event": "DPF再生時にセラミックフィルターが過熱して破損する",
+      "verdict": "needs_fix",
+      "suggested": "不要",
+      "comment": ""
+    }
+  ]
+}

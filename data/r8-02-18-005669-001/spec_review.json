@@ -1,0 +1,43 @@
+{
+  "reviewer": "佐々木さん",
+  "reviewed_at": "2026-09-04T22:11:57.196799+00:00",
+  "verdict": "needs_fix",
+  "comment": "",
+  "section_reviews": {
+    "1": {
+      "verdict": "needs_fix",
+      "comment": "",
+      "corrected_text": "## 1. 対象部品の特定\nEGR（排出ガス再循環）バルブおよびEGRパイプは、エンジンの排気ガスの一部を吸気系に還流させる排出ガス再循環装置の主要構成部品である。EGRバルブはエンジン本体付近に取付ボルトで固定され、EGRパイプが排気系と吸気系を接続する。パイプステー・ハーネスステー・クーラーステーが取付ボルトにより固定され全体を支持する。\n・取付ボルト"
+    },
+    "2": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "3": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "4": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "5": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "6": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "7": {
+      "verdict": "approved",
+      "comment": "",
+      "corrected_text": ""
+    }
+  }
+}

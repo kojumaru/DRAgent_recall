@@ -1,0 +1,43 @@
+{
+  "reviewer": "佐々木さん",
+  "reviewed_at": "2026-09-04T11:18:47.134661+00:00",
+  "verdict": "skipped",
+  "comment": "除雪機のため、レビューなし",
+  "section_reviews": {
+    "1": {
+      "verdict": "skipped",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "2": {
+      "verdict": "skipped",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "3": {
+      "verdict": "skipped",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "4": {
+      "verdict": "skipped",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "5": {
+      "verdict": "skipped",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "6": {
+      "verdict": "skipped",
+      "comment": "",
+      "corrected_text": ""
+    },
+    "7": {
+      "verdict": "skipped",
+      "comment": "",
+      "corrected_text": ""
+    }
+  }
+}

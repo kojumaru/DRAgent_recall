@@ -1,0 +1,15 @@
+{
+  "reviewer": "佐々木さん",
+  "reviewed_at": "2026-09-04T11:19:54.921541+00:00",
+  "verdict": "needs_fix",
+  "item_reviews": {
+    "溶接部に亀裂が発生して進展する": "needs_fix",
+    "除雪装置が脱落する": "approved"
+  },
+  "item_suggested": {
+    "溶接部に亀裂が発生して進展する": "不要",
+    "除雪装置が脱落する": "除雪装置が脱落する"
+  },
+  "missing_items": [],
+  "comment": ""
+}

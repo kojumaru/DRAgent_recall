@@ -1,0 +1,12 @@
+{
+  "reviewer": "佐々木さん",
+  "reviewed_at": "2026-09-04T11:46:44.595771+00:00",
+  "event_reviews": [
+    {
+      "top_event": "発電を停止し走行不能となる",
+      "verdict": "needs_fix",
+      "suggested": "警告灯の点灯により走行不能となる",
+      "comment": ""
+    }
+  ]
+}
