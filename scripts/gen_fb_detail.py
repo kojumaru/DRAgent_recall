@@ -144,13 +144,15 @@ def render_recall(rid: str, lines: list[str]):
             sr = section_revs[num]
             sv = sr.get("verdict", "")
             sc = (sr.get("comment") or "").strip()
-            show = (sv == "needs_fix") or bool(sc)
+            corrected = (sr.get("corrected_text") or "").strip()
+            show = (sv == "needs_fix") or bool(sc) or bool(corrected)
             if show:
                 any_section_shown = True
                 title = section_title(num, spec_text)
                 content = spec_sections.get(num, "（仕様書なし）")
                 lines.append(f"**セクション {num}「{title}」**")
-                # 仕様書本文を引用表示
+                # AI出力（仕様書本文）を引用表示
+                lines.append("*AI出力:*")
                 for l in content.splitlines():
                     lines.append(f"> {l}" if l.strip() else ">")
                 lines.append("")
@@ -159,6 +161,14 @@ def render_recall(rid: str, lines: list[str]):
                     lines.append(f"**FB ({fb_icon})**: {sc}")
                 else:
                     lines.append(f"**FB ({fb_icon})**: （コメントなし）")
+                # 専門家修正テキストがあれば表示
+                if corrected:
+                    # corrected_textはセクションヘッダ込みのことがあるので除去
+                    corrected_body = re.sub(r"^## \d+\..+\n", "", corrected).strip()
+                    lines.append("")
+                    lines.append("*専門家修正後:*")
+                    for l in corrected_body.splitlines():
+                        lines.append(f"> {l}" if l.strip() else ">")
                 lines.append("")
 
         # 全体コメントがあるのにセクション別に何も表示されなかった場合→仕様書全体を表示
@@ -186,14 +196,30 @@ def render_recall(rid: str, lines: list[str]):
 
     if fm_rev:
         item_reviews = fm_rev.get("item_reviews", {})
+        item_suggested = fm_rev.get("item_suggested", {})
         missing = fm_rev.get("missing_items", [])
         fm_comment = (fm_rev.get("comment") or "").strip()
 
         if item_reviews:
-            lines.append("| 故障モード（AI出力） | 判定 |")
-            lines.append("|---|---|")
-            for fm_text, verdict in item_reviews.items():
-                lines.append(f"| {fm_text} | {fmt_verdict(verdict)} |")
+            # 専門家修正案があるかどうか確認
+            has_suggested = any(
+                (item_suggested.get(k) or "").strip() and (item_suggested.get(k) or "").strip() != k
+                for k in item_reviews
+            )
+            if has_suggested:
+                lines.append("| 故障モード（AI出力） | 判定 | 専門家修正案 |")
+                lines.append("|---|---|---|")
+                for fm_text, verdict in item_reviews.items():
+                    suggested_fm = (item_suggested.get(fm_text) or "").strip()
+                    if suggested_fm and suggested_fm != fm_text:
+                        lines.append(f"| {fm_text} | {fmt_verdict(verdict)} | {suggested_fm} |")
+                    else:
+                        lines.append(f"| {fm_text} | {fmt_verdict(verdict)} | — |")
+            else:
+                lines.append("| 故障モード（AI出力） | 判定 |")
+                lines.append("|---|---|")
+                for fm_text, verdict in item_reviews.items():
+                    lines.append(f"| {fm_text} | {fmt_verdict(verdict)} |")
             lines.append("")
 
         if missing:
