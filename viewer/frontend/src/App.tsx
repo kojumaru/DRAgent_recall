@@ -22,7 +22,8 @@ import type {
 // 定数・ユーティリティ
 // ─────────────────────────────────────────────────────────────
 
-type Mode = 'spec' | 'failure_mode' | 'top_event' | 'llm' | 'expert' | 'results';
+type Mode = 'spec' | 'failure_mode' | 'top_event' | 'llm' | 'expert' | 'results' | 'fb_check';
+type FbSubMode = 'spec' | 'failure_mode' | 'top_event';
 
 const SCORE_CRITERIA: Record<number, { label: string; color: string }> = {
   5: { label: '同一現象', color: 'text-green-700' },
@@ -614,6 +615,288 @@ function LeftPanel({
 }
 
 // ─────────────────────────────────────────────────────────────
+// FbCheckPanel — OCR原文 / AI出力 / 専門家FB を3カラムで並べる
+// ─────────────────────────────────────────────────────────────
+
+const SPEC_SEC_TITLES: Record<string, string> = {
+  '1': '対象部品の特定',
+  '2': 'システム内での役割',
+  '3': '構成・関連部品',
+  '4': '作用荷重条件',
+  '5': '強度・変形要件',
+  '6': '正常保持状態',
+  '7': '使用環境・要求条件',
+};
+
+function parseSpecSections(spec: string): Record<string, string> {
+  const result: Record<string, string> = {};
+  for (const num of Object.keys(SPEC_SEC_TITLES)) {
+    const m = spec.match(new RegExp(`## ${num}\\..+?\\n([\\s\\S]*?)(?=\\n## |$)`));
+    if (m) result[num] = m[1].replace(/<!--[\s\S]*?-->/g, '').trim();
+  }
+  return result;
+}
+
+function VerdictBadge({ verdict }: { verdict?: string }) {
+  if (verdict === 'approved') return <span className="rounded px-1.5 py-0.5 text-[10px] font-bold bg-green-100 text-green-700">✓ 承認</span>;
+  if (verdict === 'needs_fix') return <span className="rounded px-1.5 py-0.5 text-[10px] font-bold bg-amber-100 text-amber-700">⚠ 要修正</span>;
+  if (verdict === 'skipped') return <span className="rounded px-1.5 py-0.5 text-[10px] font-bold bg-neutral-100 text-neutral-500">— スキップ</span>;
+  return null;
+}
+
+function FbCheckPanel({
+  detail,
+  specReview,
+  failureModeReview,
+  topEventReview,
+}: {
+  detail: RecallDetail;
+  specReview: SpecReview | null;
+  failureModeReview: FailureModeReview | null;
+  topEventReview: TopEventReview | null;
+}) {
+  const [subMode, setSubMode] = useState<FbSubMode>('spec');
+  const meta = detail.raw?.metadata;
+
+  const specSections = useMemo(
+    () => (detail.spec ? parseSpecSections(detail.spec) : {}),
+    [detail.spec],
+  );
+
+  const SUB_TABS: { key: FbSubMode; label: string; active: string }[] = [
+    { key: 'spec',         label: '① 仕様書',     active: 'bg-amber-600 text-white' },
+    { key: 'top_event',    label: '② トップ事象', active: 'bg-orange-600 text-white' },
+    { key: 'failure_mode', label: '③ 故障モード', active: 'bg-rose-600 text-white' },
+  ];
+
+  return (
+    <div className="flex h-full flex-col">
+      {/* サブタブ */}
+      <div className="flex shrink-0 items-center gap-2 border-b border-neutral-200 bg-white px-3 py-2">
+        {SUB_TABS.map(({ key, label, active }) => (
+          <button
+            key={key}
+            onClick={() => setSubMode(key)}
+            className={`rounded px-3 py-1 text-[12px] font-semibold transition-colors ${
+              subMode === key ? active : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+            }`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+
+      {/* 3カラム */}
+      <div className="flex flex-1 overflow-hidden text-[12px]">
+
+        {/* ── カラム1: OCR原文 ── */}
+        <div className="flex w-1/3 min-w-0 flex-col border-r border-neutral-200">
+          <div className="shrink-0 border-b border-neutral-200 bg-neutral-100 px-3 py-2 text-[11px] font-bold text-neutral-600">
+            📄 リコール原文（OCR）
+          </div>
+          <div className="flex-1 overflow-y-auto space-y-3 p-3 leading-relaxed text-neutral-700">
+            {meta?.defect_description && (
+              <div>
+                <div className="mb-1 text-[10px] font-semibold text-neutral-400">不具合の状況</div>
+                <p className="rounded border border-neutral-200 bg-neutral-50 p-2">{meta.defect_description}</p>
+              </div>
+            )}
+            {meta?.root_cause && meta.root_cause !== meta.defect_description && (
+              <div>
+                <div className="mb-1 text-[10px] font-semibold text-neutral-400">原因</div>
+                <p className="rounded border border-neutral-200 bg-neutral-50 p-2">{meta.root_cause}</p>
+              </div>
+            )}
+            {(meta?.consequences?.length ?? 0) > 0 && (
+              <div>
+                <div className="mb-1 text-[10px] font-semibold text-neutral-400">結果</div>
+                <div className="flex flex-col gap-1">
+                  {meta!.consequences.map((c, i) => (
+                    <p key={i} className="rounded border border-neutral-200 bg-neutral-50 p-2">→ {c}</p>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* ── カラム2: AI出力 ── */}
+        <div className="flex w-1/3 min-w-0 flex-col border-r border-neutral-200">
+          <div className="shrink-0 border-b border-neutral-200 bg-blue-50 px-3 py-2 text-[11px] font-bold text-blue-700">
+            🤖 AI出力
+          </div>
+          <div className="flex-1 overflow-y-auto space-y-2 p-3">
+
+            {/* 仕様書 */}
+            {subMode === 'spec' && Object.keys(specSections).length > 0 && Object.entries(specSections).map(([num, text]) => {
+              const sr = specReview?.section_reviews?.[num];
+              const v = sr?.verdict;
+              const border = v === 'needs_fix' ? 'border-amber-300 bg-amber-50' : v === 'approved' ? 'border-green-200 bg-green-50' : 'border-neutral-200 bg-white';
+              return (
+                <div key={num} className={`rounded border p-2 ${border}`}>
+                  <div className="mb-1 flex items-center gap-1.5">
+                    <span className="text-[10px] font-bold text-neutral-500">§{num} {SPEC_SEC_TITLES[num]}</span>
+                    <VerdictBadge verdict={v} />
+                  </div>
+                  <p className="whitespace-pre-wrap leading-relaxed text-neutral-700">{text}</p>
+                </div>
+              );
+            })}
+            {subMode === 'spec' && Object.keys(specSections).length === 0 && (
+              <p className="text-neutral-400">spec_FTA.md がありません</p>
+            )}
+
+            {/* 故障モード */}
+            {subMode === 'failure_mode' && (detail.label?.failure_modes?.length ?? 0) > 0 && detail.label!.failure_modes.map((fm) => {
+              const v = failureModeReview?.item_reviews?.[fm];
+              const border = v === 'needs_fix' ? 'border-amber-300 bg-amber-50' : v === 'approved' ? 'border-green-200 bg-green-50' : 'border-neutral-200 bg-white';
+              return (
+                <div key={fm} className={`flex items-start gap-2 rounded border p-2 ${border}`}>
+                  {v === 'needs_fix' && <span className="shrink-0 text-amber-500">⚠</span>}
+                  {v === 'approved'  && <span className="shrink-0 text-green-500">✓</span>}
+                  {!v                && <span className="shrink-0 text-neutral-300">○</span>}
+                  <span className="text-neutral-700">{fm}</span>
+                </div>
+              );
+            })}
+            {subMode === 'failure_mode' && (detail.label?.failure_modes?.length ?? 0) === 0 && (
+              <p className="text-neutral-400">故障モードがありません</p>
+            )}
+
+            {/* トップ事象 */}
+            {subMode === 'top_event' && (detail.label?.top_event?.length ?? 0) > 0 && detail.label!.top_event.map((te) => {
+              const ev = topEventReview?.event_reviews?.find((e) => e.top_event === te);
+              const v = ev?.verdict;
+              const border = v === 'needs_fix' ? 'border-amber-300 bg-amber-50' : v === 'approved' ? 'border-green-200 bg-green-50' : 'border-neutral-200 bg-white';
+              return (
+                <div key={te} className={`flex items-start gap-2 rounded border p-2 ${border}`}>
+                  {v === 'needs_fix' && <span className="shrink-0 text-amber-500">⚠</span>}
+                  {v === 'approved'  && <span className="shrink-0 text-green-500">✓</span>}
+                  {!v                && <span className="shrink-0 text-neutral-300">○</span>}
+                  <span className="text-neutral-700">{te}</span>
+                </div>
+              );
+            })}
+            {subMode === 'top_event' && (detail.label?.top_event?.length ?? 0) === 0 && (
+              <p className="text-neutral-400">トップ事象がありません</p>
+            )}
+          </div>
+        </div>
+
+        {/* ── カラム3: 専門家FB ── */}
+        <div className="flex w-1/3 min-w-0 flex-col">
+          <div className="shrink-0 border-b border-neutral-200 bg-rose-50 px-3 py-2 text-[11px] font-bold text-rose-700">
+            💬 専門家FB
+          </div>
+          <div className="flex-1 overflow-y-auto space-y-2 p-3">
+
+            {/* 仕様書FB */}
+            {subMode === 'spec' && specReview && (
+              <>
+                <div className="flex items-center gap-2">
+                  <VerdictBadge verdict={specReview.verdict} />
+                  <span className="text-neutral-500">{specReview.reviewer}</span>
+                </div>
+                {specReview.comment && (
+                  <div className="rounded border border-rose-200 bg-rose-50 p-2 text-rose-800">{specReview.comment}</div>
+                )}
+                {Object.entries(specReview.section_reviews ?? {}).map(([num, sr]) => {
+                  if (!sr.comment && sr.verdict !== 'needs_fix') return null;
+                  return (
+                    <div key={num} className="rounded border border-amber-200 bg-amber-50 p-2">
+                      <div className="mb-1 text-[10px] font-bold text-amber-700">§{num} {SPEC_SEC_TITLES[num]}</div>
+                      {sr.comment && <p className="text-amber-800">{sr.comment}</p>}
+                      {sr.corrected_text && (
+                        <div className="mt-1">
+                          <div className="mb-0.5 text-[10px] font-semibold text-amber-600">修正案</div>
+                          <p className="whitespace-pre-wrap rounded border border-amber-200 bg-white p-1 text-neutral-700">{sr.corrected_text}</p>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </>
+            )}
+            {subMode === 'spec' && !specReview && <p className="text-neutral-400">レビューなし</p>}
+
+            {/* 故障モードFB */}
+            {subMode === 'failure_mode' && failureModeReview && (
+              <>
+                <div className="flex items-center gap-2">
+                  <VerdictBadge verdict={failureModeReview.verdict} />
+                  <span className="text-neutral-500">{failureModeReview.reviewer}</span>
+                </div>
+                {failureModeReview.comment && (
+                  <div className="rounded border border-rose-200 bg-rose-50 p-2 text-rose-800">{failureModeReview.comment}</div>
+                )}
+                {Object.entries(failureModeReview.item_reviews ?? {}).filter(([, v]) => v === 'needs_fix').map(([item]) => (
+                  <div key={item} className="rounded border border-amber-200 bg-amber-50 p-2">
+                    <div className="flex items-start gap-1">
+                      <span className="shrink-0 text-amber-600">⚠</span>
+                      <span className="text-amber-800">{item}</span>
+                    </div>
+                    {failureModeReview.item_suggested?.[item] && (
+                      <p className="mt-1 text-[11px] text-amber-700">
+                        <span className="font-semibold">修正案: </span>{failureModeReview.item_suggested[item]}
+                      </p>
+                    )}
+                  </div>
+                ))}
+                {(failureModeReview.missing_items?.length ?? 0) > 0 && (
+                  <div className="rounded border border-orange-200 bg-orange-50 p-2">
+                    <div className="mb-1 text-[10px] font-bold text-orange-700">不足している故障モード</div>
+                    {failureModeReview.missing_items.map((m) => (
+                      <p key={m} className="text-orange-800">・{m}</p>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
+            {subMode === 'failure_mode' && !failureModeReview && <p className="text-neutral-400">レビューなし</p>}
+
+            {/* トップ事象FB */}
+            {subMode === 'top_event' && topEventReview && (
+              <>
+                <div className="flex items-center gap-2">
+                  <span className="text-neutral-500">{topEventReview.reviewer}</span>
+                </div>
+                {topEventReview.comment && (
+                  <div className="rounded border border-rose-200 bg-rose-50 p-2 text-rose-800">{topEventReview.comment}</div>
+                )}
+                {topEventReview.event_reviews?.map((ev) => (
+                  <div key={ev.top_event} className={`rounded border p-2 ${ev.verdict === 'needs_fix' ? 'border-amber-200 bg-amber-50' : 'border-green-200 bg-green-50'}`}>
+                    <div className="mb-1 flex items-center gap-1">
+                      <VerdictBadge verdict={ev.verdict} />
+                      <span className="truncate text-[10px] text-neutral-500">{ev.top_event}</span>
+                    </div>
+                    {ev.verdict === 'needs_fix' && ev.suggested && (
+                      <p className="text-amber-800">
+                        <span className="font-semibold text-[11px]">修正案: </span>{ev.suggested}
+                      </p>
+                    )}
+                    {ev.comment && <p className="mt-1 text-neutral-700">{ev.comment}</p>}
+                  </div>
+                ))}
+                {(topEventReview.missing_items?.length ?? 0) > 0 && (
+                  <div className="rounded border border-orange-200 bg-orange-50 p-2">
+                    <div className="mb-1 text-[10px] font-bold text-orange-700">不足しているトップ事象</div>
+                    {topEventReview.missing_items!.map((m) => (
+                      <p key={m} className="text-orange-800">・{m}</p>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
+            {subMode === 'top_event' && !topEventReview && <p className="text-neutral-400">レビューなし</p>}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
 // App
 // ─────────────────────────────────────────────────────────────
 
@@ -716,6 +999,7 @@ export default function App() {
     llm:          perItemScore ? 'ok' : null,
     expert:       expertReviews.length > 0 ? 'ok' : null,
     results:      fta ? 'ok' : null,
+    fb_check:     (specReview || failureModeReview || topEventReview) ? 'ok' : null,
   };
 
   const MODES: { key: Mode; label: string; active: string; hint: string }[] = [
@@ -725,6 +1009,7 @@ export default function App() {
     { key: 'llm',          label: '④ LLM判定',    active: 'bg-indigo-600 text-white',  hint: 'LLMによるFTA評価スコアを確認' },
     { key: 'expert',       label: '⑤ FTA評価',    active: 'bg-emerald-600 text-white', hint: '専門家によるFTAの5段階評価を入力' },
     { key: 'results',      label: '⑥ 結果',        active: 'bg-violet-600 text-white',  hint: '全ステップの完了状況とCoverageスコア' },
+    { key: 'fb_check',     label: 'FB確認',        active: 'bg-teal-600 text-white',    hint: 'OCR原文・AI出力・専門家FBを3カラムで比較' },
   ];
 
   return (
@@ -931,6 +1216,22 @@ export default function App() {
               )}
             </main>
           </>
+        ) : mode === 'fb_check' ? (
+          /* FB確認モード：OCR原文 / AI出力 / 専門家FB を3カラムで表示 */
+          <main className="flex-1 overflow-hidden">
+            {loading && <p className="p-4 text-sm text-neutral-400">読み込み中...</p>}
+            {selectedId && detail && (
+              <FbCheckPanel
+                detail={detail}
+                specReview={specReview}
+                failureModeReview={failureModeReview}
+                topEventReview={topEventReview}
+              />
+            )}
+            {selectedId && !detail && !loading && (
+              <p className="p-4 text-sm text-neutral-400">ケースを選択してください</p>
+            )}
+          </main>
         ) : mode === 'results' ? (
           /* 結果モード：左=スコア、右=FTAツリー */
           <>
