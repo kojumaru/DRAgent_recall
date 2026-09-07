@@ -329,7 +329,7 @@ function CaseSidebar({
         )}
       </div>
       <div className="flex-1 overflow-y-auto">
-        {fbCases.map((c) => {
+        {fbCases.map((c, idx) => {
           const selected = c.id === selectedId;
           const fbDone = !!(c.has_spec_review && c.has_failure_mode_review && c.has_top_event_review);
           return (
@@ -353,7 +353,7 @@ function CaseSidebar({
                 </div>
               </div>
               <p className={`truncate text-[11px] font-semibold ${selected ? 'text-indigo-800' : 'text-neutral-700'}`}>
-                {c.notifier || c.id}
+                {idx + 1} {c.notifier || c.id}
               </p>
               <p className="truncate text-[10px] text-neutral-500">{c.defect_location}</p>
             </button>
