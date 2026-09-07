@@ -302,10 +302,14 @@ function CaseSidebar({
     return m ? `R${m[1]}/${m[2]}/${m[3]}` : '';
   };
 
-  // FB可能 = 仕様書・故障モード・トップ事象がすべて生成済み（未完了を先に、完了を後ろに）
-  const fbCases = cases
-    .filter((c) => c.has_spec && c.has_label && c.has_input)
-    .sort((a, b) => {
+  // FB可能 = 仕様書・故障モード・トップ事象がすべて生成済み
+  const eligibleCases = cases.filter((c) => c.has_spec && c.has_label && c.has_input);
+  // 固定番号: IDの辞書順で割り当て（レビュー完了状況に関わらず変わらない）
+  const caseNumbers = new Map<string, number>(
+    [...eligibleCases].sort((a, b) => (a.id < b.id ? -1 : 1)).map((c, i) => [c.id, i + 1])
+  );
+  // 表示順: 未完了を先に、完了を後ろに
+  const fbCases = [...eligibleCases].sort((a, b) => {
       const aDone = !!(a.has_spec_review && a.has_failure_mode_review && a.has_top_event_review);
       const bDone = !!(b.has_spec_review && b.has_failure_mode_review && b.has_top_event_review);
       if (aDone !== bDone) return aDone ? 1 : -1;
@@ -329,7 +333,7 @@ function CaseSidebar({
         )}
       </div>
       <div className="flex-1 overflow-y-auto">
-        {fbCases.map((c, idx) => {
+        {fbCases.map((c) => {
           const selected = c.id === selectedId;
           const fbDone = !!(c.has_spec_review && c.has_failure_mode_review && c.has_top_event_review);
           return (
@@ -353,7 +357,7 @@ function CaseSidebar({
                 </div>
               </div>
               <p className={`truncate text-[11px] font-semibold ${selected ? 'text-indigo-800' : 'text-neutral-700'}`}>
-                {idx + 1} {c.notifier || c.id}
+                {caseNumbers.get(c.id)} {c.notifier || c.id}
               </p>
               <p className="truncate text-[10px] text-neutral-500">{c.defect_location}</p>
             </button>
