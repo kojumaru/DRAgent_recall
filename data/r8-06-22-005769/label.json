@@ -1,0 +1,14 @@
+{
+  "recall_id": "r8-06-22-005769",
+  "target_component": "サイドスライド窓ストッパー（窓レール）",
+  "manufacturer": "Hyundai Mobility Japan 株式会社",
+  "product_name": "ヒュンダイ PY",
+  "failure_modes": [
+    "レールに取付けたストッパー位置が設計どおりではない",
+    "窓の開放部の有効幅が500mm以下とならず保安基準に適合しない"
+  ],
+  "top_event": [
+    "保安基準に適合しない"
+  ],
+  "causal_chain": "ストッパー取付け位置が設計どおりでない → 窓開放部の有効幅が500mm以下に制限されない → 保安基準に適合しない"
+}
